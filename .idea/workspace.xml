@@ -2,39 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="338d9bed-963b-460f-a418-ff028a1d4e43" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/sas/comp/server/EmbeddedServer.java" afterPath="$PROJECT_DIR$/src/com/sas/comp/server/EmbeddedServer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/sas/comp/models/Game.java" afterPath="$PROJECT_DIR$/src/com/sas/comp/models/Game.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/com/sas/comp/models/GameTest.java" afterPath="$PROJECT_DIR$/test/com/sas/comp/models/GameTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/sas/comp/hibernate/Hibernate.java" afterPath="$PROJECT_DIR$/src/com/sas/comp/hibernate/Hibernate.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/sas/comp/models/Player.java" afterPath="$PROJECT_DIR$/src/com/sas/comp/models/Player.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/sas/comp/resource/PlayerResource.java" afterPath="$PROJECT_DIR$/src/com/sas/comp/resource/PlayerResource.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/com/sas/comp/models/PlayerTest.java" afterPath="$PROJECT_DIR$/test/com/sas/comp/models/PlayerTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/sas/comp/models/Scorer.java" afterPath="$PROJECT_DIR$/src/com/sas/comp/models/Scorer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/sas/comp/models/ScorerId.java" afterPath="$PROJECT_DIR$/src/com/sas/comp/models/ScorerId.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/com/sas/comp/models/ScorerTest.java" afterPath="$PROJECT_DIR$/test/com/sas/comp/models/ScorerTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/sas/comp/models/Season.java" afterPath="$PROJECT_DIR$/src/com/sas/comp/models/Season.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/com/sas/comp/models/SeasonTest.java" afterPath="$PROJECT_DIR$/test/com/sas/comp/models/SeasonTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/sas/comp/models/Team.java" afterPath="$PROJECT_DIR$/src/com/sas/comp/models/Team.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/sas/comp/models/TeamPlayer.java" afterPath="$PROJECT_DIR$/src/com/sas/comp/models/TeamPlayer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/sas/comp/models/TeamPlayerId.java" afterPath="$PROJECT_DIR$/src/com/sas/comp/models/TeamPlayerId.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/com/sas/comp/models/TeamPlayerTest.java" afterPath="$PROJECT_DIR$/test/com/sas/comp/models/TeamPlayerTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/com/sas/comp/models/TeamTest.java" afterPath="$PROJECT_DIR$/test/com/sas/comp/models/TeamTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/META-INF/persistence.xml" afterPath="$PROJECT_DIR$/src/META-INF/persistence.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="comp.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1364671366812" ignored="false" />
     <file path="/fragment.java" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1364612281619" ignored="false" />
-    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1364669546764" ignored="false" />
     <file path="/TeamResource.java" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1364611810318" ignored="false" />
     <file path="/a.dummy" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1364611841591" ignored="false" />
     <file path="/a.java" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1364612005050" ignored="false" />
     <file path="/sample.java" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1364611989927" ignored="false" />
     <file path="/a.jsp" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1364612069451" ignored="false" />
     <file path="/a.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1364612075762" ignored="false" />
-    <file path="/Team.java" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1364673477202" ignored="false" />
+    <file path="/Team.java" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1364675747564" ignored="false" />
     <file path="/SeasonResource.java" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1364612330810" ignored="false" />
+    <file path="/TeamPlayer.java" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1364674947192" ignored="false" />
+    <file path="/Season.java" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1364675233297" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,10 +89,28 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Game.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/sas/comp/models/Game.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="25" column="23" selection-start="600" selection-end="600" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Team.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/sas/comp/models/Team.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="15" selection-start="860" selection-end="860" vertical-scroll-proportion="0.0">
+            <state line="25" column="7" selection-start="574" selection-end="574" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Season.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/sas/comp/models/Season.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="24" column="24" selection-start="549" selection-end="549" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -115,7 +119,7 @@
       <file leaf-file-name="TeamPlayer.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/sas/comp/models/TeamPlayer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="13" selection-start="422" selection-end="422" vertical-scroll-proportion="0.25700936">
+            <state line="20" column="0" selection-start="509" selection-end="509" vertical-scroll-proportion="0.28037384">
               <folding />
             </state>
           </provider>
@@ -140,9 +144,10 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/src/com/sas/comp/resource/TeamResource.java" />
-        <option value="$PROJECT_DIR$/src/com/sas/comp/models/Season.java" />
         <option value="$PROJECT_DIR$/src/com/sas/comp/resource/SeasonResource.java" />
+        <option value="$PROJECT_DIR$/src/com/sas/comp/models/Season.java" />
         <option value="$PROJECT_DIR$/src/com/sas/comp/models/Team.java" />
+        <option value="$PROJECT_DIR$/src/com/sas/comp/models/TeamPlayer.java" />
       </list>
     </option>
   </component>
@@ -540,7 +545,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="10" y="22" width="1900" height="1120" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -561,7 +566,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24973032" sideWeight="0.67" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24973032" sideWeight="0.67" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -630,13 +635,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/sas/comp/models/TeamPlayerId.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="13" selection-start="297" selection-end="297" vertical-scroll-proportion="0.11214953">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -654,34 +652,6 @@
     <entry file="file://$PROJECT_DIR$/src/com/sas/comp/resource/PlayerResource.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="14" column="13" selection-start="308" selection-end="308" vertical-scroll-proportion="0.14018692">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/sas/comp/models/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="13" selection-start="468" selection-end="468" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/sas/comp/models/Season.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="13" selection-start="418" selection-end="418" vertical-scroll-proportion="0.25700936">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/sas/comp/models/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="23" selection-start="600" selection-end="600" vertical-scroll-proportion="0.3271028">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/sas/comp/models/Team.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="15" selection-start="860" selection-end="860" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -707,9 +677,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/sas/comp/models/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="13" selection-start="468" selection-end="468" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/sas/comp/models/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="23" selection-start="600" selection-end="600" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/sas/comp/models/TeamPlayerId.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="13" selection-start="297" selection-end="297" vertical-scroll-proportion="0.11214953">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/sas/comp/models/Season.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="24" selection-start="549" selection-end="549" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/sas/comp/models/Team.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="7" selection-start="574" selection-end="574" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/sas/comp/models/TeamPlayer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="13" selection-start="422" selection-end="422" vertical-scroll-proportion="0.25700936">
+        <state line="20" column="0" selection-start="509" selection-end="509" vertical-scroll-proportion="0.28037384">
           <folding />
         </state>
       </provider>

@@ -22,6 +22,7 @@ import javax.persistence.OneToMany;
 @Entity(name = "teams")
 public class Team implements Serializable {
 
+
 	@Id
 	private Integer id;
 	@JsonIgnore

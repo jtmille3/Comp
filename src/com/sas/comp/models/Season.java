@@ -2,6 +2,8 @@ package com.sas.comp.models;
 
 // Generated Mar 30, 2013 1:36:42 PM by Hibernate Tools 3.4.0.CR1
 
+import org.codehaus.jackson.annotate.JsonIgnore;
+
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;

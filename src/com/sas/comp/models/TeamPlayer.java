@@ -2,6 +2,8 @@ package com.sas.comp.models;
 
 // Generated Mar 30, 2013 1:36:42 PM by Hibernate Tools 3.4.0.CR1
 
+import org.codehaus.jackson.annotate.JsonIgnore;
+
 import java.io.Serializable;
 
 import javax.persistence.EmbeddedId;
@@ -19,9 +21,11 @@ public class TeamPlayer implements Serializable {
 
 	@EmbeddedId
 	private TeamPlayerId id;
+	@JsonIgnore
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "team_id", insertable = false, updatable = false)
 	private Team team;
+	@JsonIgnore
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "player_id", insertable = false, updatable = false)
 	private Player player;
