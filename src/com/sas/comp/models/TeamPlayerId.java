@@ -14,33 +14,33 @@ import javax.persistence.Embeddable;
 @Embeddable
 public class TeamPlayerId implements Serializable {
 
-  @Column(name = "team_id")
-  private int teamId;
-  @Column(name = "player_id")
-  private int playerId;
+	@Column(name = "team_id")
+	private int teamId;
+	@Column(name = "player_id")
+	private int playerId;
 
-  public TeamPlayerId() {
-  }
+	public TeamPlayerId() {
+	}
 
-  public TeamPlayerId(final int teamId, final int playerId) {
-    this.teamId = teamId;
-    this.playerId = playerId;
-  }
+	public TeamPlayerId(final int teamId, final int playerId) {
+		this.teamId = teamId;
+		this.playerId = playerId;
+	}
 
-  public int getTeamId() {
-    return this.teamId;
-  }
+	public int getTeamId() {
+		return this.teamId;
+	}
 
-  public void setTeamId(final int teamId) {
-    this.teamId = teamId;
-  }
+	public void setTeamId(final int teamId) {
+		this.teamId = teamId;
+	}
 
-  public int getPlayerId() {
-    return this.playerId;
-  }
+	public int getPlayerId() {
+		return this.playerId;
+	}
 
-  public void setPlayerId(final int playerId) {
-    this.playerId = playerId;
-  }
+	public void setPlayerId(final int playerId) {
+		this.playerId = playerId;
+	}
 
 }

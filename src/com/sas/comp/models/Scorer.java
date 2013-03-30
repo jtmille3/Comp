@@ -17,37 +17,37 @@ import javax.persistence.ManyToOne;
 @Entity(name = "scorers")
 public class Scorer implements Serializable {
 
-  @EmbeddedId
-  private ScorerId id;
-  @ManyToOne(fetch = FetchType.LAZY)
-  @JoinColumn(name = "game_id", insertable = false, updatable = false)
-  private Game game;
-  @ManyToOne(fetch = FetchType.LAZY)
-  @JoinColumn(name = "player_id", insertable = false, updatable = false)
-  private Player player;
+	@EmbeddedId
+	private ScorerId id;
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "game_id", insertable = false, updatable = false)
+	private Game game;
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "player_id", insertable = false, updatable = false)
+	private Player player;
 
-  public ScorerId getId() {
-    return this.id;
-  }
+	public ScorerId getId() {
+		return this.id;
+	}
 
-  public void setId(final ScorerId id) {
-    this.id = id;
-  }
+	public void setId(final ScorerId id) {
+		this.id = id;
+	}
 
-  public Game getGame() {
-    return this.game;
-  }
+	public Game getGame() {
+		return this.game;
+	}
 
-  public void setGame(final Game game) {
-    this.game = game;
-  }
+	public void setGame(final Game game) {
+		this.game = game;
+	}
 
-  public Player getPlayer() {
-    return this.player;
-  }
+	public Player getPlayer() {
+		return this.player;
+	}
 
-  public void setPlayer(final Player player) {
-    this.player = player;
-  }
+	public void setPlayer(final Player player) {
+		this.player = player;
+	}
 
 }

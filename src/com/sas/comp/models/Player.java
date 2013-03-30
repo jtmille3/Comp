@@ -20,46 +20,46 @@ import org.codehaus.jackson.annotate.JsonIgnore;
 @Entity(name = "players")
 public class Player implements Serializable {
 
-  @Id
-  private Integer id;
-  private String name;
-  @JsonIgnore
-  @OneToMany(fetch = FetchType.LAZY, mappedBy = "player")
-  private Set<TeamPlayer> teamPlayers = new HashSet<TeamPlayer>(0);
-  @JsonIgnore
-  @OneToMany(fetch = FetchType.LAZY, mappedBy = "player")
-  private Set<Scorer> scorers = new HashSet<Scorer>(0);
+	@Id
+	private Integer id;
+	private String name;
+	@JsonIgnore
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "player")
+	private Set<TeamPlayer> teamPlayers = new HashSet<TeamPlayer>(0);
+	@JsonIgnore
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "player")
+	private Set<Scorer> scorers = new HashSet<Scorer>(0);
 
-  public Integer getId() {
-    return this.id;
-  }
+	public Integer getId() {
+		return this.id;
+	}
 
-  public void setId(final Integer id) {
-    this.id = id;
-  }
+	public void setId(final Integer id) {
+		this.id = id;
+	}
 
-  public String getName() {
-    return this.name;
-  }
+	public String getName() {
+		return this.name;
+	}
 
-  public void setName(final String name) {
-    this.name = name;
-  }
+	public void setName(final String name) {
+		this.name = name;
+	}
 
-  public Set<TeamPlayer> getTeamPlayers() {
-    return this.teamPlayers;
-  }
+	public Set<TeamPlayer> getTeamPlayers() {
+		return this.teamPlayers;
+	}
 
-  public void setTeamPlayers(final Set<TeamPlayer> teamPlayers) {
-    this.teamPlayers = teamPlayers;
-  }
+	public void setTeamPlayers(final Set<TeamPlayer> teamPlayers) {
+		this.teamPlayers = teamPlayers;
+	}
 
-  public Set<Scorer> getScorers() {
-    return this.scorers;
-  }
+	public Set<Scorer> getScorers() {
+		return this.scorers;
+	}
 
-  public void setScorers(final Set<Scorer> scorers) {
-    this.scorers = scorers;
-  }
+	public void setScorers(final Set<Scorer> scorers) {
+		this.scorers = scorers;
+	}
 
 }

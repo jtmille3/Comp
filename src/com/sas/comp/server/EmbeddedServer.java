@@ -6,30 +6,30 @@ import org.apache.catalina.startup.Tomcat;
 
 public class EmbeddedServer {
 
-  public static void main(final String[] args) throws Exception {
-    final EmbeddedServer server = new EmbeddedServer();
-    server.start();
-  }
+	public static void main(final String[] args) throws Exception {
+		final EmbeddedServer server = new EmbeddedServer();
+		server.start();
+	}
 
-  private void start() throws Exception {
-    final String appBase = "";
-    final Integer port = 8080;
+	private void start() throws Exception {
+		final String appBase = "";
+		final Integer port = 8080;
 
-    final Tomcat tomcat = new Tomcat();
-    tomcat.setPort(port);
+		final Tomcat tomcat = new Tomcat();
+		tomcat.setPort(port);
 
-    tomcat.setBaseDir("./web");
-    tomcat.getHost().setAppBase(appBase);
+		tomcat.setBaseDir("./web");
+		tomcat.getHost().setAppBase(appBase);
 
-    final String contextPath = "/comp";
+		final String contextPath = "/comp";
 
-    // Add AprLifecycleListener
-    StandardServer server = (StandardServer) tomcat.getServer();
-    AprLifecycleListener listener = new AprLifecycleListener();
-    server.addLifecycleListener(listener);
+		// Add AprLifecycleListener
+		StandardServer server = (StandardServer) tomcat.getServer();
+		AprLifecycleListener listener = new AprLifecycleListener();
+		server.addLifecycleListener(listener);
 
-    tomcat.addWebapp(contextPath, appBase);
-    tomcat.start();
-    tomcat.getServer().await();
-  }
+		tomcat.addWebapp(contextPath, appBase);
+		tomcat.start();
+		tomcat.getServer().await();
+	}
 }

@@ -14,14 +14,14 @@ import com.sas.comp.models.Player;
 @Produces("application/json")
 public class PlayerResource {
 
-  @GET
-  public Collection<Player> findAll() {
-    return Hibernate.getInstance().createQuery("FROM players", Player.class).getResultList();
-  }
+	@GET
+	public Collection<Player> findAll() {
+		return Hibernate.getInstance().createQuery("FROM players", Player.class).getResultList();
+	}
 
-  @GET
-  @Path("{id}")
-  public Player find(@PathParam("id") final Long id) {
-    return Hibernate.getInstance().find(Player.class, id);
-  }
+	@GET
+	@Path("{id}")
+	public Player find(@PathParam("id") final Long id) {
+		return Hibernate.getInstance().find(Player.class, id);
+	}
 }

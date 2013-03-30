@@ -22,85 +22,85 @@ import javax.persistence.OneToMany;
 @Entity(name = "games")
 public class Game implements Serializable {
 
-  @Id
-  private Integer id;
-  @ManyToOne(fetch = FetchType.LAZY)
-  @JoinColumn(name = "home_team_id")
-  private Team homeTeam;
-  @ManyToOne(fetch = FetchType.LAZY)
-  @JoinColumn(name = "away_team_id")
-  private Team awayTeam;
-  private Date newDate;
-  @Column(name = "home_score")
-  private Integer homeScore;
-  @Column(name = "away_score")
-  private Integer awayScore;
-  private byte playoff;
-  @OneToMany(fetch = FetchType.LAZY, mappedBy = "game")
-  private Set<Scorer> scorers = new HashSet<Scorer>(0);
+	@Id
+	private Integer id;
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "home_team_id")
+	private Team homeTeam;
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "away_team_id")
+	private Team awayTeam;
+	private Date newDate;
+	@Column(name = "home_score")
+	private Integer homeScore;
+	@Column(name = "away_score")
+	private Integer awayScore;
+	private byte playoff;
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "game")
+	private Set<Scorer> scorers = new HashSet<Scorer>(0);
 
-  public Integer getId() {
-    return this.id;
-  }
+	public Integer getId() {
+		return this.id;
+	}
 
-  public void setId(final Integer id) {
-    this.id = id;
-  }
+	public void setId(final Integer id) {
+		this.id = id;
+	}
 
-  public Team getHomeTeam() {
-    return this.homeTeam;
-  }
+	public Team getHomeTeam() {
+		return this.homeTeam;
+	}
 
-  public void setHomeTeam(final Team homeTeam) {
-    this.homeTeam = homeTeam;
-  }
+	public void setHomeTeam(final Team homeTeam) {
+		this.homeTeam = homeTeam;
+	}
 
-  public Team getAwayTeam() {
-    return this.awayTeam;
-  }
+	public Team getAwayTeam() {
+		return this.awayTeam;
+	}
 
-  public void setTeamsByAwayTeam(final Team awayTeam) {
-    this.awayTeam = awayTeam;
-  }
+	public void setTeamsByAwayTeam(final Team awayTeam) {
+		this.awayTeam = awayTeam;
+	}
 
-  public Date getNewDate() {
-    return this.newDate;
-  }
+	public Date getNewDate() {
+		return this.newDate;
+	}
 
-  public void setNewDate(final Date newDate) {
-    this.newDate = newDate;
-  }
+	public void setNewDate(final Date newDate) {
+		this.newDate = newDate;
+	}
 
-  public Integer getHomeScore() {
-    return this.homeScore;
-  }
+	public Integer getHomeScore() {
+		return this.homeScore;
+	}
 
-  public void setHomeScore(final Integer homeScore) {
-    this.homeScore = homeScore;
-  }
+	public void setHomeScore(final Integer homeScore) {
+		this.homeScore = homeScore;
+	}
 
-  public Integer getAwayScore() {
-    return this.awayScore;
-  }
+	public Integer getAwayScore() {
+		return this.awayScore;
+	}
 
-  public void setAwayScore(final Integer awayScore) {
-    this.awayScore = awayScore;
-  }
+	public void setAwayScore(final Integer awayScore) {
+		this.awayScore = awayScore;
+	}
 
-  public byte getPlayoff() {
-    return this.playoff;
-  }
+	public byte getPlayoff() {
+		return this.playoff;
+	}
 
-  public void setPlayoff(final byte playoff) {
-    this.playoff = playoff;
-  }
+	public void setPlayoff(final byte playoff) {
+		this.playoff = playoff;
+	}
 
-  public Set<Scorer> getScorers() {
-    return this.scorers;
-  }
+	public Set<Scorer> getScorers() {
+		return this.scorers;
+	}
 
-  public void setScorers(final Set<Scorer> scorers) {
-    this.scorers = scorers;
-  }
+	public void setScorers(final Set<Scorer> scorers) {
+		this.scorers = scorers;
+	}
 
 }

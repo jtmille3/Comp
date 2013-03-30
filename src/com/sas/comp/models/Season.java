@@ -18,34 +18,34 @@ import javax.persistence.OneToMany;
 @Entity(name = "seasons")
 public class Season implements Serializable {
 
-  @Id
-  private Integer id;
-  private String name;
-  @OneToMany(fetch = FetchType.LAZY, mappedBy = "season")
-  private Set<Team> teams = new HashSet<Team>(0);
+	@Id
+	private Integer id;
+	private String name;
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "season")
+	private Set<Team> teams = new HashSet<Team>(0);
 
-  public Integer getId() {
-    return this.id;
-  }
+	public Integer getId() {
+		return this.id;
+	}
 
-  public void setId(final Integer id) {
-    this.id = id;
-  }
+	public void setId(final Integer id) {
+		this.id = id;
+	}
 
-  public String getName() {
-    return this.name;
-  }
+	public String getName() {
+		return this.name;
+	}
 
-  public void setName(final String name) {
-    this.name = name;
-  }
+	public void setName(final String name) {
+		this.name = name;
+	}
 
-  public Set<Team> getTeams() {
-    return this.teams;
-  }
+	public Set<Team> getTeams() {
+		return this.teams;
+	}
 
-  public void setTeams(final Set<Team> teams) {
-    this.teams = teams;
-  }
+	public void setTeams(final Set<Team> teams) {
+		this.teams = teams;
+	}
 
 }
