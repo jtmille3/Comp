@@ -13,7 +13,7 @@ public class PlayerTest {
 		Assert.assertTrue(player != null);
 		Assert.assertNotNull(player.getId());
 		Assert.assertNotNull(player.getName());
-		Assert.assertTrue(player.getScorers().size() > 0);
+		Assert.assertTrue(player.getGoals().size() > 0);
 		Assert.assertTrue(player.getTeamPlayers().size() > 0);
 	}
 }

@@ -37,7 +37,7 @@ public class Game implements Serializable {
 	private Integer awayScore;
 	private byte playoff;
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "game")
-	private Set<Scorer> scorers = new HashSet<Scorer>(0);
+	private Set<Goal> goals = new HashSet<Goal>(0);
 
 	public Integer getId() {
 		return this.id;
@@ -95,12 +95,12 @@ public class Game implements Serializable {
 		this.playoff = playoff;
 	}
 
-	public Set<Scorer> getScorers() {
-		return this.scorers;
+	public Set<Goal> getGoals() {
+		return this.goals;
 	}
 
-	public void setScorers(final Set<Scorer> scorers) {
-		this.scorers = scorers;
+	public void setGoals(final Set<Goal> goals) {
+		this.goals = goals;
 	}
 
 }

@@ -13,9 +13,9 @@ public class ScorerTest {
 		id.setGameId(6);
 		id.setPlayerId(1);
 
-		final Scorer scorer = Hibernate.getInstance().find(Scorer.class, id);
-		Assert.assertNotNull(scorer.getId());
-		Assert.assertNotNull(scorer.getGame());
-		Assert.assertNotNull(scorer.getPlayer());
+		final Goal goal = Hibernate.getInstance().find(Goal.class, id);
+		Assert.assertNotNull(goal.getId());
+		Assert.assertNotNull(goal.getGame());
+		Assert.assertNotNull(goal.getPlayer());
 	}
 }

@@ -24,11 +24,11 @@ public class Player implements Serializable {
 	private Integer id;
 	private String name;
 	@JsonIgnore
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "player")
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "playerID")
 	private Set<TeamPlayer> teamPlayers = new HashSet<TeamPlayer>(0);
 	@JsonIgnore
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "player")
-	private Set<Scorer> scorers = new HashSet<Scorer>(0);
+	private Set<Goal> goals = new HashSet<Goal>(0);
 
 	public Integer getId() {
 		return this.id;
@@ -54,12 +54,12 @@ public class Player implements Serializable {
 		this.teamPlayers = teamPlayers;
 	}
 
-	public Set<Scorer> getScorers() {
-		return this.scorers;
+	public Set<Goal> getGoals() {
+		return this.goals;
 	}
 
-	public void setScorers(final Set<Scorer> scorers) {
-		this.scorers = scorers;
+	public void setGoals(final Set<Goal> goals) {
+		this.goals = goals;
 	}
 
 }

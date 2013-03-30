@@ -9,11 +9,7 @@ public class TeamPlayerTest {
 
 	@Test
 	public void testTeamPlayer() {
-		final TeamPlayerId id = new TeamPlayerId();
-		id.setPlayerId(1);
-		id.setTeamId(1);
-
-		final TeamPlayer teamPlayer = Hibernate.getInstance().find(TeamPlayer.class, id);
+		final TeamPlayer teamPlayer = Hibernate.getInstance().find(TeamPlayer.class, 1);
 		Assert.assertNotNull(teamPlayer.getId());
 		Assert.assertFalse(teamPlayer.getIsCaptain());
 		Assert.assertFalse(teamPlayer.getIsCoCaptain());
