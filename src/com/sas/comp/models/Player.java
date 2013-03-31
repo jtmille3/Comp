@@ -23,11 +23,9 @@ public class Player implements Serializable {
 	@Id
 	private Integer id;
 	private String name;
-	@JsonIgnore
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "playerID")
 	private Set<TeamPlayer> teamPlayers = new HashSet<TeamPlayer>(0);
-	@JsonIgnore
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "player")
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "playerID")
 	private Set<Goal> goals = new HashSet<Goal>(0);
 
 	public Integer getId() {

@@ -25,6 +25,9 @@ public class Season implements Serializable {
 	private String name;
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "season")
 	private Set<Team> teams = new HashSet<Team>(0);
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "season")
+	private Set<Game> games = new HashSet<Game>(0);
+
 
 	public Integer getId() {
 		return this.id;
@@ -50,4 +53,11 @@ public class Season implements Serializable {
 		this.teams = teams;
 	}
 
+	public Set<Game> getGames() {
+		return games;
+	}
+
+	public void setGames(Set<Game> games) {
+		this.games = games;
+	}
 }

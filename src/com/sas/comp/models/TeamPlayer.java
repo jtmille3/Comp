@@ -18,10 +18,8 @@ public class TeamPlayer implements Serializable {
 	@JsonIgnore
 	@Id
 	private Integer id;
-	@JsonIgnore
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "team_id", insertable = false, updatable = false)
-	private Team team;
+	@Column(name = "team_id")
+	private Integer teamID;
 	@Column(name = "player_id")
 	private int playerID;
 	private Boolean isGoalie;
@@ -39,12 +37,12 @@ public class TeamPlayer implements Serializable {
 		this.id = id;
 	}
 
-	public Team getTeam() {
-		return this.team;
+	public Integer getTeamID() {
+		return teamID;
 	}
 
-	public void setTeam(final Team team) {
-		this.team = team;
+	public void setTeamID(Integer teamID) {
+		this.teamID = teamID;
 	}
 
 	public int getPlayerID() {

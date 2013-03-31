@@ -2,6 +2,8 @@ package com.sas.comp.models;
 
 // Generated Mar 30, 2013 1:36:42 PM by Hibernate Tools 3.4.0.CR1
 
+import org.codehaus.jackson.annotate.JsonIgnore;
+
 import java.io.Serializable;
 import java.util.Date;
 import java.util.HashSet;
@@ -24,19 +26,21 @@ public class Game implements Serializable {
 
 	@Id
 	private Integer id;
+	@JsonIgnore
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "home_team_id")
-	private Team homeTeam;
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "away_team_id")
-	private Team awayTeam;
+	@JoinColumn(name = "season_id")
+	private Season season;
+	@Column(name = "home_team_id")
+	private Integer homeTeamID;
+	@Column(name = "away_team_id")
+	private Integer awayTeamID;
 	private Date newDate;
 	@Column(name = "home_score")
 	private Integer homeScore;
 	@Column(name = "away_score")
 	private Integer awayScore;
 	private byte playoff;
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "game")
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "gameID")
 	private Set<Goal> goals = new HashSet<Goal>(0);
 
 	public Integer getId() {
@@ -47,20 +51,12 @@ public class Game implements Serializable {
 		this.id = id;
 	}
 
-	public Team getHomeTeam() {
-		return this.homeTeam;
+	public Season getSeason() {
+		return season;
 	}
 
-	public void setHomeTeam(final Team homeTeam) {
-		this.homeTeam = homeTeam;
-	}
-
-	public Team getAwayTeam() {
-		return this.awayTeam;
-	}
-
-	public void setTeamsByAwayTeam(final Team awayTeam) {
-		this.awayTeam = awayTeam;
+	public void setSeason(Season season) {
+		this.season = season;
 	}
 
 	public Date getNewDate() {
