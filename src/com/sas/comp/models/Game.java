@@ -34,7 +34,7 @@ public class Game implements Serializable {
 	private Integer homeTeamID;
 	@Column(name = "away_team_id")
 	private Integer awayTeamID;
-	private Date newDate;
+	private Date date;
 	@Column(name = "home_score")
 	private Integer homeScore;
 	@Column(name = "away_score")
@@ -59,12 +59,12 @@ public class Game implements Serializable {
 		this.season = season;
 	}
 
-	public Date getNewDate() {
-		return this.newDate;
+	public Integer getHomeTeamID() {
+		return homeTeamID;
 	}
 
-	public void setNewDate(final Date newDate) {
-		this.newDate = newDate;
+	public void setHomeTeamID(Integer homeTeamID) {
+		this.homeTeamID = homeTeamID;
 	}
 
 	public Integer getHomeScore() {

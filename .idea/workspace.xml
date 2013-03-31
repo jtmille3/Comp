@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="338d9bed-963b-460f-a418-ff028a1d4e43" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/sas/comp/resource/TeamResource.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/npm-debug.log" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/sas/comp/models/Game.java" afterPath="$PROJECT_DIR$/src/com/sas/comp/models/Game.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/com/sas/comp/models/GameTest.java" afterPath="$PROJECT_DIR$/test/com/sas/comp/models/GameTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/sas/comp/models/Goal.java" afterPath="$PROJECT_DIR$/src/com/sas/comp/models/Goal.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/sas/comp/models/Player.java" afterPath="$PROJECT_DIR$/src/com/sas/comp/models/Player.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/com/sas/comp/models/PlayerTest.java" afterPath="$PROJECT_DIR$/test/com/sas/comp/models/PlayerTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/sas/comp/models/Season.java" afterPath="$PROJECT_DIR$/src/com/sas/comp/models/Season.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/sas/comp/models/Team.java" afterPath="$PROJECT_DIR$/src/com/sas/comp/models/Team.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/sas/comp/models/TeamPlayer.java" afterPath="$PROJECT_DIR$/src/com/sas/comp/models/TeamPlayer.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="comp.iws" />
@@ -28,7 +21,7 @@
     <file path="/TeamPlayer.java" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1364693218635" ignored="false" />
     <file path="/Season.java" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1364679821796" ignored="false" />
     <file path="/Goal.java" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1364692576923" ignored="false" />
-    <file path="/Game.java" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1364692816777" ignored="false" />
+    <file path="/Game.java" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1364696261484" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,10 +81,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Game.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Game.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/sas/comp/models/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="26" selection-start="756" selection-end="756" vertical-scroll-proportion="0.0">
+            <state line="61" column="36" selection-start="1409" selection-end="1409" vertical-scroll-proportion="0.3504673">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -108,10 +101,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TeamPlayer.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="TeamPlayer.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/sas/comp/models/TeamPlayer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="32" selection-start="751" selection-end="751" vertical-scroll-proportion="0.8130841">
+            <state line="24" column="4" selection-start="503" selection-end="503" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -138,9 +131,9 @@
       <file leaf-file-name="Season.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/sas/comp/models/Season.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="51" selection-start="761" selection-end="761" vertical-scroll-proportion="0.0">
+            <state line="25" column="51" selection-start="654" selection-end="654" vertical-scroll-proportion="0.0">
               <folding>
-                <element signature="e#751#757#0" expanded="true" />
+                <element signature="e#701#707#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -170,9 +163,9 @@
         <option value="$PROJECT_DIR$/src/com/sas/comp/models/Season.java" />
         <option value="$PROJECT_DIR$/src/com/sas/comp/models/Player.java" />
         <option value="$PROJECT_DIR$/src/com/sas/comp/models/Goal.java" />
-        <option value="$PROJECT_DIR$/src/com/sas/comp/models/Game.java" />
         <option value="$PROJECT_DIR$/src/com/sas/comp/models/TeamPlayer.java" />
         <option value="$PROJECT_DIR$/src/com/sas/comp/models/Team.java" />
+        <option value="$PROJECT_DIR$/src/com/sas/comp/models/Game.java" />
       </list>
     </option>
   </component>
@@ -272,36 +265,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sas" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="comp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Comp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Comp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -373,6 +336,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="models" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Comp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Comp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="comp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -755,9 +736,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/sas/comp/models/Season.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="51" selection-start="761" selection-end="761" vertical-scroll-proportion="0.0">
+        <state line="25" column="51" selection-start="654" selection-end="654" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="e#751#757#0" expanded="true" />
+            <element signature="e#701#707#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -766,15 +747,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="38" column="34" selection-start="687" selection-end="687" vertical-scroll-proportion="-20.76923">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/sas/comp/models/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="26" selection-start="756" selection-end="756" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -787,8 +759,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/sas/comp/models/TeamPlayer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="32" selection-start="751" selection-end="751" vertical-scroll-proportion="0.8130841">
+        <state line="24" column="4" selection-start="503" selection-end="503" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/sas/comp/models/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="61" column="36" selection-start="1409" selection-end="1409" vertical-scroll-proportion="0.3504673">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
