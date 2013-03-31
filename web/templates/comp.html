@@ -13,10 +13,10 @@
       <li><a href="#playoffs-{{id}}" data-toggle="pill">Playoffs</a></li>
     </ul>
     <div class="pill-content">
-      <div class="pill-pane active" id="standings-{{id}}">Standings</div>
-      <div class="pill-pane" id="schedule-{{id}}">Schedule</div>
-      <div class="pill-pane" id="statistics-{{id}}">Statistics</div>
-      <div class="pill-pane" id="playoffs-{{id}}">Playoffs</div>
+      <div class="pill-pane active" id="standings-{{id}}">{{> standings this}}</div>
+      <div class="pill-pane" id="schedule-{{id}}">{{> schedule this}}</div>
+      <div class="pill-pane" id="statistics-{{id}}">{{> statistics this}}</div>
+      <div class="pill-pane" id="playoffs-{{id}}">{{> playoffs this}}</div>
     </div>
   </div>
   {{/each}}

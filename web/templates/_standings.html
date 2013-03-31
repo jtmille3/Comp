@@ -1,0 +1,30 @@
+Standings {{this.name}}
+
+<table class="table table-bordered table-striped table-hover">
+	<thead>
+		<td>Rank</td>
+		<td>Name</td>
+		<td>W</td>
+		<td>L</td>
+		<td>T</td>
+		<td>Pts</td>
+		<td>GF</td>
+		<td>GA</td>
+		<td>GD</td>
+	</thead>
+	<tbody>
+		{{#each this.standings}}
+			<tr>
+				<td>{{rank}}</td>
+				<td>{{name}}</td>
+				<td>{{wins}}</td>
+				<td>{{losses}}</td>
+				<td>{{ties}}</td>
+				<td>{{points}}</td>
+				<td>{{goals_for}}</td>
+				<td>{{goals_against}}</td>
+				<td>{{goal_difference}}</td>
+			</tr>
+		{{/each}}
+	</tbody>
+</table>

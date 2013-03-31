@@ -1,0 +1,20 @@
+Statistics {{this.name}}
+
+<table class="table table-bordered table-striped table-hover">
+	<thead>
+		<td>Rank</td>
+		<td>Top Scorers</td>
+		<td>Team</td>
+		<td>Goals</td>
+	</thead>
+	<tbody>
+		{{#each this.statistics}}
+			<tr>
+				<td>{{rank}}</td>
+				<td>{{top_scorers}}</td>
+				<td>{{team}}</td>
+				<td>{{goals}}</td>
+			</tr>
+		{{/each}}
+	</tbody>
+</table>

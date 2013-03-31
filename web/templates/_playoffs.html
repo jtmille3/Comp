@@ -1,0 +1,22 @@
+Playoffs {{this.name}}
+
+<table class="table table-bordered table-striped table-hover">
+	<thead>
+		<td>Game</td>
+		<td>Home</td>
+		<td>Away</td>
+		<td>Date</td>
+		<td>Result</td>
+	</thead>
+	<tbody>
+		{{#each this.standings}}
+			<tr>
+				<td>{{game}}</td>
+				<td>{{home}}</td>
+				<td>{{away}}</td>
+				<td>{{date}}</td>
+				<td>{{result}}</td>
+			</tr>
+		{{/each}}
+	</tbody>
+</table>
