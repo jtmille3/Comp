@@ -7,11 +7,9 @@ import com.sas.comp.hibernate.Hibernate;
 
 public class GoalTest {
 
-  @Test
-  public void testScorer() {
-    final Goal goal = Hibernate.getInstance().find(Goal.class, 1);
-    Assert.assertNotNull(goal.getId());
-    Assert.assertNotNull(goal.getGame());
-    Assert.assertNotNull(goal.getPlayer());
-  }
+	@Test
+	public void testScorer() {
+		final Goal goal = Hibernate.getInstance().find(Goal.class, 1);
+		Assert.assertNotNull(goal.getId());
+	}
 }
