@@ -18,8 +18,16 @@ public class SeasonResource {
 	public Collection<Season> findAll() {
 		return Hibernate
 				.getInstance()
-				.createQuery("SELECT distinct s FROM seasons s JOIN FETCH s.teams t JOIN FETCH s.games g ORDER BY s.name DESC",
+				.createQuery("SELECT DISTINCT s FROM seasons s JOIN FETCH s.teams t JOIN FETCH s.games g ORDER BY s.name DESC",
 						Season.class).getResultList();
+	}
+
+	@GET
+	@Path("last")
+	public Season findLast() {
+		return Hibernate.getInstance()
+				.createQuery("SELECT DISTINCT s FROM seasons s JOIN FETCH s.teams t JOIN FETCH s.games g ORDER BY s.id DESC", Season.class)
+				.setMaxResults(1).getSingleResult();
 	}
 
 	@GET

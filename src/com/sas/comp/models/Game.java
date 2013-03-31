@@ -31,20 +31,20 @@ public class Game implements Serializable {
 	@JoinColumn(name = "season_id")
 	private Season season;
 	@Column(name = "home_team_id")
-	private Integer homeTeamID;
+	private Integer homeTeamId;
 	@Column(name = "away_team_id")
-	private Integer awayTeamID;
+	private Integer awayTeamId;
 	private Date date;
 	@Column(name = "home_score")
 	private Integer homeScore;
 	@Column(name = "away_score")
 	private Integer awayScore;
 	private byte playoff;
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "gameID")
-	private Set<Goal> goals = new HashSet<Goal>(0);
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "gameId")
+	private final Set<Goal> goals = new HashSet<Goal>(0);
 
 	public Integer getId() {
-		return this.id;
+		return id;
 	}
 
 	public void setId(final Integer id) {
@@ -59,16 +59,32 @@ public class Game implements Serializable {
 		this.season = season;
 	}
 
-	public Integer getHomeTeamID() {
-		return homeTeamID;
+	public Integer getHomeTeamId() {
+		return homeTeamId;
 	}
 
-	public void setHomeTeamID(Integer homeTeamID) {
-		this.homeTeamID = homeTeamID;
+	public void setHomeTeamId(final Integer homeTeamId) {
+		this.homeTeamId = homeTeamId;
+	}
+
+	public Integer getAwayTeamId() {
+		return awayTeamId;
+	}
+
+	public void setAwayTeamId(final Integer awayTeamId) {
+		this.awayTeamId = awayTeamId;
+	}
+
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(final Date date) {
+		this.date = date;
 	}
 
 	public Integer getHomeScore() {
-		return this.homeScore;
+		return homeScore;
 	}
 
 	public void setHomeScore(final Integer homeScore) {
@@ -76,7 +92,7 @@ public class Game implements Serializable {
 	}
 
 	public Integer getAwayScore() {
-		return this.awayScore;
+		return awayScore;
 	}
 
 	public void setAwayScore(final Integer awayScore) {
@@ -84,7 +100,7 @@ public class Game implements Serializable {
 	}
 
 	public byte getPlayoff() {
-		return this.playoff;
+		return playoff;
 	}
 
 	public void setPlayoff(final byte playoff) {
@@ -92,19 +108,7 @@ public class Game implements Serializable {
 	}
 
 	public Set<Goal> getGoals() {
-		return this.goals;
-	}
-
-	public void setGoals(final Set<Goal> goals) {
-		this.goals = goals;
-	}
-
-	public Date getDate() {
-		return date;
-	}
-
-	public void setDate(Date date) {
-		this.date = date;
+		return goals;
 	}
 
 }
