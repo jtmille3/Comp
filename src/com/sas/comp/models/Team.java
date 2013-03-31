@@ -31,12 +31,12 @@ public class Team implements Serializable {
 	private Season season;
 	private String name;
 	@JsonIgnore
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "awayTeam")
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "awayTeamID")
 	private Set<Game> awayGames = new HashSet<Game>(0);
 	@JsonIgnore
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "homeTeam")
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "homeTeamID")
 	private Set<Game> homeGames = new HashSet<Game>(0);
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "team")
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "teamID")
 	private Set<TeamPlayer> teamPlayers = new HashSet<TeamPlayer>(0);
 
 	public Integer getId() {
