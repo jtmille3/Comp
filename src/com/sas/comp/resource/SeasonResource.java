@@ -16,9 +16,10 @@ public class SeasonResource {
 
 	@GET
 	public Collection<Season> findAll() {
-		return Hibernate.getInstance()
-				.createQuery("SELECT s FROM seasons s JOIN FETCH s.teams t JOIN FETCH s.games g WHERE s.id=1", Season.class)
-				.getResultList();
+		return Hibernate
+				.getInstance()
+				.createQuery("SELECT distinct s FROM seasons s JOIN FETCH s.teams t JOIN FETCH s.games g ORDER BY s.name DESC",
+						Season.class).getResultList();
 	}
 
 	@GET

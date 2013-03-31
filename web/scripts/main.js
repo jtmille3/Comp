@@ -1,19 +1,19 @@
 require.config({
     paths: {
         jquery: '../components/jquery/jquery',
-        bootstrap: 'vendor/bootstrap'
+        handlebars: '../components/handlebars/handlebars'
     },
     shim: {
-        bootstrap: {
-            deps: ['jquery'],
-            exports: 'jquery'
+        'jquery': {
+            exports: '$'
+        },
+        'handlebars': {
+            exports: 'Handlebars'
         }
     }
 });
 
-require(['app', 'jquery', 'bootstrap'], function (app, $) {
+require(['app'], function (app) {
     'use strict';
-    // use app here
     console.log(app);
-    console.log('Running jQuery %s', $().jquery);
 });

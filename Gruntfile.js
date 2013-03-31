@@ -245,7 +245,7 @@ module.exports = function (grunt) {
         handlebars: {
             compile: {
                 options: {
-                    namespace: 'football',
+                    namespace: 'comp',
                     amd: true,
                     partialRegex: /^_/
                 },
