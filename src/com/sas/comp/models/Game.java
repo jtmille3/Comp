@@ -99,4 +99,12 @@ public class Game implements Serializable {
 		this.goals = goals;
 	}
 
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
+	}
+
 }

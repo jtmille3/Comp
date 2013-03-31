@@ -15,5 +15,6 @@ public class GameTest {
 		Assert.assertTrue(game.getPlayoff() == 0);
 		Assert.assertTrue(game.getAwayScore() > 0);
 		Assert.assertTrue(game.getHomeScore() > 0);
+		Assert.assertNotNull(game.getDate());
 	}
 }
