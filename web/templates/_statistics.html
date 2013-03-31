@@ -1,20 +1,42 @@
-Statistics {{this.name}}
-
-<table class="table table-bordered table-striped table-hover">
-	<thead>
-		<td>Rank</td>
-		<td>Top Scorers</td>
-		<td>Team</td>
-		<td>Goals</td>
-	</thead>
-	<tbody>
-		{{#each this.statistics}}
-			<tr>
-				<td>{{rank}}</td>
-				<td>{{top_scorers}}</td>
-				<td>{{team}}</td>
-				<td>{{goals}}</td>
-			</tr>
-		{{/each}}
-	</tbody>
-</table>
+<div class="row-fluid">
+    <div class="span6">
+		<table class="table table-bordered table-striped table-hover">
+			<thead>
+				<td>Rank</td>
+				<td>Top Scorers</td>
+				<td>Team</td>
+				<td>Goals</td>
+			</thead>
+			<tbody>
+				{{#each this.stats}}
+					<tr>
+						<td>{{rank}}</td>
+						<td>{{top_scorers}}</td>
+						<td>{{team}}</td>
+						<td>{{goals}}</td>
+					</tr>
+				{{/each}}
+			</tbody>
+		</table>
+	</div>
+	<div class="span6">
+		<table class="table table-bordered table-striped table-hover">
+			<thead>
+				<td>Goalie</td>
+				<td>Team</td>
+				<td>Shutouts</td>
+				<td>Goals Against</td>
+			</thead>
+			<tbody>
+				{{#each this.goalie_stats}}
+					<tr>
+						<td>{{goalie}}</td>
+						<td>{{team}}</td>
+						<td>{{shutouts}}</td>
+						<td>{{goals_against}}</td>
+					</tr>
+				{{/each}}
+			</tbody>
+		</table>
+    </div>
+</div>

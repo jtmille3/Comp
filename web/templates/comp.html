@@ -2,6 +2,7 @@
   {{#each this}}
   <li {{#unless @index}}class='active'{{/unless}}><a href="#season-{{id}}" data-toggle="tab">{{name}}</a></li>
   {{/each}}
+  <li><a href="#all-time" data-toggle="tab">All Time Stats</a></li>
 </ul>
 <div class="tab-content">
   {{#each this}}
@@ -20,4 +21,26 @@
     </div>
   </div>
   {{/each}}
+  <div class="tab-pane" id="all-time">
+    <table class="table table-bordered table-striped table-hover">
+      <thead>
+        <td>Name</td>
+        <td>Goals</td>
+        <td>Shutouts</td>
+        <td>League Titles</td>
+        <td>Championships</td>
+      </thead>
+      <tbody>
+        {{#each this.allTime}}
+          <tr>
+            <td>{{name}}</td>
+            <td>{{goals}}</td>
+            <td>{{shutouts}}</td>
+            <td>{{league_titles}}</td>
+            <td>{{championships}}</td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
 </div>
