@@ -16,7 +16,8 @@ public class PlayerResource {
 
 	@GET
 	public Collection<Player> findAll() {
-		return Hibernate.getInstance().createQuery("FROM players", Player.class).getResultList();
+		return Hibernate.getInstance().createQuery("SELECT p FROM players p JOIN FETCH p.teamPlayers JOIN FETCH p.goals", Player.class)
+				.getResultList();
 	}
 
 	@GET
