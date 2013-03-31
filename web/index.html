@@ -16,19 +16,60 @@
         <!-- build:js scripts/vendor/modernizr.js -->
         <script src="components/modernizr/modernizr.js"></script>
         <!-- endbuild -->
+
+        <script src="components/jquery/jquery.js"></script>
+
+        <!-- build:js scripts/vendor/bootstrap.js -->
+        <script src="components/bootstrap/js/bootstrap-affix.js"></script>
+        <script src="components/bootstrap/js/bootstrap-alert.js"></script>
+        <script src="components/bootstrap/js/bootstrap-dropdown.js"></script>
+        <script src="components/bootstrap/js/bootstrap-tooltip.js"></script>
+        <script src="components/bootstrap/js/bootstrap-modal.js"></script>
+        <script src="components/bootstrap/js/bootstrap-transition.js"></script>
+        <script src="components/bootstrap/js/bootstrap-button.js"></script>
+        <script src="components/bootstrap/js/bootstrap-popover.js"></script>
+        <script src="components/bootstrap/js/bootstrap-typeahead.js"></script>
+        <script src="components/bootstrap/js/bootstrap-carousel.js"></script>
+        <script src="components/bootstrap/js/bootstrap-scrollspy.js"></script>
+        <script src="components/bootstrap/js/bootstrap-collapse.js"></script>
+        <script src="components/bootstrap/js/bootstrap-tab.js"></script>
+        <!-- endbuild -->
     </head>
     <body>
-        <div class="container">
-            <div class="hero-unit">
-                <h1>'Allo, 'Allo!</h1>
-                <p>You now have</p>
-                <ul>
-                    <li>HTML5 Boilerplate</li>
-                    <li>Twitter Bootstrap</li>
-                    <li>RequireJS</li>
+        <div class="container-fluid">
+            <div class="navbar">
+              <div class="navbar-inner">
+                <a class="brand" href="#">SAS Competitive Soccer Standings</a>
+                <ul class="nav">
                 </ul>
-                <p>installed.</p>
-                <h3>Enjoy coding! - Yeoman</h3>
+              </div>
+            </div>
+            <div class="row-fluid">
+                <div class="span12">
+                    <ul class="nav nav-tabs">
+                      <li class="active"><a href="#2013-season" data-toggle="tab">Season '13</a></li>
+                      <li><a href="#2012-season" data-toggle="tab">Season '12</a></li>
+                      <li><a href="#2011-season" data-toggle="tab">Season '11</a></li>
+                    </ul>
+                    <div class="tab-content">
+                      <div class="tab-pane active" id="2013-season">
+                        <ul class="nav nav-pills">
+                          <li class="active"><a href="#2013-standings" data-toggle="pill">Standings</a></li>
+                          <li><a href="#2013-schedule" data-toggle="pill">Schedule</a></li>
+                          <li><a href="#2013-statistics" data-toggle="pill">Statistics</a></li>
+                          <li><a href="#2013-playoffs" data-toggle="pill">Playoffs</a></li>
+                        </ul>
+                        <div class="pill-content">
+                          <div class="pill-pane active" id="2013-standings">Standings</div>
+                          <div class="pill-pane" id="2013-schedule">Schedule</div>
+                          <div class="pill-pane" id="2013-statistics">Statistics</div>
+                          <div class="pill-pane" id="2013-playoffs">Playoffs</div>
+                        </div>
+                      </div>
+                      <div class="tab-pane" id="2012-season">2012</div>
+                      <div class="tab-pane" id="2011-season">2011</div>
+                    </div>
+                </div>
             </div>
         </div>
 
