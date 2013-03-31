@@ -22,7 +22,7 @@ public class PlayerResource {
 
 	@GET
 	@Path("{id}")
-	public Player find(@PathParam("id") final Long id) {
+	public Player find(@PathParam("id") final Integer id) {
 		return Hibernate.getInstance().find(Player.class, id);
 	}
 }

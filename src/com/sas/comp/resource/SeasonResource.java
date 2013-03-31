@@ -16,13 +16,14 @@ public class SeasonResource {
 
 	@GET
 	public Collection<Season> findAll() {
-		return Hibernate.getInstance().createQuery("SELECT s FROM seasons s JOIN FETCH s.teams JOIN FETCH s.games", Season.class)
+		return Hibernate.getInstance()
+				.createQuery("SELECT s FROM seasons s JOIN FETCH s.teams t JOIN FETCH s.games g WHERE s.id=1", Season.class)
 				.getResultList();
 	}
 
 	@GET
 	@Path("{id}")
-	public Season find(@PathParam("id") final Long id) {
+	public Season find(@PathParam("id") final Integer id) {
 		return Hibernate.getInstance().find(Season.class, id);
 	}
 }
