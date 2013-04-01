@@ -13,6 +13,6 @@ Handlebars.registerHelper('dateFormat', function(context, block) {
     return year + '-' + month + '-' + date + ' ' + hour + ':' + minute;
 });
 
-Handlebars.registerHelper('teamName', function(season, teamid){
-	return season.teams[teamid].name;
+Handlebars.registerHelper('teamFetch', function(season, teamid, property){
+	return season.teams[teamid][property];
 });

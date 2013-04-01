@@ -8,8 +8,8 @@
 	<tbody>
 		{{#each games}}
 			<tr>
-				<td>{{#teamName ../this homeTeamId}}{{/teamName}}</td>
-				<td>{{#teamName ../this awayTeamId}}{{/teamName}}</td>
+				<td>{{#teamFetch ../this homeTeamId 'name'}}{{/teamFetch}}</td>
+				<td>{{#teamFetch ../this awayTeamId 'name'}}{{/teamFetch}}</td>
 				<td>{{#dateFormat date}}{{/dateFormat}}</td>
 				<td>{{homeScore}} - {{awayScore}}</td>
 			</tr>
