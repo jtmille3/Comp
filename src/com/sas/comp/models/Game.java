@@ -40,7 +40,7 @@ public class Game implements Serializable {
 	@Column(name = "away_score")
 	private Integer awayScore;
 	private byte playoff;
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "gameId")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "gameId")
 	private final Set<Goal> goals = new HashSet<Goal>(0);
 
 	public Integer getId() {

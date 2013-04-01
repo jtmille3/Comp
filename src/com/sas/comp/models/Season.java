@@ -21,9 +21,9 @@ public class Season implements Serializable {
 	@Id
 	private Integer id;
 	private String name;
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "season")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "season")
 	private Set<Team> teams = new HashSet<Team>(0);
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "season")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "season")
 	private Set<Game> games = new HashSet<Game>(0);
 
 	public Integer getId() {

@@ -35,7 +35,7 @@ public class Team implements Serializable {
 	@JsonIgnore
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "homeTeamId")
 	private Set<Game> homeGames = new HashSet<Game>(0);
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "teamId")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "teamId")
 	private Set<TeamPlayer> teamPlayers = new HashSet<TeamPlayer>(0);
 
 	public Integer getId() {

@@ -21,9 +21,9 @@ public class Player implements Serializable {
 	@Id
 	private Integer id;
 	private String name;
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "playerId")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "playerId")
 	private Set<TeamPlayer> teamPlayers = new HashSet<TeamPlayer>(0);
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "playerId")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "playerId")
 	private Set<Goal> goals = new HashSet<Goal>(0);
 
 	public Integer getId() {
