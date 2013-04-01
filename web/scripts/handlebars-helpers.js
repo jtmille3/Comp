@@ -12,3 +12,7 @@ Handlebars.registerHelper('dateFormat', function(context, block) {
     minute = minute < 10 ? '0' + minute : minute;
     return year + '-' + month + '-' + date + ' ' + hour + ':' + minute;
 });
+
+Handlebars.registerHelper('teamName', function(season, teamid){
+	return season.teams[teamid].name;
+});
