@@ -1,14 +1,10 @@
 require.config({
     paths: {
-        jquery: '../components/jquery/jquery',
-        handlebars: '../components/handlebars/handlebars'
+        jquery: '../components/jquery/jquery'
     },
     shim: {
         'jquery': {
             exports: '$'
-        },
-        'handlebars': {
-            exports: 'Handlebars'
         }
     }
 });

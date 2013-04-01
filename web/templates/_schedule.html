@@ -1,20 +1,21 @@
-<table class="table table-bordered table-striped table-hover">
+<table id="{{id}}-schedule-table" class="table table-bordered table-striped table-hover tablesorter">
 	<thead>
-		<td>Game</td>
 		<td>Home</td>
 		<td>Away</td>
 		<td>Date</td>
 		<td>Result</td>
 	</thead>
 	<tbody>
-		{{#each this.game}}
+		{{#each games}}
 			<tr>
-				<td>{{game}}</td>
-				<td>{{home}}</td>
-				<td>{{away}}</td>
-				<td>{{date}}</td>
-				<td>{{result}}</td>
+				<td>{{homeTeamId}}</td>
+				<td>{{awayTeamId}}</td>
+				<td>{{#dateFormat date}}{{/dateFormat}}</td>
+				<td>{{homeScore}} - {{awayScore}}</td>
 			</tr>
 		{{/each}}
 	</tbody>
 </table>
+<script>
+	$('#{{id}}-schedule-table').tablesorter( {sortList: [[3,0]]} ); 
+</script>

@@ -246,7 +246,7 @@ module.exports = function (grunt) {
             compile: {
                 options: {
                     namespace: 'comp',
-                    amd: true,
+                    amd: false,
                     partialRegex: /^_/
                 },
                 files: {

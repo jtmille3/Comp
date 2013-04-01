@@ -6,7 +6,8 @@
     "modernizr": "~2.6.2",
     "jquery": "~1.9",
     "bootstrap": "~2.3",
-    "handlebars": "~1.0.0"
+    "handlebars": "~1.0.0",
+    "jquery.tablesorter": ""
   },
   "devDependencies": {}
 }
