@@ -1,3 +1,7 @@
 html body {
 	margin-top: 20px;
 }
+
+th {
+	cursor: pointer;
+}
