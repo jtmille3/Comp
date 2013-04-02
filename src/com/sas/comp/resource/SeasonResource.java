@@ -24,10 +24,11 @@ public class SeasonResource {
 				.createQuery("SELECT DISTINCT s FROM seasons s JOIN FETCH s.teams t JOIN FETCH s.games g ORDER BY s.name DESC",
 						Season.class).getResultList();
 		for(Season s : seasons) {
-			for(Team t : s.getTeams()) {
+			Collection<Team> teams = s.getTeams().values();
+			for(Team t : teams) {
 				t.processGames();
 			}
-			Team[] sortedTeams = s.getTeams().toArray(new Team[0]);
+			Team[] sortedTeams = teams.toArray(new Team[0]);
 			Arrays.sort(sortedTeams, new Comparator<Team>() {
 				@Override
 				public int compare(Team o1, Team o2) {
