@@ -7,14 +7,14 @@ import com.sas.comp.hibernate.Hibernate;
 
 public class GameTest {
 
-	@Test
-	public void testGame() {
-		final Game game = Hibernate.getInstance().find(Game.class, 1);
-		Assert.assertNotNull(game);
-		Assert.assertTrue(game.getId() == 1);
-		Assert.assertTrue(game.getPlayoff() == 0);
-		Assert.assertTrue(game.getAwayScore() > 0);
-		Assert.assertTrue(game.getHomeScore() > 0);
-		Assert.assertNotNull(game.getDate());
-	}
+  @Test
+  public void testGame() {
+    final Game game = Hibernate.getInstance().find(Game.class, 1);
+    Assert.assertNotNull(game);
+    Assert.assertTrue(game.getId() == 1);
+    Assert.assertTrue(game.getPlayoff());
+    Assert.assertTrue(game.getAwayScore() > 0);
+    Assert.assertTrue(game.getHomeScore() > 0);
+    Assert.assertNotNull(game.getDate());
+  }
 }
