@@ -6,6 +6,7 @@ define(function(require) {
 	var teamHelper = require('./team');
 	$.getJSON('http://localhost:8080/comp/service/seasons', function(seasons) {
 		teamHelper.setTeams(seasons);
+		console.log(seasons);
 		$('#seasons').append(compTemplate(seasons));
 	});
 

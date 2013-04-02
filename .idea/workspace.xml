@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="338d9bed-963b-460f-a418-ff028a1d4e43" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/sas/comp/models/Game.java" afterPath="$PROJECT_DIR$/src/com/sas/comp/models/Game.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/sas/comp/resource/SeasonResource.java" afterPath="$PROJECT_DIR$/src/com/sas/comp/resource/SeasonResource.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/sas/comp/models/Team.java" afterPath="$PROJECT_DIR$/src/com/sas/comp/models/Team.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/templates/_standings.html" afterPath="$PROJECT_DIR$/web/templates/_standings.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/scripts/app.js" afterPath="$PROJECT_DIR$/web/scripts/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/scripts/team.js" afterPath="$PROJECT_DIR$/web/scripts/team.js" />
     </list>
     <ignored path="comp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,7 +22,7 @@
     <file path="/Goal.java" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1364692576923" ignored="false" />
     <file path="/Game.java" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1364865041652" ignored="false" />
     <file path="$PROJECT_DIR$/web/styles/main.css" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1364794195262" ignored="false" />
-    <file path="/app.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1364795443604" ignored="false" />
+    <file path="/app.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1364868269683" ignored="false" />
     <file path="/_schedule.html" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1364839720544" ignored="false" />
     <file path="/handlebars-helpers.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1364838832337" ignored="false" />
     <file path="/Player.java" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1364829737376" ignored="false" />
@@ -93,10 +90,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="_standings.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="_standings.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/templates/_standings.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="38" selection-start="468" selection-end="468" vertical-scroll-proportion="0.55825245">
+            <state line="23" column="38" selection-start="468" selection-end="468" vertical-scroll-proportion="-14.375">
               <folding />
             </state>
           </provider>
@@ -105,7 +102,25 @@
       <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/scripts/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="3" selection-start="569" selection-end="569" vertical-scroll-proportion="0.0">
+            <state line="8" column="29" selection-start="291" selection-end="291" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="team.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/scripts/team.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="7" column="30" selection-start="177" selection-end="177" vertical-scroll-proportion="0.1635514">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="comp.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/templates/comp.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="21" column="8" selection-start="1088" selection-end="1088" vertical-scroll-proportion="-9.375">
               <folding />
             </state>
           </provider>
@@ -163,7 +178,6 @@
         <option value="$PROJECT_DIR$/src/com/sas/comp/models/Goal.java" />
         <option value="$PROJECT_DIR$/src/com/sas/comp/models/TeamPlayer.java" />
         <option value="$PROJECT_DIR$/web/index.html" />
-        <option value="$PROJECT_DIR$/web/scripts/app.js" />
         <option value="$PROJECT_DIR$/src/com/sas/comp/models/Season.java" />
         <option value="$PROJECT_DIR$/src/com/sas/comp/models/Player.java" />
         <option value="$PROJECT_DIR$/src/META-INF/persistence.xml" />
@@ -173,6 +187,8 @@
         <option value="$PROJECT_DIR$/src/com/sas/comp/models/Game.java" />
         <option value="$PROJECT_DIR$/src/com/sas/comp/models/Team.java" />
         <option value="$PROJECT_DIR$/web/templates/_standings.html" />
+        <option value="$PROJECT_DIR$/web/scripts/app.js" />
+        <option value="$PROJECT_DIR$/web/scripts/team.js" />
       </list>
     </option>
   </component>
@@ -258,6 +274,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Comp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Comp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -672,20 +706,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/templates/_statistics.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/templates/comp.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="41" selection-start="870" selection-end="878" vertical-scroll-proportion="-10.625">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/sas/comp/resource/PlayerResource.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="48" selection-start="422" selection-end="440" vertical-scroll-proportion="0.25700936">
@@ -735,13 +755,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/scripts/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="3" selection-start="569" selection-end="569" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/sas/comp/models/Season.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="44" column="21" selection-start="957" selection-end="957" vertical-scroll-proportion="0.864486">
@@ -758,19 +771,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/sas/comp/models/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="104" column="0" selection-start="2129" selection-end="2129" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/sas/comp/resource/SeasonResource.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="33" column="0" selection-start="927" selection-end="927" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#985#986#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/sas/comp/models/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="104" column="0" selection-start="2129" selection-end="2129" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
@@ -781,9 +794,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/scripts/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="29" selection-start="291" selection-end="291" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/templates/comp.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="8" selection-start="1088" selection-end="1088" vertical-scroll-proportion="-9.375">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/templates/_standings.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="38" selection-start="468" selection-end="468" vertical-scroll-proportion="0.55825245">
+        <state line="23" column="38" selection-start="468" selection-end="468" vertical-scroll-proportion="-14.375">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/scripts/team.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="30" selection-start="177" selection-end="177" vertical-scroll-proportion="0.1635514">
           <folding />
         </state>
       </provider>
