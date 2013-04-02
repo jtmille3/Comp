@@ -32,7 +32,14 @@ public class SeasonResource {
 			Arrays.sort(sortedTeams, new Comparator<Team>() {
 				@Override
 				public int compare(Team o1, Team o2) {
-					return o1.getPoints().compareTo(o2.getPoints());
+					int pc = o2.getPoints().compareTo(o1.getPoints());
+					if (pc == 0)
+						pc = o2.getGoalDifferential().compareTo(o1.getGoalDifferential());
+					if (pc == 0)
+						pc = o2.getGoalsFor().compareTo(o1.getGoalsFor());
+					if (pc == 0)
+						pc = o1.getGoalsAgainst().compareTo(o2.getGoalsAgainst());
+					return pc;
 				}
 			});
 			int i = 1;

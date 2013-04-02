@@ -1,4 +1,4 @@
-<table class="table table-bordered table-striped table-hover">
+<table id="{{id}}-standings-table" class="table table-bordered table-striped table-hover tablesorter">
 	<thead>
 		<td>Rank</td>
 		<td>Name</td>
@@ -26,3 +26,6 @@
 		{{/each}}
 	</tbody>
 </table>
+<script>
+    $('#{{id}}-standings-table').tablesorter( {sortList: [[0,0]]} );
+</script>
