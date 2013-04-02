@@ -3,11 +3,12 @@ define(function(require) {
 	'use strict';
 
 	var compTemplate = window.comp['web/templates/comp.html'];
-	var teamHelper = require('./team');
-	$.getJSON('http://localhost:8080/comp/service/seasons', function(seasons) {
-		//teamHelper.setTeams(seasons);
+	$.getJSON('/comp/service/seasons', function(seasons) {
 		console.log(seasons);
-		$('#seasons').append(compTemplate(seasons));
+		$.getJSON('/comp/service/players', function(players) {
+			var allData = {seasons:seasons,players:players};
+			$('#seasons').append(compTemplate(allData));
+		});
 	});
 
 	return 'Initialized';

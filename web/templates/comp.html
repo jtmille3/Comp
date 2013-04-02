@@ -1,11 +1,11 @@
 <ul class="nav nav-tabs">
-  {{#each this}}
+  {{#each this.seasons}}
   <li {{#unless @index}}class='active'{{/unless}}><a href="#season-{{id}}" data-toggle="tab">{{name}}</a></li>
   {{/each}}
   <li><a href="#all-time" data-toggle="tab">All Time Stats</a></li>
 </ul>
 <div class="tab-content">
-  {{#each this}}
+  {{#each this.seasons}}
   <div class="tab-pane {{#unless @index}}active{{/unless}}" id="season-{{id}}">
     <ul class="nav nav-pills">
       <li class="active"><a href="#standings-{{id}}" data-toggle="pill">Standings</a></li>
@@ -22,19 +22,19 @@
   </div>
   {{/each}}
   <div class="tab-pane" id="all-time">
-    <table class="table table-bordered table-striped table-hover">
+    <table id="all-time-table" class="table table-bordered table-striped table-hover tablesorter">
       <thead>
-        <td>Name</td>
-        <td>Goals</td>
-        <td>Shutouts</td>
-        <td>League Titles</td>
-        <td>Championships</td>
+        <th>Name</th>
+        <th>Goals</th>
+        <th>Shutouts</th>
+        <th>League Titles</th>
+        <th>Championships</th>
       </thead>
       <tbody>
-        {{#each this.allTime}}
+        {{#each this.players}}
           <tr>
             <td>{{name}}</td>
-            <td>{{goals}}</td>
+            <td>{{goals.length}}</td>
             <td>{{shutouts}}</td>
             <td>{{league_titles}}</td>
             <td>{{championships}}</td>
@@ -44,3 +44,7 @@
     </table>
   </div>
 </div>
+
+<script>
+    $('#all-time-table').tablesorter( {sortList: [[1,1]]} );
+</script>
