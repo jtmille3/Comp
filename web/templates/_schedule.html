@@ -10,7 +10,7 @@
 			<tr>
 				<td>{{#teamFetch ../this homeTeamId 'name'}}{{/teamFetch}}</td>
 				<td>{{#teamFetch ../this awayTeamId 'name'}}{{/teamFetch}}</td>
-				<td>{{#dateFormat date}}{{/dateFormat}}</td>
+				<td>{{played}}</td>
 				<td>{{homeScore}} - {{awayScore}}</td>
 			</tr>
 		{{/each}}

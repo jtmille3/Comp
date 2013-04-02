@@ -3,6 +3,7 @@ package com.sas.comp.models;
 // Generated Mar 30, 2013 1:36:42 PM by Hibernate Tools 3.4.0.CR1
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -24,91 +25,98 @@ import org.codehaus.jackson.annotate.JsonIgnore;
 @Entity(name = "games")
 public class Game implements Serializable {
 
-	@Id
-	private Integer id;
-	@JsonIgnore
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "season_id")
-	private Season season;
-	@Column(name = "home_team_id")
-	private Integer homeTeamId;
-	@Column(name = "away_team_id")
-	private Integer awayTeamId;
-	private Date date;
-	@Column(name = "home_score")
-	private Integer homeScore;
-	@Column(name = "away_score")
-	private Integer awayScore;
-	private Boolean playoff;
-	@OneToMany(fetch = FetchType.EAGER, mappedBy = "gameId")
-	private final Set<Goal> goals = new HashSet<Goal>(0);
+  private static SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yy hh:mm");
 
-	public Integer getId() {
-		return id;
-	}
+  @Id
+  private Integer id;
+  @JsonIgnore
+  @ManyToOne(fetch = FetchType.LAZY)
+  @JoinColumn(name = "season_id")
+  private Season season;
+  @Column(name = "home_team_id")
+  private Integer homeTeamId;
+  @Column(name = "away_team_id")
+  private Integer awayTeamId;
+  @JsonIgnore
+  private Date date;
+  @Column(name = "home_score")
+  private Integer homeScore;
+  @Column(name = "away_score")
+  private Integer awayScore;
+  private Boolean playoff;
+  @OneToMany(fetch = FetchType.EAGER, mappedBy = "gameId")
+  private final Set<Goal> goals = new HashSet<Goal>(0);
 
-	public void setId(final Integer id) {
-		this.id = id;
-	}
+  public Integer getId() {
+    return id;
+  }
 
-	public Season getSeason() {
-		return season;
-	}
+  public void setId(final Integer id) {
+    this.id = id;
+  }
 
-	public void setSeason(final Season season) {
-		this.season = season;
-	}
+  public Season getSeason() {
+    return season;
+  }
 
-	public Integer getHomeTeamId() {
-		return homeTeamId;
-	}
+  public void setSeason(final Season season) {
+    this.season = season;
+  }
 
-	public void setHomeTeamId(final Integer homeTeamId) {
-		this.homeTeamId = homeTeamId;
-	}
+  public Integer getHomeTeamId() {
+    return homeTeamId;
+  }
 
-	public Integer getAwayTeamId() {
-		return awayTeamId;
-	}
+  public void setHomeTeamId(final Integer homeTeamId) {
+    this.homeTeamId = homeTeamId;
+  }
 
-	public void setAwayTeamId(final Integer awayTeamId) {
-		this.awayTeamId = awayTeamId;
-	}
+  public Integer getAwayTeamId() {
+    return awayTeamId;
+  }
 
-	public Date getDate() {
-		return date;
-	}
+  public void setAwayTeamId(final Integer awayTeamId) {
+    this.awayTeamId = awayTeamId;
+  }
 
-	public void setDate(final Date date) {
-		this.date = date;
-	}
+  public Date getDate() {
+    return date;
+  }
 
-	public Integer getHomeScore() {
-		return homeScore;
-	}
+  public void setDate(final Date date) {
+    this.date = date;
+  }
 
-	public void setHomeScore(final Integer homeScore) {
-		this.homeScore = homeScore;
-	}
+  public Integer getHomeScore() {
+    return homeScore;
+  }
 
-	public Integer getAwayScore() {
-		return awayScore;
-	}
+  public void setHomeScore(final Integer homeScore) {
+    this.homeScore = homeScore;
+  }
 
-	public void setAwayScore(final Integer awayScore) {
-		this.awayScore = awayScore;
-	}
+  public Integer getAwayScore() {
+    return awayScore;
+  }
 
-	public Boolean getPlayoff() {
-		return playoff;
-	}
+  public void setAwayScore(final Integer awayScore) {
+    this.awayScore = awayScore;
+  }
 
-	public void setPlayoff(final Boolean playoff) {
-		this.playoff = playoff;
-	}
+  public Boolean getPlayoff() {
+    return playoff;
+  }
 
-	public Set<Goal> getGoals() {
-		return goals;
-	}
+  public void setPlayoff(final Boolean playoff) {
+    this.playoff = playoff;
+  }
+
+  public Set<Goal> getGoals() {
+    return goals;
+  }
+
+  public String getPlayed() {
+    return sdf.format(getDate());
+  }
 
 }

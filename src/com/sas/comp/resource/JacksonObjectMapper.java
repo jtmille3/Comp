@@ -17,7 +17,8 @@ public class JacksonObjectMapper implements ContextResolver<ObjectMapper> {
     objectMapper = new ObjectMapper();
     objectMapper.setSerializationInclusion(Inclusion.NON_NULL);
     objectMapper.configure(SerializationConfig.Feature.INDENT_OUTPUT, true);
-    objectMapper.configure(SerializationConfig.Feature.WRITE_DATES_AS_TIMESTAMPS, false);
+    // objectMapper.configure(SerializationConfig.Feature.WRITE_DATES_AS_TIMESTAMPS,
+    // false);
   }
 
   @Override
