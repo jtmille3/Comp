@@ -4,10 +4,10 @@
   "dependencies": {
     "requirejs": "~2.1.4",
     "modernizr": "~2.6.2",
-    "jquery": "~1.9",
+    "jquery.tablesorter": "",
     "bootstrap": "~2.3",
     "handlebars": "~1.0.0",
-    "jquery.tablesorter": ""
+    "jquery": "~1.8.3"
   },
   "devDependencies": {}
 }
