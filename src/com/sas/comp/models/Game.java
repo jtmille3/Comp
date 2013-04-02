@@ -39,7 +39,7 @@ public class Game implements Serializable {
 	private Integer homeScore;
 	@Column(name = "away_score")
 	private Integer awayScore;
-	private byte playoff;
+	private Boolean playoff;
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "gameId")
 	private final Set<Goal> goals = new HashSet<Goal>(0);
 
@@ -99,11 +99,11 @@ public class Game implements Serializable {
 		this.awayScore = awayScore;
 	}
 
-	public byte getPlayoff() {
+	public Boolean getPlayoff() {
 		return playoff;
 	}
 
-	public void setPlayoff(final byte playoff) {
+	public void setPlayoff(final Boolean playoff) {
 		this.playoff = playoff;
 	}
 
