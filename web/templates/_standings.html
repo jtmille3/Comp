@@ -12,7 +12,7 @@
 	</thead>
 	<tbody>
 		{{#each this.teams}}
-			<tr>
+			<tr id="{{id}}" class="selectable">
 				<td>{{rank}}</td>
 				<td>{{name}}</td>
 				<td>{{wins}}</td>
@@ -28,4 +28,10 @@
 </table>
 <script>
     $('#{{id}}-standings-table').tablesorter( {sortList: [[0,0]]} );
+    $('#{{id}}-standings-table tr').click(function(row) {
+    	var $row = $(row.currentTarget);
+    	var teamId = $row.attr('id');
+    	$row.addClass('selected').siblings().removeClass('selected');
+    	console.log('clicked ' + teamId);
+    });
 </script>

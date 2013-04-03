@@ -1,8 +1,6 @@
 package com.sas.comp.resource;
 
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -18,8 +16,8 @@ public class PlayerResource {
 
 	@GET
 	public Collection<Player> findAll() {
-		return Hibernate.getInstance()
-				.createQuery("SELECT distinct p FROM players p JOIN FETCH p.teamPlayers ORDER BY 'id'", Player.class).getResultList();
+		return Hibernate.getInstance().createQuery("SELECT distinct p FROM players p JOIN FETCH p.teamPlayers ORDER BY 'id'", Player.class)
+				.getResultList();
 	}
 
 	@GET

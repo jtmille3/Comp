@@ -2,6 +2,10 @@ html body {
 	margin-top: 20px;
 }
 
-th {
+th, .selectable {
 	cursor: pointer;
+}
+
+.table-striped tbody tr.selected td {
+	background-color: #FFFF66;
 }
