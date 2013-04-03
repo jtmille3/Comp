@@ -30,8 +30,11 @@ public class Team implements Serializable {
 	@JsonIgnore
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "homeTeamId")
 	private Set<Game> homeGames = new HashSet<Game>(0);
-	@OneToMany(fetch = FetchType.EAGER, mappedBy = "teamId")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "team")
 	private Set<TeamPlayer> teamPlayers = new HashSet<TeamPlayer>(0);
+
+	private Integer leagueWinner;
+	private Integer playoffWinner;
 
 	@Transient
 	private Integer rank;
@@ -106,6 +109,14 @@ public class Team implements Serializable {
 			this.goalsFor += game.getAwayScore();
 			this.goalsAgainst += game.getHomeScore();
 			this.goalDifferential = this.goalsFor - this.goalsAgainst;
+		}
+
+		for(TeamPlayer teamPlayer : this.getTeamPlayers())
+		{
+			if(teamPlayer.getIsGoalie())
+			{
+				teamPlayer.setShutouts(this.shutouts);
+			}
 		}
 	}
 
@@ -227,5 +238,21 @@ public class Team implements Serializable {
 
 	public void setShutouts(Integer shutouts) {
 		this.shutouts = shutouts;
+	}
+
+	public Integer getLeagueWinner() {
+		return leagueWinner;
+	}
+
+	public void setLeagueWinner(Integer leagueWinner) {
+		this.leagueWinner = leagueWinner;
+	}
+
+	public Integer getPlayoffWinner() {
+		return playoffWinner;
+	}
+
+	public void setPlayoffWinner(Integer playoffWinner) {
+		this.playoffWinner = playoffWinner;
 	}
 }
