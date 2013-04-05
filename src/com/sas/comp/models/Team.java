@@ -6,7 +6,13 @@ import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Transient;
 
 import org.codehaus.jackson.annotate.JsonIgnore;
 
@@ -55,8 +61,7 @@ public class Team implements Serializable {
 	@Transient
 	private Integer shutouts;
 
-	public void processGames()
-	{
+	public void processGames() {
 		this.wins = 0;
 		this.losses = 0;
 		this.ties = 0;
@@ -65,56 +70,52 @@ public class Team implements Serializable {
 		this.goalsAgainst = 0;
 		this.goalDifferential = 0;
 		this.shutouts = 0;
-		for(Game game : this.homeGames)
-		{
-			if(game.getHomeScore() == null)
+		for (Game game : this.homeGames) {
+			if (game.getHomeScore() == null)
 				continue; //Don't calc standings for future games.
-			if(game.getPlayoff())
+			if (game.getPlayoff())
 				continue;
-			if(game.getHomeScore() > game.getAwayScore()){
+			if (game.getHomeScore() > game.getAwayScore()) {
 				this.wins++;
 				this.points += 3;
-			} else if(game.getHomeScore() < game.getAwayScore()){
+			} else if (game.getHomeScore() < game.getAwayScore()) {
 				this.losses++;
 			} else {
 				this.ties++;
 				this.points += 1;
 			}
 
-			if(game.getAwayScore() == 0)
+			if (game.getAwayScore() == 0)
 				this.shutouts++;
 
 			this.goalsFor += game.getHomeScore();
 			this.goalsAgainst += game.getAwayScore();
 			this.goalDifferential = this.goalsFor - this.goalsAgainst;
 		}
-		for(Game game : this.awayGames)
-		{
-			if(game.getHomeScore() == null)
+		for (Game game : this.awayGames) {
+			if (game.getHomeScore() == null)
 				continue; //Don't calc standings for future games.
-			if(game.getPlayoff())
+			if (game.getPlayoff())
 				continue;
-			if(game.getHomeScore() < game.getAwayScore()){
+			if (game.getHomeScore() < game.getAwayScore()) {
 				this.wins++;
 				this.points += 3;
-			} else if(game.getHomeScore() > game.getAwayScore()){
+			} else if (game.getHomeScore() > game.getAwayScore()) {
 				this.losses++;
 			} else {
 				this.ties++;
 				this.points += 1;
 			}
 
-			if(game.getHomeScore() == 0)
+			if (game.getHomeScore() == 0)
 				this.shutouts++;
 			this.goalsFor += game.getAwayScore();
 			this.goalsAgainst += game.getHomeScore();
 			this.goalDifferential = this.goalsFor - this.goalsAgainst;
 		}
 
-		for(TeamPlayer teamPlayer : this.getTeamPlayers())
-		{
-			if(teamPlayer.getIsGoalie())
-			{
+		for (TeamPlayer teamPlayer : this.getTeamPlayers()) {
+			if (teamPlayer.getIsGoalie()) {
 				teamPlayer.setShutouts(this.shutouts);
 			}
 		}
@@ -172,7 +173,7 @@ public class Team implements Serializable {
 		return rank;
 	}
 
-	public void setRank(Integer rank) {
+	public void setRank(final Integer rank) {
 		this.rank = rank;
 	}
 
@@ -180,7 +181,7 @@ public class Team implements Serializable {
 		return wins;
 	}
 
-	public void setWins(Integer wins) {
+	public void setWins(final Integer wins) {
 		this.wins = wins;
 	}
 
@@ -188,7 +189,7 @@ public class Team implements Serializable {
 		return losses;
 	}
 
-	public void setLosses(Integer losses) {
+	public void setLosses(final Integer losses) {
 		this.losses = losses;
 	}
 
@@ -196,7 +197,7 @@ public class Team implements Serializable {
 		return ties;
 	}
 
-	public void setTies(Integer ties) {
+	public void setTies(final Integer ties) {
 		this.ties = ties;
 	}
 
@@ -204,7 +205,7 @@ public class Team implements Serializable {
 		return points;
 	}
 
-	public void setPoints(Integer points) {
+	public void setPoints(final Integer points) {
 		this.points = points;
 	}
 
@@ -212,7 +213,7 @@ public class Team implements Serializable {
 		return goalsFor;
 	}
 
-	public void setGoalsFor(Integer goalsFor) {
+	public void setGoalsFor(final Integer goalsFor) {
 		this.goalsFor = goalsFor;
 	}
 
@@ -220,7 +221,7 @@ public class Team implements Serializable {
 		return goalsAgainst;
 	}
 
-	public void setGoalsAgainst(Integer goalsAgainst) {
+	public void setGoalsAgainst(final Integer goalsAgainst) {
 		this.goalsAgainst = goalsAgainst;
 	}
 
@@ -228,7 +229,7 @@ public class Team implements Serializable {
 		return goalDifferential;
 	}
 
-	public void setGoalDifferential(Integer goalDifferential) {
+	public void setGoalDifferential(final Integer goalDifferential) {
 		this.goalDifferential = goalDifferential;
 	}
 
@@ -236,7 +237,7 @@ public class Team implements Serializable {
 		return shutouts;
 	}
 
-	public void setShutouts(Integer shutouts) {
+	public void setShutouts(final Integer shutouts) {
 		this.shutouts = shutouts;
 	}
 
@@ -244,7 +245,7 @@ public class Team implements Serializable {
 		return leagueWinner;
 	}
 
-	public void setLeagueWinner(Integer leagueWinner) {
+	public void setLeagueWinner(final Integer leagueWinner) {
 		this.leagueWinner = leagueWinner;
 	}
 
@@ -252,7 +253,7 @@ public class Team implements Serializable {
 		return playoffWinner;
 	}
 
-	public void setPlayoffWinner(Integer playoffWinner) {
+	public void setPlayoffWinner(final Integer playoffWinner) {
 		this.playoffWinner = playoffWinner;
 	}
 }

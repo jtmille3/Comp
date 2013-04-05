@@ -4,7 +4,11 @@ package com.sas.comp.models;
 
 import java.io.Serializable;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.Transient;
 
 import org.codehaus.jackson.annotate.JsonIgnore;
 
@@ -30,9 +34,9 @@ public class TeamPlayer implements Serializable {
 	@Transient
 	private Integer teamId;
 	@Transient
-	private Integer shutouts=0;
+	private Integer shutouts = 0;
 	@Transient
-	private Integer goals=0;
+	private Integer goals = 0;
 
 	public Integer getId() {
 		return id;
@@ -82,7 +86,7 @@ public class TeamPlayer implements Serializable {
 		return isGoalie;
 	}
 
-	public void setGoalie(Boolean goalie) {
+	public void setGoalie(final Boolean goalie) {
 		isGoalie = goalie;
 	}
 
@@ -90,7 +94,7 @@ public class TeamPlayer implements Serializable {
 		return isCaptain;
 	}
 
-	public void setCaptain(Boolean captain) {
+	public void setCaptain(final Boolean captain) {
 		isCaptain = captain;
 	}
 
@@ -98,7 +102,7 @@ public class TeamPlayer implements Serializable {
 		return isCoCaptain;
 	}
 
-	public void setCoCaptain(Boolean coCaptain) {
+	public void setCoCaptain(final Boolean coCaptain) {
 		isCoCaptain = coCaptain;
 	}
 
@@ -106,7 +110,7 @@ public class TeamPlayer implements Serializable {
 		return shutouts;
 	}
 
-	public void setShutouts(Integer shutouts) {
+	public void setShutouts(final Integer shutouts) {
 		this.shutouts = shutouts;
 	}
 
@@ -114,7 +118,7 @@ public class TeamPlayer implements Serializable {
 		return goals;
 	}
 
-	public void setGoals(Integer goals) {
+	public void setGoals(final Integer goals) {
 		this.goals = goals;
 	}
 
@@ -122,7 +126,7 @@ public class TeamPlayer implements Serializable {
 		return team;
 	}
 
-	public void setTeam(Team team) {
+	public void setTeam(final Team team) {
 		this.team = team;
 	}
 }

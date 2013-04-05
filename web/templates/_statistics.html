@@ -8,11 +8,11 @@
 				<th>Goals</th>
 			</thead>
 			<tbody>
-				{{#each this.stats}}
+				{{#each this.players}}
 					<tr>
 						<td>{{rank}}</td>
-						<td>{{top_scorers}}</td>
-						<td>{{team}}</td>
+						<td>{{name}}</td>
+						<td>{{team.name}}</td>
 						<td>{{goals}}</td>
 					</tr>
 				{{/each}}
@@ -28,15 +28,15 @@
 				<th>Goals Against</th>
 			</thead>
 			<tbody>
-				{{#each this.goalie_stats}}
+				{{#each this.goalies}}
 					<tr>
-						<td>{{goalie}}</td>
-						<td>{{team}}</td>
+						<td>{{name}}</td>
+						<td>{{team.name}}</td>
 						<td>{{shutouts}}</td>
 						<td>{{goals_against}}</td>
 					</tr>
 				{{/each}}
 			</tbody>
 		</table>
-    </div>
+	</div>
 </div>

@@ -19,19 +19,19 @@ public class SeasonResource {
 
 	@GET
 	public Collection<Season> findAll() {
-		Collection<Season> seasons = Hibernate
+		final Collection<Season> seasons = Hibernate
 				.getInstance()
 				.createQuery("SELECT DISTINCT s FROM seasons s JOIN FETCH s.teams t JOIN FETCH s.games g ORDER BY s.name DESC",
 						Season.class).getResultList();
-		for(Season s : seasons) {
-			Collection<Team> teams = s.getTeams().values();
-			for(Team t : teams) {
-				t.processGames();
+		for (final Season season : seasons) {
+			final Collection<Team> teams = season.getTeams().values();
+			for (final Team team : teams) {
+				team.processGames();
 			}
-			Team[] sortedTeams = teams.toArray(new Team[0]);
+			final Team[] sortedTeams = teams.toArray(new Team[0]);
 			Arrays.sort(sortedTeams, new Comparator<Team>() {
 				@Override
-				public int compare(Team o1, Team o2) {
+				public int compare(final Team o1, final Team o2) {
 					int pc = o2.getPoints().compareTo(o1.getPoints());
 					if (pc == 0)
 						pc = o2.getGoalDifferential().compareTo(o1.getGoalDifferential());
@@ -43,7 +43,7 @@ public class SeasonResource {
 				}
 			});
 			int i = 1;
-			for (Team t : sortedTeams){
+			for (Team t : sortedTeams) {
 				t.setRank(i++);
 			}
 		}

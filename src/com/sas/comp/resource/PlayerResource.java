@@ -16,10 +16,9 @@ public class PlayerResource {
 
 	@GET
 	public Collection<Player> findAll() {
-		Collection<Player> players = Hibernate.getInstance().createQuery("SELECT distinct p FROM players p JOIN FETCH p.teamPlayers ORDER BY 'id'", Player.class)
-				.getResultList();
-		for(Player p : players)
-		{
+		Collection<Player> players = Hibernate.getInstance()
+				.createQuery("SELECT distinct p FROM players p JOIN FETCH p.teamPlayers ORDER BY p.id", Player.class).getResultList();
+		for (Player p : players) {
 			p.processStats();
 		}
 		return players;
