@@ -3,8 +3,6 @@ define(function(require) {
 	'use strict';
 
 	var compTemplate = window.comp['web/templates/comp.html'];
-	var helper = require('./helper');
-	var season = require('./season');
 
 	/*
 	Before implementing make sure click around the page doesn't
@@ -12,10 +10,7 @@ define(function(require) {
 	experience.
 
 	if(Modernizr.localstorage) {
-		var allData = {
-			seasons:JSON.parse(localStorage.seasons),
-			players:JSON.parse(localStorage.players)
-		};
+		seasons = JSON.parse(localStorage.seasons);
 		$('#seasons').replaceWith(compTemplate(allData));
 	}
 	*/
