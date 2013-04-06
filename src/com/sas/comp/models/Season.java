@@ -6,6 +6,7 @@ public class Season {
 
 	private Integer id;
 	private String name;
+	private List<Standing> standings;
 	private List<Schedule> playoffSchedule;
 	private List<Schedule> leagueSchedule;
 
@@ -39,5 +40,13 @@ public class Season {
 
 	public void setPlayoffSchedule(final List<Schedule> playoffSchedule) {
 		this.playoffSchedule = playoffSchedule;
+	}
+
+	public List<Standing> getStandings() {
+		return standings;
+	}
+
+	public void setStandings(final List<Standing> standings) {
+		this.standings = standings;
 	}
 }

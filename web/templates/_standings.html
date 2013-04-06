@@ -9,19 +9,21 @@
 		<th>GF</th>
 		<th>GA</th>
 		<th>GD</th>
+		<th>Shutouts</th>
 	</thead>
 	<tbody>
-		{{#each this.teams}}
+		{{#each this.standings}}
 			<tr id="{{id}}" class="selectable">
-				<td>{{rank}}</td>
-				<td>{{name}}</td>
+				<td>{{@index}}</td>
+				<td>{{team}}</td>
 				<td>{{wins}}</td>
 				<td>{{losses}}</td>
 				<td>{{ties}}</td>
 				<td>{{points}}</td>
 				<td>{{goalsFor}}</td>
 				<td>{{goalsAgainst}}</td>
-				<td>{{goalDifferential}}</td>
+				<td>{{goalDifference}}</td>
+				<td>{{shutouts}}</td>
 			</tr>
 		{{/each}}
 	</tbody>

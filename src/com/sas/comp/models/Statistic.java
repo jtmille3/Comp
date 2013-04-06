@@ -1,6 +1,6 @@
 package com.sas.comp.models;
 
-public class Statistics {
+public class Statistic {
 
 	private String team;
 	private String player;
