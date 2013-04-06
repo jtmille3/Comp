@@ -16,7 +16,7 @@ public class SeasonService {
 
 		try {
 			final Connection conn = Database.getConnection();
-			final PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM seasons");
+			final PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM seasons ORDER BY name DESC");
 			final ResultSet rs = pstmt.executeQuery();
 			while (rs.next()) {
 				final Season season = new Season();
