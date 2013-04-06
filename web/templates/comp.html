@@ -1,11 +1,11 @@
 <ul class="nav nav-tabs">
-  {{#each this.seasons}}
+  {{#each this}}
   <li {{#unless @index}}class='active'{{/unless}}><a href="#season-{{id}}" data-toggle="tab">{{name}}</a></li>
   {{/each}}
   <li><a href="#all-time" data-toggle="tab">All Time Stats</a></li>
 </ul>
 <div class="tab-content">
-  {{#each this.seasons}}
+  {{#each this}}
   <div class="tab-pane {{#unless @index}}active{{/unless}}" id="season-{{id}}">
     <ul class="nav nav-pills">
       <li class="active"><a href="#standings-{{id}}" data-toggle="pill">Standings</a></li>

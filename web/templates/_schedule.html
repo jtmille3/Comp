@@ -6,12 +6,12 @@
 		<th>Result</th>
 	</thead>
 	<tbody>
-		{{#each games}}
+		{{#each leagueSchedule}}
 			<tr>
-				<td>{{#teamFetch ../this homeTeamId 'name'}}{{/teamFetch}}</td>
-				<td>{{#teamFetch ../this awayTeamId 'name'}}{{/teamFetch}}</td>
+				<td>{{home}}</td>
+				<td>{{away}}</td>
 				<td>{{played}}</td>
-				<td>{{homeScore}} - {{awayScore}}</td>
+				<td>{{result}}</td>
 			</tr>
 		{{/each}}
 	</tbody>

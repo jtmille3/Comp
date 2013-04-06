@@ -11,11 +11,11 @@ import com.sas.comp.mysql.Database;
 
 public class ScheduleService {
 
-	public List<Schedule> getRegularSeason(final Integer seasonId) {
+	public List<Schedule> getLeagueSchedule(final Integer seasonId) {
 		return getSchedules(seasonId, false);
 	}
 
-	public List<Schedule> getPlayoffs(final Integer seasonId) {
+	public List<Schedule> getPlayoffSchedule(final Integer seasonId) {
 		return getSchedules(seasonId, true);
 	}
 

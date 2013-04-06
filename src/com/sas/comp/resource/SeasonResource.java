@@ -1,66 +1,35 @@
 package com.sas.comp.resource;
 
-import java.util.Arrays;
 import java.util.Collection;
-import java.util.Comparator;
+import java.util.List;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 
-import com.sas.comp.hibernate.Hibernate;
 import com.sas.comp.models.Season;
-import com.sas.comp.models.Team;
+import com.sas.comp.service.ScheduleService;
+import com.sas.comp.service.SeasonService;
 
 @Path("seasons")
 @Produces("application/json")
 public class SeasonResource {
 
+	private final SeasonService seasonService;
+	private final ScheduleService scheduleService;
+
+	public SeasonResource() {
+		this.seasonService = new SeasonService();
+		this.scheduleService = new ScheduleService();
+	}
+
 	@GET
 	public Collection<Season> findAll() {
-		final Collection<Season> seasons = Hibernate
-				.getInstance()
-				.createQuery("SELECT DISTINCT s FROM seasons s JOIN FETCH s.teams t JOIN FETCH s.games g ORDER BY s.name DESC",
-						Season.class).getResultList();
+		final List<Season> seasons = this.seasonService.getSeasons();
 		for (final Season season : seasons) {
-			final Collection<Team> teams = season.getTeams().values();
-			for (final Team team : teams) {
-				team.processGames();
-			}
-			final Team[] sortedTeams = teams.toArray(new Team[0]);
-			Arrays.sort(sortedTeams, new Comparator<Team>() {
-				@Override
-				public int compare(final Team o1, final Team o2) {
-					int pc = o2.getPoints().compareTo(o1.getPoints());
-					if (pc == 0)
-						pc = o2.getGoalDifferential().compareTo(o1.getGoalDifferential());
-					if (pc == 0)
-						pc = o2.getGoalsFor().compareTo(o1.getGoalsFor());
-					if (pc == 0)
-						pc = o1.getGoalsAgainst().compareTo(o2.getGoalsAgainst());
-					return pc;
-				}
-			});
-			int i = 1;
-			for (Team t : sortedTeams) {
-				t.setRank(i++);
-			}
+			season.setLeagueSchedule(this.scheduleService.getLeagueSchedule(season.getId()));
+			season.setPlayoffSchedule(this.scheduleService.getPlayoffSchedule(season.getId()));
 		}
 		return seasons;
-	}
-
-	@GET
-	@Path("last")
-	public Season findLast() {
-		return Hibernate.getInstance()
-				.createQuery("SELECT DISTINCT s FROM seasons s JOIN FETCH s.teams t JOIN FETCH s.games g ORDER BY s.id DESC", Season.class)
-				.setMaxResults(1).getSingleResult();
-	}
-
-	@GET
-	@Path("{id}")
-	public Season find(@PathParam("id") final Integer id) {
-		return Hibernate.getInstance().find(Season.class, id);
 	}
 }

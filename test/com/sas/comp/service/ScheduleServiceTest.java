@@ -12,7 +12,7 @@ public class ScheduleServiceTest {
 	@Test
 	public void testRegularSeason() {
 		final ScheduleService service = new ScheduleService();
-		final List<Schedule> schedules = service.getRegularSeason(4);
+		final List<Schedule> schedules = service.getLeagueSchedule(4);
 		Assert.assertNotNull(schedules);
 		Assert.assertTrue(schedules.size() > 0);
 	}
@@ -20,7 +20,7 @@ public class ScheduleServiceTest {
 	@Test
 	public void testPlayoffs() {
 		final ScheduleService service = new ScheduleService();
-		final List<Schedule> schedules = service.getPlayoffs(4);
+		final List<Schedule> schedules = service.getPlayoffSchedule(4);
 		Assert.assertNotNull(schedules);
 		Assert.assertTrue(schedules.size() > 0);
 	}

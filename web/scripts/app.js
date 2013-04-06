@@ -27,27 +27,7 @@ define(function(require) {
 		}
 		*/
 		console.log(seasons);
-		$.getJSON('/comp/service/players', function(players) {
-			/*
-			if(Modernizr.localstorage) {
-				localStorage.players = JSON.stringify(players);
-			}
-			*/
-
-			/*
-			Really what we want is a fully built out seasons
-			tree, and then a denormalized players list for
-			all time statistics.  Bam!
-			*/
-			var playerMap = helper.createMap(players);
-			season.addPlayers(seasons, playerMap);
-			var allData = {
-				seasons:seasons,
-				players:players
-			};
-
-			$('#seasons').replaceWith(compTemplate(allData));
-		});
+		$('#seasons').replaceWith(compTemplate(seasons));
 	});
 
 	return 'Initialized';
