@@ -20,10 +20,10 @@ public class StandingService {
 			pstmt.setInt(1, seasonId);
 
 			final ResultSet rs = pstmt.executeQuery();
-			int i = 0;
+			int rank = 1;
 			while (rs.next()) {
 				final Standing standing = new Standing();
-				standing.setRank(++i);
+				standing.setRank(rank++);
 				standing.setTeam(rs.getString(2));
 				standing.setPoints(rs.getInt(3));
 				standing.setWins(rs.getInt(4));

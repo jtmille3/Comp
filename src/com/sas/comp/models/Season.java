@@ -9,6 +9,8 @@ public class Season {
 	private List<Standing> standings;
 	private List<Schedule> playoffSchedule;
 	private List<Schedule> leagueSchedule;
+	private List<Statistic> playerStatistics;
+	private List<Statistic> goalieStatistics;
 
 	public Integer getId() {
 		return this.id;
@@ -48,5 +50,21 @@ public class Season {
 
 	public void setStandings(final List<Standing> standings) {
 		this.standings = standings;
+	}
+
+	public List<Statistic> getPlayerStatistics() {
+		return playerStatistics;
+	}
+
+	public void setPlayerStatistics(final List<Statistic> playerStatistics) {
+		this.playerStatistics = playerStatistics;
+	}
+
+	public List<Statistic> getGoalieStatistics() {
+		return goalieStatistics;
+	}
+
+	public void setGoalieStatistics(final List<Statistic> goalieStatistics) {
+		this.goalieStatistics = goalieStatistics;
 	}
 }
