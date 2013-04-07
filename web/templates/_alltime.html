@@ -1,0 +1,44 @@
+<div class="tab-pane" id="all-time">
+  <div class="row-fluid">
+    <div class="span6">
+      <table id="player-all-time-table" class="table table-bordered table-striped table-hover tablesorter">
+    <thead>
+      <th>Name</th>
+      <th>Goals</th>
+      <th>League Titles</th>
+      <th>Championships</th>
+    </thead>
+    <tbody>
+      {{#each playerStatistics}}
+        <tr>
+          <td>{{player}}</td>
+          <td>{{goals}}</td>
+          <td>{{leagueWinner}}</td>
+          <td>{{playoffWinner}}</td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+    </div>
+    <div class="span6">
+      <table id="goalie-all-time-table" class="table table-bordered table-striped table-hover tablesorter">
+        <thead>
+          <th>Name</th>
+          <th>Shutouts</th>
+        </thead>
+        <tbody>
+          {{#each goalieStatistics}}
+            <tr>
+              <td>{{player}}</td>
+              <td>{{shutouts}}</td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<script>
+    $('#player-all-time-table').tablesorter( {sortList: [[1,1]]} );
+    $('#goalie-all-time-table').tablesorter( {sortList: [[1,1]]} );
+</script>
