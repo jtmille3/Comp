@@ -34,9 +34,53 @@ define(function(require) {
 				var teamId = parseInt($row.attr('id'), 10);
 				$row.addClass('selected').siblings().removeClass('selected');
 				self.selectedTeam(season, teamId);
+				self.attachStandingsHoverHandler(teamId);
+			});
+		},
+		attachStandingsHoverHandler: function(teamId) {
+			var self = this;
+			$('#' + teamId + '-team-schedule-table tr').click(function(row) {
+				var $row = $(row.currentTarget);
+				var gameId = parseInt($row.attr('id'), 10);
 			});
 		},
 		selectedTeam: function(season, teamId) {
+			var schedule = this.schedule(season, teamId);
+			var roster = this.roster(season, teamId);
+
+			var teamScheduleTemplate = window.comp['web/templates/team_schedule.html'];
+			var template = teamScheduleTemplate({
+				id: teamId,
+				schedule: schedule,
+				roster: roster
+			});
+
+			$('#' + season.id + '-team-schedule').html(template);
+
+			$('#' + teamId + '-team-schedule-table').tablesorter( {sortList: [[2,0]]} );
+			$('#' + teamId + '-team-roster-table').tablesorter( {sortList: [[0,0]]} );
+		},
+		goals: function(teamId) {
+			var goals = [];
+			for(var i = 0; i < this.competitive.goals.length; i++) {
+				var goal = this.competitive.goals[i];
+				if(goal.teamId === teamId) {
+					goals.push(goal);
+				}
+			}
+			return goals;
+		},
+		roster: function(season, teamId) {
+			var roster = [];
+			for(var j = 0; j < season.playerStatistics.length; j++) {
+				var player = season.playerStatistics[j];
+				if(player.teamId === teamId) {
+					roster.push(player);
+				}
+			}
+			return roster;
+		},
+		schedule: function(season, teamId) {
 			var schedule = [];
 			for(var i = 0; i < season.leagueSchedule.length; i++) {
 				var match = season.leagueSchedule[i];
@@ -60,26 +104,7 @@ define(function(require) {
 					schedule.push(match);
 				}
 			}
-
-			var roster = [];
-			for(var j = 0; j < season.playerStatistics.length; j++) {
-				var player = season.playerStatistics[j];
-				if(player.teamId === teamId) {
-					roster.push(player);
-				}
-			}
-
-			var teamScheduleTemplate = window.comp['web/templates/team_schedule.html'];
-			var template = teamScheduleTemplate({
-				id: teamId,
-				schedule: schedule,
-				roster: roster
-			});
-
-			$('#' + season.id + '-team-schedule').html(template);
-
-			$('#' + teamId + '-team-schedule-table').tablesorter( {sortList: [[2,0]]} );
-			$('#' + teamId + '-team-roster-table').tablesorter( {sortList: [[0,0]]} );
+			return schedule;
 		}
 	};
 });

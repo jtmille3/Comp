@@ -1,6 +1,6 @@
 <div class="row-fluid">
     <div class="span6">
-    	<table id="{{id}}-team-schedule-table" class="table table-bordered table-striped table-hover tablesorter">
+    	<table id="{{id}}-team-schedule-table" class="table table-condensed table-bordered table-striped table-hover tablesorter">
 			<thead>
 				<th>Home</th>
 				<th>Away</th>
@@ -20,14 +20,14 @@
 		</table>
     </div>
     <div class="span6">
-    	<table id="{{id}}-team-roster-table" class="table table-bordered table-striped table-hover tablesorter">
+    	<table id="{{id}}-team-roster-table" class="table table-condensed table-bordered table-striped table-hover tablesorter">
 			<thead>
 				<th colspan=2>Roster</th>
 				<th>Goals</th>
 			</thead>
 			<tbody>
 				{{#each roster}}
-					<tr>
+					<tr id="{{gameId}}">
 						<td width="20px">
 						{{#if goalie}}
 							<img src="images/goalie.png"/>
