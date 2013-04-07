@@ -31,7 +31,7 @@ public class StandingService {
 				standing.setTies(rs.getInt("ties"));
 				standing.setGoalsFor(rs.getInt("goals_for"));
 				standing.setGoalsAgainst(rs.getInt("goals_against"));
-				standing.setGoalDifference(rs.getInt("goal_differential"));
+				standing.setGoalDifferential(rs.getInt("goal_differential"));
 				standing.setShutouts(rs.getInt("shutouts"));
 				standing.setTeamId(rs.getInt("team_id"));
 				standings.add(standing);

@@ -11,7 +11,7 @@ public class Standing {
 	private Integer points;
 	private Integer goalsFor;
 	private Integer goalsAgainst;
-	private Integer goalDifference;
+	private Integer goalDifferential;
 	private Integer shutouts;
 
 	public Integer getRank() {
@@ -78,14 +78,6 @@ public class Standing {
 		this.goalsAgainst = goalsAgainst;
 	}
 
-	public Integer getGoalDifference() {
-		return goalDifference;
-	}
-
-	public void setGoalDifference(final Integer goalDifference) {
-		this.goalDifference = goalDifference;
-	}
-
 	public Integer getShutouts() {
 		return shutouts;
 	}
@@ -98,8 +90,16 @@ public class Standing {
 		return teamId;
 	}
 
-	public void setTeamId(Integer teamId) {
+	public void setTeamId(final Integer teamId) {
 		this.teamId = teamId;
+	}
+
+	public Integer getGoalDifferential() {
+		return goalDifferential;
+	}
+
+	public void setGoalDifferential(final Integer goalDifferential) {
+		this.goalDifferential = goalDifferential;
 	}
 
 }
