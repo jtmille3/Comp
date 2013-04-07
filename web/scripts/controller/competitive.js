@@ -12,7 +12,7 @@ define(function(require) {
 			}
 			*/
 			var compTemplate = window.comp['web/templates/comp.html'];
-			$('#competitive').replaceWith(compTemplate(competitive));
+			$('#competitive').html(compTemplate(competitive));
 
 			$('#player-all-time-table').tablesorter( {sortList: [[1,1]]} );
 			$('#goalie-all-time-table').tablesorter( {sortList: [[1,1]]} );
@@ -55,11 +55,15 @@ define(function(require) {
 
 			var teamScheduleTemplate = window.comp['web/templates/team_schedule.html'];
 			var template = teamScheduleTemplate({
-				id: season.id,
+				id: teamId,
 				schedule: schedule,
 				roster: roster
 			});
-			$('#' + season.id + '-team-schedule').replaceWith(template);
+
+			$('#' + season.id + '-team-schedule').html(template);
+
+			$('#' + teamId + '-team-schedule-table').tablesorter( {sortList: [[2,0]]} );
+			$('#' + teamId + '-team-roster-table').tablesorter( {sortList: [[1,1]]} );
 		}
 	};
 });
