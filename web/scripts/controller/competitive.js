@@ -25,6 +25,7 @@ define(function(require) {
 				$('#' + season.id + '-goalie-statistics-table').tablesorter( {sortList: [[2,1]]} );
 
 				this.attachStandingsClickHandler(season);
+				this.attachScheduleClickHandler(season);
 			}
 		},
 		attachStandingsClickHandler: function(season) {
@@ -46,6 +47,17 @@ define(function(require) {
 				self.selectedGame(gameId, teamId);
 			});
 		},
+		attachScheduleClickHandler: function(season) {
+			var self = this;
+			$('#' + season.id + '-league-schedule-table tr').click(function(row) {
+				var $row = $(row.currentTarget);
+				$row.addClass('selected').siblings().removeClass('selected');
+				var gameId = parseInt($row.attr('id'), 10);
+				$("#goalsRow").remove();
+
+				$("<tr id='goalsRow'><td colspan='4'>"+self.goalPrint(gameId)+"</td></tr>").insertAfter($row);
+			});
+		},
 		selectedTeam: function(season, teamId) {
 			var schedule = this.schedule(season, teamId);
 			var roster = this.roster(season, teamId);
@@ -64,13 +76,17 @@ define(function(require) {
 		},
 
 		selectedGame: function(gameId, teamId) {
+			$('#' + teamId + '-goal-summary').html(this.goalPrint(gameId));
+		},
+
+		goalPrint: function(gameId) {
 			var goals = this.goals(gameId);
 			var print = 'Goals: ';
 			for(var i = 0; i < goals.length; i++) {
 				var goal = goals[i];
 				print += goal.player + ' (' + goal.times + ') ';
 			}
-			$('#' + teamId + '-goal-summary').html(print);
+			return print;
 		},
 
 		goals: function(gameId) {
