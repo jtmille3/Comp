@@ -1,12 +1,10 @@
 package com.sas.comp.listener;
 
-import java.util.List;
-
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 
-import com.sas.comp.models.Cache;
+import com.sas.comp.models.Competitive;
 import com.sas.comp.models.Season;
 import com.sas.comp.service.ScheduleService;
 import com.sas.comp.service.SeasonService;
@@ -27,15 +25,21 @@ public class CacheListener implements ServletContextListener {
 
 	@Override
 	public void contextInitialized(final ServletContextEvent arg0) {
-		final List<Season> seasons = this.seasonService.getSeasons();
-		for (final Season season : seasons) {
+		final Competitive competitive = new Competitive();
+
+		competitive.setSeasons(this.seasonService.getSeasons());
+		competitive.setPlayerStatistics(this.statisticService.getPlayerStatistics());
+		competitive.setGoalieStatistics(this.statisticService.getGoalieStatistics());
+
+		for (final Season season : competitive.getSeasons()) {
 			season.setStandings(this.standingService.getStandings(season.getId()));
 			season.setLeagueSchedule(this.scheduleService.getLeagueSchedule(season.getId()));
 			season.setPlayoffSchedule(this.scheduleService.getPlayoffSchedule(season.getId()));
 			season.setPlayerStatistics(this.statisticService.getPlayerStatistics(season.getId()));
 			season.setGoalieStatistics(this.statisticService.getGoalieStatistics(season.getId()));
 		}
-		Cache.getCache().setSeasons(seasons);
+
+		Cache.getCache().setCompetitive(competitive);
 	}
 
 }

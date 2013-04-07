@@ -60,4 +60,51 @@ public class StatisticService {
 		return statistics;
 	}
 
+	public List<Statistic> getPlayerStatistics() {
+		final List<Statistic> statistics = new ArrayList<Statistic>();
+
+		try {
+			final Connection conn = Database.getConnection();
+			final PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM player_alltime_statistics");
+
+			final ResultSet rs = pstmt.executeQuery();
+			int rank = 1;
+			while (rs.next()) {
+				final Statistic statistic = new Statistic();
+				statistic.setRank(rank++);
+				statistic.setPlayer(rs.getString(1));
+				statistic.setLeagueWinner(rs.getInt(2));
+				statistic.setPlayoffWinner(rs.getInt(3));
+				statistic.setGoals(rs.getInt(4));
+				statistics.add(statistic);
+			}
+		} catch (final Exception e) {
+			e.printStackTrace();
+		}
+
+		return statistics;
+	}
+
+	public List<Statistic> getGoalieStatistics() {
+		final List<Statistic> statistics = new ArrayList<Statistic>();
+
+		try {
+			final Connection conn = Database.getConnection();
+			final PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM goalie_alltime_statistics");
+
+			final ResultSet rs = pstmt.executeQuery();
+			while (rs.next()) {
+				final Statistic statistic = new Statistic();
+				statistic.setPlayer(rs.getString(1));
+				statistic.setGoalsAgainst(rs.getInt(3));
+				statistic.setShutouts(rs.getInt(4));
+				statistics.add(statistic);
+			}
+		} catch (final Exception e) {
+			e.printStackTrace();
+		}
+
+		return statistics;
+	}
+
 }

@@ -15,14 +15,13 @@ define(function(require) {
 	}
 	*/
 
-	$.getJSON('/comp/service/seasons', function(seasons) {
+	$.getJSON('/comp/service/competitive', function(competitive) {
 		/*
 		if(Modernizr.localstorage) {
 			localStorage.seasons = JSON.stringify(seasons);
 		}
 		*/
-		console.log(seasons);
-		$('#seasons').replaceWith(compTemplate(seasons));
+		$('#seasons').replaceWith(compTemplate(competitive));
 	});
 
 	return 'Initialized';

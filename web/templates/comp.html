@@ -1,11 +1,11 @@
 <ul class="nav nav-tabs">
-  {{#each this}}
+  {{#each seasons}}
   <li {{#unless @index}}class='active'{{/unless}}><a href="#season-{{id}}" data-toggle="tab">{{name}}</a></li>
   {{/each}}
   <li><a href="#all-time" data-toggle="tab">All Time Stats</a></li>
 </ul>
 <div class="tab-content">
-  {{#each this}}
+  {{#each seasons}}
   <div class="tab-pane {{#unless @index}}active{{/unless}}" id="season-{{id}}">
     <ul class="nav nav-pills">
       <li class="active"><a href="#standings-{{id}}" data-toggle="pill">Standings</a></li>
@@ -26,18 +26,16 @@
       <thead>
         <th>Name</th>
         <th>Goals</th>
-        <th>Shutouts</th>
         <th>League Titles</th>
         <th>Championships</th>
       </thead>
       <tbody>
-        {{#each this.players}}
+        {{#each playerStatistics}}
           <tr>
-            <td>{{name}}</td>
-            <td>{{goals.length}}</td>
-            <td>{{shutouts}}</td>
-            <td>{{leagueTitles}}</td>
-            <td>{{playoffTitles}}</td>
+            <td>{{player}}</td>
+            <td>{{goals}}</td>
+            <td>{{leagueWinner}}</td>
+            <td>{{playoffWinner}}</td>
           </tr>
         {{/each}}
       </tbody>
