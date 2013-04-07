@@ -10,18 +10,18 @@ define(function(require) {
 	experience.
 
 	if(Modernizr.localstorage) {
-		seasons = JSON.parse(localStorage.seasons);
-		$('#seasons').replaceWith(compTemplate(allData));
+		competitive = JSON.parse(localStorage.competitive);
+		$('#competitive').replaceWith(compTemplate(allData));
 	}
 	*/
 
 	$.getJSON('/comp/service/competitive', function(competitive) {
 		/*
 		if(Modernizr.localstorage) {
-			localStorage.seasons = JSON.stringify(seasons);
+			localStorage.competitive = JSON.stringify(competitive);
 		}
 		*/
-		$('#seasons').replaceWith(compTemplate(competitive));
+		$('#competitive').replaceWith(compTemplate(competitive));
 	});
 
 	return 'Initialized';
