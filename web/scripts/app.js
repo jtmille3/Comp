@@ -2,12 +2,12 @@
 define(function(require) {
 	'use strict';
 
-	var compTemplate = window.comp['web/templates/comp.html'];
-
 	/*
 	Before implementing make sure click around the page doesn't
 	get reset once we load new data.  Otherwise breaks user
 	experience.
+
+	var compTemplate = window.comp['web/templates/comp.html'];
 
 	if(Modernizr.localstorage) {
 		competitive = JSON.parse(localStorage.competitive);
@@ -15,13 +15,10 @@ define(function(require) {
 	}
 	*/
 
+	var competitiveController = require('./controller/competitive');
+
 	$.getJSON('/comp/service/competitive', function(competitive) {
-		/*
-		if(Modernizr.localstorage) {
-			localStorage.competitive = JSON.stringify(competitive);
-		}
-		*/
-		$('#competitive').replaceWith(compTemplate(competitive));
+		competitiveController.render(competitive);
 	});
 
 	return 'Initialized';

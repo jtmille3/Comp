@@ -28,12 +28,3 @@
 		{{/each}}
 	</tbody>
 </table>
-<script>
-    $('#{{id}}-standings-table').tablesorter( {sortList: [[0,0]]} );
-    $('#{{id}}-standings-table tr').click(function(row) {
-    	var $row = $(row.currentTarget);
-    	var teamId = $row.attr('id');
-    	$row.addClass('selected').siblings().removeClass('selected');
-    	console.log('clicked ' + teamId);
-    });
-</script>
