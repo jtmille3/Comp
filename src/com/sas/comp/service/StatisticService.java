@@ -16,7 +16,7 @@ public class StatisticService {
 
 		try {
 			final Connection conn = Database.getConnection();
-			final PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM player_summary WHERE season_id = ?");
+			final PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM player_statistics WHERE season_id = ?");
 			pstmt.setInt(1, seasonId);
 
 			final ResultSet rs = pstmt.executeQuery();
@@ -34,6 +34,10 @@ public class StatisticService {
 				statistic.setCoCaptain(rs.getBoolean("co_captain"));
 				statistics.add(statistic);
 			}
+
+			rs.close();
+			pstmt.close();
+			conn.close();
 		} catch (final Exception e) {
 			e.printStackTrace();
 		}
@@ -58,6 +62,10 @@ public class StatisticService {
 				statistic.setShutouts(rs.getInt("shutouts"));
 				statistics.add(statistic);
 			}
+
+			rs.close();
+			pstmt.close();
+			conn.close();
 		} catch (final Exception e) {
 			e.printStackTrace();
 		}
@@ -83,6 +91,10 @@ public class StatisticService {
 				statistic.setGoals(rs.getInt("goals"));
 				statistics.add(statistic);
 			}
+
+			rs.close();
+			pstmt.close();
+			conn.close();
 		} catch (final Exception e) {
 			e.printStackTrace();
 		}
@@ -105,6 +117,10 @@ public class StatisticService {
 				statistic.setShutouts(rs.getInt("shutouts"));
 				statistics.add(statistic);
 			}
+
+			rs.close();
+			pstmt.close();
+			conn.close();
 		} catch (final Exception e) {
 			e.printStackTrace();
 		}

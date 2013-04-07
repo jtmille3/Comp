@@ -36,6 +36,10 @@ public class StandingService {
 				standing.setTeamId(rs.getInt("team_id"));
 				standings.add(standing);
 			}
+
+			rs.close();
+			pstmt.close();
+			conn.close();
 		} catch (final Exception e) {
 			e.printStackTrace();
 		}

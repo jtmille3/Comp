@@ -49,6 +49,10 @@ public class ScheduleService {
 
 				schedules.add(schedule);
 			}
+
+			rs.close();
+			pstmt.close();
+			conn.close();
 		} catch (final Exception e) {
 			e.printStackTrace();
 		}

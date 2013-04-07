@@ -18,12 +18,17 @@ public class SeasonService {
 			final Connection conn = Database.getConnection();
 			final PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM seasons ORDER BY name DESC");
 			final ResultSet rs = pstmt.executeQuery();
+
 			while (rs.next()) {
 				final Season season = new Season();
 				season.setId(rs.getInt("id"));
 				season.setName(rs.getString("name"));
 				seasons.add(season);
 			}
+
+			rs.close();
+			pstmt.close();
+			conn.close();
 		} catch (final Exception e) {
 			e.printStackTrace();
 		}
