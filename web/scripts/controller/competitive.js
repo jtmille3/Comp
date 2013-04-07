@@ -56,6 +56,7 @@ define(function(require) {
 
 			var teamScheduleTemplate = window.comp['web/templates/team_schedule.html'];
 			var template = teamScheduleTemplate({
+				id: season.id,
 				schedule: schedule,
 				roster: roster
 			});
