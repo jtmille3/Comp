@@ -7,17 +7,17 @@ th, .selectable {
 }
 
 .table-striped tbody tr.selected td {
-	background-color: #FFFF66;
+	background-color: #FFFF88;
 }
 
 .table-striped tbody tr.won td {
-	background-color: #66FF66;
+	background-color: #88FF88;
 }
 
 .table-striped tbody tr.lost td {
-	background-color: #FF6666;
+	background-color: #FF8888;
 }
 
 .table-striped tbody tr.tied td {
-	background-color: #6666FF;
+	background-color: #8888FF;
 }
