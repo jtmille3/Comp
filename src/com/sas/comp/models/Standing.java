@@ -4,6 +4,7 @@ public class Standing {
 
 	private Integer rank;
 	private String team;
+	private Integer teamId;
 	private Integer wins;
 	private Integer losses;
 	private Integer ties;
@@ -89,7 +90,16 @@ public class Standing {
 		return shutouts;
 	}
 
-	public void setShutouts(Integer shutouts) {
+	public void setShutouts(final Integer shutouts) {
 		this.shutouts = shutouts;
 	}
+
+	public Integer getTeamId() {
+		return teamId;
+	}
+
+	public void setTeamId(Integer teamId) {
+		this.teamId = teamId;
+	}
+
 }

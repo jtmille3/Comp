@@ -24,9 +24,9 @@ public class StatisticService {
 			while (rs.next()) {
 				final Statistic statistic = new Statistic();
 				statistic.setRank(rank++);
-				statistic.setTeam(rs.getString(2));
-				statistic.setPlayer(rs.getString(3));
-				statistic.setGoals(rs.getInt(4));
+				statistic.setTeam(rs.getString("team"));
+				statistic.setPlayer(rs.getString("player"));
+				statistic.setGoals(rs.getInt("goals"));
 				statistics.add(statistic);
 			}
 		} catch (final Exception e) {
@@ -47,10 +47,10 @@ public class StatisticService {
 			final ResultSet rs = pstmt.executeQuery();
 			while (rs.next()) {
 				final Statistic statistic = new Statistic();
-				statistic.setPlayer(rs.getString(2));
-				statistic.setTeam(rs.getString(3));
-				statistic.setGoalsAgainst(rs.getInt(4));
-				statistic.setShutouts(rs.getInt(5));
+				statistic.setPlayer(rs.getString("player"));
+				statistic.setTeam(rs.getString("team"));
+				statistic.setGoalsAgainst(rs.getInt("against"));
+				statistic.setShutouts(rs.getInt("shutouts"));
 				statistics.add(statistic);
 			}
 		} catch (final Exception e) {
@@ -72,10 +72,10 @@ public class StatisticService {
 			while (rs.next()) {
 				final Statistic statistic = new Statistic();
 				statistic.setRank(rank++);
-				statistic.setPlayer(rs.getString(1));
-				statistic.setLeagueWinner(rs.getInt(2));
-				statistic.setPlayoffWinner(rs.getInt(3));
-				statistic.setGoals(rs.getInt(4));
+				statistic.setPlayer(rs.getString("player"));
+				statistic.setLeagueWinner(rs.getInt("league"));
+				statistic.setPlayoffWinner(rs.getInt("playoff"));
+				statistic.setGoals(rs.getInt("goals"));
 				statistics.add(statistic);
 			}
 		} catch (final Exception e) {
@@ -95,9 +95,9 @@ public class StatisticService {
 			final ResultSet rs = pstmt.executeQuery();
 			while (rs.next()) {
 				final Statistic statistic = new Statistic();
-				statistic.setPlayer(rs.getString(1));
-				statistic.setGoalsAgainst(rs.getInt(3));
-				statistic.setShutouts(rs.getInt(4));
+				statistic.setPlayer(rs.getString("player"));
+				statistic.setGoalsAgainst(rs.getInt("against"));
+				statistic.setShutouts(rs.getInt("shutouts"));
 				statistics.add(statistic);
 			}
 		} catch (final Exception e) {

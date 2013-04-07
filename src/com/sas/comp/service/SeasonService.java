@@ -20,8 +20,8 @@ public class SeasonService {
 			final ResultSet rs = pstmt.executeQuery();
 			while (rs.next()) {
 				final Season season = new Season();
-				season.setId(rs.getInt(1));
-				season.setName(rs.getString(2));
+				season.setId(rs.getInt("id"));
+				season.setName(rs.getString("name"));
 				seasons.add(season);
 			}
 		} catch (final Exception e) {

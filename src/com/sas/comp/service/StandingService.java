@@ -24,15 +24,16 @@ public class StandingService {
 			while (rs.next()) {
 				final Standing standing = new Standing();
 				standing.setRank(rank++);
-				standing.setTeam(rs.getString(2));
-				standing.setPoints(rs.getInt(3));
-				standing.setWins(rs.getInt(4));
-				standing.setLosses(rs.getInt(5));
-				standing.setTies(rs.getInt(6));
-				standing.setGoalsFor(rs.getInt(7));
-				standing.setGoalsAgainst(rs.getInt(8));
-				standing.setGoalDifference(rs.getInt(9));
-				standing.setShutouts(rs.getInt(10));
+				standing.setTeam(rs.getString("team"));
+				standing.setPoints(rs.getInt("points"));
+				standing.setWins(rs.getInt("wins"));
+				standing.setLosses(rs.getInt("losses"));
+				standing.setTies(rs.getInt("ties"));
+				standing.setGoalsFor(rs.getInt("goals_for"));
+				standing.setGoalsAgainst(rs.getInt("goals_against"));
+				standing.setGoalDifference(rs.getInt("goal_differential"));
+				standing.setShutouts(rs.getInt("shutouts"));
+				standing.setTeamId(rs.getInt("team_id"));
 				standings.add(standing);
 			}
 		} catch (final Exception e) {

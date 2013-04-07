@@ -32,7 +32,9 @@ public class ScheduleService {
 			while (rs.next()) {
 				final Schedule schedule = new Schedule();
 				schedule.setHome(rs.getString("home"));
+				schedule.setHomeId(rs.getInt("home_id"));
 				schedule.setAway(rs.getString("away"));
+				schedule.setAwayId(rs.getInt("away_id"));
 				schedule.setDate(rs.getTimestamp("date"));
 
 				schedule.setResult(rs.getInt("home_score") + " - " + rs.getInt("away_score"));

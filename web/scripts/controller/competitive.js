@@ -3,6 +3,8 @@ define(function(require) {
 	'use strict';
 	return {
 		render: function(competitive) {
+			this.competitive = competitive;
+
 			/*
 			if(Modernizr.localstorage) {
 				localStorage.competitive = JSON.stringify(competitive);
