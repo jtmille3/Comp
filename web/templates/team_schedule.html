@@ -22,12 +22,23 @@
     <div class="span6">
     	<table id="{{id}}-team-roster-table" class="table table-bordered table-striped table-hover tablesorter">
 			<thead>
-				<th>Roster</th>
+				<th colspan=2>Roster</th>
 				<th>Goals</th>
 			</thead>
 			<tbody>
 				{{#each roster}}
 					<tr>
+						<td width="20px">
+						{{#if goalie}}
+							<img src="images/goalie.png"/>
+						{{/if}}
+						{{#if captain}}
+							<img src="images/captain.png"/>
+						{{/if}}
+						{{#if coCaptain}}
+							<img src="images/cocaptain.png"/>
+						{{/if}}
+						</td>
 						<td>{{player}}</td>
 						<td>{{goals}}</td>
 					</tr>
