@@ -45,10 +45,10 @@ define(function(require) {
 					teamSchedule.push(schedule);
 				}
 			}
-
+			var param = {id:season.id, schedule:teamSchedule};
 			var teamScheduleTemplate = window.comp['web/templates/team_schedule.html'];
-			var template = teamScheduleTemplate(teamSchedule);
-			$('#' + season.id + '-team-schedule').replaceWith(template);
+			var template = teamScheduleTemplate(param);
+			$('#' + season.id + '-team-schedule-table').replaceWith(template);
 		}
 	};
 });
