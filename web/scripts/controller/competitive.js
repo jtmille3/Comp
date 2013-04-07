@@ -62,16 +62,28 @@ define(function(require) {
 			$('#' + teamId + '-team-schedule-table').tablesorter( {sortList: [[2,0]]} );
 			$('#' + teamId + '-team-roster-table').tablesorter( {sortList: [[0,0]]} );
 		},
+
 		selectedGame: function(gameId, teamId) {
 			var goals = this.goals(gameId);
-			$('#' + teamId + '-goal-summary').html('Goals: (' + goals.join('), (') + ')');
+			var print = 'Goals: ';
+			for(var i = 0; i < goals.length; i++) {
+				var goal = goals[i];
+				print += goal.player + ' (' + goal.times + ') ';
+			}
+			$('#' + teamId + '-goal-summary').html(print);
 		},
+
 		goals: function(gameId) {
 			var goals = [];
 			for(var i = 0; i < this.competitive.goals.length; i++) {
 				var goal = this.competitive.goals[i];
 				if(goal.gameId === gameId) {
-					goals.push(goal.player);
+					if(i > 1 && this.competitive.goals[i - 1].playerId === goal.playerId) {
+						goal.times++;
+					} else {
+						goal.times = 1;
+						goals.push(goal);
+					}
 				}
 			}
 			return goals;
