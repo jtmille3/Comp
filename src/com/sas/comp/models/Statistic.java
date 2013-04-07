@@ -13,6 +13,8 @@ public class Statistic {
 	private Integer goalsAgainst;
 	private Integer leagueWinner;
 	private Integer playoffWinner;
+	private Boolean coCaptain;
+	private Boolean captain;
 
 	public String getTeam() {
 		return team;
@@ -100,6 +102,22 @@ public class Statistic {
 
 	public void setPlayerId(final Integer playerId) {
 		this.playerId = playerId;
+	}
+
+	public Boolean getCoCaptain() {
+		return coCaptain;
+	}
+
+	public void setCoCaptain(final Boolean coCaptain) {
+		this.coCaptain = coCaptain;
+	}
+
+	public Boolean getCaptain() {
+		return captain;
+	}
+
+	public void setCaptain(final Boolean captain) {
+		this.captain = captain;
 	}
 
 }

@@ -29,6 +29,9 @@ public class StatisticService {
 				statistic.setGoals(rs.getInt("goals"));
 				statistic.setTeamId(rs.getInt("team_id"));
 				statistic.setPlayerId(rs.getInt("player_id"));
+				statistic.setGoalie(rs.getBoolean("goalie"));
+				statistic.setCaptain(rs.getBoolean("captain"));
+				statistic.setCoCaptain(rs.getBoolean("co_captain"));
 				statistics.add(statistic);
 			}
 		} catch (final Exception e) {
