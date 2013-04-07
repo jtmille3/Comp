@@ -37,7 +37,6 @@ define(function(require) {
 			});
 		},
 		selectedTeam: function(season, teamId) {
-			console.log('clicked ' + teamId);
 			var schedule = [];
 			for(var i = 0; i < season.leagueSchedule.length; i++) {
 				var match = season.leagueSchedule[i];
