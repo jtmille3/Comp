@@ -6,10 +6,6 @@ th, .selectable {
 	cursor: pointer;
 }
 
-.table-striped tbody tr.selected td {
-	background-color: #FFFF88;
-}
-
 .table-striped tbody tr.won td {
 	background-color: #88FF88;
 }
@@ -20,4 +16,8 @@ th, .selectable {
 
 .table-striped tbody tr.tied td {
 	background-color: #8888FF;
+}
+
+.table-striped tbody tr.selected td {
+	background-color: #FFFF88;
 }

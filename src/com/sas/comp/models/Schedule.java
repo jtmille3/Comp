@@ -16,6 +16,7 @@ public class Schedule {
 	private Date date;
 	private Integer homeScore;
 	private Integer awayScore;
+	private Integer gameId;
 
 	public String getHome() {
 		return home;
@@ -82,5 +83,13 @@ public class Schedule {
 			return getHomeScore() + " - " + getAwayScore();
 		}
 		return null;
+	}
+
+	public Integer getGameId() {
+		return gameId;
+	}
+
+	public void setGameId(final Integer gameId) {
+		this.gameId = gameId;
 	}
 }

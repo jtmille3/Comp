@@ -36,6 +36,7 @@ public class ScheduleService {
 				schedule.setAway(rs.getString("away"));
 				schedule.setAwayId(rs.getInt("away_id"));
 				schedule.setDate(rs.getTimestamp("date"));
+				schedule.setGameId(rs.getInt("game_id"));
 
 				schedule.setHomeScore(rs.getInt("home_score"));
 				if (rs.wasNull()) {

@@ -34,14 +34,16 @@ define(function(require) {
 				var teamId = parseInt($row.attr('id'), 10);
 				$row.addClass('selected').siblings().removeClass('selected');
 				self.selectedTeam(season, teamId);
-				self.attachStandingsHoverHandler(teamId);
+				self.attachTeamClickHandler(teamId);
 			});
 		},
-		attachStandingsHoverHandler: function(teamId) {
+		attachTeamClickHandler: function(teamId) {
 			var self = this;
 			$('#' + teamId + '-team-schedule-table tr').click(function(row) {
 				var $row = $(row.currentTarget);
+				$row.addClass('selected').siblings().removeClass('selected');
 				var gameId = parseInt($row.attr('id'), 10);
+				self.selectedGame(gameId, teamId);
 			});
 		},
 		selectedTeam: function(season, teamId) {
@@ -60,12 +62,16 @@ define(function(require) {
 			$('#' + teamId + '-team-schedule-table').tablesorter( {sortList: [[2,0]]} );
 			$('#' + teamId + '-team-roster-table').tablesorter( {sortList: [[0,0]]} );
 		},
-		goals: function(teamId) {
+		selectedGame: function(gameId, teamId) {
+			var goals = this.goals(gameId);
+			$('#' + teamId + '-goal-summary').html('Goals: (' + goals.join('), (') + ')');
+		},
+		goals: function(gameId) {
 			var goals = [];
 			for(var i = 0; i < this.competitive.goals.length; i++) {
 				var goal = this.competitive.goals[i];
-				if(goal.teamId === teamId) {
-					goals.push(goal);
+				if(goal.gameId === gameId) {
+					goals.push(goal.player);
 				}
 			}
 			return goals;
