@@ -34,7 +34,11 @@ public class ScheduleService {
 				schedule.setHome(rs.getString("home"));
 				schedule.setAway(rs.getString("away"));
 				schedule.setDate(rs.getTimestamp("date"));
+
 				schedule.setResult(rs.getInt("home_score") + " - " + rs.getInt("away_score"));
+				if (rs.wasNull()) {
+					schedule.setResult(null);
+				}
 				schedules.add(schedule);
 			}
 		} catch (final Exception e) {
