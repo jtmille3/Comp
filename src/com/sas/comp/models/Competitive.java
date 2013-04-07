@@ -6,6 +6,7 @@ public class Competitive {
 	private List<Season> seasons;
 	private List<Statistic> playerStatistics;
 	private List<Statistic> goalieStatistics;
+	private List<Goal> goals;
 
 	public List<Season> getSeasons() {
 		return seasons;
@@ -29,6 +30,14 @@ public class Competitive {
 
 	public void setGoalieStatistics(final List<Statistic> goalieStatistics) {
 		this.goalieStatistics = goalieStatistics;
+	}
+
+	public List<Goal> getGoals() {
+		return goals;
+	}
+
+	public void setGoals(final List<Goal> goals) {
+		this.goals = goals;
 	}
 
 }
