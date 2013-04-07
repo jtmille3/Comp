@@ -75,14 +75,16 @@ define(function(require) {
 
 		goals: function(gameId) {
 			var goals = [];
+			var unique;
 			for(var i = 0; i < this.competitive.goals.length; i++) {
 				var goal = this.competitive.goals[i];
 				if(goal.gameId === gameId) {
-					if(i > 1 && this.competitive.goals[i - 1].playerId === goal.playerId) {
-						goal.times++;
+					if(i === 0 || this.competitive.goals[i - 1].playerId !== goal.playerId) {
+						unique = goal;
+						unique.times = 1;
+						goals.push(unique);
 					} else {
-						goal.times = 1;
-						goals.push(goal);
+						unique.times++;
 					}
 				}
 			}
