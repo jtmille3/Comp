@@ -40,7 +40,23 @@ define(function(require) {
 			var schedule = [];
 			for(var i = 0; i < season.leagueSchedule.length; i++) {
 				var match = season.leagueSchedule[i];
-				if(match.homeId === teamId || match.awayId === teamId) {
+				if(match.homeId === teamId) {
+					if(match.homeScore > match.awayScore) {
+						match.result = 'won';
+					} else if(match.homeScore < match.awayScore) {
+						match.result = 'lost';
+					} else if(match.homeScore === match.awayScore && match.score) {
+						match.result = 'tied';
+					}
+					schedule.push(match);
+				} else if(match.awayId === teamId) {
+					if(match.homeScore < match.awayScore) {
+						match.result = 'won';
+					} else if(match.homeScore > match.awayScore) {
+						match.result = 'lost';
+					} else if(match.homeScore === match.awayScore && match.score) {
+						match.result = 'tied';
+					}
 					schedule.push(match);
 				}
 			}
@@ -63,7 +79,7 @@ define(function(require) {
 			$('#' + season.id + '-team-schedule').html(template);
 
 			$('#' + teamId + '-team-schedule-table').tablesorter( {sortList: [[2,0]]} );
-			$('#' + teamId + '-team-roster-table').tablesorter( {sortList: [[1,1]]} );
+			$('#' + teamId + '-team-roster-table').tablesorter( {sortList: [[0,0]]} );
 		}
 	};
 });

@@ -37,10 +37,16 @@ public class ScheduleService {
 				schedule.setAwayId(rs.getInt("away_id"));
 				schedule.setDate(rs.getTimestamp("date"));
 
-				schedule.setResult(rs.getInt("home_score") + " - " + rs.getInt("away_score"));
+				schedule.setHomeScore(rs.getInt("home_score"));
 				if (rs.wasNull()) {
-					schedule.setResult(null);
+					schedule.setHomeScore(null);
 				}
+
+				schedule.setAwayScore(rs.getInt("away_score"));
+				if (rs.wasNull()) {
+					schedule.setAwayScore(null);
+				}
+
 				schedules.add(schedule);
 			}
 		} catch (final Exception e) {

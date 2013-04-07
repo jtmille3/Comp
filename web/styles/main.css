@@ -9,3 +9,15 @@ th, .selectable {
 .table-striped tbody tr.selected td {
 	background-color: #FFFF66;
 }
+
+.table-striped tbody tr.won td {
+	background-color: #66FF66;
+}
+
+.table-striped tbody tr.lost td {
+	background-color: #FF6666;
+}
+
+.table-striped tbody tr.tied td {
+	background-color: #6666FF;
+}

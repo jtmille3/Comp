@@ -14,7 +14,8 @@ public class Schedule {
 	private Integer awayId;
 	@JsonIgnore
 	private Date date;
-	private String result;
+	private Integer homeScore;
+	private Integer awayScore;
 
 	public String getHome() {
 		return home;
@@ -40,14 +41,6 @@ public class Schedule {
 		this.date = date;
 	}
 
-	public String getResult() {
-		return result;
-	}
-
-	public void setResult(final String result) {
-		this.result = result;
-	}
-
 	public String getPlayed() {
 		return sdf.format(getDate());
 	}
@@ -64,7 +57,30 @@ public class Schedule {
 		return awayId;
 	}
 
-	public void setAwayId(Integer awayId) {
+	public void setAwayId(final Integer awayId) {
 		this.awayId = awayId;
+	}
+
+	public Integer getHomeScore() {
+		return homeScore;
+	}
+
+	public void setHomeScore(final Integer homeScore) {
+		this.homeScore = homeScore;
+	}
+
+	public Integer getAwayScore() {
+		return awayScore;
+	}
+
+	public void setAwayScore(final Integer awayScore) {
+		this.awayScore = awayScore;
+	}
+
+	public String getScore() {
+		if (getAwayScore() != null && getHomeScore() != null) {
+			return getHomeScore() + " - " + getAwayScore();
+		}
+		return null;
 	}
 }
