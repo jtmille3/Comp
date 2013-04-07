@@ -1,18 +1,38 @@
-<table id="{{id}}-team-schedule-table" class="table table-bordered table-striped table-hover tablesorter">
-	<thead>
-		<th>Home</th>
-		<th>Away</th>
-		<th>Date</th>
-		<th>Result</th>
-	</thead>
-	<tbody>
-		{{#each this}}
-			<tr>
-				<td>{{home}}</td>
-				<td>{{away}}</td>
-				<td>{{played}}</td>
-				<td>{{result}}</td>
-			</tr>
-		{{/each}}
-	</tbody>
-</table>
+<div class="row-fluid">
+    <div class="span6">
+    	<table id="{{id}}-team-schedule-table" class="table table-bordered table-striped table-hover tablesorter">
+			<thead>
+				<th>Home</th>
+				<th>Away</th>
+				<th>Date</th>
+				<th>Result</th>
+			</thead>
+			<tbody>
+				{{#each schedule}}
+					<tr>
+						<td>{{home}}</td>
+						<td>{{away}}</td>
+						<td>{{played}}</td>
+						<td>{{result}}</td>
+					</tr>
+				{{/each}}
+			</tbody>
+		</table>
+    </div>
+    <div class="span6">
+    	<table id="{{id}}-team-schedule-table" class="table table-bordered table-striped table-hover tablesorter">
+			<thead>
+				<th>Roster</th>
+				<th>Goals</th>
+			</thead>
+			<tbody>
+				{{#each roster}}
+					<tr>
+						<td>{{player}}</td>
+						<td>{{goals}}</td>
+					</tr>
+				{{/each}}
+			</tbody>
+		</table>
+    </div>
+</div>

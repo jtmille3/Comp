@@ -4,7 +4,9 @@ public class Statistic {
 
 	private Integer rank;
 	private String team;
+	private Integer teamId;
 	private String player;
+	private Integer playerId;
 	private Integer goals;
 	private Integer shutouts;
 	private Boolean goalie;
@@ -82,6 +84,22 @@ public class Statistic {
 
 	public void setRank(final Integer rank) {
 		this.rank = rank;
+	}
+
+	public Integer getTeamId() {
+		return teamId;
+	}
+
+	public void setTeamId(final Integer teamId) {
+		this.teamId = teamId;
+	}
+
+	public Integer getPlayerId() {
+		return playerId;
+	}
+
+	public void setPlayerId(final Integer playerId) {
+		this.playerId = playerId;
 	}
 
 }

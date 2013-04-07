@@ -16,7 +16,7 @@ public class StatisticService {
 
 		try {
 			final Connection conn = Database.getConnection();
-			final PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM player_statistics WHERE season_id = ?");
+			final PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM player_summary WHERE season_id = ?");
 			pstmt.setInt(1, seasonId);
 
 			final ResultSet rs = pstmt.executeQuery();
@@ -27,6 +27,8 @@ public class StatisticService {
 				statistic.setTeam(rs.getString("team"));
 				statistic.setPlayer(rs.getString("player"));
 				statistic.setGoals(rs.getInt("goals"));
+				statistic.setTeamId(rs.getInt("team_id"));
+				statistic.setPlayerId(rs.getInt("player_id"));
 				statistics.add(statistic);
 			}
 		} catch (final Exception e) {

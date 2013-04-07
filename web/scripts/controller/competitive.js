@@ -38,16 +38,27 @@ define(function(require) {
 		},
 		selectedTeam: function(season, teamId) {
 			console.log('clicked ' + teamId);
-			var teamSchedule = [];
+			var schedule = [];
 			for(var i = 0; i < season.leagueSchedule.length; i++) {
-				var schedule = season.leagueSchedule[i];
-				if(schedule.homeId === teamId || schedule.awayId === teamId) {
-					teamSchedule.push(schedule);
+				var match = season.leagueSchedule[i];
+				if(match.homeId === teamId || match.awayId === teamId) {
+					schedule.push(match);
+				}
+			}
+
+			var roster = [];
+			for(var j = 0; j < season.playerStatistics.length; j++) {
+				var player = season.playerStatistics[j];
+				if(player.teamId === teamId) {
+					roster.push(player);
 				}
 			}
 
 			var teamScheduleTemplate = window.comp['web/templates/team_schedule.html'];
-			var template = teamScheduleTemplate(teamSchedule);
+			var template = teamScheduleTemplate({
+				schedule: schedule,
+				roster: roster
+			});
 			$('#' + season.id + '-team-schedule').replaceWith(template);
 		}
 	};
