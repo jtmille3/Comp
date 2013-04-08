@@ -25,7 +25,8 @@ define(function(require) {
 				$('#' + season.id + '-goalie-statistics-table').tablesorter( {sortList: [[2,1]]} );
 
 				this.attachStandingsClickHandler(season);
-				this.attachScheduleClickHandler(season);
+				this.attachLeagueScheduleClickHandler(season);
+				this.attachPlayoffScheduleClickHandler(season);
 			}
 		},
 		attachStandingsClickHandler: function(season) {
@@ -47,9 +48,15 @@ define(function(require) {
 				self.selectedGame(gameId, teamId);
 			});
 		},
-		attachScheduleClickHandler: function(season) {
+		attachLeagueScheduleClickHandler: function(season) {
+			this.attachScheduleClickHandler(season, 'league');
+		},
+		attachPlayoffScheduleClickHandler: function(season) {
+			this.attachScheduleClickHandler(season, 'playoff');
+		},
+		attachScheduleClickHandler: function(season, name) {
 			var self = this;
-			$('#' + season.id + '-league-schedule-table tr').click(function(row) {
+			$('#' + season.id + '-' + name + '-schedule-table tr').click(function(row) {
 				var $row = $(row.currentTarget);
 				$row.addClass('selected').siblings().removeClass('selected');
 				var gameId = parseInt($row.attr('id'), 10);

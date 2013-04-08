@@ -1,4 +1,4 @@
-<table id="{{id}}-playoff-schedule-table" class="table table-condensed table-bordered table-striped table-hover">
+<table id="{{id}}-playoff-schedule-table" class="table table-condensed table-bordered table-striped table-hover tablesorter">
 	<thead>
 		<th>Home</th>
 		<th>Away</th>
@@ -7,7 +7,7 @@
 	</thead>
 	<tbody>
 		{{#each playoffSchedule}}
-			<tr>
+			<tr id="{{gameId}}" class="selectable">
 				<td>{{home}}</td>
 				<td>{{away}}</td>
 				<td>{{played}}</td>
