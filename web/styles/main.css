@@ -21,3 +21,7 @@ th, .selectable {
 .table-striped tbody tr.selected td {
 	background-color: #FFFF88;
 }
+
+.table-striped tbody tr#goalsRow td {
+	background-color: #EDEDED;
+}
