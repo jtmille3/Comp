@@ -62,7 +62,9 @@ define(function(require) {
 				var gameId = parseInt($row.attr('id'), 10);
 				$("#goalsRow").remove();
 
-				$("<tr id='goalsRow'><td colspan='4'>"+self.goalPrint(gameId)+"</td></tr>").insertAfter($row);
+				if($row.hasClass('selectable')) {
+					$("<tr id='goalsRow'><td colspan='4'>"+self.goalPrint(gameId)+"</td></tr>").insertAfter($row);
+				}
 			});
 		},
 		selectedTeam: function(season, teamId) {

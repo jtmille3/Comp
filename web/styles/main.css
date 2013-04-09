@@ -24,4 +24,7 @@ th, .selectable {
 
 .table-striped tbody tr#goalsRow td {
 	background-color: #EDEDED;
+	-moz-box-shadow: inset 0 3px 3px rgba(128, 128, 128, .5);
+	-webkit-box-shadow: inset 0 3px 3px rgba(128, 128, 128, .5);
+	box-shadow: inset 0 3px 3px rgba(128, 128, 128, .5);
 }
