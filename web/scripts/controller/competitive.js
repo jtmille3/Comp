@@ -91,7 +91,7 @@ define(function(require) {
 			var print = 'Goals: ';
 			for(var i = 0; i < goals.length; i++) {
 				var goal = goals[i];
-				print += goal.player + ' (' + goal.times + ') ';
+				print += goal.player + ' (' + goal.times + ') &nbsp;';
 			}
 			return print;
 		},
