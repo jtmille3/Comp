@@ -11,6 +11,8 @@ define(function(require) {
 					console.log('done');
 				});
 			});
+
+			$('.game-datepicker').datepicker();
 		}
 	};
 });
