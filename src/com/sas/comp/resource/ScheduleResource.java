@@ -18,7 +18,7 @@ import com.sas.comp.service.ScheduleService;
 public class ScheduleResource {
 
 	private final ScheduleService scheduleService = new ScheduleService();
-	private final SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yy hh:mm");
+	private final SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
 
 	@GET
 	public List<Schedule> getSchedules(@QueryParam("date") final String date) throws ParseException {

@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -67,8 +68,14 @@ public class ScheduleService {
 
 		try {
 			final Connection conn = Database.getConnection();
-			final PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM schedule WHERE date = ?");
+			final PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM schedule WHERE date between ? AND ?");
 			pstmt.setTimestamp(1, new java.sql.Timestamp(date.getTime()));
+
+			final Calendar cal = Calendar.getInstance();
+			cal.setTime(date);
+			cal.add(Calendar.DATE, 1); //minus number would decrement the days
+
+			pstmt.setTimestamp(2, new java.sql.Timestamp(cal.getTime().getTime()));
 
 			final ResultSet rs = pstmt.executeQuery();
 			while (rs.next()) {
