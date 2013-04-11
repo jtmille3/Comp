@@ -12,10 +12,10 @@ define(function(require) {
 				});
 			});
 
-			this.renderDatePicker();
+			this.attachDatePickerHandler();
 		},
 
-		renderDatePicker: function() {
+		attachDatePickerHandler: function() {
 			var self = this;
 			var $gameDatePicker = $('.game-datepicker');
 			$gameDatePicker.datepicker({
@@ -25,7 +25,7 @@ define(function(require) {
 				var date = self.parseDate($gameDatePicker.data('datepicker').getDate());
 				self.getGames(date);
 			});
-			
+
 			var today = this.parseDate(new Date());
 			$gameDatePicker.datepicker('update', today);
 		},
@@ -37,9 +37,37 @@ define(function(require) {
 		},
 
 		getGames: function(date) {
-			$.get('/comp/service/schedules?date=' + date, function(payload) {
-				console.log(payload);
+			var self = this;
+			$.get('/comp/service/schedules?date=' + date, function(games) {
+				self.renderGames(games);
 			});
+		},
+
+		renderGames: function(games) {
+			console.log(games);
+			var self = this;
+
+			var scheduleTemplate = window.comp['web/templates/schedule.html'];
+			$('#admin-games').html(scheduleTemplate(games));
+
+			$('#game-schedule-table tr').click(function(row) {
+				var $row = $(row.currentTarget);
+				var gameId = parseInt($row.attr('id'), 10);
+				$row.addClass('selected').siblings().removeClass('selected');
+				for(var i = 0; i < games.length; i++) {
+					var game = games[i];
+					if(game.gameId === gameId) {
+						self.selectedGame(game);
+						break;
+					}
+				}
+			});
+		},
+
+		selectedGame: function(game) {
+			console.log(game);
+			var scoresTemplate = window.comp['web/templates/scores.html'];
+			$('#admin-game-score').html(scoresTemplate(game));
 		}
 	};
 });

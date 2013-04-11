@@ -1,0 +1,18 @@
+<table id="game-schedule-table" class="table table-condensed table-bordered table-striped table-hover tablesorter">
+	<thead>
+		<th>Home</th>
+		<th>Away</th>
+		<th>Date</th>
+		<th>Result</th>
+	</thead>
+	<tbody>
+		{{#each this}}
+			<tr id="{{gameId}}" class="selectable">
+				<td>{{home}}</td>
+				<td>{{away}}</td>
+				<td>{{played}}</td>
+				<td>{{score}}</td>
+			</tr>
+		{{/each}}
+	</tbody>
+</table>
