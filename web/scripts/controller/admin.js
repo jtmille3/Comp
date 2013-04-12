@@ -34,15 +34,17 @@ define(function(require) {
 			var self = this;
 			console.log(players);
 			$('#game-players').typeahead({
-				source: players,
-				matcher: function(player) {
-					return ~player.name.toLowerCase().indexOf(this.query.toLowerCase())
-				},
-				sorter: function(player) {
-					return player;
-				}, 
-				highlighter: function(player) {
-					return player;
+				items: 100,
+				source: function (query, process) {
+				    this.playersList = [];
+				    this.map = {};
+				 	var self = this;
+				    $.each(players, function (i, player) {
+				        self.map[player.name] = player;
+				        self.playersList.push(player.name);
+				    });
+
+				    process(this.playersList);
 				}
 			});
 		},
