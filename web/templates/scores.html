@@ -5,7 +5,13 @@
         {{home}} - {{away}}
       </label>
       <input type="text" data-provide="typeahead" id="game-players"/>
-      <button class="btn"><span class="caret"></span></button>
+      <button id="game-players-btn" class="btn"><span class="caret"></span></button>
     </div>
   </div>
 </div>
+<button id="add-goal" class="btn btn-primary" onclick="return false;">Add Goal</button>
+<ul id="goals" class="unstyled">
+	{{#each goals}}
+		<li>{{player}}</li>
+	{{/each}}
+</ul>

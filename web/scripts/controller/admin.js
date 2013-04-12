@@ -33,19 +33,35 @@ define(function(require) {
 		attachPlayerTypeAheadHandler: function(players) {
 			var self = this;
 			console.log(players);
-			$('#game-players').typeahead({
+			var $typeahead = $('#game-players');
+			var selectedPlayer = null;
+			$typeahead.typeahead({
 				items: 100,
 				source: function (query, process) {
 				    this.playersList = [];
-				    this.map = {};
+				    this.playerMap = {};
 				 	var self = this;
 				    $.each(players, function (i, player) {
-				        self.map[player.name] = player;
+				        self.playerMap[player.name] = player;
 				        self.playersList.push(player.name);
 				    });
 
 				    process(this.playersList);
-				}
+				},
+				updater: function (item) {
+				    selectedPlayer = this.playerMap[item];
+				    return item;
+				},
+				minLength: 0
+			});
+
+			$('#game-players-btn').click(function() {
+				$typeahead.typeahead('lookup');
+			});
+
+			$('#add-goal').click(function() {
+				console.log(selectedPlayer);
+				$('#goals').append('<li>'+selectedPlayer.name+'</li>');
 			});
 		},
 
