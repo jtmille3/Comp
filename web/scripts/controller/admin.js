@@ -30,6 +30,11 @@ define(function(require) {
 			$gameDatePicker.datepicker('update', today);
 		},
 
+		attachPlayerTypeAheadHandler: function(players) {
+			var self = this;
+			console.log(players);
+		},
+
 		parseDate: function(date) {
 			var month = date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1;
 			var day = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
@@ -65,9 +70,13 @@ define(function(require) {
 		},
 
 		selectedGame: function(game) {
-			console.log(game);
+			var self = this;
 			var scoresTemplate = window.comp['web/templates/scores.html'];
 			$('#admin-game-score').html(scoresTemplate(game));
+			
+			$.get('/comp/service/game/'+game.gameId+'/players', function(players) {
+				self.attachPlayerTypeAheadHandler(players);	
+			});
 		}
 	};
 });
