@@ -79,7 +79,53 @@ define(function(require) {
 
 				var scoresTemplate = window.comp['web/templates/scores.html'];
 				$('#admin-game-score').html(scoresTemplate(game));
+
+				$('.add-goal').click(function() {
+					var playerId = $(this).data('player-id');
+					var gameId = $(this).data('game-id');
+					var teamId = $(this).data('team-id');
+					
+					self.addPlayerGoal(playerId, gameId);
+					self.addTeamGoal(teamId);
+				});
+
+				$('.remove-goal').click(function() {
+					var playerId = $(this).data('player-id');
+					var gameId = $(this).data('game-id');
+					var teamId = $(this).data('team-id');
+					
+					self.removePlayerGoal(playerId, gameId);
+					self.removeTeamGoal(teamId);
+				});
 			});
+		},
+
+		addPlayerGoal: function(playerId, gameId) {
+			var $goals = $('#' + playerId + '-goals');
+			var goals = parseInt($goals.html(), 10);
+			$goals.html(goals + 1);
+		},
+
+		addTeamGoal: function(teamId) {
+			var $score = $('#' + teamId + '-score');
+			var score = parseInt($score.html(), 10);
+			$score.html(score + 1);
+		},
+
+		removePlayerGoal: function(playerId, gameId) {
+			var $goals = $('#' + playerId + '-goals');
+			var goals = parseInt($goals.html(), 10);
+			if(goals > 0) {
+				$goals.html(goals - 1);
+			}
+		},
+
+		removeTeamGoal: function(teamId) {
+			var $score = $('#' + teamId + '-score');
+			var score = parseInt($score.html(), 10);
+			if(score > 0) {
+				$score.html(score - 1);
+			}
 		}
 	};
 });

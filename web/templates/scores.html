@@ -1,33 +1,33 @@
 <div class="row-fluid">
   <div class="span6">
-    <h4>{{home}} ({{homeScore}})</h4>
+    <h4>{{home}} (<span id="{{homeId}}-score">{{homeScore}}</span>)</h4>
     <table id="home-players-table" class="table table-condensed table-bordered table-striped table-hover">
       <thead>
+        <th width="90px">Goals</th>
         <th>Player</th>
-        <th width="120px">Goals</th>
       </thead>
       <tbody>
         {{#each homePlayers}}
           <tr>
+            <td><button class="btn btn-mini btn-success add-goal" data-game-id="{{../gameId}}" data-player-id="{{playerId}}" data-team-id="{{teamId}}"><i class="icon-plus icon-white"></i></button> <strong id="{{playerId}}-goals">{{goals}}</strong> <button class="btn btn-mini btn-danger remove-goal" data-game-id="{{../gameId}}" data-player-id="{{playerId}}" data-team-id="{{teamId}}"><i class="icon-minus icon-white"></i></button></td>
             <td>{{name}}</td>
-            <td><button class="btn btn-mini btn-success"><i class="icon-plus icon-white"></i></button> <strong>{{goals}}</strong> <button class="btn btn-mini btn-danger"><i class="icon-minus icon-white"></i></button></td>
           </tr>
         {{/each}}
       </tbody>
     </table>
   </div>
   <div class="span6">
-    <h4>{{away}} ({{awayScore}})</h4>
+    <h4>{{away}} (<span id="{{awayId}}-score">{{awayScore}}</span>)</h4>
     <table id="away-players-table" class="table table-condensed table-bordered table-striped table-hover">
       <thead>
+        <th width="90px">Goals</th>
         <th>Player</th>
-        <th width="120px">Goals</th>
       </thead>
       <tbody>
         {{#each awayPlayers}}
           <tr>
+            <td><button class="btn btn-mini btn-success add-goal" data-game-id="{{../gameId}}" data-player-id="{{playerId}}" data-team-id="{{teamId}}"><i class="icon-plus icon-white"></i></button> <strong id="{{playerId}}-goals">{{goals}}</strong> <button class="btn btn-mini btn-danger remove-goal" data-game-id="{{../gameId}}" data-player-id="{{playerId}}" data-team-id="{{teamId}}"><i class="icon-minus icon-white"></i></button></td>
             <td>{{name}}</td>
-            <td><button class="btn btn-mini btn-success"><i class="icon-plus icon-white"></i></button> <strong>{{goals}}</strong> <button class="btn btn-mini btn-danger"><i class="icon-minus icon-white"></i></button></td>
           </tr>
         {{/each}}
       </tbody>
