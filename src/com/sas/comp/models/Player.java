@@ -4,6 +4,7 @@ public class Player {
 	private Integer teamId;
 	private Integer playerId;
 	private String name;
+	private Integer goals;
 
 	public Integer getTeamId() {
 		return teamId;
@@ -27,5 +28,13 @@ public class Player {
 
 	public void setName(final String name) {
 		this.name = name;
+	}
+
+	public Integer getGoals() {
+		return goals;
+	}
+
+	public void setGoals(final Integer goals) {
+		this.goals = goals;
 	}
 }

@@ -1,6 +1,6 @@
 <div class="row-fluid">
   <div class="span6">
-    <h4>{{home}}</h4>
+    <h4>{{home}} ({{homeScore}})</h4>
     <table id="home-players-table" class="table table-condensed table-bordered table-striped table-hover">
       <thead>
         <th>Player</th>
@@ -10,14 +10,14 @@
         {{#each homePlayers}}
           <tr>
             <td>{{name}}</td>
-            <td><button class="btn btn-mini btn-success"><i class="icon-plus icon-white"></i></button> {{goals}} <button class="btn btn-mini btn-danger"><i class="icon-minus icon-white"></i></button></td>
+            <td><button class="btn btn-mini btn-success"><i class="icon-plus icon-white"></i></button> <strong>{{goals}}</strong> <button class="btn btn-mini btn-danger"><i class="icon-minus icon-white"></i></button></td>
           </tr>
         {{/each}}
       </tbody>
     </table>
   </div>
   <div class="span6">
-    <h4>{{away}}</h4>
+    <h4>{{away}} ({{awayScore}})</h4>
     <table id="away-players-table" class="table table-condensed table-bordered table-striped table-hover">
       <thead>
         <th>Player</th>
@@ -27,7 +27,7 @@
         {{#each awayPlayers}}
           <tr>
             <td>{{name}}</td>
-            <td><button class="btn btn-mini btn-success"><i class="icon-plus icon-white"></i></button> {{goals}} <button class="btn btn-mini btn-danger"><i class="icon-minus icon-white"></i></button></td>
+            <td><button class="btn btn-mini btn-success"><i class="icon-plus icon-white"></i></button> <strong>{{goals}}</strong> <button class="btn btn-mini btn-danger"><i class="icon-minus icon-white"></i></button></td>
           </tr>
         {{/each}}
       </tbody>

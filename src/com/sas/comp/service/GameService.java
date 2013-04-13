@@ -24,6 +24,7 @@ public class GameService {
 				player.setName(rs.getString("player"));
 				player.setPlayerId(rs.getInt("player_id"));
 				player.setTeamId(rs.getInt("team_id"));
+				player.setGoals(rs.getInt("goals"));
 				players.add(player);
 			}
 
