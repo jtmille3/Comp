@@ -30,41 +30,6 @@ define(function(require) {
 			$gameDatePicker.datepicker('update', today);
 		},
 
-		attachPlayerTypeAheadHandler: function(players) {
-			var self = this;
-			console.log(players);
-			var $typeahead = $('#game-players');
-			var selectedPlayer = null;
-			$typeahead.typeahead({
-				items: 100,
-				source: function (query, process) {
-				    this.playersList = [];
-				    this.playerMap = {};
-				 	var self = this;
-				    $.each(players, function (i, player) {
-				        self.playerMap[player.name] = player;
-				        self.playersList.push(player.name);
-				    });
-
-				    process(this.playersList);
-				},
-				updater: function (item) {
-				    selectedPlayer = this.playerMap[item];
-				    return item;
-				},
-				minLength: 0
-			});
-
-			$('#game-players-btn').click(function() {
-				$typeahead.typeahead('lookup');
-			});
-
-			$('#add-goal').click(function() {
-				console.log(selectedPlayer);
-				$('#goals').append('<li>'+selectedPlayer.name+'</li>');
-			});
-		},
-
 		parseDate: function(date) {
 			var month = date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1;
 			var day = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
@@ -79,9 +44,7 @@ define(function(require) {
 		},
 
 		renderGames: function(games) {
-			console.log(games);
 			var self = this;
-
 			var scheduleTemplate = window.comp['web/templates/schedule.html'];
 			$('#admin-games').html(scheduleTemplate(games));
 
@@ -101,11 +64,21 @@ define(function(require) {
 
 		selectedGame: function(game) {
 			var self = this;
-			var scoresTemplate = window.comp['web/templates/scores.html'];
-			$('#admin-game-score').html(scoresTemplate(game));
 			
 			$.get('/comp/service/games/'+game.gameId+'/players', function(players) {
-				self.attachPlayerTypeAheadHandler(players);	
+				game.homePlayers = [];
+				game.awayPlayers = [];
+				for(var i = 0; i < players.length; i++) {
+					var player = players[i];
+					if(game.homeId === player.teamId) {
+						game.homePlayers.push(player);
+					} else if(game.awayId === player.teamId) {
+						game.awayPlayers.push(player);
+					}
+				}
+
+				var scoresTemplate = window.comp['web/templates/scores.html'];
+				$('#admin-game-score').html(scoresTemplate(game));
 			});
 		}
 	};
