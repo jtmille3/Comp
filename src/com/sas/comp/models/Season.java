@@ -7,10 +7,10 @@ public class Season {
 	private Integer id;
 	private String name;
 	private List<Standing> standings;
-	private List<Schedule> playoffSchedule;
-	private List<Schedule> leagueSchedule;
-	private List<Statistic> playerStatistics;
-	private List<Statistic> goalieStatistics;
+	private List<Game> playoffSchedule;
+	private List<Game> leagueSchedule;
+	private List<Player> playerStatistics;
+	private List<Player> goalieStatistics;
 
 	public Integer getId() {
 		return this.id;
@@ -28,19 +28,19 @@ public class Season {
 		this.name = name;
 	}
 
-	public void setLeagueSchedule(final List<Schedule> leagueSchedule) {
+	public void setLeagueSchedule(final List<Game> leagueSchedule) {
 		this.leagueSchedule = leagueSchedule;
 	}
 
-	public List<Schedule> getLeagueSchedule() {
+	public List<Game> getLeagueSchedule() {
 		return leagueSchedule;
 	}
 
-	public List<Schedule> getPlayoffSchedule() {
+	public List<Game> getPlayoffSchedule() {
 		return playoffSchedule;
 	}
 
-	public void setPlayoffSchedule(final List<Schedule> playoffSchedule) {
+	public void setPlayoffSchedule(final List<Game> playoffSchedule) {
 		this.playoffSchedule = playoffSchedule;
 	}
 
@@ -52,19 +52,19 @@ public class Season {
 		this.standings = standings;
 	}
 
-	public List<Statistic> getPlayerStatistics() {
+	public List<Player> getPlayerStatistics() {
 		return playerStatistics;
 	}
 
-	public void setPlayerStatistics(final List<Statistic> playerStatistics) {
+	public void setPlayerStatistics(final List<Player> playerStatistics) {
 		this.playerStatistics = playerStatistics;
 	}
 
-	public List<Statistic> getGoalieStatistics() {
+	public List<Player> getGoalieStatistics() {
 		return goalieStatistics;
 	}
 
-	public void setGoalieStatistics(final List<Statistic> goalieStatistics) {
+	public void setGoalieStatistics(final List<Player> goalieStatistics) {
 		this.goalieStatistics = goalieStatistics;
 	}
 }

@@ -6,13 +6,13 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.sas.comp.models.Statistic;
+import com.sas.comp.models.Player;
 import com.sas.comp.mysql.Database;
 
 public class StatisticService {
 
-	public List<Statistic> getPlayerStatistics(final Integer seasonId) {
-		final List<Statistic> statistics = new ArrayList<Statistic>();
+	public List<Player> getPlayerStatistics(final Integer seasonId) {
+		final List<Player> statistics = new ArrayList<Player>();
 
 		try {
 			final Connection conn = Database.getConnection();
@@ -22,7 +22,7 @@ public class StatisticService {
 			final ResultSet rs = pstmt.executeQuery();
 			int rank = 1;
 			while (rs.next()) {
-				final Statistic statistic = new Statistic();
+				final Player statistic = new Player();
 				statistic.setRank(rank++);
 				statistic.setTeam(rs.getString("team"));
 				statistic.setPlayer(rs.getString("player"));
@@ -45,8 +45,8 @@ public class StatisticService {
 		return statistics;
 	}
 
-	public List<Statistic> getGoalieStatistics(final Integer seasonId) {
-		final List<Statistic> statistics = new ArrayList<Statistic>();
+	public List<Player> getGoalieStatistics(final Integer seasonId) {
+		final List<Player> statistics = new ArrayList<Player>();
 
 		try {
 			final Connection conn = Database.getConnection();
@@ -55,7 +55,7 @@ public class StatisticService {
 
 			final ResultSet rs = pstmt.executeQuery();
 			while (rs.next()) {
-				final Statistic statistic = new Statistic();
+				final Player statistic = new Player();
 				statistic.setPlayer(rs.getString("player"));
 				statistic.setTeam(rs.getString("team"));
 				statistic.setGoalsAgainst(rs.getInt("against"));
@@ -73,8 +73,8 @@ public class StatisticService {
 		return statistics;
 	}
 
-	public List<Statistic> getPlayerStatistics() {
-		final List<Statistic> statistics = new ArrayList<Statistic>();
+	public List<Player> getPlayerStatistics() {
+		final List<Player> statistics = new ArrayList<Player>();
 
 		try {
 			final Connection conn = Database.getConnection();
@@ -83,7 +83,7 @@ public class StatisticService {
 			final ResultSet rs = pstmt.executeQuery();
 			int rank = 1;
 			while (rs.next()) {
-				final Statistic statistic = new Statistic();
+				final Player statistic = new Player();
 				statistic.setRank(rank++);
 				statistic.setPlayer(rs.getString("player"));
 				statistic.setLeagueWinner(rs.getInt("league"));
@@ -102,8 +102,8 @@ public class StatisticService {
 		return statistics;
 	}
 
-	public List<Statistic> getGoalieStatistics() {
-		final List<Statistic> statistics = new ArrayList<Statistic>();
+	public List<Player> getGoalieStatistics() {
+		final List<Player> statistics = new ArrayList<Player>();
 
 		try {
 			final Connection conn = Database.getConnection();
@@ -111,7 +111,7 @@ public class StatisticService {
 
 			final ResultSet rs = pstmt.executeQuery();
 			while (rs.next()) {
-				final Statistic statistic = new Statistic();
+				final Player statistic = new Player();
 				statistic.setPlayer(rs.getString("player"));
 				statistic.setGoalsAgainst(rs.getInt("against"));
 				statistic.setShutouts(rs.getInt("shutouts"));

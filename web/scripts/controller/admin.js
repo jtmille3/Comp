@@ -38,7 +38,7 @@ define(function(require) {
 
 		getGames: function(date) {
 			var self = this;
-			$.get('/comp/service/schedules?date=' + date, function(games) {
+			$.get('/comp/service/games?date=' + date, function(games) {
 				self.renderGames(games);
 			});
 		},
@@ -47,7 +47,7 @@ define(function(require) {
 			var self = this;
 			var scheduleTemplate = window.comp['web/templates/schedule.html'];
 			$('#admin-games').html(scheduleTemplate(games));
-
+			$('#admin-game-score').html('');
 			$('#game-schedule-table tr').click(function(row) {
 				var $row = $(row.currentTarget);
 				var gameId = parseInt($row.attr('id'), 10);

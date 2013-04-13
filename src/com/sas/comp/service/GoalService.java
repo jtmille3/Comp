@@ -39,4 +39,33 @@ public class GoalService {
 		return goals;
 	}
 
+	public void addGoal(final Goal goal) {
+		try {
+			final Connection conn = Database.getConnection();
+			final PreparedStatement pstmt = conn.prepareStatement("INSERT INTO GOALS(player_id, game_Id) VALUES(?, ?)");
+			pstmt.setInt(1, goal.getPlayerId());
+			pstmt.setInt(2, goal.getGameId());
+			pstmt.execute();
+			pstmt.close();
+			conn.close();
+		} catch (final Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void removeGoal(final Goal goal) {
+		try {
+			final Connection conn = Database.getConnection();
+			final PreparedStatement pstmt = conn
+					.prepareStatement("DELETE FROM goals WHERE id = (SELECT g.id FROM (SELECT MAX(id) AS id FROM goals WHERE game_id = ? and player_id = ?) g);");
+			pstmt.setInt(1, goal.getGameId());
+			pstmt.setInt(2, goal.getPlayerId());
+			pstmt.execute();
+			pstmt.close();
+			conn.close();
+		} catch (final Exception e) {
+			e.printStackTrace();
+		}
+	}
+
 }

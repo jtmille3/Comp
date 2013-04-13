@@ -10,7 +10,7 @@
         {{#each homePlayers}}
           <tr>
             <td><button class="btn btn-mini btn-success add-goal" data-game-id="{{../gameId}}" data-player-id="{{playerId}}" data-team-id="{{teamId}}"><i class="icon-plus icon-white"></i></button> <strong id="{{playerId}}-goals">{{goals}}</strong> <button class="btn btn-mini btn-danger remove-goal" data-game-id="{{../gameId}}" data-player-id="{{playerId}}" data-team-id="{{teamId}}"><i class="icon-minus icon-white"></i></button></td>
-            <td>{{name}}</td>
+            <td>{{player}}</td>
           </tr>
         {{/each}}
       </tbody>
@@ -27,7 +27,7 @@
         {{#each awayPlayers}}
           <tr>
             <td><button class="btn btn-mini btn-success add-goal" data-game-id="{{../gameId}}" data-player-id="{{playerId}}" data-team-id="{{teamId}}"><i class="icon-plus icon-white"></i></button> <strong id="{{playerId}}-goals">{{goals}}</strong> <button class="btn btn-mini btn-danger remove-goal" data-game-id="{{../gameId}}" data-player-id="{{playerId}}" data-team-id="{{teamId}}"><i class="icon-minus icon-white"></i></button></td>
-            <td>{{name}}</td>
+            <td>{{player}}</td>
           </tr>
         {{/each}}
       </tbody>

@@ -6,7 +6,7 @@ import com.sas.comp.models.Season;
 public class CompetitiveService {
 
 	private final SeasonService seasonService = new SeasonService();
-	private final ScheduleService scheduleService = new ScheduleService();
+	private final GameService gameService = new GameService();
 	private final StandingService standingService = new StandingService();
 	private final StatisticService statisticService = new StatisticService();
 	private final GoalService goalService = new GoalService();
@@ -21,8 +21,8 @@ public class CompetitiveService {
 
 		for (final Season season : competitive.getSeasons()) {
 			season.setStandings(this.standingService.getStandings(season.getId()));
-			season.setLeagueSchedule(this.scheduleService.getLeagueSchedule(season.getId()));
-			season.setPlayoffSchedule(this.scheduleService.getPlayoffSchedule(season.getId()));
+			season.setLeagueSchedule(this.gameService.getLeagueSchedule(season.getId()));
+			season.setPlayoffSchedule(this.gameService.getPlayoffSchedule(season.getId()));
 			season.setPlayerStatistics(this.statisticService.getPlayerStatistics(season.getId()));
 			season.setGoalieStatistics(this.statisticService.getGoalieStatistics(season.getId()));
 		}

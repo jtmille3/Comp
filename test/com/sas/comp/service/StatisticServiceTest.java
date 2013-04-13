@@ -5,14 +5,14 @@ import java.util.List;
 import org.junit.Assert;
 import org.junit.Test;
 
-import com.sas.comp.models.Statistic;
+import com.sas.comp.models.Player;
 
 public class StatisticServiceTest {
 
 	@Test
 	public void testPlayerStatistics() {
 		final StatisticService statisticService = new StatisticService();
-		final List<Statistic> statistics = statisticService.getPlayerStatistics(5);
+		final List<Player> statistics = statisticService.getPlayerStatistics(5);
 		Assert.assertNotNull(statistics);
 		Assert.assertTrue(statistics.size() > 0);
 	}
@@ -20,7 +20,7 @@ public class StatisticServiceTest {
 	@Test
 	public void testGoalieStatistics() {
 		final StatisticService statisticService = new StatisticService();
-		final List<Statistic> statistics = statisticService.getGoalieStatistics(5);
+		final List<Player> statistics = statisticService.getGoalieStatistics(5);
 		Assert.assertNotNull(statistics);
 		Assert.assertTrue(statistics.size() > 0);
 	}
@@ -28,7 +28,7 @@ public class StatisticServiceTest {
 	@Test
 	public void testAllTimePlayerStatistics() {
 		final StatisticService statisticService = new StatisticService();
-		final List<Statistic> statistics = statisticService.getPlayerStatistics();
+		final List<Player> statistics = statisticService.getPlayerStatistics();
 		Assert.assertNotNull(statistics);
 		Assert.assertTrue(statistics.size() > 0);
 	}
@@ -36,7 +36,7 @@ public class StatisticServiceTest {
 	@Test
 	public void testAllTimeGoalieStatistics() {
 		final StatisticService statisticService = new StatisticService();
-		final List<Statistic> statistics = statisticService.getGoalieStatistics();
+		final List<Player> statistics = statisticService.getGoalieStatistics();
 		Assert.assertNotNull(statistics);
 		Assert.assertTrue(statistics.size() > 0);
 	}

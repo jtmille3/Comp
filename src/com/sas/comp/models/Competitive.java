@@ -4,8 +4,8 @@ import java.util.List;
 
 public class Competitive {
 	private List<Season> seasons;
-	private List<Statistic> playerStatistics;
-	private List<Statistic> goalieStatistics;
+	private List<Player> playerStatistics;
+	private List<Player> goalieStatistics;
 	private List<Goal> goals;
 
 	public List<Season> getSeasons() {
@@ -16,19 +16,19 @@ public class Competitive {
 		this.seasons = seasons;
 	}
 
-	public List<Statistic> getPlayerStatistics() {
+	public List<Player> getPlayerStatistics() {
 		return playerStatistics;
 	}
 
-	public void setPlayerStatistics(final List<Statistic> playerStatistics) {
+	public void setPlayerStatistics(final List<Player> playerStatistics) {
 		this.playerStatistics = playerStatistics;
 	}
 
-	public List<Statistic> getGoalieStatistics() {
+	public List<Player> getGoalieStatistics() {
 		return goalieStatistics;
 	}
 
-	public void setGoalieStatistics(final List<Statistic> goalieStatistics) {
+	public void setGoalieStatistics(final List<Player> goalieStatistics) {
 		this.goalieStatistics = goalieStatistics;
 	}
 
