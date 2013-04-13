@@ -85,8 +85,7 @@ define(function(require) {
 					var gameId = $(this).data('game-id');
 					var teamId = $(this).data('team-id');
 					
-					self.addPlayerGoal(playerId, gameId);
-					self.addTeamGoal(teamId);
+					self.addGoal(playerId, teamId, gameId);
 				});
 
 				$('.remove-goal').click(function() {
@@ -94,36 +93,30 @@ define(function(require) {
 					var gameId = $(this).data('game-id');
 					var teamId = $(this).data('team-id');
 					
-					self.removePlayerGoal(playerId, gameId);
-					self.removeTeamGoal(teamId);
+					self.removeGoal(playerId, teamId, gameId);
 				});
 			});
 		},
 
-		addPlayerGoal: function(playerId, gameId) {
+		addGoal: function(playerId, teamId, gameId) {
 			var $goals = $('#' + playerId + '-goals');
 			var goals = parseInt($goals.html(), 10);
 			$goals.html(goals + 1);
-		},
 
-		addTeamGoal: function(teamId) {
-			var $score = $('#' + teamId + '-score');
+			var $score = $('.' + teamId + '-score');
 			var score = parseInt($score.html(), 10);
 			$score.html(score + 1);
 		},
 
-		removePlayerGoal: function(playerId, gameId) {
+		removeGoal: function(playerId, teamId, gameId) {
 			var $goals = $('#' + playerId + '-goals');
 			var goals = parseInt($goals.html(), 10);
+
+			var $score = $('.' + teamId + '-score');
+			var score = parseInt($score.html(), 10);
+
 			if(goals > 0) {
 				$goals.html(goals - 1);
-			}
-		},
-
-		removeTeamGoal: function(teamId) {
-			var $score = $('#' + teamId + '-score');
-			var score = parseInt($score.html(), 10);
-			if(score > 0) {
 				$score.html(score - 1);
 			}
 		}
