@@ -267,8 +267,7 @@ module.exports = function (grunt) {
                     yuicompress: true
                 },
                 files: {
-                    '<%= yeoman.dist %>/styles/bootstrap.css': '<%= yeoman.app %>/components/bootstrap/less/bootstrap.less',
-                    '<%= yeoman.dist %>/styles/responsive.css': '<%= yeoman.app %>/components/bootstrap/less/responsive.less'
+                    '<%= yeoman.dist %>/styles/main.css': '<%= yeoman.app %>/less/main.less'
                 }
             }
         }
