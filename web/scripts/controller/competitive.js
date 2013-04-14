@@ -130,21 +130,25 @@ define(function(require) {
 			for(var i = 0; i < season.leagueSchedule.length; i++) {
 				var match = season.leagueSchedule[i];
 				if(match.homeId === teamId) {
-					if(match.homeScore > match.awayScore) {
-						match.result = 'won';
-					} else if(match.homeScore < match.awayScore) {
-						match.result = 'lost';
-					} else if(match.homeScore === match.awayScore && match.score) {
-						match.result = 'tied';
+					if(match.available) {
+						if(match.homeScore > match.awayScore) {
+							match.result = 'won';
+						} else if(match.homeScore < match.awayScore) {
+							match.result = 'lost';
+						} else if(match.homeScore === match.awayScore && match.score) {
+							match.result = 'tied';
+						}
 					}
 					schedule.push(match);
 				} else if(match.awayId === teamId) {
-					if(match.homeScore < match.awayScore) {
-						match.result = 'won';
-					} else if(match.homeScore > match.awayScore) {
-						match.result = 'lost';
-					} else if(match.homeScore === match.awayScore && match.score) {
-						match.result = 'tied';
+					if(match.available) {
+						if(match.homeScore < match.awayScore) {
+							match.result = 'won';
+						} else if(match.homeScore > match.awayScore) {
+							match.result = 'lost';
+						} else if(match.homeScore === match.awayScore && match.score) {
+							match.result = 'tied';
+						}
 					}
 					schedule.push(match);
 				}

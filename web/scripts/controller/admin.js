@@ -101,11 +101,11 @@ define(function(require) {
 
 		addGoal: function(gameId, teamId, playerId, type) {
 			var $goals = $('#' + playerId + '-goals');
-			var goals = parseInt($goals.html(), 10);
+			var goals = parseInt($goals.html(), 10) || 0;
 			$goals.html(goals + 1);
 
 			var $score = $('.' + teamId + '-score');
-			var score = parseInt($score.html(), 10);
+			var score = parseInt($score.html(), 10) || 0;
 			$score.html(score + 1);
 
 			$.ajax({
@@ -133,10 +133,10 @@ define(function(require) {
 
 		removeGoal: function(gameId, teamId, playerId, type) {
 			var $goals = $('#' + playerId + '-goals');
-			var goals = parseInt($goals.html(), 10);
+			var goals = parseInt($goals.html(), 10) || 0;
 
 			var $score = $('.' + teamId + '-score');
-			var score = parseInt($score.html(), 10);
+			var score = parseInt($score.html(), 10) || 0;
 
 			if(goals > 0) {
 				$goals.html(goals - 1);
