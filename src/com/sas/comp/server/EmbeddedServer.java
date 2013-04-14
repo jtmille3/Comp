@@ -18,7 +18,7 @@ public class EmbeddedServer {
 		final Tomcat tomcat = new Tomcat();
 		tomcat.setPort(port);
 
-		tomcat.setBaseDir("./web");
+		tomcat.setBaseDir("./dist");
 		tomcat.getHost().setAppBase(appBase);
 
 		final String contextPath = "/comp";

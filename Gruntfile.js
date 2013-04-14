@@ -155,7 +155,7 @@ module.exports = function (grunt) {
                 // Options: https://github.com/jrburke/r.js/blob/master/build/example.build.js
                 options: {
                     // `name` and `out` is set by grunt-usemin
-                    baseUrl: 'app/scripts',
+                    baseUrl: 'web/scripts',
                     optimize: 'none',
                     // TODO: Figure out how to make sourcemaps work with grunt-usemin
                     // https://github.com/yeoman/grunt-usemin/issues/30
@@ -305,9 +305,11 @@ module.exports = function (grunt) {
 
     grunt.registerTask('build', [
         'clean:dist',
-        'jshint',
-        'test',
+        /*'jshint',*/
+        /*'test',*/
         'coffee',
+        'less:production',
+        'handlebars',
         'compass:dist',
         'useminPrepare',
         'requirejs',
@@ -317,9 +319,7 @@ module.exports = function (grunt) {
         'concat',
         'uglify',
         'copy',
-        'usemin',
-        'less:production',
-        'handlebars'
+        'usemin'
     ]);
 
     grunt.registerTask('development', [
