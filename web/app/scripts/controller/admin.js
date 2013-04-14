@@ -46,7 +46,7 @@ define(function(require) {
 			var self = this;
 			$('#admin-game').html('');
 			$('#admin-game-score').html('');
-			$.get('/comp/service/games?date=' + date, function(games) {
+			$.get('/service/games?date=' + date, function(games) {
 				self.renderGames(games);
 			});
 		},
@@ -93,7 +93,7 @@ define(function(require) {
 		selectedGame: function(game) {
 			var self = this;
 			
-			$.get('/comp/service/games/'+game.gameId+'/players', function(players) {
+			$.get('/service/games/'+game.gameId+'/players', function(players) {
 				game.homePlayers = [];
 				game.awayPlayers = [];
 				for(var i = 0; i < players.length; i++) {
@@ -148,7 +148,7 @@ define(function(require) {
 			$score.html(score + 1);
 
 			$.ajax({
-				url: '/comp/service/goals',
+				url: '/service/goals',
 				type: 'POST',
 				contentType: 'application/json; charset=utf-8',
 				dataType: 'json',
@@ -176,7 +176,7 @@ define(function(require) {
 				$score.html(score - 1);
 
 				$.ajax({
-					url: '/comp/service/goals',
+					url: '/service/goals',
 					type: 'DELETE',
 					contentType: 'application/json; charset=utf-8',
 					dataType: 'json',
@@ -195,7 +195,7 @@ define(function(require) {
 
 		updateScore: function(game) {
 			$.ajax({
-				url: '/comp/service/games/' + game.gameId + '/score',
+				url: '/service/games/' + game.gameId + '/score',
 				type: 'PUT',
 				contentType: 'application/json; charset=utf-8',
 				dataType: 'json',

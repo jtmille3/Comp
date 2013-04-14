@@ -21,7 +21,7 @@ public class EmbeddedServer {
 		tomcat.setBaseDir("./web");
 		tomcat.getHost().setAppBase(appBase);
 
-		final String contextPath = "/comp";
+		final String contextPath = "/";
 
 		// Add AprLifecycleListener
 		StandardServer server = (StandardServer) tomcat.getServer();

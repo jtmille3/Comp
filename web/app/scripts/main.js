@@ -25,7 +25,7 @@ require(['./controller/competitive'], function (competitiveController) {
     }
     */
 
-    $.getJSON('/comp/service/competitive', function(competitive) {
+    $.getJSON('/service/competitive', function(competitive) {
         competitiveController.render(competitive);
     });
 });
