@@ -30,7 +30,7 @@ public class GameResource {
 	}
 
 	@PUT
-	@Path("{id}}/score")
+	@Path("{id}/score")
 	public void update(final Game schedule) {
 		gameService.updateScore(schedule);
 	}

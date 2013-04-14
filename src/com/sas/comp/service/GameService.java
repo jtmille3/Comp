@@ -114,20 +114,23 @@ public class GameService {
 		try {
 			final Connection conn = Database.getConnection();
 			if (game.getHomeScore() != null && game.getAwayScore() != null) {
-				final PreparedStatement pstmt = conn.prepareStatement("UPDATE games SET home_score = ?, away_score = ? WHERE game_id = ?");
+				final PreparedStatement pstmt = conn.prepareStatement("UPDATE games SET home_score = ?, away_score = ? WHERE id = ?");
 				pstmt.setInt(1, game.getHomeScore());
 				pstmt.setInt(2, game.getAwayScore());
 				pstmt.setInt(3, game.getGameId());
+				pstmt.execute();
 				pstmt.close();
 			} else if (game.getHomeScore() != null) {
-				final PreparedStatement pstmt = conn.prepareStatement("UPDATE games SET home_score = ? WHERE game_id = ?");
+				final PreparedStatement pstmt = conn.prepareStatement("UPDATE games SET home_score = ? WHERE id = ?");
 				pstmt.setInt(1, game.getHomeScore());
 				pstmt.setInt(2, game.getGameId());
+				pstmt.execute();
 				pstmt.close();
 			} else if (game.getAwayScore() != null) {
-				final PreparedStatement pstmt = conn.prepareStatement("UPDATE games SET away_score = ? WHERE game_id = ?");
+				final PreparedStatement pstmt = conn.prepareStatement("UPDATE games SET away_score = ? WHERE id = ?");
 				pstmt.setInt(1, game.getAwayScore());
 				pstmt.setInt(2, game.getGameId());
+				pstmt.execute();
 				pstmt.close();
 			}
 			conn.close();

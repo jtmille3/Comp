@@ -17,7 +17,7 @@ define(function(require) {
 
 		attachDatePickerHandler: function() {
 			var self = this;
-			var $gameDatePicker = $('.game-datepicker');
+			var $gameDatePicker = $('#game-date');
 			$gameDatePicker.datepicker({
 				autoclose: true,
 				todayBtn: true
@@ -28,7 +28,7 @@ define(function(require) {
 
 			var today = this.parseDate(new Date());
 			$gameDatePicker.datepicker('update', today);
-			self.getGames(today);
+			self.getGames(today); // automatically set todays games
 		},
 
 		parseDate: function(date) {
@@ -109,22 +109,29 @@ define(function(require) {
 			$score.html(score + 1);
 
 			$.ajax({
-			    url: '/comp/service/goals',
-			    type: 'POST',
-			    contentType: 'application/json; charset=utf-8',
-  				dataType: 'json',
-			    data: JSON.stringify({
-					'playerId': playerId, 
-					'gameId': gameId
+				url: '/comp/service/goals',
+				type: 'POST',
+				contentType: 'application/json; charset=utf-8',
+				dataType: 'json',
+				data: JSON.stringify({
+					playerId: playerId,
+					gameId: gameId
 				})
+			});
+
+			var updateScore = {};
+			updateScore.gameId = gameId;
+			updateScore[type + 'Score'] = score + 1;
+			$.ajax({
+				url: '/comp/service/games/' + gameId + '/score',
+				type: 'PUT',
+				contentType: 'application/json; charset=utf-8',
+				dataType: 'json',
+				data: JSON.stringify(updateScore)
 			});
 		},
 
 		removeGoal: function(gameId, teamId, playerId, type) {
-			var playerId = $(this).data('player-id');
-			var gameId = $(this).data('game-id');
-			var teamId = $(this).data('team-id');
-					
 			var $goals = $('#' + playerId + '-goals');
 			var goals = parseInt($goals.html(), 10);
 
@@ -136,14 +143,25 @@ define(function(require) {
 				$score.html(score - 1);
 
 				$.ajax({
-				    url: '/comp/service/goals',
-				    type: 'DELETE',
-				    contentType: 'application/json; charset=utf-8',
-	  				dataType: 'json',
+					url: '/comp/service/goals',
+					type: 'DELETE',
+					contentType: 'application/json; charset=utf-8',
+					dataType: 'json',
 					data: JSON.stringify({
-						'playerId': playerId, 
-						'gameId': gameId
+						playerId: playerId,
+						gameId: gameId
 					})
+				});
+
+				var updateScore = {};
+				updateScore.gameId = gameId;
+				updateScore[type + 'Score'] = score - 1;
+				$.ajax({
+					url: '/comp/service/games/' + gameId + '/score',
+					type: 'PUT',
+					contentType: 'application/json; charset=utf-8',
+					dataType: 'json',
+					data: JSON.stringify(updateScore)
 				});
 			}
 		}
