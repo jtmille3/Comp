@@ -10,8 +10,8 @@ module.exports = function (grunt) {
 
     // configurable paths
     var yeomanConfig = {
-        app: 'web',
-        dist: 'dist'
+        app: 'web/app',
+        dist: 'web/dist'
     };
 
     grunt.initConfig({

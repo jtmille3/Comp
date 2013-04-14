@@ -11,7 +11,7 @@ define(function(require) {
 				localStorage.competitive = JSON.stringify(competitive);
 			}
 			*/
-			var compTemplate = window.comp['web/templates/comp.html'];
+			var compTemplate = window.comp['web/app/templates/comp.html'];
 			$('#competitive').html(compTemplate(competitive));
 
 			$('#player-all-time-table').tablesorter( {sortList: [[1,1]]} );
@@ -71,7 +71,7 @@ define(function(require) {
 			var schedule = this.schedule(season, teamId);
 			var roster = this.roster(season, teamId);
 
-			var teamScheduleTemplate = window.comp['web/templates/team_schedule.html'];
+			var teamScheduleTemplate = window.comp['web/app/templates/team_schedule.html'];
 			var template = teamScheduleTemplate({
 				id: teamId,
 				schedule: schedule,

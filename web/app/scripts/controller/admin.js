@@ -3,7 +3,7 @@ define(function(require) {
 	'use strict';
 	return {
 		render: function() {
-			var adminTemplate = window.comp['web/templates/admin.html'];
+			var adminTemplate = window.comp['web/app/templates/admin.html'];
 			$('#administrator').html(adminTemplate());
 
 			this.attachResetCacheHandler();
@@ -50,7 +50,7 @@ define(function(require) {
 
 		renderGames: function(games) {
 			var self = this;
-			var scheduleTemplate = window.comp['web/templates/schedule.html'];
+			var scheduleTemplate = window.comp['web/app/templates/schedule.html'];
 			$('#admin-games').html(scheduleTemplate(games));
 			$('#admin-game-score').html('');
 			$('#game-schedule-table tr').click(function(row) {
@@ -81,7 +81,7 @@ define(function(require) {
 					awayScore: 0
 				};
 
-				var scoreTemplate = window.comp['web/templates/score.html'];
+				var scoreTemplate = window.comp['web/app/templates/score.html'];
 				$('#' + gameId + '-score').html(scoreTemplate(game));
 
 				self.updateScore(game);
@@ -103,7 +103,7 @@ define(function(require) {
 					}
 				}
 
-				var scoresTemplate = window.comp['web/templates/scores.html'];
+				var scoresTemplate = window.comp['web/app/templates/scores.html'];
 				$('#admin-game-score').html(scoresTemplate(game));
 
 				$('.add-goal').click(function() {
