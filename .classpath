@@ -33,5 +33,5 @@
 	<classpathentry kind="lib" path="web/WEB-INF/lib/jboss-logging-3.1.0.GA.jar"/>
 	<classpathentry kind="lib" path="web/WEB-INF/lib/jboss-transaction-api_1.1_spec-1.0.0.Final.jar"/>
 	<classpathentry kind="lib" path="web/WEB-INF/lib/hibernate-entitymanager-4.2.0.Final.jar"/>
-	<classpathentry kind="output" path="dist/WEB-INF/classes"/>
+	<classpathentry kind="output" path="web/WEB-INF/classes"/>
 </classpath>

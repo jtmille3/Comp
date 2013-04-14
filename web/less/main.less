@@ -1,0 +1,53 @@
+@import "../components/bootstrap/less/bootstrap.less";
+@import "../components/bootstrap-datepicker/less/datepicker.less";
+@import "../components/bootstrap/less/responsive.less";
+
+// Navbar
+// -------------------------
+@navbarCollapseWidth:             979px;
+
+@navbarHeight:                    40px;
+@navbarBackgroundHighlight:       #00539B;
+// @navbarBackgroundHighlight:       #003B76;
+@navbarBackground:                darken(@navbarBackgroundHighlight, 5%);
+@navbarBorder:                    darken(@navbarBackground, 12%);
+
+@navbarText:                      #DDD;
+@navbarLinkColor:                 #DDD;
+@navbarLinkColorHover:            @grayLighter;
+@navbarLinkColorActive:           @grayLighter;
+@navbarLinkBackgroundHover:       transparent;
+@navbarLinkBackgroundActive:      darken(@navbarBackground, 2%);
+
+@navbarBrandColor:                @navbarLinkColor;
+
+body {
+	padding-top: 60px;
+}
+
+th, .selectable {
+	cursor: pointer;
+}
+
+.table-striped tbody tr.won td {
+	background-color: #88FF88;
+}
+
+.table-striped tbody tr.lost td {
+	background-color: #FF8888;
+}
+
+.table-striped tbody tr.tied td {
+	background-color: #FFFF88;
+}
+
+.table-striped tbody tr.selected td {
+	background-color: #8888FF;
+}
+
+.table-striped tbody tr#goalsRow td {
+	background-color: #EDEDED;
+	-moz-box-shadow: inset 0 3px 3px rgba(128, 128, 128, .5);
+	-webkit-box-shadow: inset 0 3px 3px rgba(128, 128, 128, .5);
+	box-shadow: inset 0 3px 3px rgba(128, 128, 128, .5);
+}

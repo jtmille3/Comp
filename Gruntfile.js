@@ -259,8 +259,7 @@ module.exports = function (grunt) {
                 options: {
                 },
                 files: {
-                    '<%= yeoman.app %>/styles/bootstrap.css': '<%= yeoman.app %>/components/bootstrap/less/bootstrap.less',
-                    '<%= yeoman.app %>/styles/responsive.css': '<%= yeoman.app %>/components/bootstrap/less/responsive.less'
+                    '<%= yeoman.app %>/styles/main.css': '<%= yeoman.app %>/less/main.less'
                 }
             },
             production: {
