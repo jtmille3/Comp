@@ -28,6 +28,7 @@ define(function(require) {
 
 			var today = this.parseDate(new Date());
 			$gameDatePicker.datepicker('update', today);
+			self.getGames(today);
 		},
 
 		parseDate: function(date) {
@@ -84,21 +85,21 @@ define(function(require) {
 					var playerId = $(this).data('player-id');
 					var gameId = $(this).data('game-id');
 					var teamId = $(this).data('team-id');
-					
-					self.addGoal(playerId, teamId, gameId);
+					var type = $(this).data('type');
+					self.addGoal(gameId, teamId, playerId, type);
 				});
 
 				$('.remove-goal').click(function() {
 					var playerId = $(this).data('player-id');
 					var gameId = $(this).data('game-id');
 					var teamId = $(this).data('team-id');
-					
-					self.removeGoal(playerId, teamId, gameId);
+					var type = $(this).data('type');
+					self.removeGoal(gameId, teamId, playerId, type);
 				});
 			});
 		},
 
-		addGoal: function(playerId, teamId, gameId) {
+		addGoal: function(gameId, teamId, playerId, type) {
 			var $goals = $('#' + playerId + '-goals');
 			var goals = parseInt($goals.html(), 10);
 			$goals.html(goals + 1);
@@ -119,7 +120,11 @@ define(function(require) {
 			});
 		},
 
-		removeGoal: function(playerId, teamId, gameId) {
+		removeGoal: function(gameId, teamId, playerId, type) {
+			var playerId = $(this).data('player-id');
+			var gameId = $(this).data('game-id');
+			var teamId = $(this).data('team-id');
+					
 			var $goals = $('#' + playerId + '-goals');
 			var goals = parseInt($goals.html(), 10);
 

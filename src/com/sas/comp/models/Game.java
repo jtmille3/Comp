@@ -78,11 +78,8 @@ public class Game {
 		this.awayScore = awayScore;
 	}
 
-	public String getScore() {
-		if (getAwayScore() != null && getHomeScore() != null) {
-			return getHomeScore() + " - " + getAwayScore();
-		}
-		return null;
+	public Boolean getResult() {
+		return getAwayScore() != null && getHomeScore() != null;
 	}
 
 	public Integer getGameId() {

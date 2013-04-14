@@ -11,7 +11,7 @@
 				<td>{{home}}</td>
 				<td>{{away}}</td>
 				<td>{{played}}</td>
-				<td><span class="{{homeId}}-score">{{homeScore}}</span> - <span class="{{awayId}}-score">{{awayScore}}</span></td>
+				<td>{{#if result}}<span class="{{homeId}}-score">{{homeScore}}</span> - <span class="{{awayId}}-score">{{awayScore}}</span>{{/if}}</td>
 			</tr>
 		{{/each}}
 	</tbody>
