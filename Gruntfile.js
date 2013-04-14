@@ -151,11 +151,31 @@ module.exports = function (grunt) {
             dist: {}
         },*/
         requirejs: {
-            dist: {
+            main: {
                 // Options: https://github.com/jrburke/r.js/blob/master/build/example.build.js
                 options: {
                     // `name` and `out` is set by grunt-usemin
-                    baseUrl: 'web/scripts',
+                    baseUrl: 'web/app/scripts',
+                    optimize: 'none',
+                    // TODO: Figure out how to make sourcemaps work with grunt-usemin
+                    // https://github.com/yeoman/grunt-usemin/issues/30
+                    //generateSourceMaps: true,
+                    // required to support SourceMaps
+                    // http://requirejs.org/docs/errors.html#sourcemapcomments
+                    preserveLicenseComments: false,
+                    useStrict: true,
+                    wrap: true,
+                    name: 'main',
+                    out: '<%= yeoman.dist %>/scripts/main.js',
+                    //uglify2: {} // https://github.com/mishoo/UglifyJS2
+                    mainConfigFile: 'web/app/scripts/main.js'
+                }
+            },
+            admin: {
+                // Options: https://github.com/jrburke/r.js/blob/master/build/example.build.js
+                options: {
+                    // `name` and `out` is set by grunt-usemin
+                    baseUrl: 'web/app/scripts',
                     optimize: 'none',
                     // TODO: Figure out how to make sourcemaps work with grunt-usemin
                     // https://github.com/yeoman/grunt-usemin/issues/30
@@ -166,12 +186,14 @@ module.exports = function (grunt) {
                     useStrict: true,
                     wrap: true,
                     //uglify2: {} // https://github.com/mishoo/UglifyJS2
-                    mainConfigFile: 'app/scripts/main.js'
+                    name: 'admin',
+                    out: '<%= yeoman.dist %>/scripts/admin.js',
+                    mainConfigFile: 'web/app/scripts/admin.js'
                 }
             }
         },
         useminPrepare: {
-            html: '<%= yeoman.app %>/index.html',
+            html: ['<%= yeoman.app %>/index.html', '<%= yeoman.app %>/admin.html'],
             options: {
                 dest: '<%= yeoman.dist %>'
             }
