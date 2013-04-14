@@ -106,6 +106,17 @@ define(function(require) {
 			var $score = $('.' + teamId + '-score');
 			var score = parseInt($score.html(), 10);
 			$score.html(score + 1);
+
+			$.ajax({
+			    url: '/comp/service/goals',
+			    type: 'POST',
+			    contentType: 'application/json; charset=utf-8',
+  				dataType: 'json',
+			    data: JSON.stringify({
+					'playerId': playerId, 
+					'gameId': gameId
+				})
+			});
 		},
 
 		removeGoal: function(playerId, teamId, gameId) {
@@ -118,6 +129,17 @@ define(function(require) {
 			if(goals > 0) {
 				$goals.html(goals - 1);
 				$score.html(score - 1);
+
+				$.ajax({
+				    url: '/comp/service/goals',
+				    type: 'DELETE',
+				    contentType: 'application/json; charset=utf-8',
+	  				dataType: 'json',
+					data: JSON.stringify({
+						'playerId': playerId, 
+						'gameId': gameId
+					})
+				});
 			}
 		}
 	};
