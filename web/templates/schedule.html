@@ -1,5 +1,6 @@
 <table id="game-schedule-table" class="table table-condensed table-bordered table-striped table-hover tablesorter">
 	<thead>
+		<th>Played</th>
 		<th>Home</th>
 		<th>Away</th>
 		<th>Date</th>
@@ -8,10 +9,11 @@
 	<tbody>
 		{{#each this}}
 			<tr id="{{gameId}}" class="selectable">
+				<td><input class="played" type="checkbox" data-game-id="{{gameId}}" data-home-id="{{homeId}}" data-away-id="{{awayId}}" {{#if available}}checked disabled{{/if}}/>
 				<td>{{home}}</td>
 				<td>{{away}}</td>
 				<td>{{played}}</td>
-				<td><span class="{{homeId}}-score">{{homeScore}}</span> - <span class="{{awayId}}-score">{{awayScore}}</span></td>
+				<td id="{{gameId}}-score">{{#if available}}{{> score this}}{{/if}}</td>
 			</tr>
 		{{/each}}
 	</tbody>

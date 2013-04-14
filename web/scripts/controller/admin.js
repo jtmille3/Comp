@@ -6,14 +6,17 @@ define(function(require) {
 			var adminTemplate = window.comp['web/templates/admin.html'];
 			$('#administrator').html(adminTemplate());
 
+			this.attachResetCacheHandler();
+			this.attachDatePickerHandler();
+		},
+
+		attachResetCacheHandler: function() {
 			$('#reset-cache').click(function() {
 				$('#cache-message').html('<div class="alert alert-error">Clearing cache, please wait...</div>');
 				$.get('/comp/service/cache/reset', function() {
 					$('#cache-message').html('<div class="alert alert-success">Cache cleared</div>');
 				});
 			});
-
-			this.attachDatePickerHandler();
 		},
 
 		attachDatePickerHandler: function() {
@@ -62,6 +65,27 @@ define(function(require) {
 					}
 				}
 			});
+
+			$('.played').click(function() {
+				$(this).prop('checked', true);
+				$(this).prop('disabled', true);
+				var gameId = $(this).data('game-id');
+				var homeId = $(this).data('home-id');
+				var awayId = $(this).data('away-id');
+
+				var game = {
+					gameId: gameId,
+					homeId: homeId,
+					homeScore: 0,
+					awayId: awayId,
+					awayScore: 0
+				};
+
+				var scoreTemplate = window.comp['web/templates/score.html'];
+				$('#' + gameId + '-score').html(scoreTemplate(game));
+
+				self.updateScore(game);
+			});
 		},
 
 		selectedGame: function(game) {
@@ -97,6 +121,18 @@ define(function(require) {
 					var type = $(this).data('type');
 					self.removeGoal(gameId, teamId, playerId, type);
 				});
+
+				$('#goalless').click(function() {
+					var gameId = parseInt($(this).data('game-id'), 10);
+					var game = {
+						gameId: gameId,
+						homeScore: 0,
+						awayScore: 0
+					};
+					self.updateScore(game);
+					$('#' + gameId + '-played').prop('checked', true);
+					$(this).remove();
+				});
 			});
 		},
 
@@ -120,16 +156,10 @@ define(function(require) {
 				})
 			});
 
-			var updateScore = {};
-			updateScore.gameId = gameId;
-			updateScore[type + 'Score'] = score + 1;
-			$.ajax({
-				url: '/comp/service/games/' + gameId + '/score',
-				type: 'PUT',
-				contentType: 'application/json; charset=utf-8',
-				dataType: 'json',
-				data: JSON.stringify(updateScore)
-			});
+			var game = {};
+			game.gameId = gameId;{
+			game[type + 'Score'] = score + 1;
+			this.updateScore(game);}
 		},
 
 		removeGoal: function(gameId, teamId, playerId, type) {
@@ -154,17 +184,21 @@ define(function(require) {
 					})
 				});
 
-				var updateScore = {};
-				updateScore.gameId = gameId;
-				updateScore[type + 'Score'] = score - 1;
-				$.ajax({
-					url: '/comp/service/games/' + gameId + '/score',
-					type: 'PUT',
-					contentType: 'application/json; charset=utf-8',
-					dataType: 'json',
-					data: JSON.stringify(updateScore)
-				});
+				var game = {};
+				game.gameId = gameId;
+				game[type + 'Score'] = score - 1;
+				this.updateScore(game);
 			}
+		},
+
+		updateScore: function(game) {
+			$.ajax({
+				url: '/comp/service/games/' + game.gameId + '/score',
+				type: 'PUT',
+				contentType: 'application/json; charset=utf-8',
+				dataType: 'json',
+				data: JSON.stringify(game)
+			});
 		}
 	};
 });
