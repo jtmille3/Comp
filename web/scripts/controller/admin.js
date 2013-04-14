@@ -7,8 +7,9 @@ define(function(require) {
 			$('#administrator').html(adminTemplate());
 
 			$('#reset-cache').click(function() {
+				$('#cache-message').html('<div class="alert alert-error">Clearing cache, please wait...</div>');
 				$.get('/comp/service/cache/reset', function() {
-					console.log('done');
+					$('#cache-message').html('<div class="alert alert-success">Cache cleared</div>');
 				});
 			});
 
