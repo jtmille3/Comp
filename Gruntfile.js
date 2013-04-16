@@ -322,7 +322,7 @@ module.exports = function (grunt) {
         'coffee',
         'less:production',
         'handlebars',
-        'compass:dist',
+        /*'compass:dist',*/
         'useminPrepare',
         'requirejs',
         'imagemin',
