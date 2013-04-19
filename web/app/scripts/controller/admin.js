@@ -14,7 +14,7 @@ define(function(require) {
 			var $cacheMessage = $('#cache-message');
 			$('#reset-cache').click(function() {
 				$cacheMessage.html('<div class="alert alert-error">Clearing cache, please wait...</div>');
-				$.get('/comp/service/cache/reset', function() {
+				$.get('/service/cache/reset', function() {
 					$cacheMessage.html('<div class="alert alert-success">Cache cleared</div>');
 				});
 			});
