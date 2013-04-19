@@ -56,32 +56,25 @@ define(function(require) {
 			var scheduleTemplate = window.comp['web/app/templates/schedule.html'];
 			$('#admin-games').html(scheduleTemplate(games));
 			$('#game-schedule-table tr').click(function(row) {
+				$('#admin-game-score').html('');
 				var $row = $(row.currentTarget);
 				var gameId = parseInt($row.attr('id'), 10);
 				$row.addClass('selected').siblings().removeClass('selected');
-				for(var i = 0; i < games.length; i++) {
-					var game = games[i];
-					if(game.gameId === gameId) {
-						self.selectedGame(game);
-						break;
-					}
+
+				if($row.find('.played').prop('checked')) {
+					var game = self.getGame(gameId, games);
+					self.selectedGame(game);
 				}
 			});
 
 			$('.played').click(function() {
 				$(this).prop('checked', true);
 				$(this).prop('disabled', true);
+				
 				var gameId = $(this).data('game-id');
-				var homeId = $(this).data('home-id');
-				var awayId = $(this).data('away-id');
-
-				var game = {
-					gameId: gameId,
-					homeId: homeId,
-					homeScore: 0,
-					awayId: awayId,
-					awayScore: 0
-				};
+				var game = self.getGame(gameId, games);
+				game.homeScore = 0;
+				game.awayScore = 0;
 
 				var scoreTemplate = window.comp['web/app/templates/score.html'];
 				$('#' + gameId + '-score').html(scoreTemplate(game));
@@ -201,6 +194,15 @@ define(function(require) {
 				dataType: 'json',
 				data: JSON.stringify(game)
 			});
+		},
+
+		getGame: function(gameId, games) {
+			for(var i = 0; i < games.length; i++) {
+				var game = games[i];
+				if(game.gameId === gameId) {
+					return game;
+				}
+			}
 		}
 	};
 });

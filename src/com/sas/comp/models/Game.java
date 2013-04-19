@@ -46,6 +46,10 @@ public class Game {
 		return sdf.format(getDate());
 	}
 
+	public void setPlayed(final String played) {
+
+	}
+
 	public Integer getHomeId() {
 		return homeId;
 	}
@@ -86,8 +90,16 @@ public class Game {
 		return awayScore != null && homeScore != null;
 	}
 
+	public void setAvailable(final Boolean available) {
+
+	}
+
 	public String getScore() {
 		return getHomeScore() + " - " + getAwayScore();
+	}
+
+	public void setScore(final String score) {
+
 	}
 
 	public Integer getGameId() {
