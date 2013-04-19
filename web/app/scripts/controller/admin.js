@@ -85,7 +85,7 @@ define(function(require) {
 
 		selectedGame: function(game) {
 			var self = this;
-			
+
 			$.get('/service/games/'+game.gameId+'/players', function(players) {
 				game.homePlayers = [];
 				game.awayPlayers = [];
@@ -97,6 +97,20 @@ define(function(require) {
 						game.awayPlayers.push(player);
 					}
 				}
+
+				game.homePlayers.push({
+					player: 'Ghost',
+					teamId: game.homeId,
+					playerId: -1,
+					goals: self.getGhostGoals(game.homeId, game.homeScore, players)
+				});
+
+				game.awayPlayers.push({
+					player: 'Ghost',
+					teamId: game.awayId,
+					playerId: -1,
+					goals: self.getGhostGoals(game.awayId, game.awayScore, players)
+				});
 
 				var scoresTemplate = window.comp['web/app/templates/scores.html'];
 				$('#admin-game-score').html(scoresTemplate(game));
@@ -140,16 +154,18 @@ define(function(require) {
 			var score = parseInt($score.html(), 10) || 0;
 			$score.html(score + 1);
 
-			$.ajax({
-				url: '/service/goals',
-				type: 'POST',
-				contentType: 'application/json; charset=utf-8',
-				dataType: 'json',
-				data: JSON.stringify({
-					playerId: playerId,
-					gameId: gameId
-				})
-			});
+			if(playerId != -1) {
+				$.ajax({
+					url: '/service/goals',
+					type: 'POST',
+					contentType: 'application/json; charset=utf-8',
+					dataType: 'json',
+					data: JSON.stringify({
+						playerId: playerId,
+						gameId: gameId
+					})
+				});
+			}
 
 			var game = {};
 			game.gameId = gameId;{
@@ -168,16 +184,18 @@ define(function(require) {
 				$goals.html(goals - 1);
 				$score.html(score - 1);
 
-				$.ajax({
-					url: '/service/goals',
-					type: 'DELETE',
-					contentType: 'application/json; charset=utf-8',
-					dataType: 'json',
-					data: JSON.stringify({
-						playerId: playerId,
-						gameId: gameId
-					})
-				});
+				if(playerId != -1) {
+					$.ajax({
+						url: '/service/goals',
+						type: 'DELETE',
+						contentType: 'application/json; charset=utf-8',
+						dataType: 'json',
+						data: JSON.stringify({
+							playerId: playerId,
+							gameId: gameId
+						})
+					});
+				}
 
 				var game = {};
 				game.gameId = gameId;
@@ -203,6 +221,17 @@ define(function(require) {
 					return game;
 				}
 			}
+		},
+
+		getGhostGoals: function(teamId, score, players) {
+			for(var i = 0; i < players.length; i++) {
+				var player = players[i];
+				if(player.teamId === teamId) {
+					score = score - player.goals;
+				}
+			}
+
+			return score;
 		}
 	};
 });
