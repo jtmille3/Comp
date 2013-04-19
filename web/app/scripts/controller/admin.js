@@ -3,11 +3,43 @@ define(function(require) {
 	'use strict';
 	return {
 		render: function() {
-			var adminTemplate = window.comp['web/app/templates/admin.html'];
-			$('#administrator').html(adminTemplate());
+			var self = this;
+			var passwordTemplate = window.comp['web/app/templates/password.html'];
+			$('#administrator').html(passwordTemplate());
+			$('#passwordDialog').modal({
+				backdrop: false,
+				show:true
+			});
 
-			this.attachResetCacheHandler();
-			this.attachDatePickerHandler();
+			$('#password').keyup(function(e) {
+				var code = (e.keyCode ? e.keyCode : e.which);
+				if(code == 13) {
+					self.login();
+				}
+			});
+
+			$('#passwordButton').click(function() {
+				self.login();	
+			});
+
+			$('#passwordDialog').on('shown', function() {
+				$('#password').focus();
+			});
+		},
+
+		login: function() {
+			var password = $('#password').val();
+			if(password === 'damneet') {
+				var adminTemplate = window.comp['web/app/templates/admin.html'];
+				$('#administrator').html(adminTemplate());
+
+				this.attachResetCacheHandler();
+				this.attachDatePickerHandler();
+			} else {
+				$('#password-group').addClass('error');
+				$('#password').val('');
+				$('#passwordHelp').show();
+			}
 		},
 
 		attachResetCacheHandler: function() {
