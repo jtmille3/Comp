@@ -58,7 +58,7 @@ define(function(require) {
 			$('#game-schedule-table tr').click(function(row) {
 				$('#admin-game-score').html('');
 				var $row = $(row.currentTarget);
-				var gameId = parseInt($row.attr('id'), 10);
+				var gameId = parseInt($row.data('game-id'), 10);
 				$row.addClass('selected').siblings().removeClass('selected');
 
 				if($row.find('.played').prop('checked')) {
