@@ -108,7 +108,7 @@ define(function(require) {
 				game.awayPlayers.push({
 					player: 'Ghost',
 					teamId: game.awayId,
-					playerId: -1,
+					playerId: -2,
 					goals: self.getGhostGoals(game.awayId, game.awayScore, players)
 				});
 
@@ -117,44 +117,27 @@ define(function(require) {
 
 				$('.add-goal').click(function() {
 					var playerId = $(this).data('player-id');
-					var gameId = $(this).data('game-id');
-					var teamId = $(this).data('team-id');
-					var type = $(this).data('type');
-					self.addGoal(gameId, teamId, playerId, type);
+					self.addGoal(game, playerId);
 				});
 
 				$('.remove-goal').click(function() {
 					var playerId = $(this).data('player-id');
-					var gameId = $(this).data('game-id');
-					var teamId = $(this).data('team-id');
-					var type = $(this).data('type');
-					self.removeGoal(gameId, teamId, playerId, type);
-				});
-
-				$('#goalless').click(function() {
-					var gameId = parseInt($(this).data('game-id'), 10);
-					var game = {
-						gameId: gameId,
-						homeScore: 0,
-						awayScore: 0
-					};
-					self.updateScore(game);
-					$('#' + gameId + '-played').prop('checked', true);
-					$(this).remove();
+					self.removeGoal(game, playerId);
 				});
 			});
 		},
 
-		addGoal: function(gameId, teamId, playerId, type) {
+		addGoal: function(game, playerId) {
 			var $goals = $('#' + playerId + '-goals');
 			var goals = parseInt($goals.html(), 10) || 0;
 			$goals.html(goals + 1);
 
+			var teamId = this.getTeamId(game, playerId);
 			var $score = $('.' + teamId + '-score');
 			var score = parseInt($score.html(), 10) || 0;
 			$score.html(score + 1);
 
-			if(playerId != -1) {
+			if(playerId > 0) {
 				$.ajax({
 					url: '/service/goals',
 					type: 'POST',
@@ -162,46 +145,49 @@ define(function(require) {
 					dataType: 'json',
 					data: JSON.stringify({
 						playerId: playerId,
-						gameId: gameId
+						gameId: game.gameId
 					})
 				});
 			}
 
-			var game = {};
-			game.gameId = gameId;{
-			game[type + 'Score'] = score + 1;
-			this.updateScore(game);}
+			if(this.isVisiting(game, playerId)) {
+				game.awayScore++;
+			} else {
+				game.homeScore++;
+			}
+			this.updateScore(game);
 		},
 
-		removeGoal: function(gameId, teamId, playerId, type) {
+		removeGoal: function(game, playerId) {
 			var $goals = $('#' + playerId + '-goals');
 			var goals = parseInt($goals.html(), 10) || 0;
 
+			var teamId = this.getTeamId(game, playerId);
 			var $score = $('.' + teamId + '-score');
 			var score = parseInt($score.html(), 10) || 0;
 
-			if(goals > 0) {
-				$goals.html(goals - 1);
-				$score.html(score - 1);
+			$goals.html(goals - 1);
+			$score.html(score - 1);
 
-				if(playerId != -1) {
-					$.ajax({
-						url: '/service/goals',
-						type: 'DELETE',
-						contentType: 'application/json; charset=utf-8',
-						dataType: 'json',
-						data: JSON.stringify({
-							playerId: playerId,
-							gameId: gameId
-						})
-					});
-				}
-
-				var game = {};
-				game.gameId = gameId;
-				game[type + 'Score'] = score - 1;
-				this.updateScore(game);
+			if(playerId != -1) {
+				$.ajax({
+					url: '/service/goals',
+					type: 'DELETE',
+					contentType: 'application/json; charset=utf-8',
+					dataType: 'json',
+					data: JSON.stringify({
+						playerId: playerId,
+						gameId: game.gameId
+					})
+				});
 			}
+
+			if(this.isVisiting(game, playerId)) {
+				game.awayScore--;
+			} else {
+				game.homeScore--;
+			}
+			this.updateScore(game);
 		},
 
 		updateScore: function(game) {
@@ -221,6 +207,33 @@ define(function(require) {
 					return game;
 				}
 			}
+
+			return null;
+		},
+
+		getTeamId: function(game, playerId) {
+			for(var i = 0; i < game.homePlayers.length; i++) {
+				if(playerId === game.homePlayers[i].playerId) {
+					return game.homeId;
+				}
+			}
+			for(var i = 0; i < game.awayPlayers.length; i++) {
+				if(playerId === game.awayPlayers[i].playerId) {
+					return game.awayId;
+				}
+			}
+
+			return null;
+		},
+
+		isVisiting: function(game, playerId) {
+			for(var i = 0; i < game.awayPlayers.length; i++) {
+				if(playerId === game.awayPlayers[i].playerId) {
+					return true;
+				}
+			}
+
+			return false;
 		},
 
 		getGhostGoals: function(teamId, score, players) {
