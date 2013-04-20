@@ -28,6 +28,9 @@ define(function(require) {
 		},
 
 		login: function() {
+			$('#passwordButton').prop('disabled', true);
+			$('#password').prop('disabled', true);
+
 			var self = this;
 			var password = md5($('#password').val());
 			$.ajax({
@@ -44,6 +47,9 @@ define(function(require) {
 					$('#password-group').addClass('error');
 					$('#password').val('');
 					$('#passwordHelp').show();
+
+					$('#passwordButton').prop('disabled', false);
+					$('#password').prop('disabled', false);
 				}
 			});
 		},
