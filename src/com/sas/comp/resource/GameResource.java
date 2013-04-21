@@ -26,7 +26,11 @@ public class GameResource {
 
 	@GET
 	public List<Game> getSchedules(@QueryParam("date") final String date) throws ParseException {
-		return gameService.getSchedules(sdf.parse(date));
+		if (date == null) {
+			return gameService.getSchedules();
+		} else {
+			return gameService.getSchedules(sdf.parse(date));
+		}
 	}
 
 	@PUT
