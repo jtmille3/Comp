@@ -1,0 +1,21 @@
+<?xml version="1.0" ?> 
+<project name="AntExample1" default="war">
+	
+	<target name="init">
+		<mkdir dir="distribution" />
+	</target>
+	
+	<target name="war" depends="init">
+		<war destfile="distribution/comp.war" webxml="web/WEB-INF/web.xml">
+			<fileset dir="web">
+				<exclude name="**/work/**"/>
+			</fileset>
+			<lib dir="web/WEB-INF/lib"/>
+		</war>
+	</target>
+	
+	<target name="clean">
+		<delete dir="distribution" />
+	</target>
+	
+</project>
