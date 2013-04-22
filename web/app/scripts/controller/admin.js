@@ -28,18 +28,30 @@ define(function(require) {
 		},
 
 		login: function() {
-			var password = $('#password').val();
-			if(password === 'damneet') {
-				var adminTemplate = window.comp['web/app/templates/admin.html'];
-				$('#administrator').html(adminTemplate());
+			$('#passwordButton').prop('disabled', true);
+			$('#password').prop('disabled', true);
 
-				this.attachResetCacheHandler();
-				this.attachDatePickerHandler();
-			} else {
-				$('#password-group').addClass('error');
-				$('#password').val('');
-				$('#passwordHelp').show();
-			}
+			var self = this;
+			var password = md5($('#password').val());
+			$.ajax({
+				url: '/service/authentication?password=' + password,
+				type: 'POST',
+				success: function() {
+					var adminTemplate = window.comp['web/app/templates/admin.html'];
+					$('#administrator').html(adminTemplate());
+
+					self.attachResetCacheHandler();
+					self.attachDatePickerHandler();
+				},
+				error: function() {
+					$('#password-group').addClass('error');
+					$('#password').val('');
+					$('#passwordHelp').show();
+
+					$('#passwordButton').prop('disabled', false);
+					$('#password').prop('disabled', false);
+				}
+			});
 		},
 
 		attachResetCacheHandler: function() {
