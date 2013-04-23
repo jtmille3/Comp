@@ -35,8 +35,8 @@ public class GameResource {
 
 	@PUT
 	@Path("{id}/score")
-	public void update(final Game schedule) {
-		gameService.updateScore(schedule);
+	public void update(final Game game) {
+		gameService.updateScore(game);
 	}
 
 	@GET

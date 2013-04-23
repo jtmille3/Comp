@@ -150,6 +150,45 @@ public class GameService {
 		return schedules;
 	}
 
+	public Game getGame(final Integer gameId) {
+		Game game = null;
+
+		try {
+			final Connection conn = Database.getConnection();
+			final PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM schedule WHERE game_id = ?");
+			pstmt.setInt(1, gameId);
+
+			final ResultSet rs = pstmt.executeQuery();
+			if (rs.next()) {
+				game = new Game();
+				game.setHome(rs.getString("home"));
+				game.setHomeId(rs.getInt("home_id"));
+				game.setAway(rs.getString("away"));
+				game.setAwayId(rs.getInt("away_id"));
+				game.setDate(rs.getTimestamp("date"));
+				game.setGameId(rs.getInt("game_id"));
+
+				game.setHomeScore(rs.getInt("home_score"));
+				if (rs.wasNull()) {
+					game.setHomeScore(null);
+				}
+
+				game.setAwayScore(rs.getInt("away_score"));
+				if (rs.wasNull()) {
+					game.setAwayScore(null);
+				}
+			}
+
+			rs.close();
+			pstmt.close();
+			conn.close();
+		} catch (final Exception e) {
+			e.printStackTrace();
+		}
+
+		return game;
+	}
+
 	public void updateScore(final Game game) {
 		try {
 			final Connection conn = Database.getConnection();
