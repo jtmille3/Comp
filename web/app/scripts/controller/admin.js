@@ -123,7 +123,7 @@ define(function(require) {
 				var scoreTemplate = window.comp['web/app/templates/score.html'];
 				$('#' + gameId + '-score').html(scoreTemplate(game));
 
-				self.updateScore(game);
+				self.played(game);
 			});
 		},
 
@@ -181,25 +181,16 @@ define(function(require) {
 			var score = parseInt($score.html(), 10) || 0;
 			$score.html(score + 1);
 
-			if(playerId > 0) {
-				$.ajax({
-					url: '/service/goals',
-					type: 'POST',
-					contentType: 'application/json; charset=utf-8',
-					dataType: 'json',
-					data: JSON.stringify({
-						playerId: playerId,
-						gameId: game.gameId
-					})
-				});
-			}
-
-			if(this.isVisiting(game, playerId)) {
-				game.awayScore++;
-			} else {
-				game.homeScore++;
-			}
-			this.updateScore(game);
+			$.ajax({
+				url: '/service/goals',
+				type: 'POST',
+				contentType: 'application/json; charset=utf-8',
+				dataType: 'json',
+				data: JSON.stringify({
+					playerId: playerId,
+					gameId: game.gameId
+				})
+			});
 		},
 
 		removeGoal: function(game, playerId) {
@@ -213,28 +204,19 @@ define(function(require) {
 			$goals.html(goals - 1);
 			$score.html(score - 1);
 
-			if(playerId != -1) {
-				$.ajax({
-					url: '/service/goals',
-					type: 'DELETE',
-					contentType: 'application/json; charset=utf-8',
-					dataType: 'json',
-					data: JSON.stringify({
-						playerId: playerId,
-						gameId: game.gameId
-					})
-				});
-			}
-
-			if(this.isVisiting(game, playerId)) {
-				game.awayScore--;
-			} else {
-				game.homeScore--;
-			}
-			this.updateScore(game);
+			$.ajax({
+				url: '/service/goals',
+				type: 'DELETE',
+				contentType: 'application/json; charset=utf-8',
+				dataType: 'json',
+				data: JSON.stringify({
+					playerId: playerId,
+					gameId: game.gameId
+				})
+			});
 		},
 
-		updateScore: function(game) {
+		played: function(game) {
 			$.ajax({
 				url: '/service/games/' + game.gameId + '/score',
 				type: 'PUT',
