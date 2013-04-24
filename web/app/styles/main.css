@@ -8358,3 +8358,11 @@ th,
     overflow: visible !important;
   }
 }
+#footer {
+  height: 30px;
+  background-color: #ffffff;
+}
+#footer.navbar .brand {
+  padding: 5px 20px;
+  font-size: 14px;
+}

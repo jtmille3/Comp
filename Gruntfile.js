@@ -46,6 +46,7 @@ module.exports = function (grunt) {
             },
             less: {
                 files: [
+                    '<%= yeoman.app %>/less/**/*.less',
                     '<%= yeoman.app %>/components/bootstrap/less/**/*.less'
                 ],
                 tasks: ['less:development']
