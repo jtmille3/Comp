@@ -104,7 +104,7 @@ define(function(require) {
 			for(var i = 0; i < this.competitive.goals.length; i++) {
 				var goal = this.competitive.goals[i];
 				if(goal.gameId === gameId) {
-					if(i === 0 || this.competitive.goals[i - 1].playerId !== goal.playerId) {
+					if(goals.length === 0 || goals[goals.length - 1].playerId !== goal.playerId) {
 						unique = goal;
 						unique.times = 1;
 						goals.push(unique);
