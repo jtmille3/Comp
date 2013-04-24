@@ -6497,6 +6497,31 @@ a.badge:focus {
   width: 16px;
   height: 16px;
 }
+body {
+  padding-top: 60px;
+}
+th,
+.selectable {
+  cursor: pointer;
+}
+.table-striped tbody tr.won td {
+  background-color: #88FF88;
+}
+.table-striped tbody tr.lost td {
+  background-color: #FF8888;
+}
+.table-striped tbody tr.tied td {
+  background-color: #FFFF88;
+}
+.table-striped tbody tr.selected td {
+  background-color: #8888FF;
+}
+.table-striped tbody tr#goalsRow td {
+  background-color: #EDEDED;
+  -moz-box-shadow: inset 0 3px 3px rgba(128, 128, 128, 0.5);
+  -webkit-box-shadow: inset 0 3px 3px rgba(128, 128, 128, 0.5);
+  box-shadow: inset 0 3px 3px rgba(128, 128, 128, 0.5);
+}
 /*!
  * Bootstrap Responsive v2.3.1
  *
@@ -8332,29 +8357,4 @@ a.badge:focus {
     height: auto !important;
     overflow: visible !important;
   }
-}
-body {
-  padding-top: 60px;
-}
-th,
-.selectable {
-  cursor: pointer;
-}
-.table-striped tbody tr.won td {
-  background-color: #88FF88;
-}
-.table-striped tbody tr.lost td {
-  background-color: #FF8888;
-}
-.table-striped tbody tr.tied td {
-  background-color: #FFFF88;
-}
-.table-striped tbody tr.selected td {
-  background-color: #8888FF;
-}
-.table-striped tbody tr#goalsRow td {
-  background-color: #EDEDED;
-  -moz-box-shadow: inset 0 3px 3px rgba(128, 128, 128, 0.5);
-  -webkit-box-shadow: inset 0 3px 3px rgba(128, 128, 128, 0.5);
-  box-shadow: inset 0 3px 3px rgba(128, 128, 128, 0.5);
 }

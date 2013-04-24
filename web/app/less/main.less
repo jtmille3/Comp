@@ -1,25 +1,5 @@
 @import "../components/bootstrap/less/bootstrap.less";
 @import "../components/bootstrap-datepicker/less/datepicker.less";
-@import "../components/bootstrap/less/responsive.less";
-
-// Navbar
-// -------------------------
-@navbarCollapseWidth:             979px;
-
-@navbarHeight:                    40px;
-@navbarBackgroundHighlight:       #00539B;
-// @navbarBackgroundHighlight:       #003B76;
-@navbarBackground:                darken(@navbarBackgroundHighlight, 5%);
-@navbarBorder:                    darken(@navbarBackground, 12%);
-
-@navbarText:                      #DDD;
-@navbarLinkColor:                 #DDD;
-@navbarLinkColorHover:            @grayLighter;
-@navbarLinkColorActive:           @grayLighter;
-@navbarLinkBackgroundHover:       transparent;
-@navbarLinkBackgroundActive:      darken(@navbarBackground, 2%);
-
-@navbarBrandColor:                @navbarLinkColor;
 
 body {
 	padding-top: 60px;
@@ -51,3 +31,24 @@ th, .selectable {
 	-webkit-box-shadow: inset 0 3px 3px rgba(128, 128, 128, .5);
 	box-shadow: inset 0 3px 3px rgba(128, 128, 128, .5);
 }
+
+@import "../components/bootstrap/less/responsive.less";
+
+// Navbar
+// -------------------------
+@navbarCollapseWidth:             979px;
+
+@navbarHeight:                    40px;
+@navbarBackgroundHighlight:       #00539B;
+// @navbarBackgroundHighlight:       #003B76;
+@navbarBackground:                darken(@navbarBackgroundHighlight, 5%);
+@navbarBorder:                    darken(@navbarBackground, 12%);
+
+@navbarText:                      #DDD;
+@navbarLinkColor:                 #DDD;
+@navbarLinkColorHover:            @grayLighter;
+@navbarLinkColorActive:           @grayLighter;
+@navbarLinkBackgroundHover:       transparent;
+@navbarLinkBackgroundActive:      darken(@navbarBackground, 2%);
+
+@navbarBrandColor:                @navbarLinkColor;
