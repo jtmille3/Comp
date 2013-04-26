@@ -13,7 +13,7 @@ public class EmbeddedServer {
 
 	private void start() throws Exception {
 		final String appBase = "";
-		final Integer port = 80;
+		final Integer port = 8080;
 
 		final Tomcat tomcat = new Tomcat();
 		tomcat.setPort(port);

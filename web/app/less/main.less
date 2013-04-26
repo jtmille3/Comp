@@ -2,8 +2,6 @@
 @import "../components/bootstrap-datepicker/less/datepicker.less";
 
 body {
-	padding-top: 60px;
-	padding-bottom: 40px;
 }
 
 th, .selectable {
@@ -33,6 +31,15 @@ th, .selectable {
 	box-shadow: inset 0 3px 3px rgba(128, 128, 128, .5);
 }
 
+#footer .navbar-inner {
+	min-height: 30px;
+}
+
+#footer.navbar .brand {
+	padding: 5px 20px;
+	font-size: 14px;
+}
+
 @import "../components/bootstrap/less/responsive.less";
 
 // Navbar
@@ -52,13 +59,3 @@ th, .selectable {
 @navbarLinkBackgroundActive:      darken(@navbarBackground, 2%);
 
 @navbarBrandColor:                @navbarLinkColor;
-
-#footer {
-	height: 30px;
-	background-color: #ffffff;
-}
-
-#footer.navbar .brand {
-	padding: 5px 20px;
-	font-size: 14px;
-}
