@@ -47,18 +47,15 @@ th, .selectable {
 
 // Navbar
 // -------------------------
-//@navbarCollapseWidth:             979px;
-//
-//@navbar-height:                    40px;
-//@navbar-background-highlight:       #00539B;
-//@navbar-background:                darken(@navbar-background-highlight, 5%);
-//@navbar-border:                    darken(@navbar-background, 12%);
-//
-//@navbar-text:                      #DDD;
-//@navbar-link-color:                 #DDD;
-//@navbar-link-color-hover:            @gray-lighter;
-//@navbar-link-color-active:           @gray-lighter;
-//@navbar-link-background-hover:       transparent;
-//@navbar-link-background-active:      darken(@navbar-background, 2%);
-//
-//@navbar-brand-color:                @navbar-link-color;
+@navbar-default-color:       #00539B;
+@navbar-default-bg:                         darken(@navbar-default-color, 5%);
+@navbar-border:                             darken(@navbar-default-bg, 12%);
+
+@navbar-text:                               #DDD;
+@navbar-default-link-color:                 #DDD;
+@navbar-default-link-color-hover:            @gray-lighter;
+@navbar-default-link-color-active:           @gray-lighter;
+@navbar-default-link-background-hover:       transparent;
+@navbar-default-link-background-active:      darken(@navbar-default-bg, 2%);
+
+@navbar-default-brand-color:                 @navbar-default-link-color;
