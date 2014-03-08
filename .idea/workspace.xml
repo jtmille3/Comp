@@ -58,7 +58,7 @@
     <file path="$PROJECT_DIR$/src/com/sas/comp/service/StatisticService.java" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1366830946744" ignored="false" />
     <file path="/.gitignore" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1366900228403" ignored="false" />
     <file path="/EmbeddedServer.java" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394295471204" ignored="false" />
-    <file path="/main.less" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394310615625" ignored="false" />
+    <file path="/main.less" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394311023224" ignored="false" />
     <file path="/index.html" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394309327004" ignored="false" />
     <file path="/team_schedule.html" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394307647294" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -188,7 +188,7 @@
       <file leaf-file-name="main.less" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/app/less/main.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="61" column="0" selection-start="1584" selection-end="1584" vertical-scroll-proportion="0.8766626">
+            <state line="45" column="18" selection-start="912" selection-end="912" vertical-scroll-proportion="0.92503023">
               <folding />
             </state>
           </provider>
@@ -847,7 +847,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/app/less/main.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="0" selection-start="1584" selection-end="1584" vertical-scroll-proportion="0.8766626">
+        <state line="45" column="18" selection-start="912" selection-end="912" vertical-scroll-proportion="0.92503023">
           <folding />
         </state>
       </provider>
