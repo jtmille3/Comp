@@ -13,11 +13,11 @@
       <li><a href="#statistics-{{id}}" data-toggle="pill">Statistics</a></li>
       <li><a href="#playoffs-{{id}}" data-toggle="pill">Playoffs</a></li>
     </ul>
-    <div class="pill-content">
-      <div class="pill-pane active" id="standings-{{id}}">{{> standings this}}</div>
-      <div class="pill-pane" id="schedule-{{id}}">{{> league_schedule this}}</div>
-      <div class="pill-pane" id="statistics-{{id}}">{{> statistics this}}</div>
-      <div class="pill-pane" id="playoffs-{{id}}">{{> playoff_schedule this}}</div>
+    <div class="tab-content">
+      <div class="tab-pane active" id="standings-{{id}}">{{> standings this}}</div>
+      <div class="tab-pane" id="schedule-{{id}}">{{> league_schedule this}}</div>
+      <div class="tab-pane" id="statistics-{{id}}">{{> statistics this}}</div>
+      <div class="tab-pane" id="playoffs-{{id}}">{{> playoff_schedule this}}</div>
     </div>
   </div>
   {{/each}}

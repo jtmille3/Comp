@@ -10,5 +10,9 @@
     "jquery": "~1.8.3",
     "bootstrap-datepicker": ""
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "resolutions": {
+    "jquery": ">= 1.9.0",
+    "bootstrap": ">=3.0 <4.0"
+  }
 }

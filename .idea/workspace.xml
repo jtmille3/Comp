@@ -2,15 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="338d9bed-963b-460f-a418-ff028a1d4e43" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/.gitignore" afterPath="$PROJECT_DIR$/web/app/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="DELETED" beforePath="C:\intellij\Comp\component.json" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gruntfile.js" afterPath="$PROJECT_DIR$/Gruntfile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/templates/_alltime.html" afterPath="$PROJECT_DIR$/web/app/templates/_alltime.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/templates/_games.html" afterPath="$PROJECT_DIR$/web/app/templates/_games.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/templates/_statistics.html" afterPath="$PROJECT_DIR$/web/app/templates/_statistics.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/admin.html" afterPath="$PROJECT_DIR$/web/app/admin.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/templates/admin.html" afterPath="$PROJECT_DIR$/web/app/templates/admin.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/templates/comp.html" afterPath="$PROJECT_DIR$/web/app/templates/comp.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/index.html" afterPath="$PROJECT_DIR$/web/app/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/less/main.less" afterPath="$PROJECT_DIR$/web/app/less/main.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/templates/scores.html" afterPath="$PROJECT_DIR$/web/app/templates/scores.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/templates/team_schedule.html" afterPath="$PROJECT_DIR$/web/app/templates/team_schedule.html" />
     </list>
     <ignored path="comp.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1366829467214" ignored="false" />
+    <file path="/Dummy.txt" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394295391278" ignored="false" />
     <file path="/fragment.java" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1366732170537" ignored="false" />
     <file path="/TeamResource.java" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1364611810318" ignored="false" />
-    <file path="/a.dummy" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1364961855650" ignored="false" />
+    <file path="/a.dummy" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394305528682" ignored="false" />
     <file path="/a.java" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1364612005050" ignored="false" />
     <file path="/sample.java" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1364611989927" ignored="false" />
     <file path="/a.jsp" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1364612069451" ignored="false" />
@@ -30,16 +40,16 @@
     <file path="$PROJECT_DIR$/web/components/modernizr/test/js/lib/detect-global.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1364839682579" ignored="false" />
     <file path="$PROJECT_DIR$/web/components/modernizr/test/js/lib/jquery-1.7b2.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1364839682579" ignored="false" />
     <file path="/_standings.html" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1365304954061" ignored="false" />
-    <file path="$PROJECT_DIR$/../../../SAS_Projects/CurriculumPathways/Pathways/Resources/Source/Java/com/sas/inschool/commonclasses/rat/Page.java" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1364922452167" ignored="false" />
-    <file path="$PROJECT_DIR$/../../../SAS_Projects/CurriculumPathways/Pathways/Resources/Source/Java/com/sas/inschool/mathematics/algebrawidgets/numberlinevalidation/numberline/NLInterval.java" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1364922452167" ignored="false" />
-    <file path="$PROJECT_DIR$/../../../SAS_Projects/CurriculumPathways/Pathways/Framework/WebRoot/home/subscribe/subscribeaboutyou.xhtml" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1364922452167" ignored="false" />
-    <file path="$PROJECT_DIR$/../../../SAS_Projects/CurriculumPathways/Pathways/Framework/WEB-INF/web.xml" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1364922452167" ignored="false" />
-    <file path="$PROJECT_DIR$/../../../SAS_Projects/CurriculumPathways/Pathways/Resources/courseseries/algebra/module1/lesson5/content/practice/page5.xhtml" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1364922452167" ignored="false" />
-    <file path="$PROJECT_DIR$/../../../SAS_Projects/CurriculumPathways/Pathways/Resources/courseseries/algebra/module3/lesson5/content/learn/page2.xhtml" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1364922452167" ignored="false" />
-    <file path="$PROJECT_DIR$/../../../SAS_Projects/CurriculumPathways/Pathways/Resources/courseseries/algebra/module4/lesson3/content/practice/page8.xhtml" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1364922452167" ignored="false" />
-    <file path="$PROJECT_DIR$/../../../SAS_Projects/CurriculumPathways/Pathways/Framework/WEB-INF/faces-config.xml" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1364922452167" ignored="false" />
+    <file path="C:/../SAS_Projects/CurriculumPathways/Pathways/Resources/Source/Java/com/sas/inschool/commonclasses/rat/Page.java" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1364922452167" ignored="false" />
+    <file path="C:/../SAS_Projects/CurriculumPathways/Pathways/Resources/Source/Java/com/sas/inschool/mathematics/algebrawidgets/numberlinevalidation/numberline/NLInterval.java" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1364922452167" ignored="false" />
+    <file path="C:/../SAS_Projects/CurriculumPathways/Pathways/Framework/WebRoot/home/subscribe/subscribeaboutyou.xhtml" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1364922452167" ignored="false" />
+    <file path="C:/../SAS_Projects/CurriculumPathways/Pathways/Framework/WEB-INF/web.xml" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1364922452167" ignored="false" />
+    <file path="C:/../SAS_Projects/CurriculumPathways/Pathways/Resources/courseseries/algebra/module1/lesson5/content/practice/page5.xhtml" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1364922452167" ignored="false" />
+    <file path="C:/../SAS_Projects/CurriculumPathways/Pathways/Resources/courseseries/algebra/module3/lesson5/content/learn/page2.xhtml" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1364922452167" ignored="false" />
+    <file path="C:/../SAS_Projects/CurriculumPathways/Pathways/Resources/courseseries/algebra/module4/lesson3/content/practice/page8.xhtml" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1364922452167" ignored="false" />
+    <file path="C:/../SAS_Projects/CurriculumPathways/Pathways/Framework/WEB-INF/faces-config.xml" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1364922452167" ignored="false" />
     <file path="/PlayerResource.java" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1364962439335" ignored="false" />
-    <file path="/comp.html" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1364961731243" ignored="false" />
+    <file path="/comp.html" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394309992598" ignored="false" />
     <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/resources/html5-schema/html5.rnc" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1365263704150" ignored="false" />
     <file path="/competitive.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1365377383566" ignored="false" />
     <file path="/_league_schedule.html" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1365376735317" ignored="false" />
@@ -47,6 +57,10 @@
     <file path="$PROJECT_DIR$/src/com/sas/comp/service/GameService.java" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1366830946744" ignored="false" />
     <file path="$PROJECT_DIR$/src/com/sas/comp/service/StatisticService.java" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1366830946744" ignored="false" />
     <file path="/.gitignore" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1366900228403" ignored="false" />
+    <file path="/EmbeddedServer.java" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394295471204" ignored="false" />
+    <file path="/main.less" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394310094149" ignored="false" />
+    <file path="/index.html" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394309327004" ignored="false" />
+    <file path="/team_schedule.html" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394307647294" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +75,7 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -97,7 +112,6 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -108,66 +122,91 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Season.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/sas/comp/models/Season.java">
+      <file leaf-file-name="_playoff_schedule.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/app/templates/_playoff_schedule.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="13" selection-start="108" selection-end="108" vertical-scroll-proportion="0.0">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SeasonService.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/sas/comp/service/SeasonService.java">
+      <file leaf-file-name="_league_schedule.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/app/templates/_league_schedule.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="28" selection-start="300" selection-end="300" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#355#363#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EmbeddedServer.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/sas/comp/server/EmbeddedServer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="32" selection-start="606" selection-end="606" vertical-scroll-proportion="0.0">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Database.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/sas/comp/mysql/Database.java">
+      <file leaf-file-name="_games.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/app/templates/_games.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="0" selection-start="326" selection-end="326" vertical-scroll-proportion="0.0">
+            <state line="5" column="22" selection-start="120" selection-end="120" vertical-scroll-proportion="-3.2692308">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/.gitignore">
+      <file leaf-file-name="_cache.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/app/templates/_cache.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="4" selection-start="9" selection-end="9" vertical-scroll-proportion="0.0">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/app/.gitignore">
+      <file leaf-file-name="_alltime.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/app/templates/_alltime.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="15" selection-start="31" selection-end="31" vertical-scroll-proportion="0.062730625">
+            <state line="14" column="59" selection-start="448" selection-end="448" vertical-scroll-proportion="-9.153846">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CacheListener.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/sas/comp/listener/CacheListener.java">
+      <file leaf-file-name="scores.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/app/templates/scores.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="25" selection-start="711" selection-end="711" vertical-scroll-proportion="0.0">
+            <state line="18" column="21" selection-start="825" selection-end="825" vertical-scroll-proportion="-11.769231">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="score.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/app/templates/score.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="comp.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/app/templates/comp.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="24" column="59" selection-start="1144" selection-end="1144" vertical-scroll-proportion="-15.692307">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.less" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/app/less/main.less">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="42" column="19" selection-start="858" selection-end="858" vertical-scroll-proportion="0.86336154">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/app/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="56" column="45" selection-start="2688" selection-end="2688" vertical-scroll-proportion="-21.0">
               <folding />
             </state>
           </provider>
@@ -191,30 +230,30 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/com/sas/comp/models/Team.java" />
-        <option value="$PROJECT_DIR$/src/com/sas/comp/models/Goal.java" />
-        <option value="$PROJECT_DIR$/src/com/sas/comp/models/Game.java" />
-        <option value="$PROJECT_DIR$/src/com/sas/comp/resource/PlayerResource.java" />
-        <option value="$PROJECT_DIR$/src/com/sas/comp/models/Player.java" />
-        <option value="$PROJECT_DIR$/src/com/sas/comp/models/TeamPlayer.java" />
-        <option value="$PROJECT_DIR$/web/templates/_statistics.html" />
-        <option value="$PROJECT_DIR$/src/com/sas/comp/service/ScheduleService.java" />
-        <option value="$PROJECT_DIR$/web/templates/team_schedule.html" />
-        <option value="$PROJECT_DIR$/web/templates/_standings.html" />
-        <option value="$PROJECT_DIR$/web/templates/_league_schedule.html" />
         <option value="$PROJECT_DIR$/web/scripts/controller/competitive.js" />
-        <option value="$PROJECT_DIR$/src/com/sas/comp/server/EmbeddedServer.java" />
         <option value="$PROJECT_DIR$/src/com/sas/comp/mysql/Database.java" />
         <option value="$PROJECT_DIR$/web/app/styles/main.css" />
         <option value="$PROJECT_DIR$/web/app/.gitignore" />
+        <option value="$PROJECT_DIR$/src/com/sas/comp/server/EmbeddedServer.java" />
+        <option value="$PROJECT_DIR$/web/app/admin.html" />
+        <option value="$PROJECT_DIR$/Gruntfile.js" />
+        <option value="$PROJECT_DIR$/web/app/templates/team_schedule.html" />
+        <option value="$PROJECT_DIR$/web/app/templates/scores.html" />
+        <option value="$PROJECT_DIR$/web/app/templates/admin.html" />
+        <option value="$PROJECT_DIR$/web/app/templates/_statistics.html" />
+        <option value="$PROJECT_DIR$/web/app/templates/_games.html" />
+        <option value="$PROJECT_DIR$/web/app/templates/_alltime.html" />
+        <option value="$PROJECT_DIR$/web/app/index.html" />
+        <option value="$PROJECT_DIR$/web/app/templates/comp.html" />
+        <option value="$PROJECT_DIR$/web/app/less/main.less" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1296" />
-    <option name="height" value="1000" />
+    <option name="width" value="2576" />
+    <option name="height" value="1426" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -244,7 +283,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -313,13 +351,94 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Comp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Comp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="styles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Comp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Comp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="META-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Comp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Comp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="comp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Comp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Comp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="comp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -330,17 +449,18 @@
     <property name="recentsLimit" value="5" />
     <property name="options.lastSelected" value="editor" />
     <property name="MemberChooser.sorted" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../SAS_Projects/CurriculumPathways" />
+    <property name="last_opened_file_path" value="C:/../SAS_Projects/CurriculumPathways" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="GoToClass.includeJavaFiles" value="false" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="MemberChooser.showClasses" value="true" />
     <property name="FullScreen" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="dynamic.classpath" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -391,6 +511,19 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -419,19 +552,6 @@
       <listeners />
       <method />
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method />
-    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" />
@@ -445,6 +565,13 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="" />
       <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugSession" factoryName="Local" singleton="true">
+      <JSDebuggerConfigurationSettings>
+        <option name="engineId" />
+        <option name="fileUrl" />
+      </JSDebuggerConfigurationSettings>
       <method />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
@@ -513,13 +640,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
+    <frame x="-8" y="-8" width="2576" height="1426" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32978722" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -537,13 +665,12 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24878444" sideWeight="0.6713948" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3286052" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2486078" sideWeight="0.6721828" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32781717" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -613,76 +740,114 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/sas/comp/models/Season.java">
+    <entry file="file://$PROJECT_DIR$/web/app/templates/schedule.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/sas/comp/listener/CacheListener.java">
+    <entry file="file://$PROJECT_DIR$/web/app/templates/password.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="25" selection-start="711" selection-end="711" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/sas/comp/service/SeasonService.java">
+    <entry file="file://$PROJECT_DIR$/web/app/templates/admin.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="13" selection-start="375" selection-end="375" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#355#363#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/sas/comp/models/Season.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="13" selection-start="108" selection-end="108" vertical-scroll-proportion="0.0">
+        <state line="10" column="19" selection-start="363" selection-end="363" vertical-scroll-proportion="-6.5384617">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/sas/comp/listener/CacheListener.java">
+    <entry file="file://$PROJECT_DIR$/web/app/templates/_statistics.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="25" selection-start="711" selection-end="711" vertical-scroll-proportion="0.0">
+        <state line="21" column="24" selection-start="498" selection-end="498" vertical-scroll-proportion="-13.730769">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/sas/comp/service/SeasonService.java">
+    <entry file="file://$PROJECT_DIR$/web/app/templates/_standings.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="28" selection-start="300" selection-end="300" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#355#363#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/sas/comp/server/EmbeddedServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="32" selection-start="606" selection-end="606" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/sas/comp/mysql/Database.java">
+    <entry file="file://$PROJECT_DIR$/web/app/templates/_score.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="0" selection-start="326" selection-end="326" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/.gitignore">
+    <entry file="file://$PROJECT_DIR$/web/app/templates/_league_schedule.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="4" selection-start="9" selection-end="9" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/app/.gitignore">
+    <entry file="file://$PROJECT_DIR$/web/app/templates/_games.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="15" selection-start="31" selection-end="31" vertical-scroll-proportion="0.062730625">
+        <state line="5" column="22" selection-start="120" selection-end="120" vertical-scroll-proportion="-3.2692308">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/app/templates/_cache.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/app/templates/_alltime.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="59" selection-start="448" selection-end="448" vertical-scroll-proportion="-9.153846">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/app/templates/scores.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="21" selection-start="825" selection-end="825" vertical-scroll-proportion="-11.769231">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/app/templates/score.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/app/templates/_playoff_schedule.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/app/templates/comp.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="59" selection-start="1144" selection-end="1144" vertical-scroll-proportion="-15.692307">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/app/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="56" column="45" selection-start="2688" selection-end="2688" vertical-scroll-proportion="-21.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/app/less/main.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="19" selection-start="858" selection-end="858" vertical-scroll-proportion="0.86336154">
           <folding />
         </state>
       </provider>
