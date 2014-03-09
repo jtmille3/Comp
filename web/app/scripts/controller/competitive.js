@@ -78,10 +78,12 @@ define(function(require) {
 		selectedTeam: function(season, teamId) {
 			var schedule = this.schedule(season, teamId);
 			var roster = this.roster(season, teamId);
+            var team = this.getTeam(season, teamId);
 
 			var teamScheduleTemplate = window.comp['web/app/templates/team_schedule.html'];
 			var template = teamScheduleTemplate({
-				id: teamId,
+				id: team.id,
+                name: team.team,
 				schedule: schedule,
 				roster: roster
 			});
@@ -123,6 +125,16 @@ define(function(require) {
 			}
 			return goals;
 		},
+        getTeam: function(season, teamId) {
+            for(var i = 0; i < season.standings.length; i++) {
+                var team = season.standings[i];
+                if(team.teamId === teamId) {
+                    return team;
+                }
+            }
+
+            return {};
+        },
 		roster: function(season, teamId) {
 			var roster = [];
 			for(var j = 0; j < season.playerStatistics.length; j++) {
