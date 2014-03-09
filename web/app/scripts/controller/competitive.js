@@ -31,6 +31,11 @@ define(function(require) {
 				this.attachLeagueScheduleClickHandler(season);
 				this.attachPlayoffScheduleClickHandler(season);
 			}
+
+            this.getWeather(function(weather) {
+                var weatherTemplate = window.comp['web/app/templates/weather.html'];
+                $('#weather').html(weatherTemplate(weather));
+            });
 		},
 		attachStandingsClickHandler: function(season) {
 			var self = this;
@@ -157,6 +162,26 @@ define(function(require) {
 				}
 			}
 			return schedule;
-		}
+		},
+        getWeather: function(callback) {
+            // Specify the ZIP/location code and units (f or c)
+            var loc = '27513';
+            var u = 'f';
+
+            var query = "SELECT item.condition FROM weather.forecast WHERE location='" + loc + "' AND u='" + u + "'";
+            var cacheBuster = Math.floor((new Date().getTime()) / 1200 / 1000);
+            var url = 'http://query.yahooapis.com/v1/public/yql?q=' + encodeURIComponent(query) + '&format=json&_nocache=' + cacheBuster;
+
+            window['wxCallback'] = function(data) {
+                callback(data.query.results.channel.item.condition);
+            };
+
+            $.ajax({
+                url: url,
+                dataType: 'jsonp',
+                cache: true,
+                jsonpCallback: 'wxCallback'
+            });
+        }
 	};
 });
