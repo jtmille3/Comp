@@ -1,6 +1,34 @@
-<hr/>
+
 <h3>{{name}}</h3>
 <div class="row">
+    <div class="col-md-4">
+        <table id="{{id}}-team-roster-table" class="table table-condensed table-striped table-hover tablesorter">
+            <thead>
+            <th></th>
+            <th>Player</th>
+            <th>Goals</th>
+            </thead>
+            <tbody>
+            {{#each roster}}
+            <tr>
+                <td width="40px">
+                    {{#if goalie}}
+                    <img src="img/goalie.png"/>
+                    {{/if}}
+                    {{#if captain}}
+                    <img src="img/captain.png"/>
+                    {{/if}}
+                    {{#if coCaptain}}
+                    <img src="img/cocaptain.png"/>
+                    {{/if}}
+                </td>
+                <td>{{player}}</td>
+                <td>{{goals}}</td>
+            </tr>
+            {{/each}}
+            </tbody>
+        </table>
+    </div>
     <div class="col-md-8">
     	<table id="{{id}}-team-schedule-table" class="table table-condensed table-striped table-hover tablesorter">
 			<thead>
@@ -21,32 +49,5 @@
 			</tbody>
 		</table>
 		<div id='{{id}}-goal-summary'></div>
-    </div>
-    <div class="col-md-4">
-    	<table id="{{id}}-team-roster-table" class="table table-condensed table-striped table-hover tablesorter">
-			<thead>
-				<th colspan=2>Roster</th>
-				<th>Goals</th>
-			</thead>
-			<tbody>
-				{{#each roster}}
-					<tr>
-						<td width="40px">
-						{{#if goalie}}
-							<img src="img/goalie.png"/>
-						{{/if}}
-						{{#if captain}}
-							<img src="img/captain.png"/>
-						{{/if}}
-						{{#if coCaptain}}
-							<img src="img/cocaptain.png"/>
-						{{/if}}
-						</td>
-						<td>{{player}}</td>
-						<td>{{goals}}</td>
-					</tr>
-				{{/each}}
-			</tbody>
-		</table>
     </div>
 </div>
