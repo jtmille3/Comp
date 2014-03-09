@@ -50,6 +50,21 @@ th, .selectable {
   margin-top: 10px;
 }
 
+.sidebar {
+  position: fixed;
+  top: 120px;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  display: block;
+  padding: 20px;
+  margin-left: 15px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: #f5f5f5;
+  border-right: 1px solid #eee;
+}
+
 //@import "../components/bootstrap/less/responsive.less";
 
 // Navbar
@@ -66,3 +81,29 @@ th, .selectable {
 @navbar-default-link-background-active:      darken(@navbar-default-bg, 2%);
 
 @navbar-default-brand-color:                 @navbar-default-link-color;
+
+// D3 styling for brackets
+
+.node rect {
+  cursor: pointer;
+  fill: #fff;
+  stroke: black;
+  stroke-width: 2px;
+}
+
+.node text {
+  font: 14px sans-serif;
+  cursor: pointer;
+}
+
+path.link {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 1.5px;
+}
+
+.champion {
+  fill: #AAF !important;
+  stroke: black !important;
+  stroke-width: 1.5px !important;
+}

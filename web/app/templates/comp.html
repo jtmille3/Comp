@@ -7,17 +7,25 @@
 <div class="tab-content">
   {{#each seasons}}
   <div class="tab-pane {{#unless @index}}active{{/unless}}" id="season-{{id}}">
-    <ul class="nav nav-pills">
-      <li class="active"><a href="#standings-{{id}}" data-toggle="pill">Standings</a></li>
-      <li><a href="#schedule-{{id}}" data-toggle="pill">Schedule</a></li>
-      <li><a href="#statistics-{{id}}" data-toggle="pill">Statistics</a></li>
-      <li><a href="#playoffs-{{id}}" data-toggle="pill">Playoffs</a></li>
-    </ul>
-    <div class="tab-content">
-      <div class="tab-pane active" id="standings-{{id}}">{{> standings this}}</div>
-      <div class="tab-pane" id="schedule-{{id}}">{{> league_schedule this}}</div>
-      <div class="tab-pane" id="statistics-{{id}}">{{> statistics this}}</div>
-      <div class="tab-pane" id="playoffs-{{id}}">{{> playoff_schedule this}}</div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2 well sidebar">
+                <ul class="nav nav-pills nav-stacked">
+                    <li class="active"><a href="#standings-{{id}}" data-toggle="pill">Standings</a></li>
+                    <li><a href="#schedule-{{id}}" data-toggle="pill">Schedule</a></li>
+                    <li><a href="#statistics-{{id}}" data-toggle="pill">Statistics</a></li>
+                    <li><a href="#playoffs-{{id}}" data-toggle="pill">Playoffs</a></li>
+                </ul>
+            </div>
+            <div class="col-md-offset-2 col-md-10">
+                <div class="tab-content">
+                    <div class="tab-pane active" id="standings-{{id}}">{{> standings this}}</div>
+                    <div class="tab-pane" id="schedule-{{id}}">{{> league_schedule this}}</div>
+                    <div class="tab-pane" id="statistics-{{id}}">{{> statistics this}}</div>
+                    <div class="tab-pane" id="playoffs-{{id}}">{{> playoff_schedule this}}</div>
+                </div>
+            </div>
+        </div>
     </div>
   </div>
   {{/each}}
