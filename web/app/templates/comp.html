@@ -3,16 +3,24 @@
   <div class="tab-pane {{#unless @index}}active{{/unless}}" id="season-{{id}}">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-2 sidebar">
-                <ul class="nav nav-sidebar nav-stacked">
+            <div class="col-md-12">
+                <h1 class="page-header">{{name}} Season</h1>
+                <ul class="nav nav-pills">
                     <li class="active"><a href="#standings-{{id}}" data-toggle="pill">Standings</a></li>
                     <li><a href="#schedule-{{id}}" data-toggle="pill">Schedule</a></li>
                     <li><a href="#statistics-{{id}}" data-toggle="pill">Statistics</a></li>
                     <li><a href="#playoffs-{{id}}" data-toggle="pill">Playoffs</a></li>
                 </ul>
-            </div>
-            <div class="col-md-offset-2 col-md-10">
-                <h1 class="page-header">{{name}} Season</h1>
+            <!--<div class="col-md-2 sidebar">-->
+                <!--<ul class="nav nav-sidebar nav-stacked">-->
+                    <!--<li class="active"><a href="#standings-{{id}}" data-toggle="pill">Standings</a></li>-->
+                    <!--<li><a href="#schedule-{{id}}" data-toggle="pill">Schedule</a></li>-->
+                    <!--<li><a href="#statistics-{{id}}" data-toggle="pill">Statistics</a></li>-->
+                    <!--<li><a href="#playoffs-{{id}}" data-toggle="pill">Playoffs</a></li>-->
+                <!--</ul>-->
+            <!--</div>-->
+
+
                 <div class="tab-content">
                     <div class="tab-pane active" id="standings-{{id}}">{{> standings this}}</div>
                     <div class="tab-pane" id="schedule-{{id}}">{{> league_schedule this}}</div>
