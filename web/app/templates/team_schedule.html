@@ -1,5 +1,5 @@
 <hr/>
-<h4>{{name}}</h4>
+<h3>{{name}}</h3>
 <div class="row">
     <div class="col-md-8">
     	<table id="{{id}}-team-schedule-table" class="table table-condensed table-striped table-hover tablesorter">
@@ -12,8 +12,8 @@
 			<tbody>
 				{{#each schedule}}
 					<tr id="{{gameId}}" class="{{result}} selectable">
-						<td>{{home}}</td>
-						<td>{{away}}</td>
+						<td>{{#if homeTeam}}<strong>{{/if}}{{home}}{{#if homeTeam}}</strong>{{/if}}</td>
+                        <td>{{#if awayTeam}}<strong>{{/if}}{{away}}{{#if awayTeam}}</strong>{{/if}}</td>
 						<td>{{played}}</td>
 						<td>{{#if available}}{{score}}{{/if}}</td>
 					</tr>
@@ -31,7 +31,7 @@
 			<tbody>
 				{{#each roster}}
 					<tr>
-						<td width="20px">
+						<td width="40px">
 						{{#if goalie}}
 							<img src="img/goalie.png"/>
 						{{/if}}

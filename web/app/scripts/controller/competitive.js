@@ -149,7 +149,10 @@ define(function(require) {
 			var schedule = [];
 			for(var i = 0; i < season.leagueSchedule.length; i++) {
 				var match = season.leagueSchedule[i];
+                match.homeTeam = false;
+                match.awayTeam = false;
 				if(match.homeId === teamId) {
+                    match.homeTeam = true;
 					if(match.available) {
 						if(match.homeScore > match.awayScore) {
 							match.result = 'won';
@@ -161,6 +164,7 @@ define(function(require) {
 					}
 					schedule.push(match);
 				} else if(match.awayId === teamId) {
+                    match.awayTeam = true;
 					if(match.available) {
 						if(match.homeScore < match.awayScore) {
 							match.result = 'won';
