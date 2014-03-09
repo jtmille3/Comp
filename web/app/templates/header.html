@@ -1,0 +1,25 @@
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">SAS Competitive Soccer Standings</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Seasons <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        {{#each seasons}}
+                        <li {{#unless @index}}class='active'{{/unless}}><a href="#season-{{id}}" data-toggle="tab">{{name}}</a></li>
+                        {{/each}}
+                    </ul>
+                </li>
+                <li><a href="#all-time" data-toggle="tab">Statistics</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Field Status</a></li>
+                <li><a href="#">Weather</a></li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div>
+</div>

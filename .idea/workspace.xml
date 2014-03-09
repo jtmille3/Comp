@@ -3,13 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="338d9bed-963b-460f-a418-ff028a1d4e43" name="Default" comment="">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/app/scripts/bracket.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/templates/_alltime.html" afterPath="$PROJECT_DIR$/web/app/templates/_alltime.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/app/templates/header.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/templates/_league_schedule.html" afterPath="$PROJECT_DIR$/web/app/templates/_league_schedule.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/templates/_playoff_schedule.html" afterPath="$PROJECT_DIR$/web/app/templates/_playoff_schedule.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/templates/_standings.html" afterPath="$PROJECT_DIR$/web/app/templates/_standings.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/templates/_statistics.html" afterPath="$PROJECT_DIR$/web/app/templates/_statistics.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower.json" afterPath="$PROJECT_DIR$/bower.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/templates/comp.html" afterPath="$PROJECT_DIR$/web/app/templates/comp.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/scripts/controller/competitive.js" afterPath="$PROJECT_DIR$/web/app/scripts/controller/competitive.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/index.html" afterPath="$PROJECT_DIR$/web/app/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/less/main.less" afterPath="$PROJECT_DIR$/web/app/less/main.less" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/templates/schedule.html" afterPath="$PROJECT_DIR$/web/app/templates/schedule.html" />
@@ -50,19 +51,20 @@
     <file path="C:/../SAS_Projects/CurriculumPathways/Pathways/Resources/courseseries/algebra/module4/lesson3/content/practice/page8.xhtml" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1364922452167" ignored="false" />
     <file path="C:/../SAS_Projects/CurriculumPathways/Pathways/Framework/WEB-INF/faces-config.xml" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1364922452167" ignored="false" />
     <file path="/PlayerResource.java" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1364962439335" ignored="false" />
-    <file path="/comp.html" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394331187539" ignored="false" />
+    <file path="/comp.html" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394337923647" ignored="false" />
     <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/resources/html5-schema/html5.rnc" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1365263704150" ignored="false" />
-    <file path="/competitive.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1365377383566" ignored="false" />
+    <file path="/competitive.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394334758339" ignored="false" />
     <file path="/_league_schedule.html" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1365376735317" ignored="false" />
     <file path="/.gitignore" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1366900228403" ignored="false" />
     <file path="/EmbeddedServer.java" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394295471204" ignored="false" />
-    <file path="/main.less" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394332531610" ignored="false" />
-    <file path="/index.html" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394315654574" ignored="false" />
+    <file path="/main.less" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394338109757" ignored="false" />
+    <file path="/index.html" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394334724055" ignored="false" />
     <file path="/team_schedule.html" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394307647294" ignored="false" />
     <file path="/SeasonService.java" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394311450253" ignored="false" />
     <file path="/_playoff_schedule.html" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394315270226" ignored="false" />
     <file path="/bracket.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394319606075" ignored="false" />
     <file path="/bower.json" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394315520651" ignored="false" />
+    <file path="/header.html" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394336556253" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,37 +126,39 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="_statistics.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/app/templates/_statistics.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="79" selection-start="559" selection-end="559" vertical-scroll-proportion="-14.384615">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_standings.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/app/templates/_standings.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="149" selection-start="270" selection-end="270" vertical-scroll-proportion="-7.8461537">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="schedule.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/app/templates/schedule.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="60" selection-start="60" selection-end="60" vertical-scroll-proportion="-0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="comp.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/app/templates/comp.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="24" selection-start="970" selection-end="970" vertical-scroll-proportion="-12.423077">
+            <state line="3" column="148" selection-start="159" selection-end="159" vertical-scroll-proportion="-1.9615384">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/app/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="43" column="25" selection-start="2170" selection-end="2170" vertical-scroll-proportion="-15.115385">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="competitive.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/app/scripts/controller/competitive.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="166" selection-start="529" selection-end="529" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="header.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/app/templates/header.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="46" selection-start="607" selection-end="607" vertical-scroll-proportion="-6.5384617">
               <folding />
             </state>
           </provider>
@@ -181,7 +185,7 @@
       <file leaf-file-name="_alltime.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/app/templates/_alltime.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="80" selection-start="316" selection-end="316" vertical-scroll-proportion="-5.8846154">
+            <state line="27" column="183" selection-start="807" selection-end="807" vertical-scroll-proportion="-17.653847">
               <folding />
             </state>
           </provider>
@@ -190,25 +194,7 @@
       <file leaf-file-name="main.less" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/app/less/main.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="48" selection-start="502" selection-end="502" vertical-scroll-proportion="0.32889965">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="scores.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/app/templates/scores.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="48" selection-start="167" selection-end="182" vertical-scroll-proportion="-1.9615384">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="team_schedule.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/app/templates/team_schedule.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="74" selection-start="664" selection-end="664" vertical-scroll-proportion="-15.038462">
+            <state line="57" column="16" selection-start="1037" selection-end="1037" vertical-scroll-proportion="0.1521197">
               <folding />
             </state>
           </provider>
@@ -232,21 +218,21 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/web/app/templates/_games.html" />
-        <option value="$PROJECT_DIR$/src/com/sas/comp/service/SeasonService.java" />
-        <option value="$PROJECT_DIR$/web/app/templates/_playoff_visual.html" />
         <option value="$PROJECT_DIR$/bower.json" />
-        <option value="$PROJECT_DIR$/web/app/index.html" />
         <option value="$PROJECT_DIR$/web/app/scripts/bracket.js" />
-        <option value="$PROJECT_DIR$/web/app/templates/comp.html" />
         <option value="$PROJECT_DIR$/web/app/templates/_standings.html" />
         <option value="$PROJECT_DIR$/web/app/templates/_league_schedule.html" />
-        <option value="$PROJECT_DIR$/web/app/templates/_alltime.html" />
         <option value="$PROJECT_DIR$/web/app/templates/_statistics.html" />
         <option value="$PROJECT_DIR$/web/app/templates/schedule.html" />
         <option value="$PROJECT_DIR$/web/app/templates/scores.html" />
         <option value="$PROJECT_DIR$/web/app/templates/_playoff_schedule.html" />
         <option value="$PROJECT_DIR$/web/app/templates/team_schedule.html" />
+        <option value="$PROJECT_DIR$/web/app/templates/_alltime.html" />
+        <option value="$PROJECT_DIR$/web/app/index.html" />
+        <option value="$PROJECT_DIR$/web/app/scripts/controller/competitive.js" />
+        <option value="$PROJECT_DIR$/web/app/components/bootstrap/less/variables.less" />
+        <option value="$PROJECT_DIR$/web/app/templates/header.html" />
+        <option value="$PROJECT_DIR$/web/app/templates/comp.html" />
         <option value="$PROJECT_DIR$/web/app/less/main.less" />
       </list>
     </option>
@@ -270,7 +256,7 @@
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectReloadState">
-    <option name="STATE" value="0" />
+    <option name="STATE" value="1" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
@@ -835,41 +821,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/bower.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="39" selection-start="382" selection-end="382" vertical-scroll-proportion="0.40324596">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/app/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="104" selection-start="2607" selection-end="2607" vertical-scroll-proportion="-18.384615">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/app/templates/_score.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/app/templates/_games.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/app/templates/_cache.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/app/templates/score.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="114" selection-start="16" selection-end="16" vertical-scroll-proportion="-0.0">
@@ -898,13 +849,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/app/templates/comp.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="24" selection-start="970" selection-end="970" vertical-scroll-proportion="-12.423077">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/app/templates/_statistics.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="22" column="79" selection-start="559" selection-end="559" vertical-scroll-proportion="-14.384615">
@@ -919,9 +863,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/app/templates/_playoff_schedule.html">
+    <entry file="file://$PROJECT_DIR$/web/app/templates/_alltime.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="117" selection-start="446" selection-end="446" vertical-scroll-proportion="-11.769231">
+        <state line="27" column="183" selection-start="807" selection-end="807" vertical-scroll-proportion="-17.653847">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/app/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="25" selection-start="2170" selection-end="2170" vertical-scroll-proportion="-15.115385">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/app/components/bootstrap/less/variables.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="404" column="44" selection-start="13641" selection-end="13641" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/app/components/bootstrap/less/navbar.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="401" column="43" selection-start="9107" selection-end="9139" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -933,16 +898,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/app/templates/_alltime.html">
+    <entry file="file://$PROJECT_DIR$/web/app/scripts/controller/competitive.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="80" selection-start="316" selection-end="316" vertical-scroll-proportion="-5.8846154">
+        <state line="17" column="166" selection-start="529" selection-end="529" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/app/templates/_playoff_schedule.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="117" selection-start="446" selection-end="446" vertical-scroll-proportion="-11.769231">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/app/templates/header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="46" selection-start="607" selection-end="607" vertical-scroll-proportion="-6.5384617">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/app/templates/comp.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="148" selection-start="159" selection-end="159" vertical-scroll-proportion="-1.9615384">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/app/less/main.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="48" selection-start="502" selection-end="502" vertical-scroll-proportion="0.32889965">
+        <state line="57" column="16" selection-start="1037" selection-end="1037" vertical-scroll-proportion="0.1521197">
           <folding />
         </state>
       </provider>

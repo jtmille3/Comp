@@ -11,6 +11,9 @@ define(function(require) {
 				localStorage.competitive = JSON.stringify(competitive);
 			}
 			*/
+            var headerTemplate = window.comp['web/app/templates/header.html'];
+            $('#header').html(headerTemplate(competitive));
+
 			var compTemplate = window.comp['web/app/templates/comp.html'];
 			$('#competitive').html(compTemplate(competitive));
 

@@ -51,24 +51,62 @@ th, .selectable {
 }
 
 .sidebar {
+  position: fixed;
+  top: 51px;
+  bottom: 0;
+  left: 0;
+  padding-top: 20px;
+  z-index: 1000;
+  display: block;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: #f5f5f5;
+  border-right: 1px solid #eee;
+}
+
+/* Sidebar navigation */
+.nav-sidebar {
+  margin-right: -21px; /* 20px padding + 1px border */
+  margin-bottom: 20px;
+  margin-left: -20px;
+}
+.nav-sidebar > li > a {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.nav-sidebar > .active > a {
+   color: #fff;
+   background-color: #428bca;
+}
+
+.nav-sidebar > .active > a:hover {
+  color: #fff;
+  background-color: #428bca;
 }
 
 //@import "../components/bootstrap/less/responsive.less";
 
 // Navbar
 // -------------------------
-@navbar-default-color:       #00539B;
+@navbar-default-color:                      #00539B;
 @navbar-default-bg:                         darken(@navbar-default-color, 5%);
 @navbar-border:                             darken(@navbar-default-bg, 12%);
 
 @navbar-text:                               #DDD;
 @navbar-default-link-color:                 #DDD;
-@navbar-default-link-color-hover:            @gray-lighter;
-@navbar-default-link-color-active:           @gray-lighter;
-@navbar-default-link-background-hover:       transparent;
-@navbar-default-link-background-active:      darken(@navbar-default-bg, 2%);
+@navbar-default-link-hover-color:           #DDD;
+@navbar-default-link-active-color:          #DDD;
+@navbar-default-link-hover-bg:      transparent;
+@navbar-default-link-active-bg:     darken(@navbar-default-bg, 2%);
 
-@navbar-default-brand-color:                 @navbar-default-link-color;
+@navbar-default-brand-color:                @navbar-default-link-color;
+
+@navbar-default-toggle-hover-bg:            #DDD;
+@navbar-default-toggle-icon-bar-bg:         #888;
+@navbar-default-toggle-border-color:        #DDD;
+
+@nav-tabs-active-link-hover-color:          #DDD;
+@nav-tabs-active-link-hover-border-color:   #ddd;
 
 // D3 styling for brackets
 
