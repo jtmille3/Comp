@@ -56,7 +56,7 @@
     <file path="/_league_schedule.html" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1365376735317" ignored="false" />
     <file path="/.gitignore" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1366900228403" ignored="false" />
     <file path="/EmbeddedServer.java" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394295471204" ignored="false" />
-    <file path="/main.less" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394332531610" ignored="false" />
+    <file path="/main.less" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394332754886" ignored="false" />
     <file path="/index.html" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394315654574" ignored="false" />
     <file path="/team_schedule.html" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394307647294" ignored="false" />
     <file path="/SeasonService.java" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394311450253" ignored="false" />
@@ -178,19 +178,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_alltime.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="_alltime.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/app/templates/_alltime.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="80" selection-start="316" selection-end="316" vertical-scroll-proportion="-5.8846154">
+            <state line="23" column="68" selection-start="667" selection-end="667" vertical-scroll-proportion="0.48813984">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.less" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="main.less" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/app/less/main.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="48" selection-start="502" selection-end="502" vertical-scroll-proportion="0.32889965">
+            <state line="23" column="166" selection-start="461" selection-end="461" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -241,13 +241,13 @@
         <option value="$PROJECT_DIR$/web/app/templates/comp.html" />
         <option value="$PROJECT_DIR$/web/app/templates/_standings.html" />
         <option value="$PROJECT_DIR$/web/app/templates/_league_schedule.html" />
-        <option value="$PROJECT_DIR$/web/app/templates/_alltime.html" />
         <option value="$PROJECT_DIR$/web/app/templates/_statistics.html" />
         <option value="$PROJECT_DIR$/web/app/templates/schedule.html" />
         <option value="$PROJECT_DIR$/web/app/templates/scores.html" />
         <option value="$PROJECT_DIR$/web/app/templates/_playoff_schedule.html" />
         <option value="$PROJECT_DIR$/web/app/templates/team_schedule.html" />
         <option value="$PROJECT_DIR$/web/app/less/main.less" />
+        <option value="$PROJECT_DIR$/web/app/templates/_alltime.html" />
       </list>
     </option>
   </component>
@@ -933,16 +933,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/app/templates/_alltime.html">
+    <entry file="file://$PROJECT_DIR$/web/app/less/main.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="80" selection-start="316" selection-end="316" vertical-scroll-proportion="-5.8846154">
+        <state line="23" column="166" selection-start="461" selection-end="461" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/app/less/main.less">
+    <entry file="file://$PROJECT_DIR$/web/app/templates/_alltime.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="48" selection-start="502" selection-end="502" vertical-scroll-proportion="0.32889965">
+        <state line="23" column="68" selection-start="667" selection-end="667" vertical-scroll-proportion="0.48813984">
           <folding />
         </state>
       </provider>
