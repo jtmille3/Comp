@@ -6,7 +6,7 @@ import java.util.Date;
 import org.codehaus.jackson.annotate.JsonIgnore;
 
 public class Game {
-	private static SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yy hh:mm");
+	private static SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm");
 
 	private String home;
 	private Integer homeId;

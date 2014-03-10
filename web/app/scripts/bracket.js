@@ -2,12 +2,15 @@ define(function(require) {
     'use strict';
 
     return {
-        generate: function(id, data) {
+        generate: function(id, games) {
+            console.log("");
+            console.log(id);
+            this.transformToBracket(games);
             var m = [20, 20, 20, 20],
                 w = 1280 - m[1] - m[3],
                 h = 800 - m[0] - m[2],
                 i = 0,
-                root = data;
+                root = games;
 
             var tree = d3.layout.tree()
                 .size([h, w]);
@@ -15,7 +18,7 @@ define(function(require) {
             var diagonal = d3.svg.diagonal()
                 .projection(function(d) { return [d.y, d.x]; });
 
-            var vis = d3.select(id).append("svg")
+            var vis = d3.select('#' + id).append("svg")
                 .attr("width", w + m[1] + m[3])
                 .attr("height", h + m[0] + m[2])
                 .append("g")
@@ -24,29 +27,29 @@ define(function(require) {
             root.x0 = h / 2;
             root.y0 = 0;
 
-            function toggleAll(d) {
-                if (d.children) {
-                    d.children.forEach(toggleAll);
-                    toggle(d);
-                }
-            }
-
-            function toggle(d) {
-                if (d.children) {
-                    d._children = d.children;
-                    d.children = null;
-                } else {
-                    d.children = d._children;
-                    d._children = null;
-                }
-            }
-
-            // Initialize the display to show a few nodes.
-            root.children.forEach(toggleAll);
-            toggle(root.children[1]);
-            toggle(root.children[1].children[2]);
-            toggle(root.children[9]);
-            toggle(root.children[9].children[0]);
+//            function toggleAll(d) {
+//                if (d.children) {
+//                    d.children.forEach(toggleAll);
+//                    toggle(d);
+//                }
+//            }
+//
+//            function toggle(d) {
+//                if (d.children) {
+//                    d._children = d.children;
+//                    d.children = null;
+//                } else {
+//                    d.children = d._children;
+//                    d._children = null;
+//                }
+//            }
+//
+//            // Initialize the display to show a few nodes.
+//            root.children.forEach(toggleAll);
+//            toggle(root.children[1]);
+//            toggle(root.children[1].children[2]);
+//            toggle(root.children[9]);
+//            toggle(root.children[9].children[0]);
 
             update(root);
 
@@ -67,7 +70,7 @@ define(function(require) {
                 var nodeEnter = node.enter().append("svg:g")
                     .attr("class", "node")
                     .attr("transform", function(d) { return "translate(" + source.y0 + "," + source.x0 + ")"; })
-                    .on("click", function(d) { toggle(d); update(d); });
+                    .on("click", function(d) { /*toggle(d);*/ update(d); });
 
                 nodeEnter.append("svg:circle")
                     .attr("r", 1e-6)
@@ -153,7 +156,7 @@ define(function(require) {
                 var nodeEnter = node.enter().append("svg:g")
                     .attr("class", "node")
                     .attr("transform", function(d) { return "translate(" + source.y0 + "," + source.x0 + ")"; })
-                    .on("click", function(d) { toggle(d); update(d); });
+                    .on("click", function(d) { /*toggle(d);*/ update(d); });
 
                 nodeEnter.append("svg:circle")
                     .attr("r", 1e-6)
@@ -224,6 +227,45 @@ define(function(require) {
                     d.x0 = d.x;
                     d.y0 = d.y;
                 });
+            }
+        },
+        transformToBracket: function(games) {
+            // start from the newest and build our tree from it.
+            var sortedGames = Lazy(games).sortBy(function(game) {return game.played;}).toArray();
+            if(sortedGames.length > 0) {
+                this.buildTree(sortedGames);
+            }
+        },
+        buildTree: function(games, parent) {
+            var i = games.length;
+            var away = null;
+            var home = null;
+            while(i--) {
+                if(games.length <= i) {
+                    continue;
+                }
+
+                var game = games[i];
+                if(!parent) {
+                    games.splice(i, 1); // found parent game remove it
+                    this.buildTree(games, game);  // found a root
+                } else if(!home && (parent.homeId === game.homeId || parent.homeId === game.awayId)) {
+                    games.splice(i, 1); // found home game remove it
+                    home = game;
+                } else if(!away && (parent.awayId === game.homeId || parent.awayId === game.awayId)) {
+                    games.splice(i, 1); // found away game remove it
+                    away = game;
+                }
+            }
+
+            if(parent) {
+                console.log(parent.home + "(" + parent.homeScore + ")" + " - " + parent.away + "(" + parent.awayScore + ")");
+
+                parent.name = parent.home + "(" + parent.homeScore + ")" + " - " + parent.away + "(" + parent.awayScore + ")";
+                parent.children = [home, away];
+
+                this.buildTree(games, home);  // build home tree
+                this.buildTree(games, away);  // build away tree
             }
         }
     };

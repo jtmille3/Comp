@@ -1,6 +1,9 @@
 /*global define */
 define(function(require) {
 	'use strict';
+
+    var bracket = require('bracket');
+
 	return {
 		render: function(competitive) {
 			var self = this;
@@ -60,6 +63,7 @@ define(function(require) {
 			this.attachScheduleClickHandler(season, 'league');
 		},
 		attachPlayoffScheduleClickHandler: function(season) {
+            this.attachBracket(season);
 			this.attachScheduleClickHandler(season, 'playoff');
 		},
 		attachScheduleClickHandler: function(season, name) {
@@ -75,6 +79,10 @@ define(function(require) {
 				}
 			});
 		},
+        attachBracket: function(season) {
+            var id = 'playoff-bracket-' + season.id;
+            bracket.generate(id, season.playoffSchedule, false);
+        },
 		selectedTeam: function(season, teamId) {
 			var schedule = this.schedule(season, teamId);
 			var roster = this.roster(season, teamId);
