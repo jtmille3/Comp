@@ -1,271 +1,169 @@
-define(function(require) {
+define(function (require) {
     'use strict';
 
     return {
-        generate: function(id, games) {
-            console.log("");
-            console.log(id);
-            this.transformToBracket(games);
-            var m = [20, 20, 20, 20],
-                w = 1280 - m[1] - m[3],
-                h = 800 - m[0] - m[2],
-                i = 0,
-                root = games;
-
+        generate: function (id, games) {
+            var root = this.transformToBracket(games);
+            var selector = '#' + id;
+            var width = $( window ).width() - 70;
+            var size = { width: width, height: 700};
             var tree = d3.layout.tree()
-                .size([h, w]);
-
-            var diagonal = d3.svg.diagonal()
-                .projection(function(d) { return [d.y, d.x]; });
-
-            var vis = d3.select('#' + id).append("svg")
-                .attr("width", w + m[1] + m[3])
-                .attr("height", h + m[0] + m[2])
-                .append("g")
-                .attr("transform", "translate(" + m[3] + "," + m[0] + ")");
-
-            root.x0 = h / 2;
-            root.y0 = 0;
-
-//            function toggleAll(d) {
-//                if (d.children) {
-//                    d.children.forEach(toggleAll);
-//                    toggle(d);
-//                }
-//            }
-//
-//            function toggle(d) {
-//                if (d.children) {
-//                    d._children = d.children;
-//                    d.children = null;
-//                } else {
-//                    d.children = d._children;
-//                    d._children = null;
-//                }
-//            }
-//
-//            // Initialize the display to show a few nodes.
-//            root.children.forEach(toggleAll);
-//            toggle(root.children[1]);
-//            toggle(root.children[1].children[2]);
-//            toggle(root.children[9]);
-//            toggle(root.children[9].children[0]);
-
-            update(root);
-
-            function update(source) {
-                var duration = d3.event && d3.event.altKey ? 5000 : 500;
-
-                // Compute the new tree layout.
-                var nodes = tree.nodes(root).reverse();
-
-                // Normalize for fixed-depth.
-                nodes.forEach(function(d) { d.y = d.depth * 180; });
-
-                // Update the nodes…
-                var node = vis.selectAll("g.node")
-                    .data(nodes, function(d) { return d.id || (d.id = ++i); });
-
-                // Enter any new nodes at the parent's previous position.
-                var nodeEnter = node.enter().append("svg:g")
-                    .attr("class", "node")
-                    .attr("transform", function(d) { return "translate(" + source.y0 + "," + source.x0 + ")"; })
-                    .on("click", function(d) { /*toggle(d);*/ update(d); });
-
-                nodeEnter.append("svg:circle")
-                    .attr("r", 1e-6)
-                    .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; });
-
-                nodeEnter.append("svg:text")
-                    .attr("x", function(d) { return d.children || d._children ? -10 : 10; })
-                    .attr("dy", ".35em")
-                    .attr("text-anchor", function(d) { return d.children || d._children ? "end" : "start"; })
-                    .text(function(d) { return d.name; })
-                    .style("fill-opacity", 1e-6);
-
-                // Transition nodes to their new position.
-                var nodeUpdate = node.transition()
-                    .duration(duration)
-                    .attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; });
-
-                nodeUpdate.select("circle")
-                    .attr("r", 4.5)
-                    .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; });
-
-                nodeUpdate.select("text")
-                    .style("fill-opacity", 1);
-
-                // Transition exiting nodes to the parent's new position.
-                var nodeExit = node.exit().transition()
-                    .duration(duration)
-                    .attr("transform", function(d) { return "translate(" + source.y + "," + source.x + ")"; })
-                    .remove();
-
-                nodeExit.select("circle")
-                    .attr("r", 1e-6);
-
-                nodeExit.select("text")
-                    .style("fill-opacity", 1e-6);
-
-                // Update the links…
-                var link = vis.selectAll("path.link")
-                    .data(tree.links(nodes), function(d) { return d.target.id; });
-
-                // Enter any new links at the parent's previous position.
-                link.enter().insert("svg:path", "g")
-                    .attr("class", "link")
-                    .attr("d", function(d) {
-                        var o = {x: source.x0, y: source.y0};
-                        return diagonal({source: o, target: o});
-                    })
-                    .transition()
-                    .duration(duration)
-                    .attr("d", diagonal);
-
-                // Transition links to their new position.
-                link.transition()
-                    .duration(duration)
-                    .attr("d", diagonal);
-
-                // Transition exiting nodes to the parent's new position.
-                link.exit().transition()
-                    .duration(duration)
-                    .attr("d", function(d) {
-                        var o = {x: source.x, y: source.y};
-                        return diagonal({source: o, target: o});
-                    })
-                    .remove();
-
-                // Stash the old positions for transition.
-                nodes.forEach(function(d) {
-                    d.x0 = d.x;
-                    d.y0 = d.y;
-                });var duration = d3.event && d3.event.altKey ? 5000 : 500;
-
-                // Compute the new tree layout.
-                var nodes = tree.nodes(root).reverse();
-
-                // Normalize for fixed-depth.
-                nodes.forEach(function(d) { d.y = d.depth * 180; });
-
-                // Update the nodes…
-                var node = vis.selectAll("g.node")
-                    .data(nodes, function(d) { return d.id || (d.id = ++i); });
-
-                // Enter any new nodes at the parent's previous position.
-                var nodeEnter = node.enter().append("svg:g")
-                    .attr("class", "node")
-                    .attr("transform", function(d) { return "translate(" + source.y0 + "," + source.x0 + ")"; })
-                    .on("click", function(d) { /*toggle(d);*/ update(d); });
-
-                nodeEnter.append("svg:circle")
-                    .attr("r", 1e-6)
-                    .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; });
-
-                nodeEnter.append("svg:text")
-                    .attr("x", function(d) { return d.children || d._children ? -10 : 10; })
-                    .attr("dy", ".35em")
-                    .attr("text-anchor", function(d) { return d.children || d._children ? "end" : "start"; })
-                    .text(function(d) { return d.name; })
-                    .style("fill-opacity", 1e-6);
-
-                // Transition nodes to their new position.
-                var nodeUpdate = node.transition()
-                    .duration(duration)
-                    .attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; });
-
-                nodeUpdate.select("circle")
-                    .attr("r", 4.5)
-                    .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; });
-
-                nodeUpdate.select("text")
-                    .style("fill-opacity", 1);
-
-                // Transition exiting nodes to the parent's new position.
-                var nodeExit = node.exit().transition()
-                    .duration(duration)
-                    .attr("transform", function(d) { return "translate(" + source.y + "," + source.x + ")"; })
-                    .remove();
-
-                nodeExit.select("circle")
-                    .attr("r", 1e-6);
-
-                nodeExit.select("text")
-                    .style("fill-opacity", 1e-6);
-
-                // Update the links…
-                var link = vis.selectAll("path.link")
-                    .data(tree.links(nodes), function(d) { return d.target.id; });
-
-                // Enter any new links at the parent's previous position.
-                link.enter().insert("svg:path", "g")
-                    .attr("class", "link")
-                    .attr("d", function(d) {
-                        var o = {x: source.x0, y: source.y0};
-                        return diagonal({source: o, target: o});
-                    })
-                    .transition()
-                    .duration(duration)
-                    .attr("d", diagonal);
-
-                // Transition links to their new position.
-                link.transition()
-                    .duration(duration)
-                    .attr("d", diagonal);
-
-                // Transition exiting nodes to the parent's new position.
-                link.exit().transition()
-                    .duration(duration)
-                    .attr("d", function(d) {
-                        var o = {x: source.x, y: source.y};
-                        return diagonal({source: o, target: o});
-                    })
-                    .remove();
-
-                // Stash the old positions for transition.
-                nodes.forEach(function(d) {
-                    d.x0 = d.x;
-                    d.y0 = d.y;
+                .size([size.height, size.width])
+                .children(function (d) {
+                    return (!d.contents || d.contents.length === 0) ? null : d.contents;
                 });
-            }
+
+            var nodes = tree.nodes(root);
+            var maxDepth = 0;
+            nodes.forEach(function (d) {
+                maxDepth = Math.max(d.depth, maxDepth);
+            });
+            var widthOffset = width - ((maxDepth + 1) * 200);
+            nodes.forEach(function (d) {
+                d.y = size.width - (d.depth * 200) - widthOffset;
+            });
+
+            var links = tree.links(nodes);
+
+            var layoutRoot = d3.select(selector)
+                .append("svg")
+                .attr("width", size.width)
+                .attr("height", size.height)
+                .append("g")
+                .attr("class", "container")
+                .attr("transform", "translate(-100,0)");
+
+            // Edges between nodes as a <path class="link" />
+            var link = d3.svg.diagonal()
+                .projection(function (d) {
+                    return [d.y, d.x];
+                });
+
+            layoutRoot.selectAll("path.link")
+                .data(links)
+                .enter()
+                .append("path")
+                .attr("class", "link")
+                .attr("d", link);
+
+            var nodeGroup = layoutRoot.selectAll("g.node")
+                .data(nodes)
+                .enter()
+                .append("g")
+                .attr("class", "node")
+                .attr("transform", function (d) {
+                    return "translate(" + (d.y - 75) + "," + (d.x - 15) + ")";
+                });
+
+            nodeGroup.append("rect")
+                .attr("class", function(d) {
+                    if(d.champion) {
+                        return "node champion";
+                    } else if(d.winner) {
+                        return "node winner";
+                    } else {
+                        return "node loser";
+                    }
+                })
+                .attr("width", 150)
+                .attr("height", 30)
+                .attr("rx", 5)
+                .attr("ry", 5);
+
+            nodeGroup.append("text")
+                .attr("text-anchor", function (d) {
+                    // return d.children ? "end" : "start";
+                    return "end";
+                })
+                .attr("dx", 140)
+                .attr("dy", 20)
+                .text(function (d) {
+                    if(d.champion) {
+                        return d.name.length > 18 ? d.name.substring(0, 15) + "..." : d.name;
+                    } else {
+                        return d.score !== undefined ? (d.name.length > 15 ? d.name.substring(0, 12) + "..." : d.name + " ") + "(" + d.score + ")" : d.name;
+                    }
+                });
         },
-        transformToBracket: function(games) {
+        transformToBracket: function (playoffs) {
             // start from the newest and build our tree from it.
-            var sortedGames = Lazy(games).sortBy(function(game) {return game.played;}).toArray();
-            if(sortedGames.length > 0) {
-                this.buildTree(sortedGames);
+            var games = Lazy(playoffs).sortBy(function (game) {
+                return game.played;
+            }).toArray();
+
+            if (games.length > 0) {
+                var game = games[games.length - 1];
+                games.splice(games.length - 1, 1);
+
+                var champion = game.homeScore > game.awayScore ? game.home : game.away;
+
+                var root = {
+                    "name": champion,
+                    "champion": true,
+                    "contents": [
+                        {
+                            "name": game.home,
+                            "id": game.homeId,
+                            "score": game.homeScore,
+                            "winner": game.homeScore > game.awayScore,
+                            "contents": []
+                        },
+                        {
+                            "name": game.away,
+                            "id": game.awayId,
+                            "score": game.awayScore,
+                            "winner": game.awayScore > game.homeScore,
+                            "contents": []
+                        }
+                    ]
+                };
+
+                while (games.length) {
+                    this.buildTree(games, root);
+                }
+
+                return root;
             }
+
+            return {
+                name: "Playoffs",
+                contents: []
+            };
         },
-        buildTree: function(games, parent) {
-            var i = games.length;
-            var away = null;
-            var home = null;
-            while(i--) {
-                if(games.length <= i) {
-                    continue;
+        buildTree: function (games, root) {
+            if (root.contents.length > 0) {  // recursively walk until we find no contents
+                for (var i = 0; i < root.contents.length; i++) {
+                    var node = root.contents[i];
+                    this.buildTree(games, node);
                 }
-
-                var game = games[i];
-                if(!parent) {
-                    games.splice(i, 1); // found parent game remove it
-                    this.buildTree(games, game);  // found a root
-                } else if(!home && (parent.homeId === game.homeId || parent.homeId === game.awayId)) {
-                    games.splice(i, 1); // found home game remove it
-                    home = game;
-                } else if(!away && (parent.awayId === game.homeId || parent.awayId === game.awayId)) {
-                    games.splice(i, 1); // found away game remove it
-                    away = game;
-                }
+                return;
             }
 
-            if(parent) {
-                console.log(parent.home + "(" + parent.homeScore + ")" + " - " + parent.away + "(" + parent.awayScore + ")");
+            // find our game
+            var i = games.length;
+            while (i--) {
+                var game = games[i];
+                if (root.id === game.homeId || root.id === game.awayId) {
+                    games.splice(i, 1); // found home game remove it
+                    root.contents = [
+                        {
+                            "name": game.home,
+                            "id": game.homeId,
+                            "score": game.homeScore,
+                            "winner": game.homeScore > game.awayScore,
+                            "contents": []
+                        },
+                        {
+                            "name": game.away,
+                            "id": game.awayId,
+                            "score": game.awayScore,
+                            "winner": game.awayScore > game.homeScore,
+                            "contents": []
+                        }
+                    ];
 
-                parent.name = parent.home + "(" + parent.homeScore + ")" + " - " + parent.away + "(" + parent.awayScore + ")";
-                parent.children = [home, away];
-
-                this.buildTree(games, home);  // build home tree
-                this.buildTree(games, away);  // build away tree
+                    return;
+                }
             }
         }
     };

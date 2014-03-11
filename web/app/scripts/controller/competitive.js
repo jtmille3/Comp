@@ -9,6 +9,8 @@ define(function(require) {
 			var self = this;
 			this.competitive = competitive;
 
+            // this.competitive.seasons.splice(0, 2);
+
 			/*
 			if(Modernizr.localstorage) {
 				localStorage.competitive = JSON.stringify(competitive);
@@ -22,6 +24,7 @@ define(function(require) {
 
 			$('#player-all-time-table').tablesorter( {sortList: [[1,1]]} );
 			$('#goalie-all-time-table').tablesorter( {sortList: [[1,1]]} );
+
 			for(var i = 0; i < competitive.seasons.length; i++) {
 				var season = competitive.seasons[i];
 				$('#' + season.id + '-standings-table').tablesorter( {sortList: [[0,0]]} );
