@@ -14,8 +14,13 @@ define(function (require) {
                 });
 
             var nodes = tree.nodes(root);
+            var maxDepth = 0;
             nodes.forEach(function (d) {
-                d.y = size.width - (d.depth * 200);
+                maxDepth = Math.max(d.depth, maxDepth);
+            });
+            var widthOffset = width - ((maxDepth + 1) * 200);
+            nodes.forEach(function (d) {
+                d.y = size.width - (d.depth * 200) - widthOffset;
             });
 
             var links = tree.links(nodes);
