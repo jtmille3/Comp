@@ -3,8 +3,6 @@ define(function (require) {
 
     return {
         generate: function (id, games) {
-            console.log("");
-            console.log(id);
             var root = this.transformToBracket(games);
             var selector = '#' + id;
             var size = { width: 1300, height: 700};
