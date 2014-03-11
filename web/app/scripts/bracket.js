@@ -74,7 +74,7 @@ define(function (require) {
                 .attr("dy", 20)
                 .text(function (d) {
                     if(d.champion) {
-                        return d.name.length > 18 ? d.name.substring(0, 18) + "..." : d.name;
+                        return d.name.length > 18 ? d.name.substring(0, 15) + "..." : d.name;
                     } else {
                         return d.score !== undefined ? (d.name.length > 15 ? d.name.substring(0, 12) + "..." : d.name + " ") + "(" + d.score + ")" : d.name;
                     }
