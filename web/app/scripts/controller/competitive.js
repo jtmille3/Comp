@@ -9,7 +9,7 @@ define(function(require) {
 			var self = this;
 			this.competitive = competitive;
 
-            this.competitive.seasons.splice(0, 2);
+            // this.competitive.seasons.splice(0, 2);
 
 			/*
 			if(Modernizr.localstorage) {
