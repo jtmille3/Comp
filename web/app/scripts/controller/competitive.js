@@ -90,7 +90,7 @@ define(function(require) {
 
 			var teamScheduleTemplate = window.comp['web/app/templates/team_schedule.html'];
 			var template = teamScheduleTemplate({
-				id: team.id,
+				id: team.teamId,
                 name: team.team,
 				schedule: schedule,
 				roster: roster
@@ -98,8 +98,8 @@ define(function(require) {
 
 			$('#' + season.id + '-team-schedule').html(template);
 
-			$('#' + teamId + '-team-schedule-table').tablesorter( {sortList: [[2,0]]} );
-			$('#' + teamId + '-team-roster-table').tablesorter( {sortList: [[1,0]]} );
+			$('#' + team.teamId + '-team-schedule-table').tablesorter( {sortList: [[2,0]]} );
+			$('#' + team.teamId + '-team-roster-table').tablesorter( {sortList: [[1,0]]} );
 		},
 
 		selectedGame: function(gameId, teamId) {

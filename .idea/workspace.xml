@@ -2,20 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="338d9bed-963b-460f-a418-ff028a1d4e43" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/sas/comp/models/Game.java" afterPath="$PROJECT_DIR$/src/com/sas/comp/models/Game.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/templates/_playoff_schedule.html" afterPath="$PROJECT_DIR$/web/app/templates/_playoff_schedule.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/templates/admin.html" afterPath="$PROJECT_DIR$/web/app/templates/admin.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower.json" afterPath="$PROJECT_DIR$/bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/scripts/bracket.js" afterPath="$PROJECT_DIR$/web/app/scripts/bracket.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/scripts/controller/competitive.js" afterPath="$PROJECT_DIR$/web/app/scripts/controller/competitive.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/index.html" afterPath="$PROJECT_DIR$/web/app/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/less/main.less" afterPath="$PROJECT_DIR$/web/app/less/main.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/templates/team_schedule.html" afterPath="$PROJECT_DIR$/web/app/templates/team_schedule.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="comp.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394295391278" ignored="false" />
+    <file path="/Dummy.txt" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394459411008" ignored="false" />
     <file path="/fragment.java" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1366732170537" ignored="false" />
     <file path="/TeamResource.java" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1364611810318" ignored="false" />
     <file path="/a.dummy" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394380854858" ignored="false" />
@@ -49,13 +41,13 @@
     <file path="/PlayerResource.java" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1364962439335" ignored="false" />
     <file path="/comp.html" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394339529119" ignored="false" />
     <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/resources/html5-schema/html5.rnc" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1365263704150" ignored="false" />
-    <file path="/competitive.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394378768394" ignored="false" />
+    <file path="/competitive.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394495955815" ignored="false" />
     <file path="/_league_schedule.html" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1365376735317" ignored="false" />
     <file path="/.gitignore" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1366900228403" ignored="false" />
     <file path="/EmbeddedServer.java" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394295471204" ignored="false" />
     <file path="/main.less" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394415691697" ignored="false" />
     <file path="/index.html" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394381186206" ignored="false" />
-    <file path="/team_schedule.html" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394396523567" ignored="false" />
+    <file path="/team_schedule.html" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394489655895" ignored="false" />
     <file path="/SeasonService.java" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394311450253" ignored="false" />
     <file path="/_playoff_schedule.html" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394415633063" ignored="false" />
     <file path="/bracket.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394415222263" ignored="false" />
@@ -133,7 +125,7 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/app/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="181" selection-start="1316" selection-end="1316" vertical-scroll-proportion="-13.230769">
+            <state line="27" column="181" selection-start="1316" selection-end="1316" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -142,7 +134,7 @@
       <file leaf-file-name="competitive.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/app/scripts/controller/competitive.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="81" column="62" selection-start="3125" selection-end="3125" vertical-scroll-proportion="0.6169355">
+            <state line="101" column="31" selection-start="3840" selection-end="3840" vertical-scroll-proportion="0.90316397">
               <folding />
             </state>
           </provider>
@@ -151,8 +143,12 @@
       <file leaf-file-name="bracket.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/app/scripts/bracket.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="60" column="50" selection-start="1921" selection-end="1921" vertical-scroll-proportion="-40.8">
-              <folding />
+            <state line="60" column="50" selection-start="1921" selection-end="1921" vertical-scroll-proportion="0.0">
+              <folding>
+                <marker date="1394415508167" expanded="true" signature="25:11113" placeholder="{...}" />
+                <marker date="1394415508167" expanded="true" signature="57:11110" placeholder="{...}" />
+                <marker date="1394415508167" expanded="true" signature="97:9403" placeholder="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -160,7 +156,7 @@
       <file leaf-file-name="team_schedule.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/app/templates/team_schedule.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="71" selection-start="895" selection-end="895" vertical-scroll-proportion="-18.307692">
+            <state line="34" column="59" selection-start="1092" selection-end="1092" vertical-scroll-proportion="-22.23077">
               <folding />
             </state>
           </provider>
@@ -213,10 +209,10 @@
         <option value="$PROJECT_DIR$/src/com/sas/comp/models/Game.java" />
         <option value="$PROJECT_DIR$/bower.json" />
         <option value="$PROJECT_DIR$/web/app/index.html" />
-        <option value="$PROJECT_DIR$/web/app/templates/team_schedule.html" />
         <option value="$PROJECT_DIR$/web/app/scripts/bracket.js" />
         <option value="$PROJECT_DIR$/web/app/templates/_playoff_schedule.html" />
         <option value="$PROJECT_DIR$/web/app/less/main.less" />
+        <option value="$PROJECT_DIR$/web/app/templates/team_schedule.html" />
         <option value="$PROJECT_DIR$/web/app/scripts/controller/competitive.js" />
       </list>
     </option>
@@ -224,8 +220,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1456" />
-    <option name="height" value="886" />
+    <option name="width" value="2576" />
+    <option name="height" value="1426" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -262,7 +258,7 @@
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectReloadState">
-    <option name="STATE" value="1" />
+    <option name="STATE" value="2" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
@@ -415,12 +411,12 @@
     <property name="Database.TableEditor.Splitter" value="0.9" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="FullScreen" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
+    <property name="FullScreen" value="false" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
-    <property name="options.searchVisible" value="true" />
     <property name="dynamic.classpath" value="false" />
+    <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -471,19 +467,6 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method />
-    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -512,6 +495,19 @@
       <listeners />
       <method />
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" />
@@ -525,13 +521,6 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="" />
       <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavascriptDebugSession" factoryName="Local" singleton="true">
-      <JSDebuggerConfigurationSettings>
-        <option name="engineId" />
-        <option name="fileUrl" />
-      </JSDebuggerConfigurationSettings>
       <method />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
@@ -553,6 +542,13 @@
       </option>
       <envs />
       <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugSession" factoryName="Local" singleton="true">
+      <JSDebuggerConfigurationSettings>
+        <option name="engineId" value="embedded" />
+        <option name="fileUrl" />
+      </JSDebuggerConfigurationSettings>
       <method />
     </configuration>
     <configuration default="true" type="com.intellij.persistence.run.ConsoleRunConfigurationType" factoryName="Query Language Console">
@@ -606,15 +602,13 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1456" height="886" extended-state="6" />
+    <frame x="-8" y="-8" width="2576" height="1426" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32939324" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32978722" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32975337" sideWeight="0.6706068" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -632,12 +626,14 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23027259" sideWeight="0.75034297" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24965706" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.12768497" sideWeight="0.86209613" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13790385" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32939324" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -709,9 +705,7 @@
   <component name="editorHistoryManager">
     <entry file="dbDummy://dbtable:/57a34b2f/d746c035-db55-4835-b9bc-9fef75553515/soccer..game_summary">
       <provider editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
       <provider selected="true" editor-type-id="com.intellij.persistence.database.editor.DatabaseTableFileEditorProvider">
         <state />
@@ -719,9 +713,7 @@
     </entry>
     <entry file="dbDummy://dbtable:/57a34b2f/d746c035-db55-4835-b9bc-9fef75553515/soccer..teams">
       <provider editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
       <provider selected="true" editor-type-id="com.intellij.persistence.database.editor.DatabaseTableFileEditorProvider">
         <state />
@@ -729,16 +721,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/sas/comp/mysql/Database.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/57a34b2f/d746c035-db55-4835-b9bc-9fef75553515/soccer..game_players">
       <provider editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
       <provider selected="true" editor-type-id="com.intellij.persistence.database.editor.DatabaseTableFileEditorProvider">
         <state />
@@ -746,9 +734,7 @@
     </entry>
     <entry file="dbDummy://dbtable:/57a34b2f/d746c035-db55-4835-b9bc-9fef75553515/soccer..seasons">
       <provider editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
       <provider selected="true" editor-type-id="com.intellij.persistence.database.editor.DatabaseTableFileEditorProvider">
         <state />
@@ -756,9 +742,7 @@
     </entry>
     <entry file="dbDummy://dbtable:/57a34b2f/d746c035-db55-4835-b9bc-9fef75553515/soccer..goalie_statistics">
       <provider editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" />
       </provider>
       <provider selected="true" editor-type-id="com.intellij.persistence.database.editor.DatabaseTableFileEditorProvider">
         <state />
@@ -766,9 +750,7 @@
     </entry>
     <entry file="dbDummy://db-console:/57a34b2f/d746c035-db55-4835-b9bc-9fef75553515/">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="27" selection-start="0" selection-end="26" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="27" selection-start="0" selection-end="26" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bower.json">
@@ -780,37 +762,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/app/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="181" selection-start="1316" selection-end="1316" vertical-scroll-proportion="-13.230769">
+        <state line="27" column="181" selection-start="1316" selection-end="1316" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/sas/comp/models/Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="198" selection-start="672" selection-end="672" vertical-scroll-proportion="0.57920194">
-          <folding />
-        </state>
+        <state line="34" column="198" selection-start="672" selection-end="672" vertical-scroll-proportion="0.57920194" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/sas/comp/service/GameService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="20" selection-start="1534" selection-end="1534" vertical-scroll-proportion="0.5550181">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/app/templates/team_schedule.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="71" selection-start="895" selection-end="895" vertical-scroll-proportion="-18.307692">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/app/templates/_playoff_schedule.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="48" selection-start="48" selection-end="48" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="46" column="20" selection-start="1534" selection-end="1534" vertical-scroll-proportion="0.5550181" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/app/less/main.less">
@@ -822,14 +786,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/app/scripts/bracket.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="50" selection-start="1921" selection-end="1921" vertical-scroll-proportion="-40.8">
+        <state line="60" column="50" selection-start="1921" selection-end="1921" vertical-scroll-proportion="0.0">
+          <folding>
+            <marker date="1394415508167" expanded="true" signature="25:11113" placeholder="{...}" />
+            <marker date="1394415508167" expanded="true" signature="57:11110" placeholder="{...}" />
+            <marker date="1394415508167" expanded="true" signature="97:9403" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/app/templates/_playoff_schedule.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="48" selection-start="48" selection-end="48" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/app/templates/team_schedule.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="59" selection-start="1092" selection-end="1092" vertical-scroll-proportion="-22.23077">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/app/scripts/controller/competitive.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="81" column="62" selection-start="3125" selection-end="3125" vertical-scroll-proportion="0.6169355">
+        <state line="101" column="31" selection-start="3840" selection-end="3840" vertical-scroll-proportion="0.90316397">
           <folding />
         </state>
       </provider>
