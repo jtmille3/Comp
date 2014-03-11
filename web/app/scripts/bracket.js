@@ -5,7 +5,8 @@ define(function (require) {
         generate: function (id, games) {
             var root = this.transformToBracket(games);
             var selector = '#' + id;
-            var size = { width: 1300, height: 700};
+            var width = $( window ).width() - 70;
+            var size = { width: width, height: 700};
             var tree = d3.layout.tree()
                 .size([size.height, size.width])
                 .children(function (d) {
@@ -14,7 +15,7 @@ define(function (require) {
 
             var nodes = tree.nodes(root);
             nodes.forEach(function (d) {
-                d.y = size.width - (d.depth * 180);
+                d.y = size.width - (d.depth * 200);
             });
 
             var links = tree.links(nodes);
@@ -50,7 +51,15 @@ define(function (require) {
                 });
 
             nodeGroup.append("rect")
-                .attr("class", "node")
+                .attr("class", function(d) {
+                    if(d.champion) {
+                        return "node champion";
+                    } else if(d.winner) {
+                        return "node winner";
+                    } else {
+                        return "node loser";
+                    }
+                })
                 .attr("width", 150)
                 .attr("height", 30)
                 .attr("rx", 5)
@@ -64,7 +73,11 @@ define(function (require) {
                 .attr("dx", 140)
                 .attr("dy", 20)
                 .text(function (d) {
-                    return d.score !== undefined ? (d.name.length > 15 ? d.name.substring(0, 12) + "..." : d.name + " ") + "(" + d.score + ")" : d.name;
+                    if(d.champion) {
+                        return d.name.length > 18 ? d.name.substring(0, 18) + "..." : d.name;
+                    } else {
+                        return d.score !== undefined ? (d.name.length > 15 ? d.name.substring(0, 12) + "..." : d.name + " ") + "(" + d.score + ")" : d.name;
+                    }
                 });
         },
         transformToBracket: function (playoffs) {
@@ -77,8 +90,11 @@ define(function (require) {
                 var game = games[games.length - 1];
                 games.splice(games.length - 1, 1);
 
+                var champion = game.homeScore > game.awayScore ? game.home : game.away;
+
                 var root = {
-                    "name": "Championship",
+                    "name": champion,
+                    "champion": true,
                     "contents": [
                         {
                             "name": game.home,
@@ -97,7 +113,7 @@ define(function (require) {
                     ]
                 };
 
-                while(games.length) {
+                while (games.length) {
                     this.buildTree(games, root);
                 }
 
@@ -110,8 +126,8 @@ define(function (require) {
             };
         },
         buildTree: function (games, root) {
-            if(root.contents.length > 0) {  // recursively walk until we find no contents
-                for(var i = 0; i < root.contents.length; i++) {
+            if (root.contents.length > 0) {  // recursively walk until we find no contents
+                for (var i = 0; i < root.contents.length; i++) {
                     var node = root.contents[i];
                     this.buildTree(games, node);
                 }
@@ -130,14 +146,14 @@ define(function (require) {
                             "id": game.homeId,
                             "score": game.homeScore,
                             "winner": game.homeScore > game.awayScore,
-                            contents: []
+                            "contents": []
                         },
                         {
                             "name": game.away,
                             "id": game.awayId,
                             "score": game.awayScore,
                             "winner": game.awayScore > game.homeScore,
-                            contents: []
+                            "contents": []
                         }
                     ];
 
