@@ -6,7 +6,7 @@ define(function (require) {
             var root = this.transformToBracket(games);
             var selector = '#' + id;
             var width = $(window).width() - 70;
-            var size = { width: width, height: 700};
+            var size = { width: width, height: 700 };
             var tree = d3.layout.tree()
                 .size([size.height, size.width])
                 .children(function (d) {
@@ -81,7 +81,8 @@ define(function (require) {
                     if (d.champion) {
                         return d.name.length > 18 ? d.name.substring(0, 15) + "..." : d.name;
                     } else {
-                        return d.score !== undefined ? (d.name.length > 15 ? d.name.substring(0, 12) + "..." : d.name + " ") + d.date + "(" + d.score + ")" : d.name + " " + d.date;
+                        // return d.score !== undefined ? (d.name.length > 3 ? d.name.substring(0, 3) + "..." : d.name + " ") + d.date.substring(0,10) + " (" + d.score + ")" : (d.name.length > 3 ? d.name.substring(0, 3) + "..." : d.name + " ");
+                        return d.score !== undefined ? (d.name.length > 15 ? d.name.substring(0, 12) + "..." : d.name + " ") + "(" + d.score + ")" : d.name;
                     }
                 });
         },
@@ -134,6 +135,11 @@ define(function (require) {
 
             this.attach(root, siblings);
 
+            if(root.contents.length > 2) {
+                root.contents = root.contents.splice(root.contents.length - 2, root.contents.length);
+                root.name = root.contents[0].won ? root.contents[0].name : root.contents[1].name;
+                root.champion = true;
+            }
             return root;
         },
         attach: function(root, siblings) {
@@ -145,7 +151,7 @@ define(function (require) {
                 var j = root.contents.length;
                 while(j--) {
                     var child = root.contents[j];
-                    if(child.id === sibling.id) {
+                    if(child.id === sibling.id && child.won) {
                         root.contents.splice(j, 1);  // only splicing the winner
                         root.contents.push(sibling);
                         sibling.contents.push(child, child.played);
@@ -154,18 +160,19 @@ define(function (require) {
                     }
                 }
 
-                if(!loser) {
+                if(!loser) { // not losers but new roots
                     root.contents.push(sibling);
-                } else { // need to splice loser too
-                    var k = root.contents.length;
-                    while(k--) {
-                        var node = root.contents[k];
-                        if(node.id === loser.id) {
-                            root.contents.splice(k, 1);
-                            break;
-                        }
-                    }
                 }
+//                else { // need to splice loser too
+//                    var k = root.contents.length;
+//                    while(k--) {
+//                        var node = root.contents[k];
+//                        if(node.id === loser.id) {
+//                            root.contents.splice(k, 1);
+//                            break;
+//                        }
+//                    }
+//                }
 
                 loser = null;
             }
