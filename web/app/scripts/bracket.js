@@ -5,7 +5,7 @@ define(function (require) {
         generate: function (id, games) {
             var root = this.transformToBracket(games);
             var selector = '#' + id;
-            var width = $( window ).width() - 70;
+            var width = $(window).width() - 70;
             var size = { width: width, height: 700};
             var tree = d3.layout.tree()
                 .size([size.height, size.width])
@@ -56,10 +56,10 @@ define(function (require) {
                 });
 
             nodeGroup.append("rect")
-                .attr("class", function(d) {
-                    if(d.champion) {
+                .attr("class", function (d) {
+                    if (d.champion) {
                         return "node champion";
-                    } else if(d.winner) {
+                    } else if (d.won) {
                         return "node winner";
                     } else {
                         return "node loser";
@@ -78,51 +78,21 @@ define(function (require) {
                 .attr("dx", 140)
                 .attr("dy", 20)
                 .text(function (d) {
-                    if(d.champion) {
+                    if (d.champion) {
                         return d.name.length > 18 ? d.name.substring(0, 15) + "..." : d.name;
                     } else {
-                        return d.score !== undefined ? (d.name.length > 15 ? d.name.substring(0, 12) + "..." : d.name + " ") + "(" + d.score + ")" : d.name;
+                        return d.score !== undefined ? (d.name.length > 15 ? d.name.substring(0, 12) + "..." : d.name + " ") + d.date + "(" + d.score + ")" : d.name + " " + d.date;
                     }
                 });
         },
-        transformToBracket: function (playoffs) {
+        transformToBracket: function (games) {
             // start from the newest and build our tree from it.
-            var games = Lazy(playoffs).sortBy(function (game) {
+            var links = Lazy(games).sortBy(function (game) {
                 return game.played;
-            }).toArray();
+            }).reverse().toArray();
 
-            if (games.length > 0) {
-                var game = games[games.length - 1];
-                games.splice(games.length - 1, 1);
-
-                var champion = game.homeScore > game.awayScore ? game.home : game.away;
-
-                var root = {
-                    "name": champion,
-                    "champion": true,
-                    "contents": [
-                        {
-                            "name": game.home,
-                            "id": game.homeId,
-                            "score": game.homeScore,
-                            "winner": game.homeScore > game.awayScore,
-                            "contents": []
-                        },
-                        {
-                            "name": game.away,
-                            "id": game.awayId,
-                            "score": game.awayScore,
-                            "winner": game.awayScore > game.homeScore,
-                            "contents": []
-                        }
-                    ]
-                };
-
-                while (games.length) {
-                    this.buildTree(games, root);
-                }
-
-                return root;
+            if (links.length > 0) {
+                return this.buildTree(links);
             }
 
             return {
@@ -130,41 +100,99 @@ define(function (require) {
                 contents: []
             };
         },
-        buildTree: function (games, root) {
-            if (root.contents.length > 0) {  // recursively walk until we find no contents
-                for (var i = 0; i < root.contents.length; i++) {
-                    var node = root.contents[i];
-                    this.buildTree(games, node);
-                }
-                return;
+        buildTree: function (links) {
+            var root = {
+                name: "Root",
+                id: "root",
+                contents: []
+            };
+
+            var nodes = [];
+            for(var i = 0; i < links.length; i++) {
+                var game = links[i]; // found home game remove it
+                nodes = nodes.concat(this.getContents(game));
             }
 
-            // find our game
-            var i = games.length;
-            while (i--) {
-                var game = games[i];
-                if (root.id === game.homeId || root.id === game.awayId) {
-                    games.splice(i, 1); // found home game remove it
-                    root.contents = [
-                        {
-                            "name": game.home,
-                            "id": game.homeId,
-                            "score": game.homeScore,
-                            "winner": game.homeScore > game.awayScore,
-                            "contents": []
-                        },
-                        {
-                            "name": game.away,
-                            "id": game.awayId,
-                            "score": game.awayScore,
-                            "winner": game.awayScore > game.homeScore,
-                            "contents": []
+            var date = null;
+            var siblings = [];
+            var j = nodes.length;
+            while(j--) {
+                var node = nodes.splice(j, 1)[0];
+
+                if(!date) {
+                    date = node.date.substring(0, 10);
+                }
+
+                if(date !== node.date.substring(0, 10)) {
+                    this.attach(root, siblings);
+                    date = node.date.substring(0, 10);
+                    siblings = [];
+                }
+
+                siblings.push(node);
+            }
+
+            this.attach(root, siblings);
+
+            return root;
+        },
+        attach: function(root, siblings) {
+            var i = siblings.length;
+            var loser = null;
+            while(i--) {
+                var sibling = siblings.splice(i, 1)[0];
+
+                var j = root.contents.length;
+                while(j--) {
+                    var child = root.contents[j];
+                    if(child.id === sibling.id) {
+                        root.contents.splice(j, 1);  // only splicing the winner
+                        root.contents.push(sibling);
+                        sibling.contents.push(child, child.played);
+                        loser = child.played;
+                        break;
+                    }
+                }
+
+                if(!loser) {
+                    root.contents.push(sibling);
+                } else { // need to splice loser too
+                    var k = root.contents.length;
+                    while(k--) {
+                        var node = root.contents[k];
+                        if(node.id === loser.id) {
+                            root.contents.splice(k, 1);
+                            break;
                         }
-                    ];
-
-                    return;
+                    }
                 }
+
+                loser = null;
             }
+        },
+        getContents: function(game) {
+            var home = {
+                "name": game.home,
+                "id": game.homeId,
+                "date": game.played,
+                "score": game.homeScore,
+                "won": game.homeScore > game.awayScore,
+                "contents": []
+            };
+
+            var away = {
+                "name": game.away,
+                "id": game.awayId,
+                "date": game.played,
+                "score": game.awayScore,
+                "won": game.awayScore > game.homeScore,
+                "contents": []
+            };
+
+            away.played = home;
+            home.played = away;
+
+            return [ home, away ];
         }
     };
 });
