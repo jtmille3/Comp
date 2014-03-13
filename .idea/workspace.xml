@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="338d9bed-963b-460f-a418-ff028a1d4e43" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/scripts/bracket.js" afterPath="$PROJECT_DIR$/web/app/scripts/bracket.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="comp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -49,7 +50,7 @@
     <file path="/team_schedule.html" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394396523567" ignored="false" />
     <file path="/SeasonService.java" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394311450253" ignored="false" />
     <file path="/_playoff_schedule.html" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394415633063" ignored="false" />
-    <file path="/bracket.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394715798479" ignored="false" />
+    <file path="/bracket.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394718283942" ignored="false" />
     <file path="/bower.json" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394381154010" ignored="false" />
     <file path="/header.html" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394338561070" ignored="false" />
     <file path="/password.html" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394376407397" ignored="false" />
@@ -125,7 +126,7 @@
       <file leaf-file-name="bracket.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/app/scripts/bracket.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="132" column="40" selection-start="4619" selection-end="4619" vertical-scroll-proportion="0.7614314">
+            <state line="130" column="40" selection-start="4575" selection-end="4575" vertical-scroll-proportion="0.50695825">
               <folding />
             </state>
           </provider>
@@ -687,7 +688,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/app/scripts/bracket.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="132" column="40" selection-start="4619" selection-end="4619" vertical-scroll-proportion="0.7614314">
+        <state line="130" column="40" selection-start="4575" selection-end="4575" vertical-scroll-proportion="0.50695825">
           <folding />
         </state>
       </provider>

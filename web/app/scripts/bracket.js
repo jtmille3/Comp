@@ -89,7 +89,7 @@ define(function (require) {
             // start from the newest and build our tree from it.
             var links = Lazy(games).sortBy(function (game) {
                 return game.played;
-            }).reverse().toArray();
+            }).toArray();
 
             if (links.length > 0) {
                 return this.buildTree(links);
@@ -121,13 +121,15 @@ define(function (require) {
 
                 if(!date) {
                     date = node.date.substring(0, 10);
-                } else if(date !== node.date.substring(0, 10)) {
+                }
+
+                if(date !== node.date.substring(0, 10)) {
                     this.attach(root, siblings);
                     date = node.date.substring(0, 10);
                     siblings = [];
+                } else {
+                    siblings.push(node);
                 }
-
-                siblings.push(node);
             }
 
             this.attach(root, siblings);
