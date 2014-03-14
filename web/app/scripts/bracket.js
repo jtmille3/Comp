@@ -18,9 +18,9 @@ define(function (require) {
             nodes.forEach(function (d) {
                 maxDepth = Math.max(d.depth, maxDepth);
             });
-            var widthOffset = width - ((maxDepth + 1) * 200);
+            var widthOffset = width - ((maxDepth + 1) * 230);
             nodes.forEach(function (d) {
-                d.y = size.width - (d.depth * 200) - widthOffset;
+                d.y = size.width - (d.depth * 230) - widthOffset;
             });
 
             var links = tree.links(nodes);
@@ -52,7 +52,7 @@ define(function (require) {
                 .append("g")
                 .attr("class", "node")
                 .attr("transform", function (d) {
-                    return "translate(" + (d.y - 75) + "," + (d.x - 15) + ")";
+                    return "translate(" + (d.y - 125) + "," + (d.x - 15) + ")";
                 });
 
             nodeGroup.append("rect")
@@ -65,7 +65,7 @@ define(function (require) {
                         return "node loser";
                     }
                 })
-                .attr("width", 150)
+                .attr("width", 210)
                 .attr("height", 30)
                 .attr("rx", 5)
                 .attr("ry", 5);
@@ -75,14 +75,14 @@ define(function (require) {
                     // return d.children ? "end" : "start";
                     return "end";
                 })
-                .attr("dx", 140)
+                .attr("dx", 200)
                 .attr("dy", 20)
                 .text(function (d) {
                     if (d.champion) {
-                        return d.name.length > 18 ? d.name.substring(0, 15) + "..." : d.name;
+                        return d.name.length > 25 ? d.name.substring(0, 22) + "..." : d.name;
                     } else {
                         // return d.score !== undefined ? (d.name.length > 3 ? d.name.substring(0, 3) + "..." : d.name + " ") + d.date.substring(0,10) + " (" + d.score + ")" : (d.name.length > 3 ? d.name.substring(0, 3) + "..." : d.name + " ");
-                        return d.score !== undefined ? (d.name.length > 15 ? d.name.substring(0, 12) + "..." : d.name + " ") + "(" + d.score + ")" : d.name;
+                        return d.score !== undefined ? (d.name.length > 25 ? d.name.substring(0, 22) + "..." : d.name + " ") + "(" + d.score + ")" : d.name;
                     }
                 });
         },
