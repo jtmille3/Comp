@@ -1,4 +1,16 @@
-<div class="tab-content">
+<div class="sidebar col-md-2">
+    <div class="sidebar-nav">
+        <ul class="nav nav-list">
+            <li class="nav-header">Seasons</li>
+            {{#each seasons}}
+            <li {{#unless @index}}class='active'{{/unless}}><a href="#season-{{id}}" data-toggle="tab">{{name}}</a></li>
+            {{/each}}
+            <li class="nav-header">Statistics</li>
+            <li><a href="#all-time" data-toggle="tab">Overall</a></li>
+        </ul>
+    </div><!--/.well -->
+</div>
+<div class="tab-content col-md-offset-2 col-md-10">
   {{#each seasons}}
   <div class="tab-pane {{#unless @index}}active{{/unless}}" id="season-{{id}}">
     <div class="container-fluid">
