@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="338d9bed-963b-460f-a418-ff028a1d4e43" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/scripts/bracket.js" afterPath="$PROJECT_DIR$/web/app/scripts/bracket.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="comp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -56,7 +56,6 @@
     <file path="/admin.html" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394376888440" ignored="false" />
     <file path="/Comp" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394377454222" ignored="false" />
     <file path="/README.txt" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394416932546" ignored="false" />
-    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394829110030" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,10 +122,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="bracket.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/app/scripts/bracket.js">
+      <file leaf-file-name="admin.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/app/templates/admin.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="54" column="51" selection-start="1943" selection-end="1943" vertical-scroll-proportion="0.11904762">
+            <state line="19" column="42" selection-start="615" selection-end="615" vertical-scroll-proportion="0.5780933">
               <folding />
             </state>
           </provider>
@@ -163,9 +162,9 @@
         <option value="$PROJECT_DIR$/web/app/scripts/controller/competitive.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/web/app/templates/header.html" />
-        <option value="$PROJECT_DIR$/web/app/templates/comp.html" />
         <option value="$PROJECT_DIR$/web/app/less/main.less" />
         <option value="$PROJECT_DIR$/web/app/scripts/bracket.js" />
+        <option value="$PROJECT_DIR$/web/app/templates/comp.html" />
       </list>
     </option>
   </component>
@@ -635,23 +634,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/app/templates/admin.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="386" vertical-scroll-proportion="-0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/app/templates/header.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="46" selection-start="352" selection-end="352" vertical-scroll-proportion="0.18255578">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/app/templates/comp.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="28" selection-start="12" selection-end="28" vertical-scroll-proportion="3.75">
           <folding />
         </state>
       </provider>
@@ -663,9 +648,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/app/templates/comp.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="28" selection-start="28" selection-end="28" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/app/scripts/bracket.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="51" selection-start="1943" selection-end="1943" vertical-scroll-proportion="0.11904762">
+        <state line="57" column="48" selection-start="2029" selection-end="2029" vertical-scroll-proportion="0.20833333">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/app/templates/admin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="42" selection-start="615" selection-end="615" vertical-scroll-proportion="0.5780933">
           <folding />
         </state>
       </provider>
