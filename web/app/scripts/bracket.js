@@ -163,16 +163,6 @@ define(function (require) {
                 if(!loser) { // not losers but new roots
                     root.contents.push(sibling);
                 }
-//                else { // need to splice loser too
-//                    var k = root.contents.length;
-//                    while(k--) {
-//                        var node = root.contents[k];
-//                        if(node.id === loser.id) {
-//                            root.contents.splice(k, 1);
-//                            break;
-//                        }
-//                    }
-//                }
 
                 loser = null;
             }
