@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="338d9bed-963b-460f-a418-ff028a1d4e43" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/sas/comp/mysql/Database.java" afterPath="$PROJECT_DIR$/src/com/sas/comp/mysql/Database.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/sas/comp/service/SeasonService.java" afterPath="$PROJECT_DIR$/src/com/sas/comp/service/SeasonService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/less/main.less" afterPath="$PROJECT_DIR$/web/app/less/main.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/sas/comp/models/Game.java" afterPath="$PROJECT_DIR$/src/com/sas/comp/models/Game.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/sas/comp/service/GameService.java" afterPath="$PROJECT_DIR$/src/com/sas/comp/service/GameService.java" />
     </list>
     <ignored path="comp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -21,7 +20,7 @@
     <file path="/TeamPlayer.java" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1364962087807" ignored="false" />
     <file path="/Season.java" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1364906776593" ignored="false" />
     <file path="/Goal.java" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1364962211754" ignored="false" />
-    <file path="/Game.java" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1364865041652" ignored="false" />
+    <file path="/Game.java" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394916156501" ignored="false" />
     <file path="/app.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1364944686521" ignored="false" />
     <file path="/_schedule.html" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1364839720544" ignored="false" />
     <file path="/handlebars-helpers.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1364838832337" ignored="false" />
@@ -59,12 +58,13 @@
     <file path="/Comp" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394377454222" ignored="false" />
     <file path="/README.txt" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394416932546" ignored="false" />
     <file path="$PROJECT_DIR$/web/app/scripts/templates.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394849301226" ignored="false" />
-    <file path="/ImportService.java" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394914919153" ignored="false" />
+    <file path="/ImportService.java" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394917854732" ignored="false" />
     <file path="/spring2014.txt" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394852095626" ignored="false" />
     <file path="/spring2014.json" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394853606738" ignored="false" />
-    <file path="/TeamService.java" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394915126672" ignored="false" />
+    <file path="/TeamService.java" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394915583184" ignored="false" />
     <file path="/PlayerService.java" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394915031046" ignored="false" />
-    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394915142122" ignored="false" />
+    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394917934375" ignored="false" />
+    <file path="/GameService.java" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394917789124" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,10 +131,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ImportService.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="ImportService.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/sas/comp/service/ImportService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="66" column="20" selection-start="2483" selection-end="2483" vertical-scroll-proportion="0.0">
+            <state line="81" column="40" selection-start="3024" selection-end="3024" vertical-scroll-proportion="0.29959515">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -142,10 +142,19 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="StandingService.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/sas/comp/service/StandingService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="17" selection-start="406" selection-end="406" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="TeamService.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/sas/comp/service/TeamService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="58" column="123" selection-start="1713" selection-end="1754" vertical-scroll-proportion="0.0">
+            <state line="98" column="13" selection-start="2976" selection-end="2976" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -162,10 +171,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PlayerService.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="PlayerService.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/sas/comp/service/PlayerService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="62" column="56" selection-start="1819" selection-end="1819" vertical-scroll-proportion="0.8704062">
+            <state line="57" column="34" selection-start="1667" selection-end="1667" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -194,7 +203,22 @@
       <file leaf-file-name="GameService.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/sas/comp/service/GameService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="25" selection-start="721" selection-end="1061" vertical-scroll-proportion="0.0">
+            <state line="286" column="34" selection-start="9848" selection-end="9848" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#787#793#0" expanded="true" />
+                <element signature="e#2262#2268#0" expanded="true" />
+                <element signature="e#3628#3634#0" expanded="true" />
+                <element signature="e#7230#7238#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Game.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/sas/comp/models/Game.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="14" column="33" selection-start="355" selection-end="355" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -227,8 +251,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/web/app/templates/header.html" />
         <option value="$PROJECT_DIR$/web/app/scripts/bracket.js" />
         <option value="$PROJECT_DIR$/web/app/templates/admin.html" />
         <option value="$PROJECT_DIR$/web/app/scripts/controller/competitive.js" />
@@ -239,10 +261,12 @@
         <option value="$PROJECT_DIR$/import/spring2014.json" />
         <option value="$PROJECT_DIR$/web/app/less/main.less" />
         <option value="$PROJECT_DIR$/src/com/sas/comp/mysql/Database.java" />
-        <option value="$PROJECT_DIR$/src/com/sas/comp/service/ImportService.java" />
-        <option value="$PROJECT_DIR$/src/com/sas/comp/service/TeamService.java" />
         <option value="$PROJECT_DIR$/src/com/sas/comp/service/SeasonService.java" />
         <option value="$PROJECT_DIR$/src/com/sas/comp/service/PlayerService.java" />
+        <option value="$PROJECT_DIR$/src/com/sas/comp/service/TeamService.java" />
+        <option value="$PROJECT_DIR$/src/com/sas/comp/models/Game.java" />
+        <option value="$PROJECT_DIR$/src/com/sas/comp/service/GameService.java" />
+        <option value="$PROJECT_DIR$/src/com/sas/comp/service/ImportService.java" />
       </list>
     </option>
   </component>
@@ -701,8 +725,8 @@
     </list>
     <recent_temporary>
       <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Application.ImportService" />
-        <item index="1" class="java.lang.String" itemvalue="Application.EmbeddedServer" />
+        <item index="0" class="java.lang.String" itemvalue="Application.EmbeddedServer" />
+        <item index="1" class="java.lang.String" itemvalue="Application.ImportService" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -843,20 +867,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/app/scripts/controller/competitive.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="15" selection-start="1655" selection-end="1655" vertical-scroll-proportion="-0.34816247">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/app/templates/_league_schedule.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="47" selection-start="295" selection-end="295" vertical-scroll-proportion="0.30425963">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/app/templates/_standings.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="33" selection-start="279" selection-end="279" vertical-scroll-proportion="0.39553753">
@@ -892,13 +902,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/sas/comp/service/GameService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="25" selection-start="721" selection-end="1061" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/sas/comp/models/Player.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="45" column="58" selection-start="795" selection-end="795" vertical-scroll-proportion="0.0">
@@ -927,24 +930,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/sas/comp/service/ImportService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="20" selection-start="2483" selection-end="2483" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/sas/comp/service/TeamService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="123" selection-start="1713" selection-end="1754" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/sas/comp/service/SeasonService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="75" column="116" selection-start="2124" selection-end="2124" vertical-scroll-proportion="0.0">
@@ -954,7 +939,52 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/sas/comp/service/PlayerService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="56" selection-start="1819" selection-end="1819" vertical-scroll-proportion="0.8704062">
+        <state line="57" column="34" selection-start="1667" selection-end="1667" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/sas/comp/service/TeamService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="98" column="13" selection-start="2976" selection-end="2976" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/sas/comp/models/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="33" selection-start="355" selection-end="355" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/sas/comp/service/StandingService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="17" selection-start="406" selection-end="406" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/sas/comp/service/GameService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="286" column="34" selection-start="9848" selection-end="9848" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#787#793#0" expanded="true" />
+            <element signature="e#2262#2268#0" expanded="true" />
+            <element signature="e#3628#3634#0" expanded="true" />
+            <element signature="e#7230#7238#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/sas/comp/service/ImportService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="81" column="40" selection-start="3024" selection-end="3024" vertical-scroll-proportion="0.29959515">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
