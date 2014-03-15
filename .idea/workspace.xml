@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="338d9bed-963b-460f-a418-ff028a1d4e43" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/import/spring2014.json" afterPath="$PROJECT_DIR$/import/spring2014.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/less/main.less" afterPath="$PROJECT_DIR$/web/app/less/main.less" />
     </list>
     <ignored path="comp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -44,7 +44,7 @@
     <file path="/_league_schedule.html" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1365376735317" ignored="false" />
     <file path="/.gitignore" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394822442807" ignored="false" />
     <file path="/EmbeddedServer.java" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394295471204" ignored="false" />
-    <file path="/main.less" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394825123721" ignored="false" />
+    <file path="/main.less" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394912877509" ignored="false" />
     <file path="/index.html" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394381186206" ignored="false" />
     <file path="/team_schedule.html" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394396523567" ignored="false" />
     <file path="/SeasonService.java" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394892860789" ignored="false" />
@@ -62,7 +62,7 @@
     <file path="/spring2014.json" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394853606738" ignored="false" />
     <file path="/TeamService.java" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394893408026" ignored="false" />
     <file path="/PlayerService.java" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394893452696" ignored="false" />
-    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394894861289" ignored="false" />
+    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394912869342" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,6 +171,15 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="main.less" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/app/less/main.less">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="80" column="27" selection-start="1445" selection-end="1445" vertical-scroll-proportion="0.58027077">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Player.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/sas/comp/models/Player.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -189,10 +198,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="spring2014.json" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="spring2014.json" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/import/spring2014.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="277" column="66" selection-start="8260" selection-end="8260" vertical-scroll-proportion="0.46421662">
+            <state line="277" column="66" selection-start="8260" selection-end="8260" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -219,7 +228,6 @@
         <option value="$PROJECT_DIR$/README.txt" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/web/app/templates/header.html" />
-        <option value="$PROJECT_DIR$/web/app/less/main.less" />
         <option value="$PROJECT_DIR$/web/app/scripts/bracket.js" />
         <option value="$PROJECT_DIR$/web/app/templates/admin.html" />
         <option value="$PROJECT_DIR$/web/app/scripts/controller/competitive.js" />
@@ -232,6 +240,7 @@
         <option value="$PROJECT_DIR$/src/com/sas/comp/models/Player.java" />
         <option value="$PROJECT_DIR$/src/com/sas/comp/service/ImportService.java" />
         <option value="$PROJECT_DIR$/import/spring2014.json" />
+        <option value="$PROJECT_DIR$/web/app/less/main.less" />
       </list>
     </option>
   </component>
@@ -757,7 +766,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20373027" sideWeight="0.7228117" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27718833" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27718833" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32939324" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -832,13 +841,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/app/templates/admin.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="43" selection-start="615" selection-end="615" vertical-scroll-proportion="0.5780933">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/app/templates/comp.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="37" column="6" selection-start="1773" selection-end="1773" vertical-scroll-proportion="0.8174442">
@@ -945,7 +947,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/import/spring2014.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="277" column="66" selection-start="8260" selection-end="8260" vertical-scroll-proportion="0.46421662">
+        <state line="277" column="66" selection-start="8260" selection-end="8260" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/app/less/main.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="80" column="27" selection-start="1445" selection-end="1445" vertical-scroll-proportion="0.58027077">
           <folding />
         </state>
       </provider>
