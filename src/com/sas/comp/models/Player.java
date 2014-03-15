@@ -5,7 +5,7 @@ public class Player {
 	private Integer rank;
 	private String team;
 	private Integer teamId;
-	private String player;
+	private String name;
 	private Integer playerId;
 	private Integer goals;
 	private Integer shutouts;
@@ -24,12 +24,12 @@ public class Player {
 		this.team = team;
 	}
 
-	public String getPlayer() {
-		return player;
+	public String getName() {
+		return name;
 	}
 
-	public void setPlayer(final String player) {
-		this.player = player;
+	public void setName(final String name) {
+		this.name = name;
 	}
 
 	public Integer getGoals() {

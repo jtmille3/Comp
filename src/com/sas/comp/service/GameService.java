@@ -219,7 +219,7 @@ public class GameService {
       final ResultSet rs = pstmt.executeQuery();
       while (rs.next()) {
         final Player player = new Player();
-        player.setPlayer(rs.getString("player"));
+        player.setName(rs.getString("player"));
         player.setPlayerId(rs.getInt("player_id"));
         player.setTeamId(rs.getInt("team_id"));
         player.setGoals(rs.getInt("goals"));

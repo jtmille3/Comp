@@ -1,7 +1,7 @@
 <div class="tab-pane" id="all-time">
   <div class="row">
     <div class="col-md-6">
-      <table id="player-all-time-table" class="table table-condensed table-striped table-hover tablesorter">
+      <table id="name-all-time-table" class="table table-condensed table-striped table-hover tablesorter">
     <thead>
       <th>Name</th>
       <th>Goals</th>
@@ -11,7 +11,7 @@
     <tbody>
       {{#each playerStatistics}}
         <tr>
-          <td>{{player}}</td>
+          <td>{{name}}</td>
           <td>{{goals}}</td>
           <td>{{leagueWinner}}</td>
           <td>{{playoffWinner}}</td>
@@ -29,7 +29,7 @@
         <tbody>
           {{#each goalieStatistics}}
             <tr>
-              <td>{{player}}</td>
+              <td>{{name}}</td>
               <td>{{shutouts}}</td>
             </tr>
           {{/each}}
