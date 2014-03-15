@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="338d9bed-963b-460f-a418-ff028a1d4e43" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/import/spring2014.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/sas/comp/service/GameService.java" afterPath="$PROJECT_DIR$/src/com/sas/comp/service/GameService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/sas/comp/models/Player.java" afterPath="$PROJECT_DIR$/src/com/sas/comp/models/Player.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/sas/comp/service/SeasonService.java" afterPath="$PROJECT_DIR$/src/com/sas/comp/service/SeasonService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/sas/comp/service/StatisticService.java" afterPath="$PROJECT_DIR$/src/com/sas/comp/service/StatisticService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/templates/_alltime.html" afterPath="$PROJECT_DIR$/web/app/templates/_alltime.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/templates/_statistics.html" afterPath="$PROJECT_DIR$/web/app/templates/_statistics.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/templates/scores.html" afterPath="$PROJECT_DIR$/web/app/templates/scores.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/templates/team_schedule.html" afterPath="$PROJECT_DIR$/web/app/templates/team_schedule.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/import/spring2014.json" afterPath="$PROJECT_DIR$/import/spring2014.json" />
     </list>
     <ignored path="comp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -71,6 +62,7 @@
     <file path="/spring2014.json" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394853606738" ignored="false" />
     <file path="/TeamService.java" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394893408026" ignored="false" />
     <file path="/PlayerService.java" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394893452696" ignored="false" />
+    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394894861289" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -200,7 +192,7 @@
       <file leaf-file-name="spring2014.json" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/import/spring2014.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="107" column="44" selection-start="3148" selection-end="3148" vertical-scroll-proportion="0.27852997">
+            <state line="277" column="66" selection-start="8260" selection-end="8260" vertical-scroll-proportion="0.46421662">
               <folding />
             </state>
           </provider>
@@ -740,7 +732,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1440" height="874" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32978722" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -953,7 +945,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/import/spring2014.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="107" column="44" selection-start="3148" selection-end="3148" vertical-scroll-proportion="0.27852997">
+        <state line="277" column="66" selection-start="8260" selection-end="8260" vertical-scroll-proportion="0.46421662">
           <folding />
         </state>
       </provider>
