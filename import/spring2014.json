@@ -3,6 +3,8 @@
     "teams": [
         {
             "name": "Deportivo Carcosa",
+            "captain": "McGrother, Simon",
+            "goalie": "Ferris, Jim",
             "players": [
                 "McGrother, Simon",
                 "Nisley, Amber",
@@ -21,6 +23,8 @@
         },
         {
             "name": "AsSASsins",
+            "captain": "Sianez, David",
+            "goalie": "Sianez, David",
             "players": [
                 "Sianez, David",
                 "Lawrence, Brad",
@@ -40,6 +44,8 @@
         },
         {
             "name": "Leo Messy",
+            "captain": "Howard, Jordan",
+            "goalie": "Zalc, Eli",
             "players": [
                 "Howard, Jordan",
                 "Nieman, Bryan",
@@ -58,6 +64,8 @@
         },
         {
             "name": "Bosko and the Looney Tunes",
+            "captain": "Bosko, Jason",
+            "goalie": "Reese, Jason",
             "players": [
                 "Bosko, Jason",
                 "Trubey, Brad",
@@ -76,6 +84,8 @@
         },
         {
             "name": "Miller Genuine Football",
+            "captain": "Miller, Jeff",
+            "goalie": "Mukhopadhyay, Pushpal",
             "players": [
                 "Miller, Jeff",
                 "Weltken, Andrew",
@@ -94,6 +104,8 @@
         },
         {
             "name": "Sershen Destroy - A San Diego Chargers Team",
+            "captain": "Sershen, Leigh",
+            "goalie": "Tamburro, Dan",
             "players": [
                 "Sershen, Leigh",
                 "McGough, Adrian",
@@ -112,6 +124,8 @@
         },
         {
             "name": "The Brazucas",
+            "captain": "Sabourin, Philippe",
+            "goalie": "Gerakios, Peter",
             "players": [
                 "Sabourin, Philippe",
                 "Smith, Casey",
@@ -130,6 +144,8 @@
         },
         {
             "name": "Real Pathetica",
+            "captain": "Sperati, Josh",
+            "goalie": "",
             "players": [
                 "Sperati, Josh",
                 "Antonucci, Anthony",
