@@ -69,16 +69,20 @@ public class SeasonService {
         return null;
     }
 
-    public void save(final Team team) {
+    public void save(final Season season) {
         try {
             final Connection conn = Database.getConnection();
             final PreparedStatement pstmt = conn
-                    .prepareStatement("INSERT INTO TEAMS VALUES(NULL, ?, ?, ?, ?)");
-            pstmt.setInt(1, team.getSeasonId());
-            pstmt.setString(2, team.getName());
-            pstmt.setInt(3, 0);
-            pstmt.setInt(4, 0);
-            pstmt.executeQuery();
+                    .prepareStatement("INSERT INTO seasons VALUES(NULL, ?)", PreparedStatement.RETURN_GENERATED_KEYS);
+            pstmt.setString(2, season.getName());
+            pstmt.execute();
+
+            final ResultSet rs = pstmt.getGeneratedKeys();
+            if(rs.next()) {
+                season.setId(rs.getInt(1));
+            }
+
+            rs.close();
             pstmt.close();
             conn.close();
         } catch (final Exception e) {
