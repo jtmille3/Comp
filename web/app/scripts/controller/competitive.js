@@ -9,13 +9,6 @@ define(function(require) {
 			var self = this;
 			this.competitive = competitive;
 
-            // this.competitive.seasons.splice(0, 2);
-
-			/*
-			if(Modernizr.localstorage) {
-				localStorage.competitive = JSON.stringify(competitive);
-			}
-			*/
             var headerTemplate = window.comp['web/app/templates/header.html'];
             $('#header').html(headerTemplate(competitive));
 

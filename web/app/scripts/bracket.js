@@ -1,6 +1,8 @@
 define(function (require) {
     'use strict';
 
+    var d3 = require("../components/d3/d3");
+
     return {
         generate: function (id, games) {
             var root = this.transformToBracket(games);
@@ -135,6 +137,8 @@ define(function (require) {
 
             this.attach(root, siblings);
 
+            // this is a bug.  only works when the tournament is over :P
+            // need to track winners and losers and prune losers after two loses, no way around it
             if(root.contents.length > 2) {
                 root.contents = root.contents.splice(root.contents.length - 2, root.contents.length);
                 root.name = root.contents[0].won ? root.contents[0].name : root.contents[1].name;

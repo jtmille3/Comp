@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="338d9bed-963b-460f-a418-ff028a1d4e43" name="Default" comment="" />
+    <list default="true" id="338d9bed-963b-460f-a418-ff028a1d4e43" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/scripts/templates.js" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/sas/comp/mysql/Database.java" afterPath="$PROJECT_DIR$/src/com/sas/comp/mysql/Database.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gruntfile.js" afterPath="$PROJECT_DIR$/Gruntfile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/admin.html" afterPath="$PROJECT_DIR$/web/app/admin.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower.json" afterPath="$PROJECT_DIR$/bower.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/scripts/bracket.js" afterPath="$PROJECT_DIR$/web/app/scripts/bracket.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/comp.iml" afterPath="$PROJECT_DIR$/comp.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/scripts/controller/competitive.js" afterPath="$PROJECT_DIR$/web/app/scripts/controller/competitive.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/index.html" afterPath="$PROJECT_DIR$/web/app/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/scripts/main.js" afterPath="$PROJECT_DIR$/web/app/scripts/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="comp.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394822503920" ignored="false" />
@@ -43,25 +55,27 @@
     <file path="/.gitignore" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394822442807" ignored="false" />
     <file path="/EmbeddedServer.java" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394295471204" ignored="false" />
     <file path="/main.less" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394912877509" ignored="false" />
-    <file path="/index.html" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394381186206" ignored="false" />
+    <file path="/index.html" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395014846331" ignored="false" />
     <file path="/team_schedule.html" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394396523567" ignored="false" />
     <file path="/SeasonService.java" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394915039620" ignored="false" />
     <file path="/_playoff_schedule.html" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394848629388" ignored="false" />
-    <file path="/bracket.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394827964236" ignored="false" />
-    <file path="/bower.json" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394381154010" ignored="false" />
+    <file path="/bracket.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395004901216" ignored="false" />
+    <file path="/bower.json" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394985558937" ignored="false" />
     <file path="/header.html" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394338561070" ignored="false" />
     <file path="/password.html" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394376407397" ignored="false" />
-    <file path="/admin.html" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394376888440" ignored="false" />
+    <file path="/admin.html" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394987517663" ignored="false" />
     <file path="/Comp" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394377454222" ignored="false" />
     <file path="/README.txt" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394416932546" ignored="false" />
-    <file path="$PROJECT_DIR$/web/app/scripts/templates.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394849301226" ignored="false" />
     <file path="/ImportService.java" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394919098544" ignored="false" />
     <file path="/spring2014.txt" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394852095626" ignored="false" />
     <file path="/spring2014.json" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394918128697" ignored="false" />
     <file path="/TeamService.java" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394919501428" ignored="false" />
     <file path="/PlayerService.java" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394915031046" ignored="false" />
-    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394919536876" ignored="false" />
     <file path="/GameService.java" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394917789124" ignored="false" />
+    <file path="/Gruntfile.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395006304597" ignored="false" />
+    <file path="/package.json" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394984811121" ignored="false" />
+    <file path="$PROJECT_DIR$/web/comp/scripts/almond.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394997510221" ignored="false" />
+    <file path="/main.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395002472097" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,32 +142,71 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ImportService.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/sas/comp/service/ImportService.java">
+      <file leaf-file-name="bracket.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/app/scripts/bracket.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="79" column="0" selection-start="3087" selection-end="3087" vertical-scroll-proportion="0.3326886">
+            <state line="3" column="39" selection-start="86" selection-end="86" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="competitive.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/app/scripts/controller/competitive.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="38" column="55" selection-start="1546" selection-end="1546" vertical-scroll-proportion="-16.8">
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="n#!!doc" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TeamService.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/sas/comp/service/TeamService.java">
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/app/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="115" column="30" selection-start="3604" selection-end="3604" vertical-scroll-proportion="0.0">
+            <state line="14" column="41" selection-start="711" selection-end="711" vertical-scroll-proportion="11.875">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/app/admin.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="20" column="0" selection-start="880" selection-end="880" vertical-scroll-proportion="6.9583335">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Gruntfile.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Gruntfile.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="281" column="17" selection-start="8375" selection-end="8375" vertical-scroll-proportion="0.70198673">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/app/scripts/main.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="20" column="43" selection-start="492" selection-end="492" vertical-scroll-proportion="0.0">
               <folding>
-                <element signature="imports" expanded="true" />
+                <marker date="1395015553000" expanded="true" signature="30:129" placeholder="{&quot;jquery&quot;: '../components/jquery/dist/jquery'...}" />
+                <marker date="1395015553000" expanded="true" signature="143:272" placeholder="{...}" />
+                <marker date="1395015553000" expanded="true" signature="165:205" placeholder="{&quot;exports&quot;: '$'...}" />
+                <marker date="1395015553000" expanded="true" signature="223:264" placeholder="{&quot;exports&quot;: 'd3'...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="spring2014.json" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/import/spring2014.json">
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/comp/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="146" column="37" selection-start="4424" selection-end="4424" vertical-scroll-proportion="0.0">
+            <state line="15" column="0" selection-start="718" selection-end="718" vertical-scroll-proportion="-8.125">
               <folding />
             </state>
           </provider>
@@ -177,22 +230,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/web/app/scripts/bracket.js" />
-        <option value="$PROJECT_DIR$/web/app/templates/admin.html" />
-        <option value="$PROJECT_DIR$/web/app/scripts/controller/competitive.js" />
-        <option value="$PROJECT_DIR$/web/app/templates/_playoff_schedule.html" />
-        <option value="$PROJECT_DIR$/web/app/templates/comp.html" />
-        <option value="$PROJECT_DIR$/import/spring2014.txt" />
-        <option value="$PROJECT_DIR$/src/com/sas/comp/models/Player.java" />
-        <option value="$PROJECT_DIR$/web/app/less/main.less" />
-        <option value="$PROJECT_DIR$/src/com/sas/comp/mysql/Database.java" />
-        <option value="$PROJECT_DIR$/src/com/sas/comp/service/SeasonService.java" />
-        <option value="$PROJECT_DIR$/src/com/sas/comp/service/PlayerService.java" />
-        <option value="$PROJECT_DIR$/src/com/sas/comp/models/Game.java" />
         <option value="$PROJECT_DIR$/src/com/sas/comp/service/GameService.java" />
         <option value="$PROJECT_DIR$/import/spring2014.json" />
         <option value="$PROJECT_DIR$/src/com/sas/comp/service/ImportService.java" />
         <option value="$PROJECT_DIR$/src/com/sas/comp/service/TeamService.java" />
+        <option value="$PROJECT_DIR$/src/com/sas/comp/mysql/Database.java" />
+        <option value="$PROJECT_DIR$/web/comp/admin.html" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/bower.json" />
+        <option value="$PROJECT_DIR$/web/app/scripts/controller/competitive.js" />
+        <option value="$PROJECT_DIR$/web/app/scripts/bracket.js" />
+        <option value="$PROJECT_DIR$/web/comp/scripts/main.js" />
+        <option value="$PROJECT_DIR$/web/app/admin.html" />
+        <option value="$PROJECT_DIR$/web/app/index.html" />
+        <option value="$PROJECT_DIR$/web/comp/index.html" />
+        <option value="$PROJECT_DIR$/web/app/scripts/main.js" />
+        <option value="$PROJECT_DIR$/Gruntfile.js" />
       </list>
     </option>
   </component>
@@ -305,7 +358,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -323,137 +376,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Comp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Comp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Comp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Comp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="comp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="service" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Comp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Comp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="comp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Comp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Comp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="comp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Comp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Comp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="comp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Comp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Comp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="libs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Comp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Comp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="import" />
+              <option name="myItemId" value="scripts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -488,6 +415,9 @@
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.sas.comp.resource" />
       <recent name="com.sas.comp.models" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/libs" />
     </key>
   </component>
   <component name="RunManager" selected="Application.ImportService">
@@ -657,8 +587,8 @@
     </list>
     <recent_temporary>
       <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Application.ImportService" />
-        <item index="1" class="java.lang.String" itemvalue="Application.EmbeddedServer" />
+        <item index="0" class="java.lang.String" itemvalue="Application.EmbeddedServer" />
+        <item index="1" class="java.lang.String" itemvalue="Application.ImportService" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -701,7 +631,7 @@
     <frame x="0" y="22" width="1440" height="874" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32978722" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32891247" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -711,7 +641,7 @@
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39920425" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32891247" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -723,8 +653,8 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20373027" sideWeight="0.7228117" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27718833" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20373027" sideWeight="0.6710875" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27718833" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32939324" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -799,127 +729,117 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/app/templates/_standings.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="33" selection-start="279" selection-end="279" vertical-scroll-proportion="0.39553753">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/app/templates/_games.html">
+    <entry file="file://$PROJECT_DIR$/web/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/app/templates/_playoff_schedule.html">
+    <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="50" selection-start="330" selection-end="330" vertical-scroll-proportion="0.30425963">
+        <state line="23" column="27" selection-start="748" selection-end="751" vertical-scroll-proportion="-14.375">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/sas/comp/service/ImportService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="79" column="0" selection-start="3087" selection-end="3087" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/com/sas/comp/service/AuthenticationServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="16" selection-start="47" selection-end="47" vertical-scroll-proportion="0.060728744">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bower.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="21" selection-start="309" selection-end="309" vertical-scroll-proportion="0.3346856">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/app/components/d3/d3.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/app/components/d3/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/app/scripts/bracket.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="39" selection-start="86" selection-end="86" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/app/scripts/controller/competitive.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="55" selection-start="1546" selection-end="1546" vertical-scroll-proportion="-16.8">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/app/admin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="0" selection-start="880" selection-end="880" vertical-scroll-proportion="6.9583335">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/app/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="66" selection-start="1316" selection-end="1316" vertical-scroll-proportion="-0.3125">
+        <state line="14" column="41" selection-start="711" selection-end="711" vertical-scroll-proportion="11.875">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/sas/comp/service/AuthenticationService.java">
+    <entry file="file://$PROJECT_DIR$/web/comp/scripts/comp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="13" selection-start="172" selection-end="172" vertical-scroll-proportion="0.116054155">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/sas/comp/models/Player.java">
+    <entry file="file://$PROJECT_DIR$/web/comp/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="0" selection-start="795" selection-end="795" vertical-scroll-proportion="0.0">
+        <state line="15" column="0" selection-start="718" selection-end="718" vertical-scroll-proportion="-8.125">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/sas/comp/mysql/Database.java">
+    <entry file="file://$PROJECT_DIR$/web/app/scripts/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="66" selection-start="389" selection-end="389" vertical-scroll-proportion="0.27327934">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/app/less/main.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="85" column="19" selection-start="1522" selection-end="1522" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/sas/comp/service/SeasonService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="75" column="116" selection-start="2124" selection-end="2124" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/sas/comp/service/PlayerService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="28" selection-start="1667" selection-end="1667" vertical-scroll-proportion="0.0">
+        <state line="20" column="43" selection-start="492" selection-end="492" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="imports" expanded="true" />
+            <marker date="1395015553000" expanded="true" signature="30:129" placeholder="{&quot;jquery&quot;: '../components/jquery/dist/jquery'...}" />
+            <marker date="1395015553000" expanded="true" signature="143:272" placeholder="{...}" />
+            <marker date="1395015553000" expanded="true" signature="165:205" placeholder="{&quot;exports&quot;: '$'...}" />
+            <marker date="1395015553000" expanded="true" signature="223:264" placeholder="{&quot;exports&quot;: 'd3'...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/sas/comp/models/Game.java">
+    <entry file="file://$PROJECT_DIR$/Gruntfile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="24" selection-start="355" selection-end="355" vertical-scroll-proportion="0.0">
+        <state line="281" column="17" selection-start="8375" selection-end="8375" vertical-scroll-proportion="0.70198673">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/sas/comp/service/StandingService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="0" selection-start="406" selection-end="406" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/sas/comp/service/GameService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="286" column="28" selection-start="9848" selection-end="9848" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#787#793#0" expanded="true" />
-            <element signature="e#2262#2268#0" expanded="true" />
-            <element signature="e#3628#3634#0" expanded="true" />
-            <element signature="e#7230#7238#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/import/spring2014.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="146" column="37" selection-start="4424" selection-end="4424" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/sas/comp/service/TeamService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="115" column="30" selection-start="3604" selection-end="3604" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/sas/comp/service/ImportService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="79" column="0" selection-start="3087" selection-end="3087" vertical-scroll-proportion="0.3326886">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
