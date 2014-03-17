@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="comp:Web exploded" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="338d9bed-963b-460f-a418-ff028a1d4e43" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/less/main.less" afterPath="$PROJECT_DIR$/web/app/less/main.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gruntfile.js" afterPath="$PROJECT_DIR$/Gruntfile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/comp.iml" afterPath="$PROJECT_DIR$/comp.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="comp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -62,12 +69,230 @@
     <file path="/TeamService.java" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394919501428" ignored="false" />
     <file path="/PlayerService.java" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394915031046" ignored="false" />
     <file path="/GameService.java" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394917789124" ignored="false" />
-    <file path="/Gruntfile.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395006304597" ignored="false" />
+    <file path="/Gruntfile.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395018220097" ignored="false" />
     <file path="/package.json" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394984811121" ignored="false" />
     <file path="$PROJECT_DIR$/web/comp/scripts/almond.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394997510221" ignored="false" />
     <file path="/main.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395002472097" ignored="false" />
-    <file path="$PROJECT_DIR$/web/comp/scripts/comp.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395015979532" ignored="false" />
-    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016218456" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/package.json" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771466" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-livereload/node_modules/tiny-lr/node_modules/noptify/node_modules/nopt/bin/nopt.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771466" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-livereload/node_modules/tiny-lr/node_modules/noptify/node_modules/nopt/lib/nopt.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771466" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-livereload/node_modules/tiny-lr/node_modules/noptify/node_modules/nopt/examples/my-program.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771466" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/lib/handlebars.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771466" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/lib/index.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771466" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-livereload/node_modules/tiny-lr/node_modules/noptify/node_modules/nopt/node_modules/abbrev/package.json" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771466" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/lib/handlebars.runtime.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771466" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-livereload/node_modules/tiny-lr/node_modules/noptify/node_modules/nopt/node_modules/abbrev/lib/abbrev.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771466" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/lib/handlebars/safe-string.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771466" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/lib/handlebars/runtime.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771466" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-livereload/node_modules/tiny-lr/node_modules/faye-websocket/package.json" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771466" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/lib/handlebars/utils.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771466" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/lib/handlebars/exception.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771466" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/lib/handlebars/base.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771466" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/lib/handlebars/compiler/compiler.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771466" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/lib/handlebars/compiler/visitor.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771466" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-livereload/node_modules/tiny-lr/node_modules/faye-websocket/lib/faye/eventsource.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771466" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/lib/handlebars/compiler/javascript-compiler.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771466" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/lib/handlebars/compiler/printer.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771466" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-livereload/node_modules/tiny-lr/node_modules/faye-websocket/lib/faye/websocket.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771466" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/lib/handlebars/compiler/parser.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771466" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-livereload/node_modules/tiny-lr/node_modules/faye-websocket/lib/faye/websocket/draft76_parser.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771466" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/lib/handlebars/compiler/base.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771466" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/lib/handlebars/compiler/ast.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771466" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/dist/handlebars.runtime.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771466" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-livereload/node_modules/tiny-lr/node_modules/faye-websocket/lib/faye/websocket/client.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771466" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/dist/handlebars.runtime.min.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771466" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-livereload/node_modules/tiny-lr/node_modules/faye-websocket/lib/faye/websocket/draft75_parser.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771466" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/dist/handlebars.min.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771466" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-livereload/node_modules/tiny-lr/node_modules/faye-websocket/lib/faye/websocket/hybi_parser.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771466" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/dist/handlebars.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771466" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-livereload/node_modules/tiny-lr/node_modules/faye-websocket/lib/faye/websocket/api.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771466" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-livereload/node_modules/tiny-lr/node_modules/faye-websocket/lib/faye/websocket/api/event.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771466" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/dist/handlebars.amd.min.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771466" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-livereload/node_modules/tiny-lr/node_modules/faye-websocket/lib/faye/websocket/api/event_target.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771466" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/dist/handlebars.runtime.amd.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771466" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-livereload/node_modules/tiny-lr/node_modules/faye-websocket/lib/faye/websocket/hybi_parser/handshake.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771466" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/dist/handlebars.amd.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771466" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-livereload/node_modules/tiny-lr/node_modules/faye-websocket/lib/faye/websocket/hybi_parser/stream_reader.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771466" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/dist/handlebars.runtime.amd.min.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771466" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/dist/amd/handlebars.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771466" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/dist/amd/handlebars.runtime.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771466" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-livereload/node_modules/tiny-lr/node_modules/faye-websocket/spec/runner.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771466" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/dist/amd/handlebars/safe-string.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771466" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-livereload/node_modules/tiny-lr/node_modules/faye-websocket/spec/faye/websocket/client_spec.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771466" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-livereload/node_modules/tiny-lr/node_modules/faye-websocket/spec/faye/websocket/draft75parser_spec.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771466" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/dist/amd/handlebars/runtime.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771466" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-livereload/node_modules/tiny-lr/node_modules/faye-websocket/spec/faye/websocket/draft76parser_spec.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771466" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/dist/amd/handlebars/utils.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771466" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-livereload/node_modules/tiny-lr/node_modules/faye-websocket/spec/faye/websocket/hybi_parser_spec.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771466" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/dist/amd/handlebars/exception.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771466" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-livereload/node_modules/tiny-lr/node_modules/faye-websocket/examples/autobahn_client.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771466" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/dist/amd/handlebars/base.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771466" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-livereload/node_modules/tiny-lr/node_modules/faye-websocket/examples/client.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771466" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/dist/amd/handlebars/compiler/compiler.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771466" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-livereload/node_modules/tiny-lr/node_modules/faye-websocket/examples/ws.html" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771466" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/dist/amd/handlebars/compiler/visitor.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771466" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-livereload/node_modules/tiny-lr/node_modules/faye-websocket/examples/sse.html" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771466" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/dist/amd/handlebars/compiler/javascript-compiler.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771466" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-livereload/node_modules/tiny-lr/node_modules/faye-websocket/examples/server.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771466" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/dist/amd/handlebars/compiler/printer.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771466" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/dist/amd/handlebars/compiler/parser.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771466" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/dist/amd/handlebars/compiler/base.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771466" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/dist/amd/handlebars/compiler/ast.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771466" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/dist/cjs/handlebars.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771466" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/dist/cjs/handlebars.runtime.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771466" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/dist/cjs/handlebars/safe-string.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771466" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/dist/cjs/handlebars/runtime.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771466" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/dist/cjs/handlebars/utils.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771466" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/dist/cjs/handlebars/exception.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771466" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/dist/cjs/handlebars/base.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771466" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/dist/cjs/handlebars/compiler/compiler.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771466" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/dist/cjs/handlebars/compiler/visitor.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771466" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771466" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/dist/cjs/handlebars/compiler/printer.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771466" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/dist/cjs/handlebars/compiler/parser.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/dist/cjs/handlebars/compiler/base.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/dist/cjs/handlebars/compiler/ast.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/node_modules/optimist/index.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/node_modules/optimist/package.json" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/node_modules/optimist/test/parse.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/node_modules/optimist/test/_.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/node_modules/optimist/test/usage.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/node_modules/optimist/example/divide.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/node_modules/optimist/example/string.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/node_modules/optimist/example/default_hash.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/node_modules/optimist/example/boolean_double.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/node_modules/optimist/example/default_singles.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/node_modules/optimist/example/usage-options.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/node_modules/optimist/example/boolean_single.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/node_modules/optimist/example/line_count_options.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/node_modules/optimist/example/line_count.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/node_modules/optimist/example/line_count_wrap.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/node_modules/optimist/node_modules/wordwrap/index.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/node_modules/optimist/node_modules/wordwrap/package.json" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/node_modules/optimist/node_modules/wordwrap/test/wrap.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/node_modules/optimist/node_modules/wordwrap/test/break.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/node_modules/optimist/node_modules/wordwrap/example/center.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/node_modules/uglify-js/package.json" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/node_modules/uglify-js/lib/scope.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/node_modules/uglify-js/lib/transform.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/node_modules/uglify-js/lib/utils.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/node_modules/uglify-js/lib/mozilla-ast.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/node_modules/uglify-js/lib/sourcemap.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/node_modules/uglify-js/lib/output.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/node_modules/uglify-js/lib/parse.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/node_modules/uglify-js/lib/ast.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/node_modules/uglify-js/lib/compress.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/node_modules/uglify-js/test/run-tests.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/node_modules/uglify-js/test/compress/drop-unused.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/node_modules/uglify-js/test/compress/issue-59.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/node_modules/uglify-js/test/compress/sequences.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/node_modules/uglify-js/test/compress/issue-105.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/node_modules/uglify-js/test/compress/dead-code.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/node_modules/uglify-js/test/compress/issue-22.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/node_modules/uglify-js/test/compress/issue-12.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/node_modules/uglify-js/test/compress/issue-143.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/node_modules/uglify-js/test/compress/arrays.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/node_modules/uglify-js/test/compress/labels.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/node_modules/uglify-js/test/compress/issue-44.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/node_modules/uglify-js/test/compress/blocks.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/node_modules/uglify-js/test/compress/switch.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/node_modules/uglify-js/test/compress/typeof.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/node_modules/uglify-js/test/compress/conditionals.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/node_modules/uglify-js/test/compress/loops.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/node_modules/uglify-js/tools/node.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/node_modules/uglify-js/node_modules/async/component.json" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/node_modules/uglify-js/node_modules/async/package.json" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/node_modules/uglify-js/node_modules/async/lib/async.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/node_modules/uglify-js/node_modules/source-map/package.json" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/node_modules/uglify-js/node_modules/source-map/Makefile.dryice.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/node_modules/uglify-js/node_modules/source-map/lib/source-map/source-node.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/node_modules/uglify-js/node_modules/source-map/lib/source-map/array-set.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/node_modules/uglify-js/node_modules/source-map/lib/source-map/util.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/node_modules/uglify-js/node_modules/source-map/lib/source-map/binary-search.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/node_modules/uglify-js/node_modules/source-map/lib/source-map/source-map-generator.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/node_modules/uglify-js/node_modules/source-map/lib/source-map/base64.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/node_modules/uglify-js/node_modules/source-map/lib/source-map/base64-vlq.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/node_modules/uglify-js/node_modules/source-map/lib/source-map/source-map-consumer.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/node_modules/uglify-js/node_modules/source-map/test/run-tests.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/node_modules/uglify-js/node_modules/source-map/test/source-map/test-array-set.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/node_modules/uglify-js/node_modules/source-map/test/source-map/test-source-map-consumer.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/node_modules/uglify-js/node_modules/source-map/test/source-map/test-source-map-generator.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/node_modules/uglify-js/node_modules/source-map/test/source-map/test-api.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/node_modules/uglify-js/node_modules/source-map/test/source-map/test-base64-vlq.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/node_modules/uglify-js/node_modules/source-map/test/source-map/util.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/node_modules/uglify-js/node_modules/source-map/test/source-map/test-binary-search.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/node_modules/uglify-js/node_modules/source-map/test/source-map/test-source-node.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/node_modules/uglify-js/node_modules/source-map/test/source-map/test-dog-fooding.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/node_modules/uglify-js/node_modules/source-map/test/source-map/test-util.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/node_modules/uglify-js/node_modules/source-map/test/source-map/test-base64.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/node_modules/uglify-js/node_modules/source-map/build/test-suffix.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/node_modules/uglify-js/node_modules/source-map/build/assert-shim.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/node_modules/uglify-js/node_modules/source-map/build/suffix-browser.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/node_modules/uglify-js/node_modules/source-map/build/mini-require.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/node_modules/uglify-js/node_modules/source-map/node_modules/amdefine/package.json" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/node_modules/uglify-js/node_modules/source-map/node_modules/amdefine/intercept.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/handlebars/node_modules/uglify-js/node_modules/source-map/node_modules/amdefine/amdefine.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/grunt-lib-contrib/package.json" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/grunt-lib-contrib/.jshintrc" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/grunt-lib-contrib/lib/contrib.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/grunt-lib-contrib/test/lib_test.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/grunt-lib-contrib/node_modules/zlib-browserify/zlib.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/grunt-lib-contrib/node_modules/zlib-browserify/index.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/grunt-lib-contrib/node_modules/zlib-browserify/package.json" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/grunt-lib-contrib/node_modules/zlib-browserify/test/zlib.test.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-livereload/package.json" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-livereload/.jshintrc" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771467" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-livereload/lib/utils.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771468" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-livereload/tasks/livereload.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771468" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-livereload/node_modules/tiny-lr/package.json" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771468" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-livereload/node_modules/tiny-lr/lib/index.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771468" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-livereload/node_modules/tiny-lr/lib/server.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771468" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-livereload/node_modules/tiny-lr/lib/client.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771468" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-livereload/node_modules/tiny-lr/lib/public/livereload.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771468" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-livereload/node_modules/tiny-lr/test/middleware.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771468" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-livereload/node_modules/tiny-lr/test/server.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771468" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-livereload/node_modules/tiny-lr/test/client.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771468" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-livereload/node_modules/tiny-lr/tasks/tiny-lr.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771468" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-livereload/node_modules/tiny-lr/node_modules/qs/benchmark.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771468" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-livereload/node_modules/tiny-lr/node_modules/qs/index.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771468" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-livereload/node_modules/tiny-lr/node_modules/qs/examples.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771468" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-livereload/node_modules/tiny-lr/node_modules/qs/component.json" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771468" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-livereload/node_modules/tiny-lr/node_modules/qs/package.json" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771468" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-livereload/node_modules/tiny-lr/node_modules/qs/test/parse.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771468" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-livereload/node_modules/tiny-lr/node_modules/qs/test/stringify.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771468" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-requirejs/node_modules/requirejs/package.json" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771468" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-requirejs/node_modules/requirejs/require.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771468" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-livereload/node_modules/tiny-lr/node_modules/qs/test/browser/jquery.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771468" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-livereload/node_modules/tiny-lr/node_modules/qs/test/browser/index.html" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771468" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-livereload/node_modules/tiny-lr/node_modules/qs/test/browser/mocha.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771468" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-livereload/node_modules/tiny-lr/node_modules/qs/test/browser/mocha.css" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771470" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-livereload/node_modules/tiny-lr/node_modules/qs/test/browser/qs.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771470" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-livereload/node_modules/tiny-lr/node_modules/qs/test/browser/expect.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771470" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/package.json" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771470" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-livereload/node_modules/tiny-lr/node_modules/debug/package.json" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771470" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-livereload/node_modules/tiny-lr/node_modules/debug/debug.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771470" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/tasks/handlebars.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771470" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-livereload/node_modules/tiny-lr/node_modules/debug/index.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771470" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-livereload/node_modules/tiny-lr/node_modules/debug/lib/debug.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771470" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-livereload/node_modules/tiny-lr/node_modules/noptify/package.json" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771470" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-livereload/node_modules/tiny-lr/node_modules/noptify/index.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771470" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/chalk/package.json" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771470" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/chalk/index.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771470" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-livereload/node_modules/tiny-lr/node_modules/noptify/test/collectable.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771470" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-livereload/node_modules/tiny-lr/node_modules/noptify/test/commandable.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771470" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-livereload/node_modules/tiny-lr/node_modules/noptify/test/api.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771470" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/chalk/node_modules/has-color/has-color.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771470" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-livereload/node_modules/tiny-lr/node_modules/noptify/util/extend.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771470" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/chalk/node_modules/has-color/package.json" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771470" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-livereload/node_modules/tiny-lr/node_modules/noptify/util/index.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771470" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-livereload/node_modules/tiny-lr/node_modules/noptify/actions/collectable.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771470" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/chalk/node_modules/strip-ansi/package.json" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771470" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-livereload/node_modules/tiny-lr/node_modules/noptify/actions/commandable.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771470" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/chalk/node_modules/strip-ansi/cli.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771470" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/chalk/node_modules/strip-ansi/index.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771470" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/chalk/node_modules/ansi-styles/ansi-styles.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771470" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/chalk/node_modules/ansi-styles/package.json" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771470" ignored="false" />
+    <file path="$PROJECT_DIR$/node_modules/grunt-contrib-livereload/node_modules/tiny-lr/node_modules/noptify/node_modules/nopt/package.json" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771470" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,10 +359,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="main.less" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/app/less/main.less">
+      <file leaf-file-name="Gruntfile.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Gruntfile.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="59" column="10" selection-start="1064" selection-end="1064" vertical-scroll-proportion="0.50209206">
+            <state line="87" column="30" selection-start="2790" selection-end="2790" vertical-scroll-proportion="0.62913907">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="package.json" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="23" column="27" selection-start="748" selection-end="751" vertical-scroll-proportion="-10.541667">
               <folding />
             </state>
           </provider>
@@ -154,6 +388,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitLogSettings">
+    <option name="myStructureFilterPaths" />
     <option name="myDateState">
       <MyDateState />
     </option>
@@ -175,8 +410,8 @@
         <option value="$PROJECT_DIR$/web/app/index.html" />
         <option value="$PROJECT_DIR$/web/comp/index.html" />
         <option value="$PROJECT_DIR$/web/app/scripts/main.js" />
-        <option value="$PROJECT_DIR$/Gruntfile.js" />
         <option value="$PROJECT_DIR$/web/app/less/main.less" />
+        <option value="$PROJECT_DIR$/Gruntfile.js" />
       </list>
     </option>
   </component>
@@ -193,16 +428,67 @@
             <id />
           </State>
           <State>
+            <id>Abstraction issues</id>
+          </State>
+          <State>
+            <id>Android</id>
+          </State>
+          <State>
             <id>Android Lint</id>
           </State>
           <State>
+            <id>CSS</id>
+          </State>
+          <State>
+            <id>Class metrics</id>
+          </State>
+          <State>
+            <id>Declaration redundancy</id>
+          </State>
+          <State>
+            <id>Error handling</id>
+          </State>
+          <State>
+            <id>GeneralJavaScript</id>
+          </State>
+          <State>
+            <id>Google Web Toolkit issues</id>
+          </State>
+          <State>
+            <id>Groovy</id>
+          </State>
+          <State>
             <id>Internationalization issues</id>
+          </State>
+          <State>
+            <id>JSP Inspections</id>
+          </State>
+          <State>
+            <id>JavaScript</id>
+          </State>
+          <State>
+            <id>Method MetricsGroovy</id>
+          </State>
+          <State>
+            <id>Method metrics</id>
+          </State>
+          <State>
+            <id>Naming ConventionsGroovy</id>
+          </State>
+          <State>
+            <id>Naming conventions</id>
+          </State>
+          <State>
+            <id>OSGi</id>
           </State>
           <State>
             <id>Performance issues</id>
           </State>
           <State>
             <id>Plugin DevKit</id>
+          </State>
+          <State>
+            <id>Security issues</id>
           </State>
         </expanded-state>
         <selected-state>
@@ -227,6 +513,14 @@
   </component>
   <component name="ProjectReloadState">
     <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectStructureProblems">
+    <ignored-problems>
+      <problem id="library-missing-from-artifact(artifact:comp:Web exploded,WEB-INF/classes/module-output)" />
+      <problem id="library-missing-from-artifact(artifact:comp:Web exploded,WEB-INF/classes/module-output)" />
+      <problem id="library-missing-from-artifact(artifact:comp:Web exploded,WEB-INF/classes/module-output)" />
+      <problem id="library-missing-from-artifact(artifact:comp:Web exploded,WEB-INF/classes/module-output)" />
+    </ignored-problems>
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
@@ -261,6 +555,52 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Comp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Comp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Comp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Comp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="comp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Comp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Comp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="libs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -271,7 +611,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="recentsLimit" value="5" />
-    <property name="options.lastSelected" value="editor.preferences.appearance" />
+    <property name="options.lastSelected" value="Errors" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/web/WEB-INF/lib/mysql-connector-java-5.1.24-bin.jar" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
@@ -504,13 +844,33 @@
     <option name="localTasksCounter" value="2" />
     <servers />
   </component>
+  <component name="TodoView" selected-index="0">
+    <todo-panel id="selected-file">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="default-changelist">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1440" height="874" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32891247" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32891247" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20373027" sideWeight="0.28647214" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32891247" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32975337" sideWeight="0.6706068" order="3" side_tool="false" content_ui="tabs" />
@@ -521,16 +881,16 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32891247" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32891247" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32891247" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20373027" sideWeight="0.28647214" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32891247" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24973032" sideWeight="0.369" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20373027" sideWeight="0.6710875" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20373027" sideWeight="0.6710875" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27718833" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -613,29 +973,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="27" selection-start="748" selection-end="751" vertical-scroll-proportion="-14.375">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/sas/comp/service/ImportService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="79" column="0" selection-start="3087" selection-end="3087" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/com/sas/comp/service/AuthenticationServiceTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="16" selection-start="47" selection-end="47" vertical-scroll-proportion="0.060728744">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bower.json">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="21" selection-start="309" selection-end="309" vertical-scroll-proportion="0.3346856">
@@ -653,20 +990,6 @@
     <entry file="file://$PROJECT_DIR$/web/app/components/d3/README.md">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/comp/scripts/comp.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Gruntfile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="281" column="17" selection-start="8375" selection-end="8375" vertical-scroll-proportion="0.47019866">
           <folding />
         </state>
       </provider>
@@ -722,7 +1045,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/app/less/main.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="10" selection-start="1064" selection-end="1064" vertical-scroll-proportion="0.50209206">
+        <state line="57" column="32" selection-start="1037" selection-end="1037" vertical-scroll-proportion="-0.62761503">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/sas/comp/service/ImportService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="79" column="0" selection-start="3087" selection-end="3087" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="27" selection-start="748" selection-end="751" vertical-scroll-proportion="-10.541667">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gruntfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="87" column="30" selection-start="2790" selection-end="2790" vertical-scroll-proportion="0.62913907">
           <folding />
         </state>
       </provider>
@@ -733,10 +1079,12 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
+          <last-edited>comp:Web exploded</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>
@@ -744,7 +1092,7 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
-          <last-edited>JPA</last-edited>
+          <last-edited>Web (comp)|Web</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -803,6 +1151,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
+          <last-edited>external</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

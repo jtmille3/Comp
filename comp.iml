@@ -67,7 +67,7 @@
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="jdk" jdkName="1.7" jdkType="JavaSDK" />
-    <orderEntry type="module-library">
+    <orderEntry type="module-library" scope="RUNTIME">
       <library name="ecj-4.2.1.jar">
         <CLASSES>
           <root url="jar://$MODULE_DIR$/libs/ecj-4.2.1.jar!/" />
@@ -76,7 +76,7 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="module-library">
+    <orderEntry type="module-library" scope="RUNTIME">
       <library name="tomcat-dbcp.jar">
         <CLASSES>
           <root url="jar://$MODULE_DIR$/libs/tomcat-dbcp.jar!/" />
@@ -85,7 +85,7 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="module-library">
+    <orderEntry type="module-library" scope="RUNTIME">
       <library name="tomcat-embed-core.jar">
         <CLASSES>
           <root url="jar://$MODULE_DIR$/libs/tomcat-embed-core.jar!/" />
@@ -94,7 +94,7 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="module-library">
+    <orderEntry type="module-library" scope="RUNTIME">
       <library name="tomcat-embed-jasper.jar">
         <CLASSES>
           <root url="jar://$MODULE_DIR$/libs/tomcat-embed-jasper.jar!/" />
@@ -103,7 +103,7 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="module-library">
+    <orderEntry type="module-library" scope="RUNTIME">
       <library name="tomcat-embed-logging-juli.jar">
         <CLASSES>
           <root url="jar://$MODULE_DIR$/libs/tomcat-embed-logging-juli.jar!/" />
@@ -112,7 +112,7 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="module-library">
+    <orderEntry type="module-library" scope="RUNTIME">
       <library name="tomcat-embed-logging-log4j.jar">
         <CLASSES>
           <root url="jar://$MODULE_DIR$/libs/tomcat-embed-logging-log4j.jar!/" />
@@ -319,7 +319,7 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" name="external" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="external" level="project" />
   </component>
 </module>
 

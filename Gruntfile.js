@@ -82,24 +82,8 @@ module.exports = function (grunt) {
         },
         clean: {
             dist: ['.tmp', '<%= yeoman.dist %>/*'],
-            server: '.tmp'
-        },
-        compass: {
-            options: {
-                sassDir: '<%= yeoman.app %>/styles',
-                cssDir: '.tmp/styles',
-                imagesDir: '<%= yeoman.app %>/images',
-                javascriptsDir: '<%= yeoman.app %>/scripts',
-                fontsDir: '<%= yeoman.app %>/styles/fonts',
-                importPath: 'web/app/components',
-                relativeAssets: true
-            },
-            dist: {},
-            server: {
-                options: {
-                    debugInfo: true
-                }
-            }
+            server: '.tmp',
+            build: ['<%= yeoman.dist %>/less', '<%= yeoman.dist %>/templates', '<%= yeoman.dist %>/test', '<%= yeoman.dist %>/.gitignore']
         },
         requirejs: {
             build: {
@@ -228,18 +212,6 @@ module.exports = function (grunt) {
                     '<%= yeoman.dist %>/styles/main.css': '<%= yeoman.app %>/less/main.less'
                 }
             }
-        },
-        rev: {
-            dist: {
-                files: {
-                    src: [
-                        '<%= yeoman.dist %>/scripts/{,*/}*.js',
-                        '<%= yeoman.dist %>/styles/{,*/}*.css',
-                        '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
-                        '<%= yeoman.dist %>/styles/fonts/*'
-                    ]
-                }
-            }
         }
     });
 
@@ -252,7 +224,6 @@ module.exports = function (grunt) {
 
         grunt.task.run([
             'clean:server',
-            'compass:server',
             'livereload-start',
             'connect:livereload',
             'open',
@@ -262,7 +233,6 @@ module.exports = function (grunt) {
 
     grunt.registerTask('test', [
         'clean:server',
-        'compass',
         'connect:test',
         'mocha'
     ]);
@@ -279,7 +249,8 @@ module.exports = function (grunt) {
         'concat',
         'uglify',
         'copy',
-        'usemin'
+        'usemin',
+        'clean:build'
     ]);
 
     grunt.registerTask('development', [
