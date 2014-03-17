@@ -13,3 +13,10 @@ bower install && npm install
 
 grunt development # will compile handlebars and less
 grunt watch # will watch for changes to handlebars and less templates
+
+
+TODO:
+
+Fix bug with playoffs
+Fix bug with standings when no games have been played
+Fix bug with admin for ghost goals

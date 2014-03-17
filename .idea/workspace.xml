@@ -7,7 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="338d9bed-963b-460f-a418-ff028a1d4e43" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.txt" afterPath="$PROJECT_DIR$/README.txt" />
     </list>
     <ignored path="comp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -60,7 +60,7 @@
     <file path="/password.html" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394376407397" ignored="false" />
     <file path="/admin.html" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394987517663" ignored="false" />
     <file path="/Comp" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394377454222" ignored="false" />
-    <file path="/README.txt" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394416932546" ignored="false" />
+    <file path="/README.txt" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395019158678" ignored="false" />
     <file path="/ImportService.java" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394919098544" ignored="false" />
     <file path="/spring2014.txt" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394852095626" ignored="false" />
     <file path="/spring2014.json" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394918128697" ignored="false" />
@@ -291,6 +291,7 @@
     <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/chalk/node_modules/ansi-styles/ansi-styles.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771470" ignored="false" />
     <file path="$PROJECT_DIR$/node_modules/grunt-contrib-handlebars/node_modules/chalk/node_modules/ansi-styles/package.json" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771470" ignored="false" />
     <file path="$PROJECT_DIR$/node_modules/grunt-contrib-livereload/node_modules/tiny-lr/node_modules/noptify/node_modules/nopt/package.json" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395016771470" ignored="false" />
+    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395019160745" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -356,7 +357,17 @@
     <favorites_list name="Comp" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="README.txt" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="21" column="34" selection-start="492" selection-end="492" vertical-scroll-proportion="0.6589958">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -375,7 +386,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/import/spring2014.json" />
         <option value="$PROJECT_DIR$/src/com/sas/comp/service/ImportService.java" />
         <option value="$PROJECT_DIR$/src/com/sas/comp/service/TeamService.java" />
         <option value="$PROJECT_DIR$/src/com/sas/comp/mysql/Database.java" />
@@ -391,6 +401,7 @@
         <option value="$PROJECT_DIR$/web/app/scripts/main.js" />
         <option value="$PROJECT_DIR$/web/app/less/main.less" />
         <option value="$PROJECT_DIR$/Gruntfile.js" />
+        <option value="$PROJECT_DIR$/README.txt" />
       </list>
     </option>
   </component>
@@ -803,7 +814,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1440" height="874" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32891247" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -827,7 +838,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20373027" sideWeight="0.6710875" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20373027" sideWeight="0.6710875" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27718833" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -1006,6 +1017,13 @@
     <entry file="file://$PROJECT_DIR$/Gruntfile.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="98" column="65" selection-start="3273" selection-end="3273" vertical-scroll-proportion="3.0753138">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="34" selection-start="492" selection-end="492" vertical-scroll-proportion="0.6589958">
           <folding />
         </state>
       </provider>
