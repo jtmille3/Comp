@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="comp:Web exploded" />
+      <artifact name="comp.war" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="338d9bed-963b-460f-a418-ff028a1d4e43" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gruntfile.js" afterPath="$PROJECT_DIR$/Gruntfile.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/comp.iml" afterPath="$PROJECT_DIR$/comp.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="comp.iws" />
@@ -69,7 +67,7 @@
     <file path="/TeamService.java" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394919501428" ignored="false" />
     <file path="/PlayerService.java" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394915031046" ignored="false" />
     <file path="/GameService.java" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394917789124" ignored="false" />
-    <file path="/Gruntfile.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395018220097" ignored="false" />
+    <file path="/Gruntfile.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395019038123" ignored="false" />
     <file path="/package.json" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394984811121" ignored="false" />
     <file path="$PROJECT_DIR$/web/comp/scripts/almond.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394997510221" ignored="false" />
     <file path="/main.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395002472097" ignored="false" />
@@ -358,26 +356,7 @@
     <favorites_list name="Comp" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="Gruntfile.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Gruntfile.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="87" column="30" selection-start="2790" selection-end="2790" vertical-scroll-proportion="0.62913907">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="package.json" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="27" selection-start="748" selection-end="751" vertical-scroll-proportion="-10.541667">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -516,6 +495,10 @@
   </component>
   <component name="ProjectStructureProblems">
     <ignored-problems>
+      <problem id="library-missing-from-artifact(artifact:comp.war,WEB-INF/classes/module-output)" />
+      <problem id="library-missing-from-artifact(artifact:comp.war,WEB-INF/classes/module-output)" />
+      <problem id="library-missing-from-artifact(artifact:comp.war,WEB-INF/classes/module-output)" />
+      <problem id="library-missing-from-artifact(artifact:comp.war,WEB-INF/classes/module-output)" />
       <problem id="library-missing-from-artifact(artifact:comp:Web exploded,WEB-INF/classes/module-output)" />
       <problem id="library-missing-from-artifact(artifact:comp:Web exploded,WEB-INF/classes/module-output)" />
       <problem id="library-missing-from-artifact(artifact:comp:Web exploded,WEB-INF/classes/module-output)" />
@@ -555,59 +538,13 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Comp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Comp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Comp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Comp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="comp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Comp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Comp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="libs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="GoToFile.includeJavaFiles" value="false" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="recentsLimit" value="5" />
@@ -868,7 +805,7 @@
     <frame x="0" y="22" width="1440" height="874" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32891247" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32891247" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20373027" sideWeight="0.28647214" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1061,14 +998,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="27" selection-start="748" selection-end="751" vertical-scroll-proportion="-10.541667">
+        <state line="23" column="27" selection-start="748" selection-end="751" vertical-scroll-proportion="0.55726874">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Gruntfile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="87" column="30" selection-start="2790" selection-end="2790" vertical-scroll-proportion="0.62913907">
+        <state line="98" column="65" selection-start="3273" selection-end="3273" vertical-scroll-proportion="3.0753138">
           <folding />
         </state>
       </provider>
@@ -1079,12 +1016,11 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
-          <last-edited>comp:Web exploded</last-edited>
+          <last-edited>comp.war</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>
