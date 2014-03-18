@@ -8,7 +8,6 @@
   <component name="ChangeListManager">
     <list default="true" id="338d9bed-963b-460f-a418-ff028a1d4e43" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/scripts/bracket.js" afterPath="$PROJECT_DIR$/web/app/scripts/bracket.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="comp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -55,7 +54,7 @@
     <file path="/team_schedule.html" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394396523567" ignored="false" />
     <file path="/SeasonService.java" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394915039620" ignored="false" />
     <file path="/_playoff_schedule.html" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394848629388" ignored="false" />
-    <file path="/bracket.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395113025543" ignored="false" />
+    <file path="/bracket.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395113189321" ignored="false" />
     <file path="/bower.json" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394985558937" ignored="false" />
     <file path="/header.html" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394338561070" ignored="false" />
     <file path="/password.html" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394376407397" ignored="false" />
@@ -302,6 +301,7 @@
     <file path="$PROJECT_DIR$/web/comp/components/jquery.tablesorter/docs/css/jq.css" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395110036820" ignored="false" />
     <file path="$PROJECT_DIR$/web/comp/components/jquery.tablesorter/docs/css/menu.css" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395110036820" ignored="false" />
     <file path="/StandingService.java" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395111683095" ignored="false" />
+    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395113197984" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -371,7 +371,7 @@
       <file leaf-file-name="bracket.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/app/scripts/bracket.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="146" column="40" selection-start="5402" selection-end="5402" vertical-scroll-proportion="0.6237006">
+            <state line="150" column="44" selection-start="5597" selection-end="5597" vertical-scroll-proportion="0.84199584">
               <folding />
             </state>
           </provider>
@@ -1160,7 +1160,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/app/scripts/bracket.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="146" column="40" selection-start="5402" selection-end="5402" vertical-scroll-proportion="0.6237006">
+        <state line="150" column="44" selection-start="5597" selection-end="5597" vertical-scroll-proportion="0.84199584">
           <folding />
         </state>
       </provider>

@@ -145,9 +145,11 @@ define(function (require) {
                 root.champion = true;
 
                 // winner bracket on top
-                var swap = root.contents[0];
-                root.contents[0] = root.contents[1];
-                root.contents[1] = swap;
+                if(!root.contents[0].won) {
+                    var swap = root.contents[0];
+                    root.contents[0] = root.contents[1];
+                    root.contents[1] = swap;
+                }
             }
             return root;
         },
