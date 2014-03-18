@@ -33391,7 +33391,7 @@ function program3(depth0,data) {
   return buffer;
   }
 
-  buffer += "<div class=\"tab-pane\" id=\"all-time\">\n  <div class=\"row\">\n    <div class=\"col-md-6\">\n      <table id=\"name-all-time-table\" class=\"table table-condensed table-striped table-hover tablesorter\">\n    <thead>\n      <th>Name</th>\n      <th>Goals</th>\n      <th>League Titles</th>\n      <th>Championships</th>\n    </thead>\n    <tbody>\n      ";
+  buffer += "<div class=\"tab-pane\" id=\"all-time\">\n  <div class=\"row\">\n    <div class=\"col-md-6\">\n      <table id=\"player-all-time-table\" class=\"table table-condensed table-striped table-hover tablesorter\">\n    <thead>\n      <th>Name</th>\n      <th>Goals</th>\n      <th>League Titles</th>\n      <th>Championships</th>\n    </thead>\n    <tbody>\n      ";
   stack1 = helpers.each.call(depth0, (depth0 && depth0.playerStatistics), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += "\n    </tbody>\n  </table>\n    </div>\n    <div class=\"col-md-6\">\n      <table id=\"goalie-all-time-table\" class=\"table table-condensed table-striped table-hover tablesorter\">\n        <thead>\n          <th>Name</th>\n          <th>Shutouts</th>\n        </thead>\n        <tbody>\n          ";
@@ -33661,7 +33661,7 @@ function program3(depth0,data) {
   if (helper = helpers.id) { stack1 = helper.call(depth0, {hash:{},data:data}); }
   else { helper = (depth0 && depth0.id); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
   buffer += escapeExpression(stack1)
-    + "-name-statistics-table\" class=\"table table-condensed table-striped table-hover\">\n			<thead>\n				<th>Rank</th>\n				<th>Top Scorers</th>\n				<th>Team</th>\n				<th>Goals</th>\n			</thead>\n			<tbody>\n				";
+    + "-player-statistics-table\" class=\"table table-condensed table-striped table-hover\">\n			<thead>\n				<th>Rank</th>\n				<th>Top Scorers</th>\n				<th>Team</th>\n				<th>Goals</th>\n			</thead>\n			<tbody>\n				";
   stack1 = helpers.each.call(depth0, (depth0 && depth0.playerStatistics), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += "\n			</tbody>\n		</table>\n	</div>\n	<div class=\"col-md-6\">\n		<table id=\"";
@@ -33789,7 +33789,7 @@ function program5(depth0,data) {
   buffer += "<div class=\"sidebar col-md-2\">\n    <div class=\"sidebar-nav\">\n        <ul class=\"nav nav-list\">\n            <li class=\"nav-header\">Seasons</li>\n            ";
   stack1 = helpers.each.call(depth0, (depth0 && depth0.seasons), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n            <li class=\"nav-header\">Statistics</li>\n            <li><a href=\"#all-time\" data-toggle=\"tab\">Overall</a></li>\n        </ul>\n    </div><!--/.well -->\n</div>\n<div class=\"tab-content col-md-offset-2 col-md-10\">\n  ";
+  buffer += "\n            <li class=\"nav-header\">Statistics</li>\n            <li><a href=\"#all-time\" data-toggle=\"tab\">All Time</a></li>\n        </ul>\n    </div><!--/.well -->\n</div>\n<div class=\"tab-content col-md-offset-2 col-md-10\">\n  ";
   stack1 = helpers.each.call(depth0, (depth0 && depth0.seasons), {hash:{},inverse:self.noop,fn:self.program(4, program4, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += "\n  ";
