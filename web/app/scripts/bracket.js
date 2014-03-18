@@ -143,6 +143,11 @@ define(function (require) {
                 root.contents = root.contents.splice(root.contents.length - 2, root.contents.length);
                 root.name = root.contents[0].won ? root.contents[0].name : root.contents[1].name;
                 root.champion = true;
+
+                // winner bracket on top
+                var swap = root.contents[0];
+                root.contents[0] = root.contents[1];
+                root.contents[1] = swap;
             }
             return root;
         },

@@ -55,7 +55,7 @@
     <file path="/team_schedule.html" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394396523567" ignored="false" />
     <file path="/SeasonService.java" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394915039620" ignored="false" />
     <file path="/_playoff_schedule.html" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394848629388" ignored="false" />
-    <file path="/bracket.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395004901216" ignored="false" />
+    <file path="/bracket.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395113025543" ignored="false" />
     <file path="/bower.json" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394985558937" ignored="false" />
     <file path="/header.html" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394338561070" ignored="false" />
     <file path="/password.html" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394376407397" ignored="false" />
@@ -371,7 +371,7 @@
       <file leaf-file-name="bracket.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/app/scripts/bracket.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="101" column="47" selection-start="3876" selection-end="3876" vertical-scroll-proportion="0.5925156">
+            <state line="146" column="40" selection-start="5402" selection-end="5402" vertical-scroll-proportion="0.6237006">
               <folding />
             </state>
           </provider>
@@ -1160,7 +1160,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/app/scripts/bracket.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="101" column="47" selection-start="3876" selection-end="3876" vertical-scroll-proportion="0.5925156">
+        <state line="146" column="40" selection-start="5402" selection-end="5402" vertical-scroll-proportion="0.6237006">
           <folding />
         </state>
       </provider>
