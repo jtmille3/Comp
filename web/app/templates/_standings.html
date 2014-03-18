@@ -14,7 +14,7 @@
 	<tbody>
 		{{#each this.standings}}
 			<tr id="{{teamId}}" class="selectable">
-				<td>{{rank}}</td>
+				<td>{{#if rank}}{{rank}}{{/if}}</td>
 				<td>{{team}}</td>
 				<td>{{wins}}</td>
 				<td>{{losses}}</td>

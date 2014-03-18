@@ -7,8 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="338d9bed-963b-460f-a418-ff028a1d4e43" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/templates/_league_schedule.html" afterPath="$PROJECT_DIR$/web/app/templates/_league_schedule.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/templates/_playoff_schedule.html" afterPath="$PROJECT_DIR$/web/app/templates/_playoff_schedule.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/sas/comp/service/StandingService.java" afterPath="$PROJECT_DIR$/src/com/sas/comp/service/StandingService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/templates/_standings.html" afterPath="$PROJECT_DIR$/web/app/templates/_standings.html" />
     </list>
     <ignored path="comp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,7 +34,7 @@
     <file path="$PROJECT_DIR$/web/components/jquery/jquery.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1364839682579" ignored="false" />
     <file path="$PROJECT_DIR$/web/components/modernizr/test/js/lib/detect-global.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1364839682579" ignored="false" />
     <file path="$PROJECT_DIR$/web/components/modernizr/test/js/lib/jquery-1.7b2.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1364839682579" ignored="false" />
-    <file path="/_standings.html" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1394340919999" ignored="false" />
+    <file path="/_standings.html" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395111840632" ignored="false" />
     <file path="C:/../SAS_Projects/CurriculumPathways/Pathways/Resources/Source/Java/com/sas/inschool/commonclasses/rat/Page.java" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1364922452167" ignored="false" />
     <file path="C:/../SAS_Projects/CurriculumPathways/Pathways/Resources/Source/Java/com/sas/inschool/mathematics/algebrawidgets/numberlinevalidation/numberline/NLInterval.java" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1364922452167" ignored="false" />
     <file path="C:/../SAS_Projects/CurriculumPathways/Pathways/Framework/WebRoot/home/subscribe/subscribeaboutyou.xhtml" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1364922452167" ignored="false" />
@@ -301,7 +301,8 @@
     <file path="$PROJECT_DIR$/web/comp/scripts/comp.js" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395110036820" ignored="false" />
     <file path="$PROJECT_DIR$/web/comp/components/jquery.tablesorter/docs/css/jq.css" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395110036820" ignored="false" />
     <file path="$PROJECT_DIR$/web/comp/components/jquery.tablesorter/docs/css/menu.css" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395110036820" ignored="false" />
-    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395111004252" ignored="false" />
+    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395111871456" ignored="false" />
+    <file path="/StandingService.java" changelist="338d9bed-963b-460f-a418-ff028a1d4e43" time="1395111683095" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -389,16 +390,34 @@
       <file leaf-file-name="CompetitiveService.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/sas/comp/service/CompetitiveService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="64" selection-start="1029" selection-end="1029" vertical-scroll-proportion="0.0">
+            <state line="22" column="57" selection-start="947" selection-end="947" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_playoff_schedule.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="StandingService.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/sas/comp/service/StandingService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="31" column="54" selection-start="1025" selection-end="1025" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_standings.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/app/templates/_standings.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="16" column="32" selection-start="370" selection-end="370" vertical-scroll-proportion="0.5106383">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_playoff_schedule.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/app/templates/_playoff_schedule.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="58" selection-start="458" selection-end="458" vertical-scroll-proportion="0.46255508">
+            <state line="14" column="58" selection-start="458" selection-end="458" vertical-scroll-proportion="-8.75">
               <folding />
             </state>
           </provider>
@@ -441,8 +460,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/web/app/scripts/controller/competitive.js" />
-        <option value="$PROJECT_DIR$/web/app/scripts/bracket.js" />
         <option value="$PROJECT_DIR$/web/comp/scripts/main.js" />
         <option value="$PROJECT_DIR$/web/app/admin.html" />
         <option value="$PROJECT_DIR$/web/app/index.html" />
@@ -457,6 +474,8 @@
         <option value="$PROJECT_DIR$/Gruntfile.js" />
         <option value="$PROJECT_DIR$/web/app/templates/_league_schedule.html" />
         <option value="$PROJECT_DIR$/web/app/templates/_playoff_schedule.html" />
+        <option value="$PROJECT_DIR$/src/com/sas/comp/service/StandingService.java" />
+        <option value="$PROJECT_DIR$/web/app/templates/_standings.html" />
       </list>
     </option>
   </component>
@@ -930,15 +949,15 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32975337" sideWeight="0.6706068" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32891247" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27718833" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32891247" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32891247" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20373027" sideWeight="0.6710875" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27718833" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20373027" sideWeight="0.7228117" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27718833" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32891247" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1024,20 +1043,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/app/scripts/bracket.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="39" selection-start="86" selection-end="86" vertical-scroll-proportion="0.09677419">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/app/less/main.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="32" selection-start="1037" selection-end="1037" vertical-scroll-proportion="-0.62761503">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/sas/comp/service/ImportService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="79" column="0" selection-start="3087" selection-end="3087" vertical-scroll-proportion="0.0">
@@ -1105,13 +1110,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/sas/comp/service/CompetitiveService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="64" selection-start="1029" selection-end="1029" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/sas/comp/service/GameService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="18" column="17" selection-start="431" selection-end="431" vertical-scroll-proportion="0.0">
@@ -1135,7 +1133,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/app/templates/_playoff_schedule.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="58" selection-start="458" selection-end="458" vertical-scroll-proportion="0.46255508">
+        <state line="14" column="58" selection-start="458" selection-end="458" vertical-scroll-proportion="-8.75">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/sas/comp/service/CompetitiveService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="57" selection-start="947" selection-end="947" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/sas/comp/service/StandingService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="54" selection-start="1025" selection-end="1025" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/app/templates/_standings.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="32" selection-start="370" selection-end="370" vertical-scroll-proportion="0.5106383">
           <folding />
         </state>
       </provider>
