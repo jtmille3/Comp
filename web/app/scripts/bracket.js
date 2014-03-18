@@ -99,7 +99,7 @@ define(function (require) {
             }
 
             return {
-                name: "Playoffs",
+                name: "Playoffs haven't started...",
                 contents: []
             };
         },
