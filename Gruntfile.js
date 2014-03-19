@@ -90,19 +90,19 @@ module.exports = function (grunt) {
             build: {
                 // Options: https://github.com/jrburke/r.js/blob/master/build/example.build.js
                 options: {
-                    almond: true,
-                    wrap: true,
+                    almond: false,
+                    wrap: false,
                     baseUrl: 'scripts',
                     appDir: '<%= yeoman.app %>',
                     dir: '<%= yeoman.dist %>',
                     replaceRequireScript: [
                         {
                             files: ['<%= yeoman.dist %>/index.html'],
-                            module: 'main'
+                            module: 'main',
                         },
                         {
                             files: ['<%= yeoman.dist %>/admin.html'],
-                            module: 'admin'
+                            module: 'admin',
                         }
                     ],
                     modules: [
