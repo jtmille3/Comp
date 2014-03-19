@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" hash="1803711107">
-    <data-source source="LOCAL" name="Comp" product="MySQL" version="5.6.11-log" jdbc-version="4.0" driver-name="MySQL-AB JDBC Driver" driver-version="mysql-connector-java-5.1.24 ( Revision: ${bzr.revision-id} )" uuid="d746c035-db55-4835-b9bc-9fef75553515">
-      <extra-name-characters>#@</extra-name-characters>
-      <identifier-quote-string>`</identifier-quote-string>
+    <data-source source="LOCAL" name="Comp" uuid="d746c035-db55-4835-b9bc-9fef75553515">
+      <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://pip.na.sas.com:3306/soccer</jdbc-url>
+      <jdbc-url>jdbc:mysql://d18891.na.sas.com:3306/soccer</jdbc-url>
       <user-name>soccer</user-name>
       <user-password>dfc3df96df99dfd9dfc5dfc9dfc9dfcfdfd8</user-password>
       <libraries>

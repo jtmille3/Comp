@@ -83,14 +83,15 @@ module.exports = function (grunt) {
         clean: {
             dist: ['.tmp', '<%= yeoman.dist %>/*'],
             server: '.tmp',
-            build: ['<%= yeoman.dist %>/less', '<%= yeoman.dist %>/templates', '<%= yeoman.dist %>/test', '<%= yeoman.dist %>/.gitignore']
+            build: ['<%= yeoman.dist %>/less', '<%= yeoman.dist %>/templates', '<%= yeoman.dist %>/test', '<%= yeoman.dist %>/.gitignore'],
+            imagemin: ['<%= yeoman.dist %>/img']
         },
         requirejs: {
             build: {
                 // Options: https://github.com/jrburke/r.js/blob/master/build/example.build.js
                 options: {
-                    almond: false,
-                    wrap: false,
+                    almond: true,
+                    wrap: true,
                     baseUrl: 'scripts',
                     appDir: '<%= yeoman.app %>',
                     dir: '<%= yeoman.dist %>',
@@ -136,9 +137,9 @@ module.exports = function (grunt) {
                 files: [
                     {
                         expand: true,
-                        cwd: '<%= yeoman.app %>/img/',
+                        cwd: '<%= yeoman.app %>/img',
                         src: '**/*.{png,jpg,jpeg}',
-                        dest: '<%= yeoman.dist %>/img/'
+                        dest: '<%= yeoman.dist %>/img'
                     }
                 ]
             }
@@ -246,6 +247,7 @@ module.exports = function (grunt) {
         'handlebars',
         'requirejs',
         'useminPrepare',
+        'clean:imagemin',
         'imagemin',
         'cssmin',
         'htmlmin',

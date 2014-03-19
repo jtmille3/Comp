@@ -33444,11 +33444,17 @@ function program1(depth0,data) {
   else { helper = (depth0 && depth0.played); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
   buffer += escapeExpression(stack1)
     + "</td>\n				<td>";
+  stack1 = helpers['if'].call(depth0, (depth0 && depth0.available), {hash:{},inverse:self.noop,fn:self.program(2, program2, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "</td>\n			</tr>\n		";
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  var stack1, helper;
   if (helper = helpers.score) { stack1 = helper.call(depth0, {hash:{},data:data}); }
   else { helper = (depth0 && depth0.score); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
-  buffer += escapeExpression(stack1)
-    + "</td>\n			</tr>\n		";
-  return buffer;
+  return escapeExpression(stack1);
   }
 
   buffer += "<table id=\"";
@@ -33486,12 +33492,18 @@ function program1(depth0,data) {
   if (helper = helpers.played) { stack1 = helper.call(depth0, {hash:{},data:data}); }
   else { helper = (depth0 && depth0.played); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
   buffer += escapeExpression(stack1)
-    + "</td>\n				<td>";
+    + "</td>\n                <td>";
+  stack1 = helpers['if'].call(depth0, (depth0 && depth0.available), {hash:{},inverse:self.noop,fn:self.program(2, program2, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "</td>\n			</tr>\n		";
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  var stack1, helper;
   if (helper = helpers.score) { stack1 = helper.call(depth0, {hash:{},data:data}); }
   else { helper = (depth0 && depth0.score); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
-  buffer += escapeExpression(stack1)
-    + "</td>\n			</tr>\n		";
-  return buffer;
+  return escapeExpression(stack1);
   }
 
   buffer += "<div id=\"playoff-bracket-";
@@ -33548,10 +33560,9 @@ function program1(depth0,data) {
   else { helper = (depth0 && depth0.teamId); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
   buffer += escapeExpression(stack1)
     + "\" class=\"selectable\">\n				<td>";
-  if (helper = helpers.rank) { stack1 = helper.call(depth0, {hash:{},data:data}); }
-  else { helper = (depth0 && depth0.rank); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
-  buffer += escapeExpression(stack1)
-    + "</td>\n				<td>";
+  stack1 = helpers['if'].call(depth0, (depth0 && depth0.rank), {hash:{},inverse:self.noop,fn:self.program(2, program2, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "</td>\n				<td>";
   if (helper = helpers.team) { stack1 = helper.call(depth0, {hash:{},data:data}); }
   else { helper = (depth0 && depth0.team); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
   buffer += escapeExpression(stack1)
@@ -33589,6 +33600,13 @@ function program1(depth0,data) {
   buffer += escapeExpression(stack1)
     + "</td>\n			</tr>\n		";
   return buffer;
+  }
+function program2(depth0,data) {
+  
+  var stack1, helper;
+  if (helper = helpers.rank) { stack1 = helper.call(depth0, {hash:{},data:data}); }
+  else { helper = (depth0 && depth0.rank); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
+  return escapeExpression(stack1);
   }
 
   buffer += "<table id=\"";
