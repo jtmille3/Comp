@@ -11,7 +11,8 @@
         "bootstrap-datepicker": "",
         "d3": "~3.4.3",
         "lazy.js": "~0.3",
-        "almond": "~0.2.9"
+        "almond": "~0.2.9",
+        "typeahead.js": "0.10.2"
     },
     "devDependencies": {},
     "resolutions": {

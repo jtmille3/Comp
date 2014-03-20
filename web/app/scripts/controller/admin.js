@@ -7,7 +7,7 @@ define(function(require) {
 			var passwordTemplate = window.comp['web/app/templates/password.html'];
 			$('#administrator').html(passwordTemplate());
 			$('#passwordDialog').modal({
-				backdrop: false,
+				backdrop: true,
 				show:true
 			});
 
