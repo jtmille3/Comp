@@ -1,4 +1,4 @@
-<div id="{{id}}-playoff-bracket"></div>
+<div id="playoff-bracket-{{id}}" class="bracket"></div>
 <table id="{{id}}-playoff-schedule-table" class="table table-condensed table-striped table-hover tablesorter">
 	<thead>
 		<th>Home</th>
@@ -12,7 +12,7 @@
 				<td>{{home}}</td>
 				<td>{{away}}</td>
 				<td>{{played}}</td>
-				<td>{{score}}</td>
+                <td>{{#if available}}{{score}}{{/if}}</td>
 			</tr>
 		{{/each}}
 	</tbody>

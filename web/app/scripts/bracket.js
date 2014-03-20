@@ -1,228 +1,206 @@
-define(function(require) {
+define(function (require) {
     'use strict';
 
+    var d3 = require("../components/d3/d3");
+
     return {
-        generate: function(id, data) {
-            var m = [20, 20, 20, 20],
-                w = 1280 - m[1] - m[3],
-                h = 800 - m[0] - m[2],
-                i = 0,
-                root = data;
-
+        generate: function (id, games) {
+            var root = this.transformToBracket(games);
+            var selector = '#' + id;
+            var width = $(window).width() - 70;
+            var size = { width: width, height: 700 };
             var tree = d3.layout.tree()
-                .size([h, w]);
+                .size([size.height, size.width])
+                .children(function (d) {
+                    return (!d.contents || d.contents.length === 0) ? null : d.contents;
+                });
 
-            var diagonal = d3.svg.diagonal()
-                .projection(function(d) { return [d.y, d.x]; });
+            var nodes = tree.nodes(root);
+            var maxDepth = 0;
+            nodes.forEach(function (d) {
+                maxDepth = Math.max(d.depth, maxDepth);
+            });
+            var widthOffset = width - ((maxDepth + 1) * 230);
+            nodes.forEach(function (d) {
+                d.y = size.width - (d.depth * 230) - widthOffset;
+            });
 
-            var vis = d3.select(id).append("svg")
-                .attr("width", w + m[1] + m[3])
-                .attr("height", h + m[0] + m[2])
+            var links = tree.links(nodes);
+
+            var layoutRoot = d3.select(selector)
+                .append("svg")
+                .attr("width", size.width)
+                .attr("height", size.height)
                 .append("g")
-                .attr("transform", "translate(" + m[3] + "," + m[0] + ")");
+                .attr("class", "container")
+                .attr("transform", "translate(-100,0)");
 
-            root.x0 = h / 2;
-            root.y0 = 0;
+            // Edges between nodes as a <path class="link" />
+            var link = d3.svg.diagonal()
+                .projection(function (d) {
+                    return [d.y, d.x];
+                });
 
-            function toggleAll(d) {
-                if (d.children) {
-                    d.children.forEach(toggleAll);
-                    toggle(d);
+            layoutRoot.selectAll("path.link")
+                .data(links)
+                .enter()
+                .append("path")
+                .attr("class", "link")
+                .attr("d", link);
+
+            var nodeGroup = layoutRoot.selectAll("g.node")
+                .data(nodes)
+                .enter()
+                .append("g")
+                .attr("class", "node")
+                .attr("transform", function (d) {
+                    return "translate(" + (d.y - 125) + "," + (d.x - 15) + ")";
+                });
+
+            nodeGroup.append("rect")
+                .attr("class", function (d) {
+                    if (d.champion) {
+                        return "node champion";
+                    } else if (d.won) {
+                        return "node winner";
+                    } else {
+                        return "node loser";
+                    }
+                })
+                .attr("width", 210)
+                .attr("height", 30)
+                .attr("rx", 5)
+                .attr("ry", 5);
+
+            nodeGroup.append("text")
+                .attr("text-anchor", function (d) {
+                    // return d.children ? "end" : "start";
+                    return "end";
+                })
+                .attr("dx", 200)
+                .attr("dy", 20)
+                .text(function (d) {
+                    if (d.champion) {
+                        return d.name.length > 25 ? d.name.substring(0, 22) + "..." : d.name;
+                    } else {
+                        // return d.score !== undefined ? (d.name.length > 3 ? d.name.substring(0, 3) + "..." : d.name + " ") + d.date.substring(0,10) + " (" + d.score + ")" : (d.name.length > 3 ? d.name.substring(0, 3) + "..." : d.name + " ");
+                        return d.score !== undefined ? (d.name.length > 25 ? d.name.substring(0, 22) + "..." : d.name + " ") + "(" + d.score + ")" : d.name;
+                    }
+                });
+        },
+        transformToBracket: function (games) {
+            // start from the newest and build our tree from it.
+            var links = Lazy(games).sortBy(function (game) {
+                return game.played;
+            }).reverse().toArray();
+
+            if (links.length > 0) {
+                return this.buildTree(links);
+            }
+
+            return {
+                name: "Playoffs haven't started...",
+                contents: []
+            };
+        },
+        buildTree: function (links) {
+            var root = {
+                name: "Root",
+                id: "root",
+                contents: []
+            };
+
+            var nodes = [];
+            for(var i = 0; i < links.length; i++) {
+                var game = links[i]; // found home game remove it
+                nodes = nodes.concat(this.getContents(game));
+            }
+
+            var date = null;
+            var siblings = [];
+            var j = nodes.length;
+            while(j--) {
+                var node = nodes.splice(j, 1)[0];
+
+                if(!date) {
+                    date = node.date.substring(0, 10);
+                }
+
+                if(date !== node.date.substring(0, 10)) {
+                    this.attach(root, siblings);
+                    date = node.date.substring(0, 10);
+                    siblings = [];
+                }
+
+                siblings.push(node);
+            }
+
+            this.attach(root, siblings);
+
+            // this is a bug.  only works when the tournament is over :P
+            // need to track winners and losers and prune losers after two loses, no way around it
+            if(root.contents.length > 2) {
+                root.contents = root.contents.splice(root.contents.length - 2, root.contents.length);
+                root.name = root.contents[0].won ? root.contents[0].name : root.contents[1].name;
+                root.champion = true;
+
+                // winner bracket on top
+                if(!root.contents[0].won) {
+                    var swap = root.contents[0];
+                    root.contents[0] = root.contents[1];
+                    root.contents[1] = swap;
                 }
             }
-
-            // Initialize the display to show a few nodes.
-            root.children.forEach(toggleAll);
-            this.toggle(root.children[1]);
-            this.toggle(root.children[1].children[2]);
-            this.toggle(root.children[9]);
-            this.toggle(root.children[9].children[0]);
-
-            this.update(root);
+            return root;
         },
-        update: function(source) {
-            var duration = d3.event && d3.event.altKey ? 5000 : 500;
+        attach: function(root, siblings) {
+            var i = siblings.length;
+            var loser = null;
+            while(i--) {
+                var sibling = siblings.splice(i, 1)[0];
 
-            // Compute the new tree layout.
-            var nodes = tree.nodes(root).reverse();
+                var j = root.contents.length;
+                while(j--) {
+                    var child = root.contents[j];
+                    if(child.id === sibling.id && child.won) {
+                        root.contents.splice(j, 1);  // only splicing the winner
+                        root.contents.push(sibling);
+                        sibling.contents.push(child, child.played);
+                        loser = child.played;
+                        break;
+                    }
+                }
 
-            // Normalize for fixed-depth.
-            nodes.forEach(function(d) { d.y = d.depth * 180; });
+                if(!loser) { // not losers but new roots
+                    root.contents.push(sibling);
+                }
 
-            // Update the nodes…
-            var node = vis.selectAll("g.node")
-                .data(nodes, function(d) { return d.id || (d.id = ++i); });
-
-            // Enter any new nodes at the parent's previous position.
-            var nodeEnter = node.enter().append("svg:g")
-                .attr("class", "node")
-                .attr("transform", function(d) { return "translate(" + source.y0 + "," + source.x0 + ")"; })
-                .on("click", function(d) { toggle(d); update(d); });
-
-            nodeEnter.append("svg:circle")
-                .attr("r", 1e-6)
-                .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; });
-
-            nodeEnter.append("svg:text")
-                .attr("x", function(d) { return d.children || d._children ? -10 : 10; })
-                .attr("dy", ".35em")
-                .attr("text-anchor", function(d) { return d.children || d._children ? "end" : "start"; })
-                .text(function(d) { return d.name; })
-                .style("fill-opacity", 1e-6);
-
-            // Transition nodes to their new position.
-            var nodeUpdate = node.transition()
-                .duration(duration)
-                .attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; });
-
-            nodeUpdate.select("circle")
-                .attr("r", 4.5)
-                .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; });
-
-            nodeUpdate.select("text")
-                .style("fill-opacity", 1);
-
-            // Transition exiting nodes to the parent's new position.
-            var nodeExit = node.exit().transition()
-                .duration(duration)
-                .attr("transform", function(d) { return "translate(" + source.y + "," + source.x + ")"; })
-                .remove();
-
-            nodeExit.select("circle")
-                .attr("r", 1e-6);
-
-            nodeExit.select("text")
-                .style("fill-opacity", 1e-6);
-
-            // Update the links…
-            var link = vis.selectAll("path.link")
-                .data(tree.links(nodes), function(d) { return d.target.id; });
-
-            // Enter any new links at the parent's previous position.
-            link.enter().insert("svg:path", "g")
-                .attr("class", "link")
-                .attr("d", function(d) {
-                    var o = {x: source.x0, y: source.y0};
-                    return diagonal({source: o, target: o});
-                })
-                .transition()
-                .duration(duration)
-                .attr("d", diagonal);
-
-            // Transition links to their new position.
-            link.transition()
-                .duration(duration)
-                .attr("d", diagonal);
-
-            // Transition exiting nodes to the parent's new position.
-            link.exit().transition()
-                .duration(duration)
-                .attr("d", function(d) {
-                    var o = {x: source.x, y: source.y};
-                    return diagonal({source: o, target: o});
-                })
-                .remove();
-
-            // Stash the old positions for transition.
-            nodes.forEach(function(d) {
-                d.x0 = d.x;
-                d.y0 = d.y;
-            });var duration = d3.event && d3.event.altKey ? 5000 : 500;
-
-            // Compute the new tree layout.
-            var nodes = tree.nodes(root).reverse();
-
-            // Normalize for fixed-depth.
-            nodes.forEach(function(d) { d.y = d.depth * 180; });
-
-            // Update the nodes…
-            var node = vis.selectAll("g.node")
-                .data(nodes, function(d) { return d.id || (d.id = ++i); });
-
-            // Enter any new nodes at the parent's previous position.
-            var nodeEnter = node.enter().append("svg:g")
-                .attr("class", "node")
-                .attr("transform", function(d) { return "translate(" + source.y0 + "," + source.x0 + ")"; })
-                .on("click", function(d) { toggle(d); update(d); });
-
-            nodeEnter.append("svg:circle")
-                .attr("r", 1e-6)
-                .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; });
-
-            nodeEnter.append("svg:text")
-                .attr("x", function(d) { return d.children || d._children ? -10 : 10; })
-                .attr("dy", ".35em")
-                .attr("text-anchor", function(d) { return d.children || d._children ? "end" : "start"; })
-                .text(function(d) { return d.name; })
-                .style("fill-opacity", 1e-6);
-
-            // Transition nodes to their new position.
-            var nodeUpdate = node.transition()
-                .duration(duration)
-                .attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; });
-
-            nodeUpdate.select("circle")
-                .attr("r", 4.5)
-                .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; });
-
-            nodeUpdate.select("text")
-                .style("fill-opacity", 1);
-
-            // Transition exiting nodes to the parent's new position.
-            var nodeExit = node.exit().transition()
-                .duration(duration)
-                .attr("transform", function(d) { return "translate(" + source.y + "," + source.x + ")"; })
-                .remove();
-
-            nodeExit.select("circle")
-                .attr("r", 1e-6);
-
-            nodeExit.select("text")
-                .style("fill-opacity", 1e-6);
-
-            // Update the links…
-            var link = vis.selectAll("path.link")
-                .data(tree.links(nodes), function(d) { return d.target.id; });
-
-            // Enter any new links at the parent's previous position.
-            link.enter().insert("svg:path", "g")
-                .attr("class", "link")
-                .attr("d", function(d) {
-                    var o = {x: source.x0, y: source.y0};
-                    return diagonal({source: o, target: o});
-                })
-                .transition()
-                .duration(duration)
-                .attr("d", diagonal);
-
-            // Transition links to their new position.
-            link.transition()
-                .duration(duration)
-                .attr("d", diagonal);
-
-            // Transition exiting nodes to the parent's new position.
-            link.exit().transition()
-                .duration(duration)
-                .attr("d", function(d) {
-                    var o = {x: source.x, y: source.y};
-                    return diagonal({source: o, target: o});
-                })
-                .remove();
-
-            // Stash the old positions for transition.
-            nodes.forEach(function(d) {
-                d.x0 = d.x;
-                d.y0 = d.y;
-            });
-        },
-        toggle: function(d) {
-            if (d.children) {
-                d._children = d.children;
-                d.children = null;
-            } else {
-                d.children = d._children;
-                d._children = null;
+                loser = null;
             }
+        },
+        getContents: function(game) {
+            var home = {
+                "name": game.home,
+                "id": game.homeId,
+                "date": game.played,
+                "score": game.homeScore,
+                "won": game.homeScore > game.awayScore,
+                "contents": []
+            };
+
+            var away = {
+                "name": game.away,
+                "id": game.awayId,
+                "date": game.played,
+                "score": game.awayScore,
+                "won": game.awayScore > game.homeScore,
+                "contents": []
+            };
+
+            away.played = home;
+            home.played = away;
+
+            return [ home, away ];
         }
     };
 });

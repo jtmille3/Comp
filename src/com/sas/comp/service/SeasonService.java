@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.sas.comp.hibernate.model.Team;
 import com.sas.comp.models.Season;
 import com.sas.comp.mysql.Database;
 
@@ -34,5 +35,59 @@ public class SeasonService {
 		}
 		return seasons;
 	}
+
+    public Season find(final String name) {
+        try {
+            final Connection conn = Database.getConnection();
+            final PreparedStatement pstmt = conn
+                    .prepareStatement("SELECT name, id FROM seasons WHERE name = ?");
+            pstmt.setString(1, name);
+
+            final ResultSet rs = pstmt.executeQuery();
+
+            if (rs.next()) {
+                final Season season = new Season();
+                season.setName(rs.getString("name"));
+                season.setId(rs.getInt("id"));
+
+                rs.close();
+                pstmt.close();
+                conn.close();
+
+                return season;
+            } else {
+                rs.close();
+                pstmt.close();
+                conn.close();
+
+                return null;
+            }
+        } catch (final Exception e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
+    public void save(final Season season) {
+        try {
+            final Connection conn = Database.getConnection();
+            final PreparedStatement pstmt = conn
+                    .prepareStatement("INSERT INTO seasons VALUES(NULL, ?)", PreparedStatement.RETURN_GENERATED_KEYS);
+            pstmt.setString(2, season.getName());
+            pstmt.execute();
+
+            final ResultSet rs = pstmt.getGeneratedKeys();
+            if(rs.next()) {
+                season.setId(rs.getInt(1));
+            }
+
+            rs.close();
+            pstmt.close();
+            conn.close();
+        } catch (final Exception e) {
+            e.printStackTrace();
+        }
+    }
 
 }

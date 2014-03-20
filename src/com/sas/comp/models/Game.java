@@ -6,8 +6,10 @@ import java.util.Date;
 import org.codehaus.jackson.annotate.JsonIgnore;
 
 public class Game {
-	private static SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yy hh:mm");
+	private static SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm");
 
+    @JsonIgnore
+    private Integer seasonId;
 	private String home;
 	private Integer homeId;
 	private String away;
@@ -97,4 +99,12 @@ public class Game {
 	public void setGameId(final Integer gameId) {
 		this.gameId = gameId;
 	}
+
+    public Integer getSeasonId() {
+        return seasonId;
+    }
+
+    public void setSeasonId(final Integer seasonId) {
+        this.seasonId = seasonId;
+    }
 }

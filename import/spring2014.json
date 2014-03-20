@@ -1,0 +1,308 @@
+{
+    "season": "2014 Spring",
+    "teams": [
+        {
+            "name": "Deportivo Carcosa",
+            "captain": "McGrother, Simon",
+            "goalie": "Ferris, Jim",
+            "players": [
+                "McGrother, Simon",
+                "Nisley, Amber",
+                "Page, Brett",
+                "Butler, Chris",
+                "Fetters, Dan",
+                "Osten, Jacob",
+                "Fuller, Jay",
+                "Ferris, Jim",
+                "Hosford, Matt",
+                "Vazquez, Miguel",
+                "Salvatore, Nick",
+                "Taheri, Roshan",
+                "Mangum, Tim"
+            ]
+        },
+        {
+            "name": "AsSASsins",
+            "captain": "Sianez, David",
+            "goalie": "Sianez, David",
+            "players": [
+                "Sianez, David",
+                "Lawrence, Brad",
+                "Terrents, Brady",
+                "Watts, Brian",
+                "Segbefia, Gideon",
+                "Xing, Jie",
+                "Trexler, Jon",
+                "Polito, Jonathan",
+                "Taft, Lee",
+                "Davis, Luke",
+                "Pezzoni, Mike",
+                "Bisgaard, Ole",
+                "Abbey, Ralph"
+
+            ]
+        },
+        {
+            "name": "Leo Messy",
+            "captain": "Howard, Jordan",
+            "goalie": "Zalc, Eli",
+            "players": [
+                "Howard, Jordan",
+                "Nieman, Bryan",
+                "Zalc, Eli",
+                "Ye, Feng",
+                "Thompson, Jamie",
+                "Davis, Mark",
+                "Clayton, Mike",
+                "Polo, Paul",
+                "Borysov, Peter",
+                "Hamm, Rob",
+                "George, Rob",
+                "Rasathurai, Sumithran",
+                "Foreman, Todd"
+            ]
+        },
+        {
+            "name": "Bosko and the Looney Tunes",
+            "captain": "Bosko, Jason",
+            "goalie": "Reese, Jason",
+            "players": [
+                "Bosko, Jason",
+                "Trubey, Brad",
+                "Boyd, Chris",
+                "Brown, Chris",
+                "Zimmerman, Danny",
+                "Weiss, James",
+                "Reese, Jason",
+                "Thompson, Jeff",
+                "Bouedo, Mickael",
+                "Soltys, Mitchel",
+                "Klink, Rob",
+                "Ryan, Stephen",
+                "Quinley, William"
+            ]
+        },
+        {
+            "name": "Miller Genuine Football",
+            "captain": "Miller, Jeff",
+            "goalie": "Mukhopadhyay, Pushpal",
+            "players": [
+                "Miller, Jeff",
+                "Weltken, Andrew",
+                "Apilli, Bellanov",
+                "Berry, Bruce",
+                "Hall, Chad",
+                "Woelfel, Charles",
+                "Kummer, Daniel",
+                "Park, David",
+                "Chambers, Joe",
+                "Hia, Kyle",
+                "Zachary, Michael",
+                "Mukhopadhyay, Pushpal",
+                "Li, Yongcheng"
+            ]
+        },
+        {
+            "name": "Sershen Destroy - A San Diego Chargers Team",
+            "captain": "Sershen, Leigh",
+            "goalie": "Tamburro, Dan",
+            "players": [
+                "Sershen, Leigh",
+                "McGough, Adrian",
+                "Bonham, Bob",
+                "Smith, Brett",
+                "Zuercher, Brian",
+                "Hoh, Chris",
+                "Tamburro, Dan",
+                "Landy, James",
+                "Matthew, Jason",
+                "Arfaoui, Kais",
+                "Shah, Kunal",
+                "Davis, Randy",
+                "Erikson, Tim"
+            ]
+        },
+        {
+            "name": "The Brazucas",
+            "captain": "Sabourin, Philippe",
+            "goalie": "Gerakios, Peter",
+            "players": [
+                "Sabourin, Philippe",
+                "Smith, Casey",
+                "Lu, Jiangang",
+                "Choy, Justin",
+                "Bishop, Orin",
+                "Trexler, Patty",
+                "Mastropolo, Paul",
+                "Gerakios, Peter",
+                "Loftus, Ray",
+                "Girardin, Robert",
+                "Ligtenberg, Robert",
+                "Robison, Russ",
+                "Tucker, Summer"
+            ]
+        },
+        {
+            "name": "Real Pathetica",
+            "captain": "Sperati, Josh",
+            "goalie": "",
+            "players": [
+                "Sperati, Josh",
+                "Antonucci, Anthony",
+                "Nielsen, Chelsea",
+                "Ilmberger, Chris",
+                "Latour, Dom",
+                "McCorquodale, Don",
+                "Boulus, Ian",
+                "Imbriani, Jack",
+                "Lui, Kenny",
+                "Montufar, Octavio",
+                "Ye, Qing",
+                "Sioss, Rob",
+                "Enck, Steven"
+            ]
+        }
+    ],
+    "games": [
+        {
+            "away": "Deportivo Carcosa",
+            "home": "AsSASsins",
+            "datetime": "2014-03-17 11:30:00"
+        },
+        {
+            "away": "Leo Messy",
+            "home": "Bosko and the Looney Tunes",
+            "datetime": "2014-03-17 11:30:00"
+        },
+        {
+            "away": "Miller Genuine Football",
+            "home": "Sershen Destroy - A San Diego Chargers Team",
+            "datetime": "2014-03-17 12:30:00"
+        },
+        {
+            "away": "The Brazucas",
+            "home": "Real Pathetica",
+            "datetime": "2014-03-17 12:30:00"
+        },
+        {
+            "away": "Leo Messy",
+            "home": "Miller Genuine Football",
+            "datetime": "2014-03-24 11:30:00"
+        },
+        {
+            "away": "The Brazucas",
+            "home": "Deportivo Carcosa",
+            "datetime": "2014-03-24 11:30:00"
+        },
+        {
+            "away": "Bosko and the Looney Tunes",
+            "home": "AsSASsins",
+            "datetime": "2014-03-24 12:30:00"
+        },
+        {
+            "away": "Real Pathetica",
+            "home": "Sershen Destroy - A San Diego Chargers Team",
+            "datetime": "2014-03-24 12:30:00"
+        },
+        {
+            "away": "AsSASsins",
+            "home": "The Brazucas",
+            "datetime": "2014-03-31 11:30:00"
+        },
+        {
+            "away": "Sershen Destroy - A San Diego Chargers Team",
+            "home": "Bosko and the Looney Tunes",
+            "datetime": "2014-03-31 11:30:00"
+        },
+        {
+            "away": "Miller Genuine Football",
+            "home": "Real Pathetica",
+            "datetime": "2014-03-31 12:30:00"
+        },
+        {
+            "away": "Deportivo Carcosa",
+            "home": "Leo Messy",
+            "datetime": "2014-03-31 12:30:00"
+        },
+        {
+            "away": "Sershen Destroy - A San Diego Chargers Team",
+            "home": "Deportivo Carcosa",
+            "datetime": "2014-04-07 11:30:00"
+        },
+        {
+            "away": "AsSASsins",
+            "home": "Real Pathetica",
+            "datetime": "2014-04-07 11:30:00"
+        },
+        {
+            "away": "The Brazucas",
+            "home": "Leo Messy",
+            "datetime": "2014-04-07 12:30:00"
+        },
+        {
+            "away": "Bosko and the Looney Tunes",
+            "home": "Miller Genuine Football",
+            "datetime": "2014-04-07 12:30:00"
+        },
+        {
+            "away": "Miller Genuine Football",
+            "home": "The Brazucas",
+            "datetime": "2014-04-14 11:30:00"
+        },
+        {
+            "away": "Real Pathetica",
+            "home": "Leo Messy",
+            "datetime": "2014-04-14 11:30:00"
+        },
+        {
+            "away": "Deportivo Carcosa",
+            "home": "Bosko and the Looney Tunes",
+            "datetime": "2014-04-14 12:30:00"
+        },
+        {
+            "away": "AsSASsins",
+            "home": "Sershen Destroy - A San Diego Chargers Team",
+            "datetime": "2014-04-14 12:30:00"
+        },
+        {
+            "away": "Bosko and the Looney Tunes",
+            "home": "Real Pathetica",
+            "datetime": "2014-04-23 11:30:00"
+        },
+        {
+            "away": "Miller Genuine Football",
+            "home": "Deportivo Carcosa",
+            "datetime": "2014-04-23 11:30:00"
+        },
+        {
+            "away": "The Brazucas",
+            "home": "Sershen Destroy - A San Diego Chargers Team",
+            "datetime": "2014-04-23 12:30:00"
+        },
+        {
+            "away": "Leo Messy",
+            "home": "AsSASsins",
+            "datetime": "2014-04-23 12:30:00"
+        },
+        {
+            "away": "Sershen Destroy - A San Diego Chargers Team",
+            "home": "Leo Messy",
+            "datetime": "2014-05-07 11:30:00"
+        },
+        {
+            "away": "AsSASsins",
+            "home": "Miller Genuine Football",
+            "datetime": "2014-05-07 11:30:00"
+        },
+        {
+            "away": "Real Pathetica",
+            "home": "Deportivo Carcosa",
+            "datetime": "2014-05-07 12:30:00"
+        },
+        {
+            "away": "Bosko and the Looney Tunes",
+            "home": "The Brazucas",
+            "datetime": "2014-05-07 12:30:00"
+        }
+    ]
+}

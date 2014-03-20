@@ -1,21 +1,23 @@
 /*global define */
 define(function(require) {
 	'use strict';
+
+    var bracket = require('bracket');
+
 	return {
 		render: function(competitive) {
 			var self = this;
 			this.competitive = competitive;
 
-			/*
-			if(Modernizr.localstorage) {
-				localStorage.competitive = JSON.stringify(competitive);
-			}
-			*/
+            var headerTemplate = window.comp['web/app/templates/header.html'];
+            $('#header').html(headerTemplate(competitive));
+
 			var compTemplate = window.comp['web/app/templates/comp.html'];
 			$('#competitive').html(compTemplate(competitive));
 
 			$('#player-all-time-table').tablesorter( {sortList: [[1,1]]} );
 			$('#goalie-all-time-table').tablesorter( {sortList: [[1,1]]} );
+
 			for(var i = 0; i < competitive.seasons.length; i++) {
 				var season = competitive.seasons[i];
 				$('#' + season.id + '-standings-table').tablesorter( {sortList: [[0,0]]} );
@@ -28,6 +30,11 @@ define(function(require) {
 				this.attachLeagueScheduleClickHandler(season);
 				this.attachPlayoffScheduleClickHandler(season);
 			}
+
+            this.getWeather(function(weather) {
+                var weatherTemplate = window.comp['web/app/templates/weather.html'];
+                $('#weather').html(weatherTemplate(weather));
+            });
 		},
 		attachStandingsClickHandler: function(season) {
 			var self = this;
@@ -52,6 +59,7 @@ define(function(require) {
 			this.attachScheduleClickHandler(season, 'league');
 		},
 		attachPlayoffScheduleClickHandler: function(season) {
+            this.attachBracket(season);
 			this.attachScheduleClickHandler(season, 'playoff');
 		},
 		attachScheduleClickHandler: function(season, name) {
@@ -67,21 +75,27 @@ define(function(require) {
 				}
 			});
 		},
+        attachBracket: function(season) {
+            var id = 'playoff-bracket-' + season.id;
+            bracket.generate(id, season.playoffSchedule, false);
+        },
 		selectedTeam: function(season, teamId) {
 			var schedule = this.schedule(season, teamId);
 			var roster = this.roster(season, teamId);
+            var team = this.getTeam(season, teamId);
 
 			var teamScheduleTemplate = window.comp['web/app/templates/team_schedule.html'];
 			var template = teamScheduleTemplate({
-				id: teamId,
+				id: team.teamId,
+                name: team.team,
 				schedule: schedule,
 				roster: roster
 			});
 
 			$('#' + season.id + '-team-schedule').html(template);
 
-			$('#' + teamId + '-team-schedule-table').tablesorter( {sortList: [[2,0]]} );
-			$('#' + teamId + '-team-roster-table').tablesorter( {sortList: [[1,0]]} );
+			$('#' + team.teamId + '-team-schedule-table').tablesorter( {sortList: [[2,0]]} );
+			$('#' + team.teamId + '-team-roster-table').tablesorter( {sortList: [[1,0]]} );
 		},
 
 		selectedGame: function(gameId, teamId) {
@@ -115,6 +129,16 @@ define(function(require) {
 			}
 			return goals;
 		},
+        getTeam: function(season, teamId) {
+            for(var i = 0; i < season.standings.length; i++) {
+                var team = season.standings[i];
+                if(team.teamId === teamId) {
+                    return team;
+                }
+            }
+
+            return {};
+        },
 		roster: function(season, teamId) {
 			var roster = [];
 			for(var j = 0; j < season.playerStatistics.length; j++) {
@@ -129,7 +153,10 @@ define(function(require) {
 			var schedule = [];
 			for(var i = 0; i < season.leagueSchedule.length; i++) {
 				var match = season.leagueSchedule[i];
+                match.homeTeam = false;
+                match.awayTeam = false;
 				if(match.homeId === teamId) {
+                    match.homeTeam = true;
 					if(match.available) {
 						if(match.homeScore > match.awayScore) {
 							match.result = 'won';
@@ -141,6 +168,7 @@ define(function(require) {
 					}
 					schedule.push(match);
 				} else if(match.awayId === teamId) {
+                    match.awayTeam = true;
 					if(match.available) {
 						if(match.homeScore < match.awayScore) {
 							match.result = 'won';
@@ -154,6 +182,26 @@ define(function(require) {
 				}
 			}
 			return schedule;
-		}
+		},
+        getWeather: function(callback) {
+            // Specify the ZIP/location code and units (f or c)
+            var loc = '27513';
+            var u = 'f';
+
+            var query = "SELECT item.condition FROM weather.forecast WHERE location='" + loc + "' AND u='" + u + "'";
+            var cacheBuster = Math.floor((new Date().getTime()) / 1200 / 1000);
+            var url = 'http://query.yahooapis.com/v1/public/yql?q=' + encodeURIComponent(query) + '&format=json&_nocache=' + cacheBuster;
+
+            window['wxCallback'] = function(data) {
+                callback(data.query.results.channel.item.condition);
+            };
+
+            $.ajax({
+                url: url,
+                dataType: 'jsonp',
+                cache: true,
+                jsonpCallback: 'wxCallback'
+            });
+        }
 	};
 });

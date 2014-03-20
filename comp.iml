@@ -52,6 +52,9 @@
         <webroots>
           <root url="file://$MODULE_DIR$/web" relative="/" />
         </webroots>
+        <sourceRoots>
+          <root url="file://$MODULE_DIR$/src" />
+        </sourceRoots>
       </configuration>
     </facet>
   </component>
@@ -60,10 +63,14 @@
     <exclude-output />
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/test" isTestSource="true" />
+      <excludeFolder url="file://$MODULE_DIR$/.settings" />
+      <excludeFolder url="file://$MODULE_DIR$/.tmp" />
+      <excludeFolder url="file://$MODULE_DIR$/node_modules" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="inheritedJdk" />
-    <orderEntry type="module-library">
+    <orderEntry type="jdk" jdkName="1.7" jdkType="JavaSDK" />
+    <orderEntry type="module-library" scope="RUNTIME">
       <library name="ecj-4.2.1.jar">
         <CLASSES>
           <root url="jar://$MODULE_DIR$/libs/ecj-4.2.1.jar!/" />
@@ -72,7 +79,7 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="module-library">
+    <orderEntry type="module-library" scope="RUNTIME">
       <library name="tomcat-dbcp.jar">
         <CLASSES>
           <root url="jar://$MODULE_DIR$/libs/tomcat-dbcp.jar!/" />
@@ -81,7 +88,7 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="module-library">
+    <orderEntry type="module-library" scope="RUNTIME">
       <library name="tomcat-embed-core.jar">
         <CLASSES>
           <root url="jar://$MODULE_DIR$/libs/tomcat-embed-core.jar!/" />
@@ -90,7 +97,7 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="module-library">
+    <orderEntry type="module-library" scope="RUNTIME">
       <library name="tomcat-embed-jasper.jar">
         <CLASSES>
           <root url="jar://$MODULE_DIR$/libs/tomcat-embed-jasper.jar!/" />
@@ -99,7 +106,7 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="module-library">
+    <orderEntry type="module-library" scope="RUNTIME">
       <library name="tomcat-embed-logging-juli.jar">
         <CLASSES>
           <root url="jar://$MODULE_DIR$/libs/tomcat-embed-logging-juli.jar!/" />
@@ -108,7 +115,7 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="module-library">
+    <orderEntry type="module-library" scope="RUNTIME">
       <library name="tomcat-embed-logging-log4j.jar">
         <CLASSES>
           <root url="jar://$MODULE_DIR$/libs/tomcat-embed-logging-log4j.jar!/" />
@@ -315,6 +322,7 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" scope="PROVIDED" name="external" level="project" />
   </component>
 </module>
 

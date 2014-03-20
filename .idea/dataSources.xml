@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="1803711107">
+    <data-source source="LOCAL" name="Comp" uuid="d746c035-db55-4835-b9bc-9fef75553515">
+      <driver-ref>mysql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://d18891.na.sas.com:3306/soccer</jdbc-url>
+      <user-name>soccer</user-name>
+      <user-password>dfc3df96df99dfd9dfc5dfc9dfc9dfcfdfd8</user-password>
+      <libraries>
+        <library>
+          <url>file://$PROJECT_DIR$/web/WEB-INF/lib/mysql-connector-java-5.1.24-bin.jar</url>
+        </library>
+      </libraries>
+    </data-source>
+  </component>
+</project>
+

@@ -26,7 +26,7 @@ public class StatisticService {
         final Player statistic = new Player();
         statistic.setRank(rank++);
         statistic.setTeam(rs.getString("team"));
-        statistic.setPlayer(rs.getString("player"));
+        statistic.setName(rs.getString("player"));
         statistic.setGoals(rs.getInt("goals"));
         statistic.setTeamId(rs.getInt("team_id"));
         statistic.setPlayerId(rs.getInt("player_id"));
@@ -58,7 +58,7 @@ public class StatisticService {
       final ResultSet rs = pstmt.executeQuery();
       while (rs.next()) {
         final Player statistic = new Player();
-        statistic.setPlayer(rs.getString("player"));
+        statistic.setName(rs.getString("player"));
         statistic.setTeam(rs.getString("team"));
         statistic.setGoalsAgainst(rs.getInt("against"));
         statistic.setShutouts(rs.getInt("shutouts"));
@@ -88,7 +88,7 @@ public class StatisticService {
       while (rs.next()) {
         final Player statistic = new Player();
         statistic.setRank(rank++);
-        statistic.setPlayer(rs.getString("player"));
+        statistic.setName(rs.getString("player"));
         statistic.setLeagueWinner(rs.getInt("league"));
         statistic.setPlayoffWinner(rs.getInt("playoff"));
         statistic.setGoals(rs.getInt("goals"));
@@ -116,7 +116,7 @@ public class StatisticService {
       final ResultSet rs = pstmt.executeQuery();
       while (rs.next()) {
         final Player statistic = new Player();
-        statistic.setPlayer(rs.getString("player"));
+        statistic.setName(rs.getString("player"));
         statistic.setGoalsAgainst(rs.getInt("against"));
         statistic.setShutouts(rs.getInt("shutouts"));
         statistics.add(statistic);

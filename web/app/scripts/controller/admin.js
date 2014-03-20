@@ -22,7 +22,7 @@ define(function(require) {
 				self.login();	
 			});
 
-			$('#passwordDialog').on('shown', function() {
+			$('#passwordDialog').on('shown.bs.modal', function() {
 				$('#password').focus();
 			});
 		},
