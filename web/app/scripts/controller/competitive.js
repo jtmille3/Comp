@@ -12,54 +12,13 @@ define(function(require) {
             var headerTemplate = window.comp['web/app/templates/header.html'];
             $('#header').html(headerTemplate(competitive));
 
-            var names = new Bloodhound({
-                datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
-                queryTokenizer: Bloodhound.tokenizers.whitespace,
-                // `states` is an array of state names defined in "The Basics"
-                local: $.map(competitive.playerStatistics, function(player) {
-                    return player;
-                })
-            });
-
-            names.initialize();
-
-            $('.comp-search').typeahead({
-                minLength: 1,
-                hint: true,
-                highlight: true
-            },
-            {
-                name: 'competitive',
-                displayKey: 'name',
-                source: names.ttAdapter(),
-                templates: {
-                    empty: [
-                        '<div class="empty-message">',
-                        'Nothing found',
-                        '</div>'
-                    ].join('\n'),
-                    suggestion: Handlebars.compile('<p><strong>{{name}}</strong></p>')
-                }
-            });
-
-            $('.comp-search').on('typeahead:selected', function(event, suggestion, dataset) {
-                var playerTemplate = window.comp['web/app/templates/player.html'];
-                $('#competitive').append(playerTemplate(suggestion));
-                var playerDialog = $('#playerDialog');
-                playerDialog.modal({
-                    backdrop:true,
-                    show:true
-                });
-                playerDialog.on('hidden.bs.modal', function() {
-                    $('#playerDialog').remove();
-                });
-            });
-
 			var compTemplate = window.comp['web/app/templates/comp.html'];
 			$('#competitive').html(compTemplate(competitive));
 
 			$('#player-all-time-table').tablesorter( {sortList: [[1,1]]} );
 			$('#goalie-all-time-table').tablesorter( {sortList: [[1,1]]} );
+
+            this.attachSearch(competitive);
 
 			for(var i = 0; i < competitive.seasons.length; i++) {
 				var season = competitive.seasons[i];
@@ -121,6 +80,49 @@ define(function(require) {
         attachBracket: function(season) {
             var id = 'playoff-bracket-' + season.id;
             bracket.generate(id, season.playoffSchedule, false);
+        },
+        attachSearch: function(competitive) {
+            var names = new Bloodhound({
+                datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
+                queryTokenizer: Bloodhound.tokenizers.whitespace,
+                local: $.map(competitive.playerStatistics, function(player) {
+                    return player;
+                })
+            });
+
+            names.initialize();
+
+            $('.comp-search').typeahead({
+                    minLength: 1,
+                    hint: true,
+                    highlight: true
+                },
+                {
+                    name: 'competitive',
+                    displayKey: 'name',
+                    source: names.ttAdapter(),
+                    templates: {
+                        empty: [
+                            '<div class="empty-message">',
+                            'Nothing found',
+                            '</div>'
+                        ].join('\n'),
+                        suggestion: Handlebars.compile('<p><strong>{{name}}</strong></p>')
+                    }
+                });
+
+            $('.comp-search').on('typeahead:selected', function(event, suggestion, dataset) {
+                var playerTemplate = window.comp['web/app/templates/player.html'];
+                $('#competitive').append(playerTemplate(suggestion));
+                var playerDialog = $('#playerDialog');
+                playerDialog.modal({
+                    backdrop:true,
+                    show:true
+                });
+                playerDialog.on('hidden.bs.modal', function() {
+                    $('#playerDialog').remove();
+                });
+            });
         },
 		selectedTeam: function(season, teamId) {
 			var schedule = this.schedule(season, teamId);
