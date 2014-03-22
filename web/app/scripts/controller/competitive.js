@@ -92,7 +92,9 @@ define(function(require) {
 
             names.initialize();
 
-            $('.comp-search').typeahead({
+            var search = $('#comp-search');
+
+            search.typeahead({
                     minLength: 1,
                     hint: true,
                     highlight: true
@@ -111,7 +113,27 @@ define(function(require) {
                     }
                 });
 
-            $('.comp-search').on('typeahead:selected', function(event, suggestion, dataset) {
+
+            search.on('typeahead:selected', function(event, suggestion, dataset) {
+                displayPlayer(suggestion);
+            });
+
+            var clear = $('#comp-clear');
+
+            search.on('keyup', function(event) {
+                if(search.val().length) {
+                    clear.show();
+                } else {
+                    clear.hide();
+                }
+            });
+
+            clear.on('click', function() {
+                search.val('');
+                search.focus();
+            });
+
+            function displayPlayer(suggestion) {
                 var playerTemplate = window.comp['web/app/templates/player.html'];
                 $('#competitive').append(playerTemplate(suggestion));
                 var playerDialog = $('#playerDialog');
@@ -121,8 +143,9 @@ define(function(require) {
                 });
                 playerDialog.on('hidden.bs.modal', function() {
                     $('#playerDialog').remove();
+                    search.val('');
                 });
-            });
+            }
         },
 		selectedTeam: function(season, teamId) {
 			var schedule = this.schedule(season, teamId);
