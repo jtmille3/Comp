@@ -170,6 +170,25 @@ path.link {
   height: 700px;
 }
 
+.bar {
+  fill: steelblue;
+}
+
+.axis text {
+  font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: none;
+}
+
 // @import "1pxdeep.less";
 
 .typeahead {
@@ -222,4 +241,18 @@ path.link {
 .tt-suggestion.tt-cursor {
   color: #fff;
   background-color: @brand-primary;
+}
+
+.player-stats {
+  text-align: center;
+}
+
+.player-stats > .titles {
+  text-align: left;
+  border-bottom: 1px solid @gray-darker;
+}
+
+.player-stats .goals {
+  text-align: left;
+  border-bottom: 1px solid @gray-darker;
 }

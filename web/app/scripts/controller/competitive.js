@@ -3,6 +3,7 @@ define(function(require) {
 	'use strict';
 
     var bracket = require('bracket');
+    var goalsSeason = require('goals_season');
 
 	return {
 		render: function(competitive) {
@@ -133,6 +134,7 @@ define(function(require) {
                 search.focus();
             });
 
+            var self = this;
             function displayPlayer(suggestion) {
                 var playerTemplate = window.comp['web/app/templates/player.html'];
                 $('#competitive').append(playerTemplate(suggestion));
@@ -145,6 +147,8 @@ define(function(require) {
                     $('#playerDialog').remove();
                     search.val('');
                 });
+
+                goalsSeason.generate(suggestion, self.competitive);
             }
         },
 		selectedTeam: function(season, teamId) {
