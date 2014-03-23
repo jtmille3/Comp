@@ -8,13 +8,13 @@ define(function (require) {
             var data = [];
 
             var goals = [];
-            Lazy(competitive.goals).each(function(goal) {
+            Lazy(competitive.goals).each(function (goal) {
                 if (goal && goal.player === player.name) {
                     goals.push(goal);
                 }
             });
 
-            Lazy(competitive.seasons).each(function(season, j) {
+            Lazy(competitive.seasons).each(function (season, j) {
                 if (!data[j]) {
                     data[j] = {
                         name: season.name,
@@ -22,24 +22,24 @@ define(function (require) {
                     };
                 }
 
-                Lazy(season.leagueSchedule).each(function(game) {
+                Lazy(season.leagueSchedule).each(function (game) {
                     var games = Lazy(goals).where({ gameId: game.gameId });
-                    if(games.size()) {
+                    if (games.size()) {
                         data[j].goals += games.size();
                     }
                 });
 
-                Lazy(season.playoffSchedule).each(function(game) {
+                Lazy(season.playoffSchedule).each(function (game) {
                     var games = Lazy(goals).where({ gameId: game.gameId });
-                    if(games.size()) {
+                    if (games.size()) {
                         data[j].goals += games.size();
                     }
                 });
             });
 
             data = Lazy(data).reverse().toArray();
-            var max = Lazy(data).max(function(d) {
-               return d.goals;
+            var max = Lazy(data).max(function (d) {
+                return d.goals;
             });
 
             var ticks = Math.min(max.goals, 10);
@@ -71,11 +71,11 @@ define(function (require) {
                 .append("g")
                 .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-            x.domain(data.map(function(d) {
+            x.domain(data.map(function (d) {
                 return d.name;
             }));
 
-            y.domain([0, d3.max(data, function(d) {
+            y.domain([0, d3.max(data, function (d) {
                 return d.goals;
             })]);
 
@@ -92,21 +92,21 @@ define(function (require) {
                 .attr("class", "y axis")
                 .call(yAxis);
 
+            var yTextPadding = 20;
             svg.selectAll(".bar")
                 .data(data)
                 .enter().append("rect")
                 .attr("class", "bar")
-                .attr("x", function(d) {
+                .attr("x", function (d) {
                     return x(d.name);
                 })
                 .attr("width", x.rangeBand())
-                .attr("y", function(d) {
+                .attr("y", function (d) {
                     return y(d.goals);
                 })
-                .attr("height", function(d) {
+                .attr("height", function (d) {
                     return height - y(d.goals);
                 });
-
         }
     };
 });
