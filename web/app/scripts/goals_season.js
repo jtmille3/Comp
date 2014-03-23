@@ -1,3 +1,12 @@
+/**
+ * Record shutouts
+ * Only Display for Seasons played
+ * Line break season name and year?
+ * Change bar chart to line chart with goals and shutouts combined?
+ * Refactor season database so it's name and year
+ * For the player list the number of seasons played
+ */
+
 define(function (require) {
     'use strict';
 
@@ -5,6 +14,7 @@ define(function (require) {
 
     return {
         generate: function (player, competitive) {
+            console.log(competitive);
             var data = [];
 
             var goals = [];
@@ -14,7 +24,16 @@ define(function (require) {
                 }
             });
 
-            Lazy(competitive.seasons).each(function (season, j) {
+            var seasons = [];
+            Lazy(competitive.seasons).each(function(season) {
+                // should do this by playerId :P
+                var found = Lazy(season.playerStatistics).where({ name: player.name });
+                if(found.size()) {
+                    seasons.push(season);
+                }
+            });
+
+            Lazy(seasons).each(function (season, j) {
                 if (!data[j]) {
                     data[j] = {
                         name: season.name,
