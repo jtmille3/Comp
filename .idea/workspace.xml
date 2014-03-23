@@ -8,7 +8,6 @@
   <component name="ChangeListManager">
     <list default="true" id="338d9bed-963b-460f-a418-ff028a1d4e43" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/scripts/goals_season.js" afterPath="$PROJECT_DIR$/web/app/scripts/goals_season.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/less/main.less" afterPath="$PROJECT_DIR$/web/app/less/main.less" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="comp.iws" />
@@ -99,20 +98,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="goals_season.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="goals_season.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/app/scripts/goals_season.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="930" max-vertical-offset="1980">
-              <caret line="79" column="33" selection-start-line="79" selection-start-column="33" selection-end-line="79" selection-end-column="33" />
+            <state vertical-scroll-proportion="0.3345725" vertical-offset="0" max-vertical-offset="1965">
+              <caret line="12" column="12" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.less" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="main.less" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/app/less/main.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.50389105" vertical-offset="2546" max-vertical-offset="3945">
+            <state vertical-scroll-proportion="-10.791667" vertical-offset="2546" max-vertical-offset="3945">
               <caret line="187" column="17" selection-start-line="187" selection-start-column="17" selection-end-line="187" selection-end-column="17" />
               <folding />
             </state>
@@ -163,8 +162,8 @@
         <option value="$PROJECT_DIR$/bower.json" />
         <option value="$PROJECT_DIR$/web/app/scripts/controller/competitive.js" />
         <option value="$PROJECT_DIR$/web/app/templates/player.html" />
-        <option value="$PROJECT_DIR$/web/app/scripts/goals_season.js" />
         <option value="$PROJECT_DIR$/web/app/less/main.less" />
+        <option value="$PROJECT_DIR$/web/app/scripts/goals_season.js" />
       </list>
     </option>
   </component>
@@ -764,7 +763,7 @@
       <updated>1364607849370</updated>
       <workItem from="1395194693376" duration="100000" />
       <workItem from="1395268066210" duration="4519000" />
-      <workItem from="1395275948717" duration="37912000" />
+      <workItem from="1395275948717" duration="38441000" />
     </task>
     <task id="LOCAL-00001" summary="Switching servers.">
       <created>1366829491658</created>
@@ -774,7 +773,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42531000" />
+    <option name="totallyTimeSpent" value="43060000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1195,6 +1194,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/app/less/main.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.791667" vertical-offset="2546" max-vertical-offset="3945">
+          <caret line="187" column="17" selection-start-line="187" selection-start-column="17" selection-end-line="187" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/app/templates/player.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-9.541667" vertical-offset="11" max-vertical-offset="630">
@@ -1205,16 +1212,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/app/scripts/goals_season.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="930" max-vertical-offset="1980">
-          <caret line="79" column="33" selection-start-line="79" selection-start-column="33" selection-end-line="79" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/app/less/main.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.50389105" vertical-offset="2546" max-vertical-offset="3945">
-          <caret line="187" column="17" selection-start-line="187" selection-start-column="17" selection-end-line="187" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.3345725" vertical-offset="0" max-vertical-offset="1965">
+          <caret line="12" column="12" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
           <folding />
         </state>
       </provider>

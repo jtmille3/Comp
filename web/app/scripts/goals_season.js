@@ -10,7 +10,6 @@ define(function (require) {
 
     return {
         generate: function (player, competitive) {
-            console.log(competitive);
             var data = [];
 
             var goals = [];
