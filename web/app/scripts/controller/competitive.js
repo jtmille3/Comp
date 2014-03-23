@@ -135,9 +135,20 @@ define(function(require) {
             });
 
             var self = this;
-            function displayPlayer(suggestion) {
+            function displayPlayer(player) {
                 var playerTemplate = window.comp['web/app/templates/player.html'];
-                $('#competitive').append(playerTemplate(suggestion));
+
+                var seasons = [];
+                Lazy(self.competitive.seasons).each(function(season) {
+                    var found = Lazy(season.playerStatistics).where({ name: player.name });
+                    if(found.size()) {
+                        seasons.push(season);
+                    }
+                });
+
+                player.seasonsPlayed = seasons.length;
+
+                $('#competitive').append(playerTemplate(player));
                 var playerDialog = $('#playerDialog');
                 playerDialog.modal({
                     backdrop:true,
@@ -148,7 +159,7 @@ define(function(require) {
                     search.val('');
                 });
 
-                goalsSeason.generate(suggestion, self.competitive);
+                goalsSeason.generate(player, self.competitive);
             }
         },
 		selectedTeam: function(season, teamId) {

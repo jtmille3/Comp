@@ -7,7 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="338d9bed-963b-460f-a418-ff028a1d4e43" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/scripts/controller/competitive.js" afterPath="$PROJECT_DIR$/web/app/scripts/controller/competitive.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/scripts/goals_season.js" afterPath="$PROJECT_DIR$/web/app/scripts/goals_season.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/templates/player.html" afterPath="$PROJECT_DIR$/web/app/templates/player.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="comp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -80,28 +83,28 @@
       <file leaf-file-name="competitive.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/app/scripts/controller/competitive.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.423077" vertical-offset="1875" max-vertical-offset="4260">
-              <caret line="150" column="67" selection-start-line="150" selection-start-column="67" selection-end-line="150" selection-end-column="67" />
+            <state vertical-scroll-proportion="-29.423077" vertical-offset="1650" max-vertical-offset="4425">
+              <caret line="161" column="43" selection-start-line="161" selection-start-column="43" selection-end-line="161" selection-end-column="43" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="player.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="player.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/app/templates/player.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.416666" vertical-offset="26" max-vertical-offset="615">
-              <caret line="28" column="55" selection-start-line="28" selection-start-column="55" selection-end-line="28" selection-end-column="55" />
+            <state vertical-scroll-proportion="0.4455253" vertical-offset="11" max-vertical-offset="630">
+              <caret line="16" column="60" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="goals_season.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="goals_season.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/app/scripts/goals_season.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.69330853" vertical-offset="77" max-vertical-offset="2040">
-              <caret line="30" column="31" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2025">
+              <caret line="25" column="12" selection-start-line="25" selection-start-column="12" selection-end-line="32" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -112,16 +115,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-9.541667" vertical-offset="2426" max-vertical-offset="3945">
               <caret line="177" column="20" selection-start-line="177" selection-start-column="20" selection-end-line="177" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/app/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.875" vertical-offset="192" max-vertical-offset="1095">
-              <caret line="19" column="51" selection-start-line="19" selection-start-column="51" selection-end-line="19" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -167,12 +160,12 @@
         <option value="$PROJECT_DIR$/web/app/templates/password.html" />
         <option value="$PROJECT_DIR$/web/app/scripts/controller/admin.js" />
         <option value="$PROJECT_DIR$/web/app/templates/header.html" />
-        <option value="$PROJECT_DIR$/web/app/scripts/controller/competitive.js" />
-        <option value="$PROJECT_DIR$/web/app/templates/player.html" />
         <option value="$PROJECT_DIR$/web/app/less/main.less" />
         <option value="$PROJECT_DIR$/web/app/index.html" />
         <option value="$PROJECT_DIR$/bower.json" />
         <option value="$PROJECT_DIR$/web/app/scripts/goals_season.js" />
+        <option value="$PROJECT_DIR$/web/app/scripts/controller/competitive.js" />
+        <option value="$PROJECT_DIR$/web/app/templates/player.html" />
       </list>
     </option>
   </component>
@@ -772,7 +765,7 @@
       <updated>1364607849370</updated>
       <workItem from="1395194693376" duration="100000" />
       <workItem from="1395268066210" duration="4519000" />
-      <workItem from="1395275948717" duration="36314000" />
+      <workItem from="1395275948717" duration="36648000" />
     </task>
     <task id="LOCAL-00001" summary="Switching servers.">
       <created>1366829491658</created>
@@ -782,7 +775,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40933000" />
+    <option name="totallyTimeSpent" value="41267000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1179,18 +1172,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/app/scripts/controller/competitive.js">
+    <entry file="file://$PROJECT_DIR$/bower.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.423077" vertical-offset="1875" max-vertical-offset="4260">
-          <caret line="150" column="67" selection-start-line="150" selection-start-column="67" selection-end-line="150" selection-end-column="67" />
+        <state vertical-scroll-proportion="0.32101166" vertical-offset="0" max-vertical-offset="514">
+          <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/app/templates/player.html">
+    <entry file="file://$PROJECT_DIR$/web/app/scripts/goals_season.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.416666" vertical-offset="26" max-vertical-offset="615">
-          <caret line="28" column="55" selection-start-line="28" selection-start-column="55" selection-end-line="28" selection-end-column="55" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2025">
+          <caret line="25" column="12" selection-start-line="25" selection-start-column="12" selection-end-line="32" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/app/scripts/controller/competitive.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-29.423077" vertical-offset="1650" max-vertical-offset="4425">
+          <caret line="161" column="43" selection-start-line="161" selection-start-column="43" selection-end-line="161" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/app/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.18562874" vertical-offset="192" max-vertical-offset="1095">
+          <caret line="19" column="51" selection-start-line="19" selection-start-column="51" selection-end-line="19" selection-end-column="51" />
           <folding />
         </state>
       </provider>
@@ -1203,26 +1212,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/app/index.html">
+    <entry file="file://$PROJECT_DIR$/web/app/templates/player.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.875" vertical-offset="192" max-vertical-offset="1095">
-          <caret line="19" column="51" selection-start-line="19" selection-start-column="51" selection-end-line="19" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bower.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.32101166" vertical-offset="0" max-vertical-offset="514">
-          <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/app/scripts/goals_season.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.69330853" vertical-offset="77" max-vertical-offset="2040">
-          <caret line="30" column="31" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
+        <state vertical-scroll-proportion="0.4455253" vertical-offset="11" max-vertical-offset="630">
+          <caret line="16" column="60" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
           <folding />
         </state>
       </provider>

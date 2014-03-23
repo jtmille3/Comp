@@ -1,6 +1,5 @@
 /**
  * Record shutouts
- * Only Display for Seasons played
  * Line break season name and year?
  * Change bar chart to line chart with goals and shutouts combined?
  * Refactor season database so it's name and year
