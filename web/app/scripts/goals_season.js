@@ -1,9 +1,6 @@
 /**
  * Record shutouts
- * Line break season name and year?
  * Change bar chart to line chart with goals and shutouts combined?
- * Refactor season database so it's name and year
- * For the player list the number of seasons played
  */
 
 define(function (require) {
@@ -80,6 +77,7 @@ define(function (require) {
                 .scale(y)
                 .orient("left")
                 .ticks(ticks) // calculate the max
+                .tickSize(-width)
                 .tickFormat(d3.format(".0f"));
 
             var svg = d3.select("#goals-per-season")
@@ -110,7 +108,6 @@ define(function (require) {
                 .attr("class", "y axis")
                 .call(yAxis);
 
-            var yTextPadding = 20;
             svg.selectAll(".bar")
                 .data(data)
                 .enter().append("rect")
