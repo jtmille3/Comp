@@ -29,8 +29,9 @@ define(function (require) {
 
             Lazy(seasons).each(function (season, j) {
                 if (!data[j]) {
+                    var name = season.name.split(' ')[1].substring(0, 2) + season.name.split(' ')[0];
                     data[j] = {
-                        name: season.name,
+                        name: name,
                         goals: 0
                     };
                 }
