@@ -7,8 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="338d9bed-963b-460f-a418-ff028a1d4e43" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/sas/comp/resource/GoalResource.java" afterPath="$PROJECT_DIR$/src/com/sas/comp/resource/GoalResource.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/import/spring2014.json" afterPath="$PROJECT_DIR$/import/spring2014.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/sas/comp/service/ImportService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/sas/comp/service/PlayerService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/sas/comp/service/TeamService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="comp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -78,6 +80,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/app/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.06787331" vertical-offset="0" max-vertical-offset="442">
+              <caret line="2" column="29" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="admin.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/app/scripts/controller/admin.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -108,10 +120,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ImportService.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="ImportService.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/sas/comp/service/ImportService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.12895928" vertical-offset="18" max-vertical-offset="1710">
+            <state vertical-scroll-proportion="0.0" vertical-offset="18" max-vertical-offset="1710">
               <caret line="14" column="47" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
               <folding />
             </state>
@@ -874,7 +886,7 @@
       <updated>1364607849370</updated>
       <workItem from="1395194693376" duration="100000" />
       <workItem from="1395268066210" duration="4519000" />
-      <workItem from="1395275948717" duration="56446000" />
+      <workItem from="1395275948717" duration="56645000" />
     </task>
     <task id="LOCAL-00001" summary="Switching servers.">
       <created>1366829491658</created>
@@ -884,7 +896,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61065000" />
+    <option name="totallyTimeSpent" value="61264000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1039,22 +1051,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2166065" vertical-offset="0" max-vertical-offset="554">
           <caret line="8" column="8" selection-start-line="1" selection-start-column="6" selection-end-line="8" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.27829313" vertical-offset="0" max-vertical-offset="539">
-          <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/app/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.055658627" vertical-offset="0" max-vertical-offset="539">
-          <caret line="2" column="29" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
           <folding />
         </state>
       </provider>
@@ -1371,14 +1367,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/app/scripts/controller/admin.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.6153846" vertical-offset="2112" max-vertical-offset="4215">
-          <caret line="154" column="32" selection-start-line="154" selection-start-column="30" selection-end-line="154" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/sas/comp/resource/GoalResource.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="578" max-vertical-offset="1200">
@@ -1397,8 +1385,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/sas/comp/service/ImportService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12895928" vertical-offset="18" max-vertical-offset="1710">
+        <state vertical-scroll-proportion="0.0" vertical-offset="18" max-vertical-offset="1710">
           <caret line="14" column="47" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33936653" vertical-offset="0" max-vertical-offset="442">
+          <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/app/scripts/controller/admin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.6153846" vertical-offset="2112" max-vertical-offset="4215">
+          <caret line="154" column="32" selection-start-line="154" selection-start-column="30" selection-end-line="154" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/app/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.06787331" vertical-offset="0" max-vertical-offset="442">
+          <caret line="2" column="29" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
           <folding />
         </state>
       </provider>
