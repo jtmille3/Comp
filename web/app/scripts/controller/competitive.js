@@ -13,7 +13,7 @@ define(function(require) {
             Lazy(competitive.shutoutStatistics).each(function(p1) {
                 var player = Lazy(competitive.playerStatistics).where({playerId: p1.playerId}).toArray()[0];
                 player.shutouts = p1.shutouts;
-                player.against = p1.against;
+                player.goalsAgainst = p1.goalsAgainst;
             });
 
             var headerTemplate = window.comp['web/app/templates/header.html'];

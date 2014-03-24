@@ -20,8 +20,7 @@ define(function (require) {
 
             var seasons = [];
             Lazy(competitive.seasons).each(function (season) {
-                // should do this by playerId :P
-                var found = Lazy(season.playerStatistics).where({ name: player.name });
+                var found = Lazy(season.playerStatistics).where({ playerId: player.playerId });
                 if (found.size()) {
                     seasons.push(season);
                 }
@@ -53,7 +52,39 @@ define(function (require) {
 
             return Lazy(data).reverse().toArray();
         },
+        getShutoutData: function (player, competitive) {
+            var data = [];
+
+            var seasons = [];
+            Lazy(competitive.seasons).each(function (season) {
+                var found = Lazy(season.playerStatistics).where({ playerId: player.playerId });
+                if (found.size()) {
+                    seasons.push(season);
+                }
+            });
+
+            Lazy(seasons).each(function (season, j) {
+                if (!data[j]) {
+                    var name = season.name.split(' ')[1].substring(0, 2) + season.name.split(' ')[0];
+                    data[j] = {
+                        name: name,
+                        shutouts: 0
+                    };
+                }
+
+                Lazy(season.standings).each(function (team) {
+                    Lazy(season.playerStatistics).each(function (p2) {
+                        if (team.teamId === p2.teamId && p2.playerId === player.playerId) {
+                            data[j].shutouts = team.shutouts;
+                        }
+                    });
+                });
+            });
+
+            return Lazy(data).reverse().toArray();
+        },
         generate: function (player, competitive) {
+            var shutoutData = this.getShutoutData(player, competitive);
             var goalData = this.getGoalData(player, competitive);
 
             var max = Lazy(goalData).max(function (d) {
