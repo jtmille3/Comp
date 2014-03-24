@@ -12,7 +12,8 @@
         "d3": "~3.4.3",
         "lazy.js": "~0.3",
         "almond": "~0.2.9",
-        "typeahead.js": "0.10.2"
+        "typeahead.js": "0.10.2",
+        "tipsy": "0.1.7"
     },
     "devDependencies": {},
     "resolutions": {

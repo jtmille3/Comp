@@ -170,23 +170,39 @@ path.link {
   height: 700px;
 }
 
-.bar {
-  fill: @brand-primary;
+.data-line {
+  stroke: steelblue;
+  stroke-width: 2;
+  stroke-dasharray: 0;
 }
 
-.bar:hover {
-  fill: @gray-darker;
-}
-
-.axis text {
-  font: 10px sans-serif;
-}
-
-.axis path,
-.axis line {
+path {
+  stroke: #eee;
+  stroke-width: 2;
+  stroke-dasharray: 0;
   fill: none;
+}
+
+.area {
+  fill: lightsteelblue;
+}
+
+text {
+  font-family: Arial;
+  font-size: 8pt;
+  fill: #787878;
+}
+
+line {
   stroke: #CDCDCD;
-  shape-rendering: crispEdges;
+  stroke-width: 0.5;
+  fill: none;
+}
+
+.data-point {
+  stroke: steelblue;
+  stroke-width: 2;
+  fill: #FFF;
 }
 
 // @import "1pxdeep.less";
@@ -256,3 +272,13 @@ path.link {
   text-align: left;
   border-bottom: 1px solid @gray-darker;
 }
+
+/* Tipsy */
+
+.tipsy { padding: 5px; font-size: 10px; opacity: 0.8; filter: alpha(opacity=80); /*background-repeat: no-repeat;  background-image: url(../img/tipsy.gif);*/ }
+.tipsy-inner { padding: 5px 8px 4px 8px; background-color: black; color: white; max-width: 200px; text-align: center; }
+.tipsy-inner { -moz-border-radius:3px; -webkit-border-radius:3px; }
+.tipsy-north { background-position: top center; }
+.tipsy-south { background-position: bottom center; }
+.tipsy-east { background-position: right center; }
+.tipsy-west { background-position: left center; }

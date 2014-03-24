@@ -9,7 +9,7 @@ define(function (require) {
     var d3 = require("../components/d3/d3");
 
     return {
-        generate: function (player, competitive) {
+        getGoalData: function (player, competitive) {
             var data = [];
 
             var goals = [];
@@ -20,10 +20,10 @@ define(function (require) {
             });
 
             var seasons = [];
-            Lazy(competitive.seasons).each(function(season) {
+            Lazy(competitive.seasons).each(function (season) {
                 // should do this by playerId :P
                 var found = Lazy(season.playerStatistics).where({ name: player.name });
-                if(found.size()) {
+                if (found.size()) {
                     seasons.push(season);
                 }
             });
@@ -51,76 +51,103 @@ define(function (require) {
                 });
             });
 
-            data = Lazy(data).reverse().toArray();
+            return Lazy(data).reverse().toArray();
+        },
+        generate: function (player, competitive) {
+            var data = this.getGoalData(player, competitive);
+
             var max = Lazy(data).max(function (d) {
                 return d.goals;
             });
 
             var ticks = Math.min(max.goals, 10);
 
-            var margin = {top: 20, right: 20, bottom: 50, left: 40},
-                width = 550 - margin.left - margin.right,
-                height = 300 - margin.top - margin.bottom;
+            var maxDataPointsForDots = 50;
 
-            var x = d3.scale.ordinal()
-                .rangeRoundBands([0, width], .1);
+            var margin = 20,
+                w = 600 - margin * 2,
+                h = 350 - margin * 2;
+            var pointRadius = 5;
 
-            var y = d3.scale.linear()
-                .range([height, 0]);
-
-            var xAxis = d3.svg.axis()
-                .scale(x)
-                .orient("bottom");
-
-            var yAxis = d3.svg.axis()
-                .scale(y)
-                .orient("left")
-                .ticks(ticks) // calculate the max
-                .tickSize(-width)
-                .tickFormat(d3.format(".0f"));
-
-            var svg = d3.select("#goals-per-season")
-                .attr("width", width + margin.left + margin.right)
-                .attr("height", height + margin.top + margin.bottom)
-                .data(data)
-                .append("g")
-                .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-            x.domain(data.map(function (d) {
+            var x = d3.scale.ordinal().rangeRoundBands([0, w - margin * 2], 1).domain(data.map(function (d) {
                 return d.name;
             }));
 
-            y.domain([0, d3.max(data, function (d) {
+            var y = d3.scale.linear().range([h - margin * 2, 0]).domain([0, d3.max(data, function (d) {
                 return d.goals;
             })]);
 
-            svg.append("g")
-                .attr("class", "x axis")
-                .attr("transform", "translate(0," + height + ")")
-                .call(xAxis)
-                .selectAll("text")
-                .attr("transform", "rotate(20)")
-                .attr("dy", "1.3em")
-                .style("text-anchor", "start");
+            var xAxis = d3.svg.axis().scale(x).tickSize(h - margin * 2).ticks(data.length);
 
-            svg.append("g")
-                .attr("class", "y axis")
+            var yAxis = d3.svg.axis().scale(y).orient('left').ticks(ticks).tickSize(-w + margin * 2).tickFormat(d3.format(".0f"));
+
+            var svg = d3.select('#goals-per-season')
+                .append('svg:svg')
+                .attr('width', w)
+                .attr('height', h)
+                .attr('class', 'viz')
+                .append('svg:g')
+                .attr('transform', 'translate(' + margin + ',' + margin + ')');
+
+            // y ticks and labels
+            svg.append('svg:g')
+                .attr('class', 'yTick')
                 .call(yAxis);
 
-            svg.selectAll(".bar")
-                .data(data)
-                .enter().append("rect")
-                .attr("class", "bar")
-                .attr("x", function (d) {
+            // x ticks and labels
+            svg.append('svg:g')
+                .attr('class', 'xTick')
+                .call(xAxis);
+
+            var dataLines = svg.append('svg:g')
+                .selectAll('.data-line')
+                .data([data]);
+
+            var line = d3.svg.line()
+                .x(function (d) {
+                    // verbose logging to show what's actually being done
                     return x(d.name);
                 })
-                .attr("width", x.rangeBand())
-                .attr("y", function (d) {
+                .y(function (d) {
+                    // verbose logging to show what's actually being done
                     return y(d.goals);
                 })
-                .attr("height", function (d) {
-                    return height - y(d.goals);
+                .interpolate("linear");
+
+            dataLines
+                .enter()
+                .append('path')
+                .attr('class', 'data-line')
+                .style('opacity', 0.7)
+                .attr("d", line(data));
+
+            // Draw the points
+            svg.append('svg:g')
+                .selectAll('.data-point')
+                .data(data)
+                .enter()
+                .append('svg:circle')
+                .attr('class', 'data-point')
+                .attr('cx', function (d) {
+                    return x(d.name)
+                })
+                .attr('cy', function (d) {
+                    return y(d.goals)
+                })
+                .attr('r', function () {
+                    return (data.length <= maxDataPointsForDots) ? pointRadius : 0;
                 });
+
+            $('svg circle').tipsy({
+                gravity: 's',
+                html: true,
+                title: function() {
+                    var d = this.__data__;
+                    return d.goals + ' goals';
+                }
+            });
         }
-    };
-});
+    }
+        ;
+})
+;
