@@ -10,6 +10,12 @@ define(function(require) {
 			var self = this;
 			this.competitive = competitive;
 
+            Lazy(competitive.shutoutStatistics).each(function(p1) {
+                var player = Lazy(competitive.playerStatistics).where({playerId: p1.playerId}).toArray()[0];
+                player.shutouts = p1.shutouts;
+                player.against = p1.against;
+            });
+
             var headerTemplate = window.comp['web/app/templates/header.html'];
             $('#header').html(headerTemplate(competitive));
 
