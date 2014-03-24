@@ -132,4 +132,33 @@ public class StatisticService {
     return statistics;
   }
 
+    public List<Player> getShutoutStatistics() {
+        final List<Player> statistics = new ArrayList<Player>();
+
+        try {
+            final Connection conn = Database.getConnection();
+            final PreparedStatement pstmt = conn
+                    .prepareStatement("SELECT * FROM shutout_alltime_statistics ORDER BY shutouts desc");
+
+            final ResultSet rs = pstmt.executeQuery();
+            while (rs.next()) {
+                final Player statistic = new Player();
+                statistic.setName(rs.getString("player"));
+                statistic.setPlayerId(rs.getInt("player_id"));
+                statistic.setGoalie(rs.getBoolean("goalie"));
+                statistic.setGoalsAgainst(rs.getInt("against"));
+                statistic.setShutouts(rs.getInt("shutouts"));
+                statistics.add(statistic);
+            }
+
+            rs.close();
+            pstmt.close();
+            conn.close();
+        } catch (final Exception e) {
+            e.printStackTrace();
+        }
+
+        return statistics;
+    }
+
 }

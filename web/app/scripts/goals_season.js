@@ -54,9 +54,9 @@ define(function (require) {
             return Lazy(data).reverse().toArray();
         },
         generate: function (player, competitive) {
-            var data = this.getGoalData(player, competitive);
+            var goalData = this.getGoalData(player, competitive);
 
-            var max = Lazy(data).max(function (d) {
+            var max = Lazy(goalData).max(function (d) {
                 return d.goals;
             });
 
@@ -69,15 +69,15 @@ define(function (require) {
                 h = 350 - margin * 2;
             var pointRadius = 5;
 
-            var x = d3.scale.ordinal().rangeRoundBands([0, w - margin * 2], 1).domain(data.map(function (d) {
+            var x = d3.scale.ordinal().rangeRoundBands([0, w - margin * 2], 1).domain(goalData.map(function (d) {
                 return d.name;
             }));
 
-            var y = d3.scale.linear().range([h - margin * 2, 0]).domain([0, d3.max(data, function (d) {
+            var y = d3.scale.linear().range([h - margin * 2, 0]).domain([0, d3.max(goalData, function (d) {
                 return d.goals;
             })]);
 
-            var xAxis = d3.svg.axis().scale(x).tickSize(h - margin * 2).tickPadding(10).ticks(data.length);
+            var xAxis = d3.svg.axis().scale(x).tickSize(h - margin * 2).tickPadding(10).ticks(goalData.length);
 
             var yAxis = d3.svg.axis().scale(y).orient('left').ticks(ticks).tickSize(-w + margin * 2).tickPadding(10).tickFormat(d3.format(".0f"));
 
@@ -100,7 +100,7 @@ define(function (require) {
 
             var dataLines = svg.append('svg:g')
                 .selectAll('.data-line')
-                .data([data]);
+                .data([goalData]);
 
             var line = d3.svg.line()
                 .x(function (d) {
@@ -118,12 +118,12 @@ define(function (require) {
                 .append('path')
                 .attr('class', 'data-line')
                 .style('opacity', 0.7)
-                .attr("d", line(data));
+                .attr("d", line(goalData));
 
             // Draw the points
             svg.append('svg:g')
                 .selectAll('.data-point')
-                .data(data)
+                .data(goalData)
                 .enter()
                 .append('svg:circle')
                 .attr('class', 'data-point')
@@ -134,7 +134,7 @@ define(function (require) {
                     return y(d.goals)
                 })
                 .attr('r', function () {
-                    return (data.length <= maxDataPointsForDots) ? pointRadius : 0;
+                    return (goalData.length <= maxDataPointsForDots) ? pointRadius : 0;
                 });
 
             $('svg circle').tipsy({

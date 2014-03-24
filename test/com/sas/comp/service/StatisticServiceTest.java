@@ -17,6 +17,14 @@ public class StatisticServiceTest {
 		Assert.assertTrue(statistics.size() > 0);
 	}
 
+    @Test
+    public void testShutoutStatistics() {
+        final StatisticService statisticService = new StatisticService();
+        final List<Player> statistics = statisticService.getShutoutStatistics();
+        Assert.assertNotNull(statistics);
+        Assert.assertTrue(statistics.size() > 0);
+    }
+
 	@Test
 	public void testGoalieStatistics() {
 		final StatisticService statisticService = new StatisticService();
