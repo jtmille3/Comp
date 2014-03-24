@@ -76,9 +76,9 @@ define(function (require) {
                 return d.goals;
             })]);
 
-            var xAxis = d3.svg.axis().scale(x).tickSize(h - margin * 2).ticks(data.length);
+            var xAxis = d3.svg.axis().scale(x).tickSize(h - margin * 2).tickPadding(10).ticks(data.length);
 
-            var yAxis = d3.svg.axis().scale(y).orient('left').ticks(ticks).tickSize(-w + margin * 2).tickFormat(d3.format(".0f"));
+            var yAxis = d3.svg.axis().scale(y).orient('left').ticks(ticks).tickSize(-w + margin * 2).tickPadding(10).tickFormat(d3.format(".0f"));
 
             var svg = d3.select('#goals-per-season')
                 .attr('width', w)
