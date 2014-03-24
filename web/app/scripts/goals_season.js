@@ -1,6 +1,5 @@
 /**
  * Record shutouts
- * Change bar chart to line chart with goals and shutouts combined?
  */
 
 define(function (require) {
@@ -82,7 +81,6 @@ define(function (require) {
             var yAxis = d3.svg.axis().scale(y).orient('left').ticks(ticks).tickSize(-w + margin * 2).tickFormat(d3.format(".0f"));
 
             var svg = d3.select('#goals-per-season')
-                .append('svg:svg')
                 .attr('width', w)
                 .attr('height', h)
                 .attr('class', 'viz')
