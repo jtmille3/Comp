@@ -113,13 +113,12 @@ public class StatisticService {
         try {
             final Connection conn = Database.getConnection();
             final PreparedStatement pstmt = conn
-                    .prepareStatement("SELECT * FROM shutout_alltime_statistics WHERE goalie = 1 ORDER BY shutouts desc");
+                    .prepareStatement("SELECT * FROM goalie_alltime_statistics ORDER BY shutouts desc");
 
             final ResultSet rs = pstmt.executeQuery();
             while (rs.next()) {
                 final Player statistic = new Player();
                 statistic.setName(rs.getString("player"));
-                statistic.setPlayerId(rs.getInt("player_id"));
                 statistic.setGoalsAgainst(rs.getInt("against"));
                 statistic.setShutouts(rs.getInt("shutouts"));
                 statistics.add(statistic);
