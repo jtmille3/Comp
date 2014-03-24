@@ -9,7 +9,7 @@
       <tbody>
         {{#each homePlayers}}
           <tr>
-            <td><button class="btn btn-mini btn-success add-goal" data-name-id="{{playerId}}"><i class="icon-plus icon-white"></i></button> <strong id="{{playerId}}-goals">{{goals}}</strong> <button class="btn btn-mini btn-danger remove-goal" data-name-id="{{playerId}}"><i class="icon-minus icon-white"></i></button></td>
+            <td><button class="btn btn-xs btn-success add-goal" data-name-id="{{playerId}}"><i class="glyphicon glyphicon-plus"></i></button> <strong id="{{playerId}}-goals">{{goals}}</strong> <button class="btn btn-xs btn-danger remove-goal" data-name-id="{{playerId}}"><i class="glyphicon glyphicon-minus"></i></button></td>
             <td>{{name}}</td>
           </tr>
         {{/each}}
@@ -18,7 +18,7 @@
   </div>
   <div class="col-md-6">
     <h4>{{away}} (<span class="{{awayId}}-score">{{awayScore}}</span>)</h4>
-    <table id="away-players-table" class="table table-condensed table-bordered table-striped table-hover">
+    <table id="away-players-table" class="table table-condensed table-striped table-hover">
       <thead>
         <th width="90px">Goals</th>
         <th>Player</th>
@@ -26,7 +26,7 @@
       <tbody>
         {{#each awayPlayers}}
           <tr>
-            <td><button class="btn btn-mini btn-success add-goal" data-name-id="{{playerId}}"><i class="icon-plus icon-white"></i></button> <strong id="{{playerId}}-goals">{{goals}}</strong> <button class="btn btn-mini btn-danger remove-goal" data-name-id="{{playerId}}"><i class="icon-minus icon-white"></i></button></td>
+            <td><button class="btn btn-xs btn-success add-goal" data-name-id="{{playerId}}"><i class="glyphicon glyphicon-plus"></i></button> <strong id="{{playerId}}-goals">{{goals}}</strong> <button class="btn btn-xs btn-danger remove-goal" data-name-id="{{playerId}}"><i class="glyphicon glyphicon-minus"></i></button></td>
             <td>{{name}}</td>
           </tr>
         {{/each}}
