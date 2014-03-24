@@ -17,6 +17,7 @@ public class CompetitiveService {
 		competitive.setSeasons(this.seasonService.getSeasons());
 		competitive.setPlayerStatistics(this.statisticService.getPlayerStatistics());
 		competitive.setGoalieStatistics(this.statisticService.getGoalieStatistics());
+        competitive.setShutoutStatistics(this.statisticService.getShutoutStatistics());
 		competitive.setGoals(this.goalService.getGoals());
 
 		for (final Season season : competitive.getSeasons()) {

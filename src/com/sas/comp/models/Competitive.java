@@ -6,9 +6,10 @@ public class Competitive {
 	private List<Season> seasons;
 	private List<Player> playerStatistics;
 	private List<Player> goalieStatistics;
+    private List<Player> shutoutStatistics;
 	private List<Goal> goals;
 
-	public List<Season> getSeasons() {
+    public List<Season> getSeasons() {
 		return seasons;
 	}
 
@@ -40,4 +41,11 @@ public class Competitive {
 		this.goals = goals;
 	}
 
+    public void setShutoutStatistics(List<Player> shutoutStatistics) {
+        this.shutoutStatistics = shutoutStatistics;
+    }
+
+    public List<Player> getShutoutStatistics() {
+        return shutoutStatistics;
+    }
 }

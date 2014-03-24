@@ -7,10 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="338d9bed-963b-460f-a418-ff028a1d4e43" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/sas/comp/models/Competitive.java" afterPath="$PROJECT_DIR$/src/com/sas/comp/models/Competitive.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/sas/comp/service/CompetitiveService.java" afterPath="$PROJECT_DIR$/src/com/sas/comp/service/CompetitiveService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/sas/comp/service/StatisticService.java" afterPath="$PROJECT_DIR$/src/com/sas/comp/service/StatisticService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/com/sas/comp/service/StatisticServiceTest.java" afterPath="$PROJECT_DIR$/test/com/sas/comp/service/StatisticServiceTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/scripts/goals_season.js" afterPath="$PROJECT_DIR$/web/app/scripts/goals_season.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="comp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -110,39 +109,57 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PlayerService.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/sas/comp/service/PlayerService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1095">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <marker date="1394915139000" expanded="true" signature="585:628" placeholder="SELECT name,..players..." />
-                <marker date="1394915139000" expanded="true" signature="1509:1544" placeholder="INSERT INTO ..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StatisticService.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="StatisticService.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/sas/comp/service/StatisticService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1772" max-vertical-offset="2445">
-              <caret line="134" column="44" selection-start-line="134" selection-start-column="24" selection-end-line="134" selection-end-column="44" />
+            <state vertical-scroll-proportion="0.62749004" vertical-offset="1905" max-vertical-offset="2595">
+              <caret line="148" column="58" selection-start-line="148" selection-start-column="58" selection-end-line="148" selection-end-column="58" />
               <folding>
-                <marker date="1395630068000" expanded="true" signature="546:648" placeholder="SELECT * FRO..player_statistics..." />
-                <marker date="1395630068000" expanded="true" signature="1755:1829" placeholder="SELECT * FRO..goalie_statistics..." />
-                <marker date="1395630068000" expanded="true" signature="2645:2704" placeholder="SELECT * FRO..player_alltime_statistics..." />
-                <marker date="1395630068000" expanded="true" signature="3544:3606" placeholder="SELECT * FRO..goalie_alltime_statistics..." />
-                <marker date="1395630068000" expanded="true" signature="4373:4436" placeholder="SELECT * FRO..shutout_alltime_statistics..." />
+                <element signature="imports" expanded="true" />
+                <element signature="e#401#409#0" expanded="true" />
+                <element signature="e#1798#1806#0" expanded="true" />
+                <element signature="e#2909#2917#0" expanded="true" />
+                <element signature="e#4021#4029#0" expanded="true" />
+                <element signature="e#5027#5035#0" expanded="true" />
+                <marker date="1395630685000" expanded="true" signature="578:680" placeholder="SELECT * FRO..player_statistics..." />
+                <marker date="1395630685000" expanded="true" signature="1975:2065" placeholder="SELECT * FRO..shutout_statistics..." />
+                <marker date="1395630685000" expanded="true" signature="3086:3145" placeholder="SELECT * FRO..player_alltime_statistics..." />
+                <marker date="1395630685000" expanded="true" signature="4198:4278" placeholder="SELECT * FRO..shutout_alltime_statistics..." />
+                <marker date="1395630685000" expanded="true" signature="5204:5267" placeholder="SELECT * FRO..shutout_alltime_statistics..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StatisticServiceTest.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="CompetitiveService.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/sas/comp/service/CompetitiveService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="570">
+              <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Competitive.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/sas/comp/models/Competitive.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="615">
+              <caret line="8" column="43" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
+              <folding>
+                <element signature="e#996#997#0" expanded="true" />
+                <element signature="e#1054#1055#0" expanded="true" />
+                <element signature="e#1104#1105#0" expanded="true" />
+                <element signature="e#1144#1145#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StatisticServiceTest.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/com/sas/comp/service/StatisticServiceTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3325792" vertical-offset="138" max-vertical-offset="780">
+            <state vertical-scroll-proportion="0.0" vertical-offset="138" max-vertical-offset="780">
               <caret line="24" column="58" selection-start-line="24" selection-start-column="49" selection-end-line="24" selection-end-column="49" />
               <folding />
             </state>
@@ -205,8 +222,10 @@
         <option value="$PROJECT_DIR$/web/app/index.html" />
         <option value="$PROJECT_DIR$/web/app/less/main.less" />
         <option value="$PROJECT_DIR$/web/app/scripts/goals_season.js" />
-        <option value="$PROJECT_DIR$/src/com/sas/comp/service/StatisticService.java" />
         <option value="$PROJECT_DIR$/test/com/sas/comp/service/StatisticServiceTest.java" />
+        <option value="$PROJECT_DIR$/src/com/sas/comp/service/CompetitiveService.java" />
+        <option value="$PROJECT_DIR$/src/com/sas/comp/models/Competitive.java" />
+        <option value="$PROJECT_DIR$/src/com/sas/comp/service/StatisticService.java" />
       </list>
     </option>
   </component>
@@ -879,7 +898,7 @@
       <updated>1364607849370</updated>
       <workItem from="1395194693376" duration="100000" />
       <workItem from="1395268066210" duration="4519000" />
-      <workItem from="1395275948717" duration="50764000" />
+      <workItem from="1395275948717" duration="51298000" />
     </task>
     <task id="LOCAL-00001" summary="Switching servers.">
       <created>1366829491658</created>
@@ -889,7 +908,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55383000" />
+    <option name="totallyTimeSpent" value="55917000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -922,19 +941,19 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32975337" sideWeight="0.6706068" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39897698" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27621484" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32891247" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32891247" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2453505" sideWeight="0.7228117" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27621484" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27621484" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3286445" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39897698" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39897698" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3279503" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20373027" sideWeight="0.28647214" order="3" side_tool="true" content_ui="tabs" />
@@ -980,21 +999,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/app/scripts/bracket.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3165">
-          <caret line="150" column="44" selection-start-line="150" selection-start-column="44" selection-end-line="150" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Gruntfile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3750" max-vertical-offset="4065">
-          <caret line="250" column="45" selection-start-line="250" selection-start-column="18" selection-end-line="250" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/app/templates/_league_schedule.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="195" max-vertical-offset="345">
@@ -1083,13 +1087,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="465" max-vertical-offset="1530">
           <caret line="31" column="54" selection-start-line="31" selection-start-column="54" selection-end-line="31" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/sas/comp/service/CompetitiveService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5400982" vertical-offset="0" max-vertical-offset="611">
-          <caret line="22" column="57" selection-start-line="22" selection-start-column="57" selection-end-line="22" selection-end-column="57" />
         </state>
       </provider>
     </entry>
@@ -1333,10 +1330,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/app/scripts/goals_season.js">
+    <entry file="file://$PROJECT_DIR$/src/com/sas/comp/models/Player.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="375" max-vertical-offset="2355">
-          <caret line="35" column="45" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
+        <state vertical-scroll-proportion="0.055762082" vertical-offset="0" max-vertical-offset="1155">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/com/sas/comp/service/StatisticServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="138" max-vertical-offset="780">
+          <caret line="24" column="58" selection-start-line="24" selection-start-column="49" selection-end-line="24" selection-end-column="49" />
           <folding />
         </state>
       </provider>
@@ -1346,39 +1351,71 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1095">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1394915139000" expanded="true" signature="585:628" placeholder="SELECT name,..players..." />
-            <marker date="1394915139000" expanded="true" signature="1509:1544" placeholder="INSERT INTO ..." />
+            <marker date="1394915139000" expanded="true" signature="-1:-1" placeholder="SELECT name,..players..." />
+            <marker date="1394915139000" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/sas/comp/models/Player.java">
+    <entry file="file://$PROJECT_DIR$/web/app/scripts/goals_season.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.055762082" vertical-offset="0" max-vertical-offset="1155">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="375" max-vertical-offset="2355">
+          <caret line="35" column="45" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/sas/comp/models/Competitive.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7468355" vertical-offset="36" max-vertical-offset="510">
+          <caret line="42" column="4" selection-start-line="42" selection-start-column="4" selection-end-line="42" selection-end-column="4" />
+          <folding>
+            <element signature="e#996#997#0" expanded="true" />
+            <element signature="e#1054#1055#0" expanded="true" />
+            <element signature="e#1104#1105#0" expanded="true" />
+            <element signature="e#1144#1145#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/sas/comp/service/CompetitiveService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="570">
+          <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/sas/comp/models/Competitive.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="615">
+          <caret line="8" column="43" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
+          <folding>
+            <element signature="e#996#997#0" expanded="true" />
+            <element signature="e#1054#1055#0" expanded="true" />
+            <element signature="e#1104#1105#0" expanded="true" />
+            <element signature="e#1144#1145#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/sas/comp/service/StatisticService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1772" max-vertical-offset="2445">
-          <caret line="134" column="44" selection-start-line="134" selection-start-column="24" selection-end-line="134" selection-end-column="44" />
+        <state vertical-scroll-proportion="0.62749004" vertical-offset="1905" max-vertical-offset="2595">
+          <caret line="148" column="58" selection-start-line="148" selection-start-column="58" selection-end-line="148" selection-end-column="58" />
           <folding>
-            <marker date="1395630068000" expanded="true" signature="546:648" placeholder="SELECT * FRO..player_statistics..." />
-            <marker date="1395630068000" expanded="true" signature="1755:1829" placeholder="SELECT * FRO..goalie_statistics..." />
-            <marker date="1395630068000" expanded="true" signature="2645:2704" placeholder="SELECT * FRO..player_alltime_statistics..." />
-            <marker date="1395630068000" expanded="true" signature="3544:3606" placeholder="SELECT * FRO..goalie_alltime_statistics..." />
-            <marker date="1395630068000" expanded="true" signature="4373:4436" placeholder="SELECT * FRO..shutout_alltime_statistics..." />
+            <element signature="imports" expanded="true" />
+            <element signature="e#401#409#0" expanded="true" />
+            <element signature="e#1798#1806#0" expanded="true" />
+            <element signature="e#2909#2917#0" expanded="true" />
+            <element signature="e#4021#4029#0" expanded="true" />
+            <element signature="e#5027#5035#0" expanded="true" />
+            <marker date="1395630685000" expanded="true" signature="578:680" placeholder="SELECT * FRO..player_statistics..." />
+            <marker date="1395630685000" expanded="true" signature="1975:2065" placeholder="SELECT * FRO..shutout_statistics..." />
+            <marker date="1395630685000" expanded="true" signature="3086:3145" placeholder="SELECT * FRO..player_alltime_statistics..." />
+            <marker date="1395630685000" expanded="true" signature="4198:4278" placeholder="SELECT * FRO..shutout_alltime_statistics..." />
+            <marker date="1395630685000" expanded="true" signature="5204:5267" placeholder="SELECT * FRO..shutout_alltime_statistics..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/com/sas/comp/service/StatisticServiceTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3325792" vertical-offset="138" max-vertical-offset="780">
-          <caret line="24" column="58" selection-start-line="24" selection-start-column="49" selection-end-line="24" selection-end-column="49" />
-          <folding />
         </state>
       </provider>
     </entry>
