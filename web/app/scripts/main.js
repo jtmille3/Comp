@@ -13,7 +13,7 @@ require.config({
 //    }
 });
 
-define(['./controller/competitive'], function (competitiveController) {
+require(['./controller/competitive'], function (competitiveController) {
     'use strict';
     $.getJSON('/service/competitive', function(competitive) {
         competitiveController.render(competitive);

@@ -88,7 +88,6 @@ module.exports = function (grunt) {
         },
         requirejs: {
             build: {
-                // Options: https://github.com/jrburke/r.js/blob/master/build/example.build.js
                 options: {
                     almond: false,
                     wrap: false,
@@ -98,11 +97,11 @@ module.exports = function (grunt) {
                     replaceRequireScript: [
                         {
                             files: ['<%= yeoman.dist %>/index.html'],
-                            module: 'main',
+                            module: 'main'
                         },
                         {
                             files: ['<%= yeoman.dist %>/admin.html'],
-                            module: 'admin',
+                            module: 'admin'
                         }
                     ],
                     modules: [
@@ -184,6 +183,23 @@ module.exports = function (grunt) {
                 ]
             }
         },
+        rev: {
+            options: {
+                encoding: 'utf8',
+                algorithm: 'md5',
+                length: 8
+            },
+            assets: {
+                files: [{
+                    src: [
+                        '<%= yeoman.dist %>/scripts/{,*/!(require)}*.js',
+                        '<%= yeoman.dist %>/styles/{,*/}*.css',
+                        '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp}',
+                        '<%= yeoman.dist %>/fonts/{,*/}*.*'
+                    ]
+                }]
+            }
+        },
         bower: {
             rjsConfig: 'app/scripts/main.js',
             indent: '    '
@@ -254,6 +270,7 @@ module.exports = function (grunt) {
         'concat',
         'uglify',
         'copy',
+        'rev',
         'usemin',
         'clean:build'
     ]);

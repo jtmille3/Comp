@@ -16,9 +16,6 @@ define(function(require) {
                 player.goalsAgainst = p1.goalsAgainst;
             });
 
-            var headerTemplate = window.comp['web/app/templates/header.html'];
-            $('#header').html(headerTemplate(competitive));
-
 			var compTemplate = window.comp['web/app/templates/comp.html'];
 			$('#competitive').html(compTemplate(competitive));
 
