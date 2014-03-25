@@ -89,7 +89,7 @@ module.exports = function (grunt) {
         requirejs: {
             build: {
                 options: {
-                    almond: false,
+                    almond: true,
                     wrap: false,
                     baseUrl: 'scripts',
                     appDir: '<%= yeoman.app %>',
@@ -97,11 +97,13 @@ module.exports = function (grunt) {
                     replaceRequireScript: [
                         {
                             files: ['<%= yeoman.dist %>/index.html'],
-                            module: 'main'
+                            module: 'main',
+                            modulePath: '/scripts/main'
                         },
                         {
                             files: ['<%= yeoman.dist %>/admin.html'],
-                            module: 'admin'
+                            module: 'admin',
+                            modulePath: '/scripts/admin'
                         }
                     ],
                     modules: [
@@ -261,12 +263,12 @@ module.exports = function (grunt) {
         'clean:dist',
         'less:production',
         'handlebars',
-        'requirejs',
         'useminPrepare',
         'clean:imagemin',
         'imagemin',
         'cssmin',
         'htmlmin',
+        'requirejs',
         'concat',
         'uglify',
         'copy',
