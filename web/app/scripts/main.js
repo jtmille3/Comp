@@ -23,11 +23,13 @@ require(['./controller/competitive'], function (competitiveController) {
     crossroads.addRoute('alltime', function() {
         competitiveController.renderAllTime();
     });
+    crossroads.addRoute('reset');
 
-    var lastHash = null;
+    var firstHash = null;
     function parseHash(hash) {
-        lastHash = hash;
         crossroads.parse(hash);
+        if(!firstHash)
+            firstHash = hash;
     }
 
     hasher.initialized.add(parseHash);
@@ -37,8 +39,9 @@ require(['./controller/competitive'], function (competitiveController) {
     $.getJSON('/service/competitive', function(competitive) {
         competitiveController.init(competitive);
 
-        if(lastHash) {
-            hasher.setHash(lastHash);
+        if(firstHash) {
+            hasher.setHash('reset');
+            hasher.setHash(firstHash);
         } else {
             // navigate to the first season
             var season = Lazy(competitive.seasons).first();
