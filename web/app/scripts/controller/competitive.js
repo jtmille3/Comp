@@ -6,7 +6,7 @@ define(function(require) {
     var goalsSeason = require('goals_season');
 
 	return {
-		render: function(competitive) {
+		init: function(competitive) {
 			var self = this;
 			this.competitive = competitive;
 
@@ -288,6 +288,22 @@ define(function(require) {
                 cache: true,
                 jsonpCallback: 'wxCallback'
             });
+        },
+        renderSeason: function(id) {
+            console.log('season ' + id);
+            $('#comp-menu').children().removeClass('active');
+            $('#menu-season-' + id).addClass('active');
+
+            $('#comp-panels').children().removeClass('active');
+            $('#season-' + id).addClass('active');
+        },
+        renderAllTime: function() {
+            console.log('all time');
+            $('#comp-menu').children().removeClass('active');
+            $('#menu-all-time').addClass('active');
+
+            $('#comp-panels').children().removeClass('active');
+            $('#all-time').addClass('active');
         }
 	};
 });

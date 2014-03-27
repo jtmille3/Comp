@@ -1,16 +1,16 @@
 <div class="sidebar col-md-2">
     <div class="sidebar-nav">
-        <ul class="nav nav-list">
+        <ul class="nav nav-list" id="comp-menu">
             <li class="nav-header">Seasons</li>
             {{#each seasons}}
-            <li {{#unless @index}}class='active'{{/unless}}><a href="#season-{{id}}" data-toggle="tab">{{name}}</a></li>
+            <li {{#unless @index}}class='active'{{/unless}} id="menu-season-{{id}}"><a href="#/seasons/{{id}}">{{name}}</a></li>
             {{/each}}
             <li class="nav-header">Statistics</li>
-            <li><a href="#all-time" data-toggle="tab">All Time</a></li>
+            <li id="menu-all-time"><a href="#/alltime">All Time</a></li>
         </ul>
     </div><!--/.well -->
 </div>
-<div class="tab-content col-md-offset-2 col-md-10">
+<div class="tab-content col-md-offset-2 col-md-10" id="comp-panels">
   {{#each seasons}}
   <div class="tab-pane {{#unless @index}}active{{/unless}}" id="season-{{id}}">
     <div class="container-fluid">
@@ -18,10 +18,10 @@
             <div class="col-md-12">
                 <h1 class="page-header">{{name}} Season</h1>
                 <ul class="nav nav-pills">
-                    <li class="active"><a href="#standings-{{id}}" data-toggle="pill">Standings</a></li>
-                    <li><a href="#schedule-{{id}}" data-toggle="pill">Schedule</a></li>
-                    <li><a href="#statistics-{{id}}" data-toggle="pill">Statistics</a></li>
-                    <li><a href="#playoffs-{{id}}" data-toggle="pill">Playoffs</a></li>
+                    <li class="active"><a href="#standings-{{id}}">Standings</a></li>
+                    <li><a href="#schedule-{{id}}">Schedule</a></li>
+                    <li><a href="#statistics-{{id}}">Statistics</a></li>
+                    <li><a href="#playoffs-{{id}}">Playoffs</a></li>
                 </ul>
                 <div class="tab-content">
                     <div class="tab-pane active" id="standings-{{id}}">{{> standings this}}</div>

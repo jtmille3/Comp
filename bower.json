@@ -13,7 +13,10 @@
         "lazy.js": "~0.3",
         "almond": "~0.2.9",
         "typeahead.js": "0.10.2",
-        "tipsy": "0.1.7"
+        "tipsy": "0.1.7",
+        "js-signals": "1.0.0",
+        "crossroads": "0.12.0",
+        "hasher": "1.2.0"
     },
     "devDependencies": {},
     "resolutions": {
