@@ -3,31 +3,31 @@
         <ul class="nav nav-list" id="comp-menu">
             <li class="nav-header">Seasons</li>
             {{#each seasons}}
-            <li {{#unless @index}}class='active'{{/unless}} id="menu-season-{{id}}"><a href="#/seasons/{{id}}">{{name}}</a></li>
+            <li {{#unless @index}}class='active'{{/unless}} id="comp-season-{{id}}-menu"><a href="#/seasons/{{id}}">{{name}}</a></li>
             {{/each}}
             <li class="nav-header">Statistics</li>
-            <li id="menu-all-time"><a href="#/alltime">All Time</a></li>
+            <li id="comp-all-time-menu"><a href="#/alltime">All Time</a></li>
         </ul>
     </div><!--/.well -->
 </div>
-<div class="tab-content col-md-offset-2 col-md-10" id="comp-panels">
+<div class="tab-content col-md-offset-2 col-md-10" id="comp-content">
   {{#each seasons}}
-  <div class="tab-pane {{#unless @index}}active{{/unless}}" id="season-{{id}}">
+  <div class="tab-pane {{#unless @index}}active{{/unless}}" id="season-{{id}}-content">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
                 <h1 class="page-header">{{name}} Season</h1>
-                <ul class="nav nav-pills">
-                    <li class="active"><a href="#standings-{{id}}">Standings</a></li>
-                    <li><a href="#schedule-{{id}}">Schedule</a></li>
-                    <li><a href="#statistics-{{id}}">Statistics</a></li>
-                    <li><a href="#playoffs-{{id}}">Playoffs</a></li>
+                <ul class="nav nav-pills" id="season-{{id}}-menu">
+                    <li class="active" id="season-{{id}}-standings-menu"><a href="#/seasons/{{id}}/standings">Standings</a></li>
+                    <li id="season-{{id}}-schedule-menu"><a href="#/seasons/{{id}}/schedule">Schedule</a></li>
+                    <li id="season-{{id}}-statistics-menu"><a href="#/seasons/{{id}}/statistics">Statistics</a></li>
+                    <li id="season-{{id}}-playoffs-menu"><a href="#/seasons/{{id}}/playoffs">Playoffs</a></li>
                 </ul>
-                <div class="tab-content">
-                    <div class="tab-pane active" id="standings-{{id}}">{{> standings this}}</div>
-                    <div class="tab-pane" id="schedule-{{id}}">{{> league_schedule this}}</div>
-                    <div class="tab-pane" id="statistics-{{id}}">{{> statistics this}}</div>
-                    <div class="tab-pane" id="playoffs-{{id}}">{{> playoff_schedule this}}</div>
+                <div class="tab-content" id="season-{{id}}-tabs">
+                    <div class="tab-pane active" id="season-{{id}}-standings">{{> standings this}}</div>
+                    <div class="tab-pane" id="season-{{id}}-schedule">{{> league_schedule this}}</div>
+                    <div class="tab-pane" id="season-{{id}}-statistics">{{> statistics this}}</div>
+                    <div class="tab-pane" id="season-{{id}}-playoffs">{{> playoff_schedule this}}</div>
                 </div>
             </div>
         </div>

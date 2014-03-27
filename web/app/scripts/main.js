@@ -1,16 +1,4 @@
 require.config({
-//    paths: {
-//        jquery: '../components/jquery/dist/jquery',
-//        d3: '../components/d3/d3'
-//    },
-//    shim: {
-//        'jquery': {
-//            exports: '$'
-//        },
-//        'd3': {
-//            exports: 'd3'
-//        }
-//    }
 });
 
 require(['./controller/competitive'], function (competitiveController) {
@@ -20,25 +8,41 @@ require(['./controller/competitive'], function (competitiveController) {
     crossroads.addRoute('seasons/{id}', function(id) {
         competitiveController.renderSeason(id);
     });
+    crossroads.addRoute('seasons/{id}/standings', function(id) {
+        competitiveController.renderStandings(id);
+    });
+    crossroads.addRoute('seasons/{id}/schedule', function(id) {
+        competitiveController.renderSchedule(id);
+    });
+    crossroads.addRoute('seasons/{id}/statistics', function(id) {
+        competitiveController.renderStatistics(id);
+    });
+    crossroads.addRoute('seasons/{id}/playoffs', function(id) {
+        competitiveController.renderPlayoffs(id);
+    });
     crossroads.addRoute('alltime', function() {
         competitiveController.renderAllTime();
     });
-    // crossroads.routed.add(console.log, console); //log all routes
 
-    //setup hasher
-    function parseHash(newHash, oldHash) {
-        crossroads.parse(newHash);
+    var lastHash = null;
+    function parseHash(hash) {
+        lastHash = hash;
+        crossroads.parse(hash);
     }
 
-    hasher.initialized.add(parseHash); //parse initial hash
-    hasher.changed.add(parseHash); //parse hash changes
-    hasher.init(); //start listening for history change
+    hasher.initialized.add(parseHash);
+    hasher.changed.add(parseHash);
+    hasher.init();
 
     $.getJSON('/service/competitive', function(competitive) {
         competitiveController.init(competitive);
 
-        // navigate to the first season
-        var season = Lazy(competitive.seasons).first();
-        hasher.setHash('seasons/' + season.id);
+        if(lastHash) {
+            hasher.setHash(lastHash);
+        } else {
+            // navigate to the first season
+            var season = Lazy(competitive.seasons).first();
+            hasher.setHash('seasons/' + season.id);
+        }
     });
 });

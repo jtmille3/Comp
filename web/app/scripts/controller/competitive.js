@@ -290,20 +290,54 @@ define(function(require) {
             });
         },
         renderSeason: function(id) {
-            console.log('season ' + id);
             $('#comp-menu').children().removeClass('active');
-            $('#menu-season-' + id).addClass('active');
+            $('#comp-season-' + id + '-menu').addClass('active');
 
-            $('#comp-panels').children().removeClass('active');
-            $('#season-' + id).addClass('active');
+            $('#comp-content').children().removeClass('active');
+            $('#season-' + id + '-content').addClass('active');
         },
         renderAllTime: function() {
-            console.log('all time');
             $('#comp-menu').children().removeClass('active');
-            $('#menu-all-time').addClass('active');
+            $('#comp-all-time-menu').addClass('active');
 
-            $('#comp-panels').children().removeClass('active');
-            $('#all-time').addClass('active');
+            $('#comp-content').children().removeClass('active');
+            $('#all-time-content').addClass('active');
+        },
+        renderStandings: function(id) {
+            this.renderSeason(id);
+
+            $('#season-' + id + '-menu').children().removeClass('active');
+            $('#season-' + id + '-standings-menu').addClass('active');
+
+            $('#season-' + id + '-tabs').children().removeClass('active');
+            $('#season-' + id + '-standings').addClass('active');
+        },
+        renderSchedule: function(id) {
+            this.renderSeason(id);
+
+            $('#season-' + id + '-menu').children().removeClass('active');
+            $('#season-' + id + '-schedule-menu').addClass('active');
+
+            $('#season-' + id + '-tabs').children().removeClass('active');
+            $('#season-' + id + '-schedule').addClass('active');
+        },
+        renderStatistics: function(id) {
+            this.renderSeason(id);
+
+            $('#season-' + id + '-menu').children().removeClass('active');
+            $('#season-' + id + '-statistics-menu').addClass('active');
+
+            $('#season-' + id + '-tabs').children().removeClass('active');
+            $('#season-' + id + '-statistics').addClass('active');
+        },
+        renderPlayoffs: function(id) {
+            this.renderSeason(id);
+
+            $('#season-' + id + '-menu').children().removeClass('active');
+            $('#season-' + id + '-playoffs-menu').addClass('active');
+
+            $('#season-' + id + '-tabs').children().removeClass('active');
+            $('#season-' + id + '-playoffs').addClass('active');
         }
 	};
 });
