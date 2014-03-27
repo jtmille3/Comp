@@ -7,7 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="338d9bed-963b-460f-a418-ff028a1d4e43" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/scripts/controller/competitive.js" afterPath="$PROJECT_DIR$/web/app/scripts/controller/competitive.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/scripts/main.js" afterPath="$PROJECT_DIR$/web/app/scripts/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="comp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -77,11 +79,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="competitive.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="competitive.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/app/scripts/controller/competitive.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="4797" max-vertical-offset="5220">
-              <caret line="333" column="40" selection-start-line="333" selection-start-column="34" selection-end-line="333" selection-end-column="34" />
+            <state vertical-scroll-proportion="0.71631205" vertical-offset="4122" max-vertical-offset="5310">
+              <caret line="295" column="23" selection-start-line="295" selection-start-column="23" selection-end-line="295" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -107,11 +109,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="main.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/app/scripts/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.58715594" vertical-offset="119" max-vertical-offset="840">
-              <caret line="25" column="30" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="419" max-vertical-offset="855">
+              <caret line="39" column="20" selection-start-line="39" selection-start-column="18" selection-end-line="39" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -170,8 +172,8 @@
         <option value="$PROJECT_DIR$/web/app/index.html" />
         <option value="$PROJECT_DIR$/web/app/templates/_alltime.html" />
         <option value="$PROJECT_DIR$/web/app/templates/comp.html" />
-        <option value="$PROJECT_DIR$/web/app/scripts/controller/competitive.js" />
         <option value="$PROJECT_DIR$/web/app/scripts/main.js" />
+        <option value="$PROJECT_DIR$/web/app/scripts/controller/competitive.js" />
       </list>
     </option>
   </component>
@@ -805,7 +807,7 @@
       <workItem from="1395194693376" duration="100000" />
       <workItem from="1395268066210" duration="4519000" />
       <workItem from="1395275948717" duration="57442000" />
-      <workItem from="1395706578225" duration="21071000" />
+      <workItem from="1395706578225" duration="21953000" />
     </task>
     <task id="LOCAL-00001" summary="Switching servers.">
       <created>1366829491658</created>
@@ -815,7 +817,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83132000" />
+    <option name="totallyTimeSpent" value="84014000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1253,14 +1255,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/comp/scripts/9e338414.competitive.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="423">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/app/templates/_standings.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5825243" vertical-offset="0" max-vertical-offset="540">
@@ -1293,18 +1287,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/app/scripts/controller/competitive.js">
+    <entry file="file://$PROJECT_DIR$/web/app/scripts/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="4797" max-vertical-offset="5220">
-          <caret line="333" column="40" selection-start-line="333" selection-start-column="34" selection-end-line="333" selection-end-column="34" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="419" max-vertical-offset="855">
+          <caret line="39" column="20" selection-start-line="39" selection-start-column="18" selection-end-line="39" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/app/scripts/main.js">
+    <entry file="file://$PROJECT_DIR$/web/app/scripts/controller/competitive.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.58715594" vertical-offset="119" max-vertical-offset="840">
-          <caret line="25" column="30" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
+        <state vertical-scroll-proportion="0.71631205" vertical-offset="4122" max-vertical-offset="5310">
+          <caret line="295" column="23" selection-start-line="295" selection-start-column="23" selection-end-line="295" selection-end-column="23" />
           <folding />
         </state>
       </provider>

@@ -290,6 +290,12 @@ define(function(require) {
             });
         },
         renderSeason: function(id) {
+            if(!id && this.competitive) {
+                id = id || Lazy(this.competitive.seasons).first().id;
+            } else if(!id && !this.competitive) {
+                return;
+            }
+
             $('#comp-menu').children().removeClass('active');
             $('#comp-season-' + id + '-menu').addClass('active');
 

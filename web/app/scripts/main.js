@@ -23,6 +23,9 @@ require(['./controller/competitive'], function (competitiveController) {
     crossroads.addRoute('alltime', function() {
         competitiveController.renderAllTime();
     });
+    crossroads.addRoute('', function() {
+        competitiveController.renderSeason(null);
+    });
     crossroads.addRoute('reset');
 
     var firstHash = null;
@@ -43,9 +46,7 @@ require(['./controller/competitive'], function (competitiveController) {
             hasher.setHash('reset');
             hasher.setHash(firstHash);
         } else {
-            // navigate to the first season
-            var season = Lazy(competitive.seasons).first();
-            hasher.setHash('seasons/' + season.id);
+            hasher.setHash('');
         }
     });
 });
