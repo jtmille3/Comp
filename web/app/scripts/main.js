@@ -39,7 +39,15 @@ require(['./controller/competitive'], function (competitiveController) {
     hasher.changed.add(parseHash);
     hasher.init();
 
-    $.getJSON('/service/competitive', function(competitive) {
+    if(!window.globalCompetitive) {
+        $.getJSON('/service/competitive', function(competitive) {
+            loadCompetitive(competitive);
+        });
+    }  else {
+        loadCompetitive(window.globalCompetitive);
+    }
+
+    function loadCompetitive(competitive) {
         competitiveController.init(competitive);
 
         if(firstHash) {
@@ -48,5 +56,6 @@ require(['./controller/competitive'], function (competitiveController) {
         } else {
             hasher.setHash('');
         }
-    });
+    }
+
 });
