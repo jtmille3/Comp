@@ -1,7 +1,7 @@
 node_modules
 temp
 dist
-comp
+web/comp
 .sass-cache
 app/components
 work
