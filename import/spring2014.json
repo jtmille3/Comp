@@ -126,6 +126,7 @@
         {
             "name": "The Brazucas",
             "captain": "Sabourin, Philippe",
+            "cocaptain": "Robison, Russ",
             "goalie": "Gerakios, Peter",
             "players": [
                 "Sabourin, Philippe",
@@ -304,6 +305,54 @@
             "away": "Bosko and the Looney Tunes",
             "home": "The Brazucas",
             "datetime": "2014-05-07 12:30:00"
+        },
+        {
+            "away": "AsSASsins",
+            "home": "Miller Genuine Football",
+            "datetime": "2014-06-02 11:30:00",
+            "playoff": true
+        },
+        {
+            "away": "Real Pathetica",
+            "home": "The Brazucas",
+            "datetime": "2014-06-02 12:30:00",
+            "playoff": true
+        },
+        {
+            "away": "Sershen Destroy - A San Diego Chargers Team",
+            "home": "Leo Messy",
+            "datetime": "2014-06-02 11:30:00",
+            "playoff": true
+        },
+        {
+            "away": "Deportivo Carcosa",
+            "home": "Bosko and the Looney Tunes",
+            "datetime": "2014-06-02 12:30:00",
+            "playoff": true
+        },
+        {
+            "away": "Real Pathetica",
+            "home": "Miller Genuine Football",
+            "datetime": "2014-06-05 11:30:00",
+            "playoff": true
+        },
+        {
+            "away": "AsSASsins",
+            "home": "The Brazucas",
+            "datetime": "2014-06-05 11:30:00",
+            "playoff": true
+        },
+        {
+            "away": "Bosko and the Looney Tunes",
+            "home": "Leo Messy",
+            "datetime": "2014-06-05 12:30:00",
+            "playoff": true
+        },
+        {
+            "away": "Deportivo Carcosa",
+            "home": "Sershen Destroy - A San Diego Chargers Team",
+            "datetime": "2014-06-05 12:30:00",
+            "playoff": true
         }
     ]
 }

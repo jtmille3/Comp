@@ -20,6 +20,8 @@ public class Game {
 	private Integer awayScore;
 	private Integer gameId;
 
+    private Boolean playoff;
+
 	public String getHome() {
 		return home;
 	}
@@ -106,5 +108,13 @@ public class Game {
 
     public void setSeasonId(final Integer seasonId) {
         this.seasonId = seasonId;
+    }
+
+    public Boolean getPlayoff() {
+        return playoff;
+    }
+
+    public void setPlayoff(Boolean playoff) {
+        this.playoff = playoff;
     }
 }

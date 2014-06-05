@@ -93,6 +93,7 @@ public class ImportService {
             final String away = gameMap.get("away").toString();
             final String home = gameMap.get("home").toString();
             final String datetime = gameMap.get("datetime").toString();
+            final Boolean playoff = gameMap.get("playoff") != null ? true : false;
 
             final Team homeGame = teamService.find(home, season.getId());
             final Team awayGame = teamService.find(away, season.getId());
@@ -106,6 +107,7 @@ public class ImportService {
             game.setHomeId(homeGame.getId());
             game.setHomeScore(null);
             game.setDate(sdf.parse(datetime));
+            game.setPlayoff(playoff);
 
             if(!gameService.isScheduled(game)) {
                 gameService.save(game);
