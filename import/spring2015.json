@@ -1,0 +1,321 @@
+{
+    "season": "2015 Spring",
+    "teams": [
+        {
+            "name": "Liquid football",
+            "captain": "McGrother, Simon",
+            "goalie": "Trexler, Jon",
+            "players": [
+                "McGrother, Simon",
+                "McGough, Adrian",
+                "Ilmberger, Chris",
+                "Wilder, George",
+                "Landy, James",
+                "Trexler, Jon",
+                "Rathod, Ketan",
+                "Davis, Mark",
+                "Zachary, Michael",
+                "Trexler, Patty",
+                "Sabourin, Philippe",
+                "Ryan, Stephen",
+                "Rasathurai, Sumithran",
+                "Mangum, Tim"
+            ]
+        },
+        {
+            "name": "Los Pollos Hermanos",
+            "captain": "Fuller, Jay",
+            "goalie": "Reese, Jason",
+            "players": [
+                "Fuller, Jay",
+                "Trubey, Brad",
+                "Berry, Bruce",
+                "Zimmerman, Danny",
+                "Segbefia, Gideon",
+                "Elfaysal, Hassan",
+                "Reese, Jason",
+                "Chambers, Joe",
+                "Salvatore, Nick",
+                "Polo, Paul",
+                "O'Brien, Richard",
+                "Ligtenberg, Robert",
+                "Allen, Taylor",
+                "Quinley, William"
+            ]
+        },
+        {
+            "name": "Leo Messy",
+            "captain": "Howard, Jordan",
+            "goalie": "Zalc, Eli",
+            "players": [
+                "Howard, Jordan",
+                "Shannon, Eddie",
+                "Zalc, Eli",
+                "Hurtado, Gerardo",
+                "Xing, Jie",
+                "Sperati, Josh",
+                "Snipes, Matt",
+                "Clayton, Mike",
+                "Pezzoni, Mike",
+                "Vazquez, Mike",
+                "Ye, Qing",
+                "Abbey, Ralph",
+                "George, Rob",
+                "Babineau, Steven"
+            ]
+        },
+        {
+            "name": "Bosko and the Looney Tunes",
+            "captain": "Bosko, Jason",
+            "goalie": "Gibson, Mark",
+            "players": [
+                "Bosko, Jason",
+                "DePompa, Andrew",
+                "Smith, Casey",
+                "Latour, Dominique",
+                "Weiss, James",
+                "Pingenot, Joseph",
+                "Hia, Kyle",
+                "Gibson, Mark",
+                "Paallo, Mark",
+                "Hosford, Matt",
+                "Klink, Rob",
+                "Gerardin, Robert",
+                "Robison, Russ",
+                "Valsaraj, Varunraj"
+            ]
+        },
+        {
+            "name": "Teams Great, Less Suck",
+            "captain": "Miller, Jeff",
+            "goalie": "Mukhopadhyay, Pushpal",
+            "players": [
+                "Miller, Jeff",
+                "Terrents, Brady",
+                "Watts, Brian",
+                "Zuercher, Brian",
+                "Brown, Chris",
+                "Boulus, Ian",
+                "Osten, Jacob",
+                "Thompson, Jeff",
+                "Lu, Jiangang",
+                "Mukhopadhyay, Pushpal",
+                "Tucker, Summer",
+                "Toiger, Tarmo",
+                "Lewis, Warren",
+                "Li, Yongcheng"
+            ]
+        },
+        {
+            "name": "You Poor Souls",
+            "captain": "Sershen, Leigh",
+            "goalie": "Montufar, Octavio",
+            "players": [
+                "Sershen, Leigh",
+                "Antonucci, Anthony",
+                "White, Carson",
+                "Hoh, Chris",
+                "Imbriani, Jack",
+                "Firlet, John",
+                "Taft, Lee",
+                "Lopes, Leonardo",
+                "Ruzzeddu, Luca",
+                "Pikalov, Mikhail",
+                "Montufar, Octavio",
+                "Borysov, Peter",
+                "Davis, Randy",
+                "Sioss, Rob"
+            ]
+        },
+        {
+            "name": "gg no re",
+            "captain": "Matthew, Jason",
+            "goalie": "N/A",
+            "players": [
+                "Matthew, Jason",
+                "Iagnocco, Alex",
+                "Neiman, Bryan",
+                "Hall, Chad",
+                "Woeful, Charles",
+                "Boyd, Chris",
+                "Hill, DeMarcus",
+                "McCorquodale, Don",
+                "Sanchez, Eduardo",
+                "Fulajtar, Frank",
+                "Lui, Kenny",
+                "Muraleetharan, M",
+                "Knouse, Mark",
+                "Enck, Steven"
+            ]
+        },
+        {
+            "name": "Barrel Monkeys FC",
+            "captain": "Lawrence, Brad",
+            "goalie": "Tamburro, Dan",
+            "players": [
+                "Lawrence, Brad",
+                "Smith, Brett",
+                "Bonham, Bob",
+                "Tamburro, Dan",
+                "Kummer, Daniel",
+                "Barkley, Ian",
+                "Polito, Jonathan",
+                "Craigwell-Graham, Julian",
+                "Arfaoui, Kais",
+                "Jackson, Laura",
+                "Bisgaard, Ole",
+                "Bishop, Orin",
+                "Hamm, Rob",
+                "Avett, Wes"
+            ]
+        }
+    ],
+    "games": [
+        {
+            "away": "Liquid football",
+            "home": "Los Pollos Hermanos",
+            "datetime": "2015-03-16 11:30:00"
+        },
+        {
+            "away": "Leo Messy",
+            "home": "Bosko and the Looney Tunes",
+            "datetime": "2015-03-18 11:30:00"
+        },
+        {
+            "away": "Teams Great, Less Suck",
+            "home": "You Poor Souls",
+            "datetime": "2015-03-16 12:30:00"
+        },
+        {
+            "away": "gg no re",
+            "home": "Barrel Monkeys FC",
+            "datetime": "2015-03-18 12:30:00"
+        },
+
+        {
+            "away": "Leo Messy",
+            "home": "Teams Great, Less Suck",
+            "datetime": "2015-03-23 11:30:00"
+        },
+        {
+            "away": "gg no re",
+            "home": "Liquid football",
+            "datetime": "2015-03-23 11:30:00"
+        },
+        {
+            "away": "Bosko and the Looney Tunes",
+            "home": "Los Pollos Hermanos",
+            "datetime": "2015-03-23 12:30:00"
+        },
+        {
+            "away": "Barrel Monkeys FC",
+            "home": "You Poor Souls",
+            "datetime": "2015-03-23 12:30:00"
+        },
+
+        {
+            "away": "Los Pollos Hermanos",
+            "home": "gg no re",
+            "datetime": "2015-03-30 11:30:00"
+        },
+        {
+            "away": "You Poor Souls",
+            "home": "Bosko and the Looney Tunes",
+            "datetime": "2015-03-30 11:30:00"
+        },
+        {
+            "away": "Teams Great, Less Suck",
+            "home": "Barrel Monkeys FC",
+            "datetime": "2015-03-30 12:30:00"
+        },
+        {
+            "away": "Liquid football",
+            "home": "Leo Messy",
+            "datetime": "2015-03-30 12:30:00"
+        },
+
+        {
+            "away": "You Poor Souls",
+            "home": "Liquid football",
+            "datetime": "2015-04-06 11:30:00"
+        },
+        {
+            "away": "Los Pollos Hermanos",
+            "home": "Barrel Monkeys FC",
+            "datetime": "2015-04-06 11:30:00"
+        },
+        {
+            "away": "gg no re",
+            "home": "Leo Messy",
+            "datetime": "2015-04-06 12:30:00"
+        },
+        {
+            "away": "Bosko and the Looney Tunes",
+            "home": "Teams Great, Less Suck",
+            "datetime": "2015-04-06 12:30:00"
+        },
+
+        {
+            "away": "Teams Great, Less Suck",
+            "home": "gg no re",
+            "datetime": "2015-04-13 11:30:00"
+        },
+        {
+            "away": "Barrel Monkeys FC",
+            "home": "Leo Messy",
+            "datetime": "2015-04-13 11:30:00"
+        },
+        {
+            "away": "Liquid football",
+            "home": "Bosko and the Looney Tunes",
+            "datetime": "2015-04-13 12:30:00"
+        },
+        {
+            "away": "Los Pollos Hermanos",
+            "home": "You Poor Souls",
+            "datetime": "2015-04-13 12:30:00"
+        },
+
+        {
+            "away": "Bosko and the Looney Tunes",
+            "home": "Barrel Monkeys FC",
+            "datetime": "2015-04-20 11:30:00"
+        },
+        {
+            "away": "Teams Great, Less Suck",
+            "home": "Liquid football",
+            "datetime": "2015-04-20 11:30:00"
+        },
+        {
+            "away": "gg no re",
+            "home": "You Poor Souls",
+            "datetime": "2015-04-20 12:30:00"
+        },
+        {
+            "away": "Leo Messy",
+            "home": "Los Pollos Hermanos",
+            "datetime": "2015-04-20 12:30:00"
+        },
+
+        {
+            "away": "You Poor Souls",
+            "home": "Leo Messy",
+            "datetime": "2015-04-27 11:30:00"
+        },
+        {
+            "away": "Los Pollos Hermanos",
+            "home": "Teams Great, Less Suck",
+            "datetime": "2015-04-27 11:30:00"
+        },
+        {
+            "away": "Barrel Monkeys FC",
+            "home": "Liquid football",
+            "datetime": "2015-04-27 12:30:00"
+        },
+        {
+            "away": "Bosko and the Looney Tunes",
+            "home": "gg no re",
+            "datetime": "2015-04-27 12:30:00"
+        }
+    ]
+}
