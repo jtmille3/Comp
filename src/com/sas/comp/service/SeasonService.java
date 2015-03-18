@@ -74,7 +74,7 @@ public class SeasonService {
             final Connection conn = Database.getConnection();
             final PreparedStatement pstmt = conn
                     .prepareStatement("INSERT INTO seasons VALUES(NULL, ?)", PreparedStatement.RETURN_GENERATED_KEYS);
-            pstmt.setString(2, season.getName());
+            pstmt.setString(1, season.getName());
             pstmt.execute();
 
             final ResultSet rs = pstmt.getGeneratedKeys();
