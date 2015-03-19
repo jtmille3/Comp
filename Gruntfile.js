@@ -1,5 +1,4 @@
 'use strict';
-var lrSnippet = require('grunt-contrib-livereload/lib/utils').livereloadSnippet;
 var mountFolder = function (connect, dir) {
     return connect.static(require('path').resolve(dir));
 };
@@ -46,11 +45,11 @@ module.exports = function (grunt) {
             },
             livereload: {
                 options: {
-                    middleware: function (connect) {
+                    middleware: function(connect) {
                         return [
-                            lrSnippet,
-                            mountFolder(connect, '.tmp'),
-                            mountFolder(connect, 'app')
+                            connect.static('.tmp'),
+                            connect().use('/bower_components', connect.static('./bower_components')),
+                            connect.static(config.app)
                         ];
                     }
                 }
@@ -237,8 +236,6 @@ module.exports = function (grunt) {
         }
     });
 
-    grunt.renameTask('regarde', 'watch');
-
     grunt.registerTask('server', function (target) {
         if (target === 'dist') {
             return grunt.task.run(['open', 'connect:dist:keepalive']);
@@ -246,7 +243,6 @@ module.exports = function (grunt) {
 
         grunt.task.run([
             'clean:server',
-            'livereload-start',
             'connect:livereload',
             'open',
             'watch'
