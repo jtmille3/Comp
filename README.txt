@@ -18,9 +18,3 @@ Compile your java into Comp/web/WEB-INF/classes
 The main method can be found in EmbeddedServer.java.
 
 Open a web browser to http://localhost:8080/app/index.html
-
-TODO:
-
-Fix bug with playoffs
-Fix bug with standings when no games have been played
-Fix bug with admin for ghost goals
