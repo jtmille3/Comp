@@ -3,8 +3,6 @@ package com.sas.comp.service;
 import com.sas.comp.models.Standing;
 import com.sas.comp.mysql.Database;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +19,7 @@ public class StandingService {
     }
 
     private List<Standing> getEmptyStandings(final Integer seasonId) {
-        final List<Standing> standings = new ArrayList<Standing>();
+        final List<Standing> standings = new ArrayList<>();
 
         Database.doVoidTransaction("SELECT id, name FROM teams WHERE season_id = ? ORDER BY name", (pstmt) -> {
             pstmt.setInt(1, seasonId);
@@ -48,7 +46,7 @@ public class StandingService {
     }
 
     private List<Standing> getSeasonStandings(final Integer seasonId) {
-        final List<Standing> standings = new ArrayList<Standing>();
+        final List<Standing> standings = new ArrayList<>();
 
         Database.doVoidTransaction("SELECT * FROM standings WHERE season_id = ? order by points desc, goal_differential desc, goals_for desc", (pstmt) -> {
             pstmt.setInt(1, seasonId);

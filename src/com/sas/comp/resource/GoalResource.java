@@ -28,20 +28,20 @@ public class GoalResource {
 		final List<Player> players = gameService.getPlayers(goal.getGameId());
 		final Game game = gameService.getGame(goal.getGameId());
 
-        if(goal.getPlayerId().intValue() < 0) {
-            if (goal.getPlayerId().intValue() == -1) {
-                game.setHomeScore(game.getHomeScore().intValue() + 1);
-            } else if (goal.getPlayerId().intValue() == -2) {
-                game.setAwayScore(game.getAwayScore().intValue() + 1);
+        if(goal.getPlayerId() < 0) {
+            if (goal.getPlayerId() == -1) {
+                game.setHomeScore(game.getHomeScore() + 1);
+            } else if (goal.getPlayerId() == -2) {
+                game.setAwayScore(game.getAwayScore() + 1);
             }
         } else {
             for (final Player player : players) {
-                if (player.getId().intValue() == goal.getPlayerId().intValue()) {
-                    if (player.getTeamId().intValue() == game.getHomeId().intValue()) {
-                        game.setHomeScore(game.getHomeScore().intValue() + 1);
+                if (player.getId().equals(goal.getPlayerId())) {
+                    if (player.getTeamId().equals(game.getHomeId())) {
+                        game.setHomeScore(game.getHomeScore() + 1);
                         break;
-                    } else if (player.getTeamId().intValue() == game.getAwayId().intValue()) {
-                        game.setAwayScore(game.getAwayScore().intValue() + 1);
+                    } else if (player.getTeamId().equals(game.getAwayId())) {
+                        game.setAwayScore(game.getAwayScore() + 1);
                         break;
                     }
                 }
@@ -49,7 +49,7 @@ public class GoalResource {
         }
 
 		gameService.updateScore(game);
-		if (goal.getPlayerId().intValue() > 0) {
+		if (goal.getPlayerId() > 0) {
 			goalService.addGoal(goal);
 		}
 	}
@@ -59,20 +59,20 @@ public class GoalResource {
 		final List<Player> players = gameService.getPlayers(goal.getGameId());
 		final Game game = gameService.getGame(goal.getGameId());
 
-        if(goal.getPlayerId().intValue() < 0) {
-            if (goal.getPlayerId().intValue() == -1) {
-                game.setHomeScore(game.getHomeScore().intValue() - 1);
-            } else if (goal.getPlayerId().intValue() == -2) {
-                game.setAwayScore(game.getAwayScore().intValue() - 1);
+        if(goal.getPlayerId() < 0) {
+            if (goal.getPlayerId() == -1) {
+                game.setHomeScore(game.getHomeScore() - 1);
+            } else if (goal.getPlayerId() == -2) {
+                game.setAwayScore(game.getAwayScore() - 1);
             }
         } else {
             for (final Player player : players) {
-                if (player.getId().intValue() == goal.getPlayerId().intValue()) {
-                    if (player.getTeamId().intValue() == game.getHomeId().intValue()) {
-                        game.setHomeScore(game.getHomeScore().intValue() - 1);
+                if (player.getId().equals(goal.getPlayerId())) {
+                    if (player.getTeamId().equals(game.getHomeId())) {
+                        game.setHomeScore(game.getHomeScore() - 1);
                         break;
-                    } else if (player.getTeamId().intValue() == game.getAwayId().intValue()) {
-                        game.setAwayScore(game.getAwayScore().intValue() - 1);
+                    } else if (player.getTeamId().equals(game.getAwayId())) {
+                        game.setAwayScore(game.getAwayScore() - 1);
                         break;
                     }
                 }
@@ -80,7 +80,7 @@ public class GoalResource {
         }
 
 		gameService.updateScore(game);
-		if (goal.getPlayerId().intValue() > 0) {
+		if (goal.getPlayerId() > 0) {
 			goalService.removeGoal(goal);
 		}
 	}

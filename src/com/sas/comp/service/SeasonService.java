@@ -1,7 +1,5 @@
 package com.sas.comp.service;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +10,7 @@ import com.sas.comp.mysql.Database;
 public class SeasonService {
 
 	public List<Season> getSeasons() {
-		final List<Season> seasons = new ArrayList<Season>();
+		final List<Season> seasons = new ArrayList<>();
 
         Database.doVoidTransaction("SELECT * FROM seasons ORDER BY id DESC", (pstmt) -> {
             final ResultSet rs = pstmt.executeQuery();

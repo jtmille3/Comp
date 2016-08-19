@@ -1,7 +1,5 @@
 package com.sas.comp.mysql;
 
-import com.sas.comp.models.BaseModel;
-
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 

@@ -1,7 +1,6 @@
 package com.sas.comp.service;
 
 import java.sql.*;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -21,7 +20,7 @@ public class GameService {
     }
 
     private List<Game> getSchedules(final Integer seasonId, final Boolean playoff) {
-        final List<Game> schedules = new ArrayList<Game>();
+        final List<Game> schedules = new ArrayList<>();
 
         Database.doVoidTransaction("SELECT * FROM schedule WHERE playoff = ? AND season_id = ?", (pstmt) -> {
             pstmt.setBoolean(1, playoff);
@@ -34,7 +33,7 @@ public class GameService {
     }
 
     public List<Game> getSchedules() {
-        final List<Game> schedules = new ArrayList<Game>();
+        final List<Game> schedules = new ArrayList<>();
 
         Database.doVoidTransaction("SELECT * FROM schedule ORDER BY date", (pstmt) -> {
             final ResultSet rs = pstmt.executeQuery();
@@ -45,7 +44,7 @@ public class GameService {
     }
 
     public List<Game> getSchedules(final Date date) {
-        final List<Game> schedules = new ArrayList<Game>();
+        final List<Game> schedules = new ArrayList<>();
         Database.doVoidTransaction("SELECT * FROM schedule WHERE date between ? AND ? ORDER BY date", (pstmt) -> {
             pstmt.setTimestamp(1, new java.sql.Timestamp(date.getTime()));
             final Calendar cal = Calendar.getInstance();

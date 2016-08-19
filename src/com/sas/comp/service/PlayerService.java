@@ -3,8 +3,6 @@ package com.sas.comp.service;
 import com.sas.comp.models.Player;
 import com.sas.comp.mysql.Database;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 /**

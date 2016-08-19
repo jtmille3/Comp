@@ -3,8 +3,6 @@ package com.sas.comp.service;
 import com.sas.comp.models.Player;
 import com.sas.comp.mysql.Database;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +10,7 @@ import java.util.List;
 public class StatisticService {
 
     public List<Player> getPlayerStatistics(final Integer seasonId) {
-        final List<Player> statistics = new ArrayList<Player>();
+        final List<Player> statistics = new ArrayList<>();
 
         Database.doVoidTransaction("SELECT * FROM player_statistics WHERE season_id = ? ORDER BY season_id, goals DESC, team_id, player_id", (pstmt) -> {
             pstmt.setInt(1, seasonId);
@@ -38,7 +36,7 @@ public class StatisticService {
     }
 
     public List<Player> getGoalieStatistics(final Integer seasonId) {
-        final List<Player> statistics = new ArrayList<Player>();
+        final List<Player> statistics = new ArrayList<>();
 
         Database.doVoidTransaction("SELECT * FROM shutout_statistics WHERE season_id = ? and goalie = 1 ORDER BY shutouts DESC", (pstmt) -> {
             pstmt.setInt(1, seasonId);
@@ -58,7 +56,7 @@ public class StatisticService {
     }
 
     public List<Player> getPlayerStatistics() {
-        final List<Player> statistics = new ArrayList<Player>();
+        final List<Player> statistics = new ArrayList<>();
 
         Database.doVoidTransaction("SELECT * FROM player_alltime_statistics ORDER BY goals DESC", (pstmt) -> {
 
@@ -80,7 +78,7 @@ public class StatisticService {
     }
 
     public List<Player> getGoalieStatistics() {
-        final List<Player> statistics = new ArrayList<Player>();
+        final List<Player> statistics = new ArrayList<>();
 
         Database.doVoidTransaction("SELECT * FROM goalie_alltime_statistics ORDER BY shutouts desc", (pstmt) -> {
 
@@ -98,7 +96,7 @@ public class StatisticService {
     }
 
     public List<Player> getShutoutStatistics() {
-        final List<Player> statistics = new ArrayList<Player>();
+        final List<Player> statistics = new ArrayList<>();
 
         Database.doVoidTransaction("SELECT * FROM shutout_alltime_statistics ORDER BY shutouts desc", (pstmt) -> {
 

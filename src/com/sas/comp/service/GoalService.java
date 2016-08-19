@@ -1,7 +1,5 @@
 package com.sas.comp.service;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +10,7 @@ import com.sas.comp.mysql.Database;
 public class GoalService {
 
 	public List<Goal> getGoals() {
-		final List<Goal> goals = new ArrayList<Goal>();
+		final List<Goal> goals = new ArrayList<>();
         Database.doVoidTransaction("SELECT * FROM goal_summary", (pstmt) -> {
 			final ResultSet rs = pstmt.executeQuery();
 			while (rs.next()) {

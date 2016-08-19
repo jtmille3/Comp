@@ -12,6 +12,7 @@ public class Autoboxing {
 		final Integer i3 = Integer.valueOf(132);
 		final Integer i4 = Integer.valueOf(132);
 
+        Assert.assertTrue(i1 == 132);
 		Assert.assertTrue(i1 == i2);
 		Assert.assertTrue(i3 == i4);
 		Assert.assertTrue(i1 == i3);

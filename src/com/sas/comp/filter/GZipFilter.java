@@ -42,7 +42,7 @@ public class GZipFilter implements Filter {
 
     private boolean acceptsGZipEncoding(HttpServletRequest httpRequest) {
         String acceptEncoding = httpRequest.getHeader("Accept-Encoding");
-        return acceptEncoding != null && acceptEncoding.indexOf("gzip") != -1;
+        return acceptEncoding != null && acceptEncoding.contains("gzip");
     }
 }
 
