@@ -6,7 +6,6 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.sas.comp.hibernate.model.Team;
 import com.sas.comp.models.Season;
 import com.sas.comp.mysql.Database;
 

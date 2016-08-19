@@ -1,6 +1,6 @@
 package com.sas.comp.service;
 
-import com.sas.comp.hibernate.model.Team;
+import com.sas.comp.models.Team;
 import com.sas.comp.models.Player;
 import com.sas.comp.mysql.Database;
 
