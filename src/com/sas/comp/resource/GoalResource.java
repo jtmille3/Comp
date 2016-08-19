@@ -36,7 +36,7 @@ public class GoalResource {
             }
         } else {
             for (final Player player : players) {
-                if (player.getPlayerId().intValue() == goal.getPlayerId().intValue()) {
+                if (player.getId().intValue() == goal.getPlayerId().intValue()) {
                     if (player.getTeamId().intValue() == game.getHomeId().intValue()) {
                         game.setHomeScore(game.getHomeScore().intValue() + 1);
                         break;
@@ -67,7 +67,7 @@ public class GoalResource {
             }
         } else {
             for (final Player player : players) {
-                if (player.getPlayerId().intValue() == goal.getPlayerId().intValue()) {
+                if (player.getId().intValue() == goal.getPlayerId().intValue()) {
                     if (player.getTeamId().intValue() == game.getHomeId().intValue()) {
                         game.setHomeScore(game.getHomeScore().intValue() - 1);
                         break;

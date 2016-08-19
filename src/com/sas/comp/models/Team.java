@@ -5,19 +5,9 @@ package com.sas.comp.models;
 import java.io.Serializable;
 
 @SuppressWarnings("serial")
-public class Team implements Serializable {
-
-	private Integer id;
+public class Team extends BaseModel implements Serializable {
 	private Integer seasonId;
 	private String name;
-
-	public Integer getId() {
-		return this.id;
-	}
-
-	public void setId(final Integer id) {
-		this.id = id;
-	}
 
 	public String getName() {
 		return this.name;

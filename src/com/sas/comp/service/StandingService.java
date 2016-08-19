@@ -23,10 +23,7 @@ public class StandingService {
     private List<Standing> getEmptyStandings(final Integer seasonId) {
         final List<Standing> standings = new ArrayList<Standing>();
 
-        try {
-            final Connection conn = Database.getConnection();
-            final PreparedStatement pstmt = conn
-                    .prepareStatement("SELECT id, name FROM teams WHERE season_id = ? ORDER BY name");
+        Database.doVoidTransaction("SELECT id, name FROM teams WHERE season_id = ? ORDER BY name", (pstmt) -> {
             pstmt.setInt(1, seasonId);
 
             final ResultSet rs = pstmt.executeQuery();
@@ -45,13 +42,7 @@ public class StandingService {
                 standing.setShutouts(0);
                 standings.add(standing);
             }
-
-            rs.close();
-            pstmt.close();
-            conn.close();
-        } catch (final Exception e) {
-            e.printStackTrace();
-        }
+        });
 
         return standings;
     }
@@ -59,10 +50,7 @@ public class StandingService {
     private List<Standing> getSeasonStandings(final Integer seasonId) {
         final List<Standing> standings = new ArrayList<Standing>();
 
-        try {
-            final Connection conn = Database.getConnection();
-            final PreparedStatement pstmt = conn
-                    .prepareStatement("SELECT * FROM standings WHERE season_id = ? order by points desc, goal_differential desc, goals_for desc");
+        Database.doVoidTransaction("SELECT * FROM standings WHERE season_id = ? order by points desc, goal_differential desc, goals_for desc", (pstmt) -> {
             pstmt.setInt(1, seasonId);
 
             final ResultSet rs = pstmt.executeQuery();
@@ -82,13 +70,7 @@ public class StandingService {
                 standing.setTeamId(rs.getInt("team_id"));
                 standings.add(standing);
             }
-
-            rs.close();
-            pstmt.close();
-            conn.close();
-        } catch (final Exception e) {
-            e.printStackTrace();
-        }
+        });
 
         return standings;
     }

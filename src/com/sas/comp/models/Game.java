@@ -5,7 +5,7 @@ import java.util.Date;
 
 import org.codehaus.jackson.annotate.JsonIgnore;
 
-public class Game {
+public class Game extends BaseModel {
 	private static SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm");
 
     @JsonIgnore
@@ -18,7 +18,6 @@ public class Game {
 	private Date date;
 	private Integer homeScore;
 	private Integer awayScore;
-	private Integer gameId;
 
     private Boolean playoff;
 
@@ -92,14 +91,6 @@ public class Game {
 
 	public String getScore() {
 		return getHomeScore() + " - " + getAwayScore();
-	}
-
-	public Integer getGameId() {
-		return gameId;
-	}
-
-	public void setGameId(final Integer gameId) {
-		this.gameId = gameId;
 	}
 
     public Integer getSeasonId() {

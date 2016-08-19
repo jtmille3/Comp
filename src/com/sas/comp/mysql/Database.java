@@ -1,34 +1,51 @@
 package com.sas.comp.mysql;
 
+import com.sas.comp.models.BaseModel;
+
 import java.sql.*;
 
 public class Database {
 
 	public static Connection getConnection() throws SQLException, ClassNotFoundException {
 		Class.forName("com.mysql.jdbc.Driver");
-		//return DriverManager.getConnection("jdbc:mysql://pip.na.sas.com:3306/soccer", "soccer", "i<3soccer");
-        return DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/soccer", "soccer", "i<3soccer");
+		return DriverManager.getConnection("jdbc:mysql://pip.na.sas.com:3306/soccer", "soccer", "i<3soccer");
+        //return DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/soccer", "soccer", "i<3soccer");
 	}
 
-    public static int doDBTransaction(String preparedStatement, TransactionInterface transactionInterface) {
-        int generatedKey = -1;
+    public static void doVoidTransaction(String preparedStatement, TransactionVoidInterface transactionVoidInterface) {
+        doDBTransaction(preparedStatement, transactionVoidInterface);
+    }
+
+    public static <T> T doReturnTransaction(Class<T> type, String preparedStatement, TransactionReturnInterface transactionInterface)
+    {
+        return type.cast(doDBTransaction(preparedStatement, transactionInterface));
+    }
+
+    private static Object doDBTransaction(String preparedStatement, Object transactionInterface) {
         Connection conn = null;
+        Object returnObject = null;
         try {
             conn = getConnection();
             conn.setAutoCommit(false);
 
 
             PreparedStatement statement = conn.prepareStatement(preparedStatement, PreparedStatement.RETURN_GENERATED_KEYS);
-            transactionInterface.doTransaction(statement);
+            if(transactionInterface instanceof TransactionReturnInterface) {
+                returnObject = ((TransactionReturnInterface)transactionInterface).doTransaction(statement);
+            } else {
+                ((TransactionVoidInterface)transactionInterface).doTransaction(statement);
+            }
             conn.commit();
-            try {
-                final ResultSet rs = statement.getGeneratedKeys();
-                if (rs.next()) {
-                    generatedKey = rs.getInt(1);
+            if(returnObject != null && returnObject instanceof BaseModel) {
+                try {
+                    final ResultSet rs = statement.getGeneratedKeys();
+                    if (rs.next()) {
+                        ((BaseModel)returnObject).setId(rs.getInt(1));
+                    }
+                    rs.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
                 }
-                rs.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
             }
             statement.close();
         } catch (SQLException | ClassNotFoundException e) {
@@ -47,6 +64,6 @@ public class Database {
                 }
             }
         }
-        return generatedKey;
+        return returnObject;
     }
 }

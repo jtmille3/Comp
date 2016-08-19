@@ -3,22 +3,13 @@ package com.sas.comp.models;
 import java.io.Serializable;
 
 @SuppressWarnings("serial")
-public class TeamPlayer implements Serializable {
+public class TeamPlayer extends BaseModel implements Serializable {
 
-	private Integer id;
 	private Integer teamId;
 	private Integer playerId;
 	private Byte isGoalie;
 	private Byte isCaptain;
 	private Byte isCoCaptain;
-
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(final Integer id) {
-		this.id = id;
-	}
 
 	public Integer getTeamId() {
 		return teamId;

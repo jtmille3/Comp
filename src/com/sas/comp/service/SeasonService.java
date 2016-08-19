@@ -14,7 +14,7 @@ public class SeasonService {
 	public List<Season> getSeasons() {
 		final List<Season> seasons = new ArrayList<Season>();
 
-        Database.doDBTransaction("SELECT * FROM seasons ORDER BY id DESC", (pstmt) -> {
+        Database.doVoidTransaction("SELECT * FROM seasons ORDER BY id DESC", (pstmt) -> {
             final ResultSet rs = pstmt.executeQuery();
             while (rs.next()) {
                 final Season season = new Season();
@@ -28,10 +28,7 @@ public class SeasonService {
 	}
 
     public Season find(final String name) {
-        try {
-            final Connection conn = Database.getConnection();
-            final PreparedStatement pstmt = conn
-                    .prepareStatement("SELECT name, id FROM seasons WHERE name = ?");
+        return Database.doReturnTransaction(Season.class, "SELECT name, id FROM seasons WHERE name = ?", (pstmt) -> {
             pstmt.setString(1, name);
 
             final ResultSet rs = pstmt.executeQuery();
@@ -40,45 +37,18 @@ public class SeasonService {
                 final Season season = new Season();
                 season.setName(rs.getString("name"));
                 season.setId(rs.getInt("id"));
-
-                rs.close();
-                pstmt.close();
-                conn.close();
-
                 return season;
             } else {
-                rs.close();
-                pstmt.close();
-                conn.close();
-
                 return null;
             }
-        } catch (final Exception e) {
-            e.printStackTrace();
-        }
-
-        return null;
+        });
     }
 
     public void save(final Season season) {
-        try {
-            final Connection conn = Database.getConnection();
-            final PreparedStatement pstmt = conn
-                    .prepareStatement("INSERT INTO seasons VALUES(NULL, ?)", PreparedStatement.RETURN_GENERATED_KEYS);
+        Database.doVoidTransaction("INSERT INTO seasons VALUES(NULL, ?)", (pstmt) -> {
             pstmt.setString(1, season.getName());
             pstmt.execute();
-
-            final ResultSet rs = pstmt.getGeneratedKeys();
-            if(rs.next()) {
-                season.setId(rs.getInt(1));
-            }
-
-            rs.close();
-            pstmt.close();
-            conn.close();
-        } catch (final Exception e) {
-            e.printStackTrace();
-        }
+        });
     }
 
 }

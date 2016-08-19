@@ -13,11 +13,7 @@ public class GoalService {
 
 	public List<Goal> getGoals() {
 		final List<Goal> goals = new ArrayList<Goal>();
-
-		try {
-			final Connection conn = Database.getConnection();
-			final PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM goal_summary");
-
+        Database.doVoidTransaction("SELECT * FROM goal_summary", (pstmt) -> {
 			final ResultSet rs = pstmt.executeQuery();
 			while (rs.next()) {
 				final Goal goal = new Goal();
@@ -28,44 +24,25 @@ public class GoalService {
 				goal.setTeamId(rs.getInt("team_id"));
 				goals.add(goal);
 			}
-
-			rs.close();
-			pstmt.close();
-			conn.close();
-		} catch (final Exception e) {
-			e.printStackTrace();
-		}
+		});
 
 		return goals;
 	}
 
 	public void addGoal(final Goal goal) {
-		try {
-			final Connection conn = Database.getConnection();
-			final PreparedStatement pstmt = conn.prepareStatement("INSERT INTO GOALS(player_id, game_Id) VALUES(?, ?)");
+        Database.doVoidTransaction("INSERT INTO GOALS(player_id, game_Id) VALUES(?, ?)", (pstmt) -> {
 			pstmt.setInt(1, goal.getPlayerId());
 			pstmt.setInt(2, goal.getGameId());
 			pstmt.execute();
-			pstmt.close();
-			conn.close();
-		} catch (final Exception e) {
-			e.printStackTrace();
-		}
+		});
 	}
 
 	public void removeGoal(final Goal goal) {
-		try {
-			final Connection conn = Database.getConnection();
-			final PreparedStatement pstmt = conn
-					.prepareStatement("DELETE FROM goals WHERE id = (SELECT g.id FROM (SELECT MAX(id) AS id FROM goals WHERE game_id = ? and player_id = ?) g);");
+        Database.doVoidTransaction("DELETE FROM goals WHERE id = (SELECT g.id FROM (SELECT MAX(id) AS id FROM goals WHERE game_id = ? and player_id = ?) g);", (pstmt) -> {
 			pstmt.setInt(1, goal.getGameId());
 			pstmt.setInt(2, goal.getPlayerId());
 			pstmt.execute();
-			pstmt.close();
-			conn.close();
-		} catch (final Exception e) {
-			e.printStackTrace();
-		}
+		});
 	}
 
 }

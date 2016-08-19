@@ -1,12 +1,11 @@
 package com.sas.comp.models;
 
-public class Player {
+public class Player extends BaseModel {
 
 	private Integer rank;
 	private String team;
 	private Integer teamId;
 	private String name;
-	private Integer playerId;
 	private Integer goals;
 	private Integer shutouts;
 	private Boolean goalie;
@@ -94,14 +93,6 @@ public class Player {
 
 	public void setTeamId(final Integer teamId) {
 		this.teamId = teamId;
-	}
-
-	public Integer getPlayerId() {
-		return playerId;
-	}
-
-	public void setPlayerId(final Integer playerId) {
-		this.playerId = playerId;
 	}
 
 	public Boolean getCoCaptain() {

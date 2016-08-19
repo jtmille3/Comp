@@ -2,23 +2,14 @@ package com.sas.comp.models;
 
 import java.util.List;
 
-public class Season {
+public class Season extends BaseModel {
 
-	private Integer id;
 	private String name;
 	private List<Standing> standings;
 	private List<Game> playoffSchedule;
 	private List<Game> leagueSchedule;
 	private List<Player> playerStatistics;
 	private List<Player> goalieStatistics;
-
-	public Integer getId() {
-		return this.id;
-	}
-
-	public void setId(final Integer id) {
-		this.id = id;
-	}
 
 	public String getName() {
 		return this.name;

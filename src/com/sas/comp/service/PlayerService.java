@@ -17,56 +17,24 @@ import java.sql.ResultSet;
 public class PlayerService {
 
     public Player find(final String name) {
-        try {
-            final Connection conn = Database.getConnection();
-            final PreparedStatement pstmt = conn
-                    .prepareStatement("SELECT name, id FROM players WHERE name = ?");
+        return Database.doReturnTransaction(Player.class,"SELECT name, id FROM players WHERE name = ?", (pstmt) -> {
             pstmt.setString(1, name);
-
             final ResultSet rs = pstmt.executeQuery();
-
             if (rs.next()) {
                 final Player player = new Player();
                 player.setName(rs.getString("name"));
-                player.setPlayerId(rs.getInt("id"));
-
-                rs.close();
-                pstmt.close();
-                conn.close();
-
+                player.setId(rs.getInt("id"));
                 return player;
             } else {
-                rs.close();
-                pstmt.close();
-                conn.close();
-
                 return null;
             }
-        } catch (final Exception e) {
-            e.printStackTrace();
-        }
-
-        return null;
+        });
     }
 
     public void save(final Player player) {
-        try {
-            final Connection conn = Database.getConnection();
-            final PreparedStatement pstmt = conn
-                    .prepareStatement("INSERT INTO PLAYERS VALUES(NULL, ?)", PreparedStatement.RETURN_GENERATED_KEYS);
+        Database.doVoidTransaction("INSERT INTO PLAYERS VALUES(NULL, ?)", (pstmt) -> {
             pstmt.setString(1, player.getName());
             pstmt.execute();
-
-            final ResultSet rs = pstmt.getGeneratedKeys();
-            if(rs.next()) {
-                player.setPlayerId(rs.getInt(1));
-            }
-
-            rs.close();
-            pstmt.close();
-            conn.close();
-        } catch (final Exception e) {
-            e.printStackTrace();
-        }
+        });
     }
 }
