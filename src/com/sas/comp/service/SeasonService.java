@@ -14,25 +14,17 @@ public class SeasonService {
 	public List<Season> getSeasons() {
 		final List<Season> seasons = new ArrayList<Season>();
 
-		try {
-			final Connection conn = Database.getConnection();
-			final PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM seasons ORDER BY id DESC");
-			final ResultSet rs = pstmt.executeQuery();
+        Database.doDBTransaction("SELECT * FROM seasons ORDER BY id DESC", (pstmt) -> {
+            final ResultSet rs = pstmt.executeQuery();
+            while (rs.next()) {
+                final Season season = new Season();
+                season.setId(rs.getInt("id"));
+                season.setName(rs.getString("name"));
+                seasons.add(season);
+            }
+        });
 
-			while (rs.next()) {
-				final Season season = new Season();
-				season.setId(rs.getInt("id"));
-				season.setName(rs.getString("name"));
-				seasons.add(season);
-			}
-
-			rs.close();
-			pstmt.close();
-			conn.close();
-		} catch (final Exception e) {
-			e.printStackTrace();
-		}
-		return seasons;
+        return seasons;
 	}
 
     public Season find(final String name) {

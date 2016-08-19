@@ -195,19 +195,12 @@ public class GameService {
     }
 
     public void updateScore(final Game game) {
-        try {
-            final Connection conn = Database.getConnection();
-            final PreparedStatement pstmt = conn
-                    .prepareStatement("UPDATE games SET home_score = ?, away_score = ? WHERE id = ?");
+        Database.doDBTransaction("UPDATE games SET home_score = ?, away_score = ? WHERE id = ?", (pstmt) -> {
             pstmt.setInt(1, game.getHomeScore());
             pstmt.setInt(2, game.getAwayScore());
             pstmt.setInt(3, game.getGameId());
             pstmt.execute();
-            pstmt.close();
-            conn.close();
-        } catch (final Exception e) {
-            e.printStackTrace();
-        }
+        });
     }
 
     public List<Player> getPlayers(final Integer gameId) {
