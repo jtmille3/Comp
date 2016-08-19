@@ -38,7 +38,7 @@ public class ImportService {
             System.out.println("Season not found.");
             season = new Season();
             season.setName(seasonName);
-            seasonService.save(season);
+            seasonService.create(season);
         } else {
             System.out.println("Season: " + season.getName());
             System.out.println();

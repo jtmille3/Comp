@@ -30,9 +30,10 @@ public class PlayerService {
     }
 
     public void save(final Player player) {
-        Database.doVoidTransaction("INSERT INTO PLAYERS VALUES(NULL, ?)", (pstmt) -> {
+        Database.doReturnTransaction(Player.class,"INSERT INTO PLAYERS VALUES(NULL, ?)", (pstmt) -> {
             pstmt.setString(1, player.getName());
             pstmt.execute();
+            return player;
         });
     }
 }

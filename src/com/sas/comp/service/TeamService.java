@@ -35,12 +35,13 @@ public class TeamService {
     }
 
     public void save(final Team team) {
-        Database.doVoidTransaction("INSERT INTO TEAMS VALUES(NULL, ?, ?, ?, ?)", (pstmt) -> {
+        Database.doReturnTransaction(Team.class,"INSERT INTO TEAMS VALUES(NULL, ?, ?, ?, ?)", (pstmt) -> {
             pstmt.setInt(1, team.getSeasonId());
             pstmt.setString(2, team.getName());
             pstmt.setInt(3, 0);
             pstmt.setInt(4, 0);
             pstmt.execute();
+            return team;
         });
     }
 
