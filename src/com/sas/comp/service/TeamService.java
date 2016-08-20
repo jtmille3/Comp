@@ -2,9 +2,11 @@ package com.sas.comp.service;
 
 import com.sas.comp.models.Team;
 import com.sas.comp.models.Player;
+import com.sas.comp.models.TeamPlayer;
 import com.sas.comp.mysql.Database;
 
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 /**
  * Created with IntelliJ IDEA.
@@ -23,25 +25,10 @@ public class TeamService {
             final ResultSet rs = pstmt.executeQuery();
 
             if (rs.next()) {
-                final Team team = new Team();
-                team.setName(rs.getString("name"));
-                team.setId(rs.getInt("id"));
-                team.setSeasonId(rs.getInt("season_id"));
-                return team;
+                return teamFromResultSet(rs);
             } else {
                 return null;
             }
-        });
-    }
-
-    public void save(final Team team) {
-        Database.doReturnTransaction(Team.class,"INSERT INTO TEAMS VALUES(NULL, ?, ?, ?, ?)", (pstmt) -> {
-            pstmt.setInt(1, team.getSeasonId());
-            pstmt.setString(2, team.getName());
-            pstmt.setInt(3, 0);
-            pstmt.setInt(4, 0);
-            pstmt.execute();
-            return team;
         });
     }
 
@@ -55,15 +42,85 @@ public class TeamService {
         });
     }
 
-    public void addPlayer(final Team team, final Player player) {
-        Database.doVoidTransaction("INSERT INTO team_player VALUES(NULL, ?, ?, ?, ?, ?)", (pstmt) -> {
-            pstmt.setInt(1, team.getId());
-            pstmt.setInt(2, player.getId());
-            pstmt.setBoolean(3, player.getGoalie());
-            pstmt.setBoolean(4, player.getCaptain());
-            pstmt.setBoolean(5, player.getCoCaptain());
+    public TeamPlayer addPlayer(TeamPlayer player) {
+        return Database.doReturnTransaction(TeamPlayer.class, "INSERT INTO team_player VALUES(NULL, ?, ?, ?, ?, ?)", (pstmt) -> {
+            pstmt.setInt(1, player.getTeamId());
+            pstmt.setInt(2, player.getPlayerId());
+            pstmt.setBoolean(3, player.getIsGoalie());
+            pstmt.setBoolean(4, player.getIsCaptain());
+            pstmt.setBoolean(5, player.getIsCoCaptain());
+            pstmt.execute();
+            return player;
+        });
+    }
 
+    public void updatePlayer(TeamPlayer player) {
+        Database.doVoidTransaction("UPDATE team_player SET isGoalie = ?, isCaptain = ?, isCoCaptain = ? WHERE player_id = ? AND team_id = ?", (pstmt) -> {
+            pstmt.setBoolean(1, player.getIsGoalie());
+            pstmt.setBoolean(2, player.getIsCaptain());
+            pstmt.setBoolean(3, player.getIsCoCaptain());
+            pstmt.setInt(4, player.getPlayerId());
+            pstmt.setInt(5, player.getTeamId());
             pstmt.execute();
         });
+    }
+
+    public void deletePlayer(TeamPlayer player) {
+        Database.doVoidTransaction("DELETE FROM team_player WHERE player_id = ? AND team_id = ?", (pstmt) -> {
+            pstmt.setInt(1, player.getPlayerId());
+            pstmt.setInt(2, player.getTeamId());
+            pstmt.execute();
+        });
+    }
+
+    public void create(final Team team) {
+        Database.doReturnTransaction(Team.class,"INSERT INTO teams VALUES(NULL, ?, ?, ?, ?)", (pstmt) -> {
+            pstmt.setInt(1, team.getSeasonId());
+            pstmt.setString(2, team.getName());
+            pstmt.setBoolean(3, team.getLeagueWinner());
+            pstmt.setBoolean(4, team.getPlayoffWinner());
+            pstmt.execute();
+            return team;
+        });
+    }
+
+    public Team read(final Integer id) {
+        return Database.doReturnTransaction(Team.class, "SELECT * FROM teams WHERE id = ?", (pstmt) -> {
+            pstmt.setInt(1,id);
+            final ResultSet rs = pstmt.executeQuery();
+            if (rs.next()) {
+                return teamFromResultSet(rs);
+            } else {
+                return null;
+            }
+        });
+    }
+
+    public void update(final Team team) {
+        Database.doVoidTransaction("UPDATE teams SET name=?, leagueWinner=?, playoffWinner=? WHERE id = ?", (pstmt) -> {
+            pstmt.setString(1, team.getName());
+            pstmt.setBoolean(2, team.getLeagueWinner());
+            pstmt.setBoolean(3, team.getPlayoffWinner());
+            pstmt.setInt(4, team.getId());
+            pstmt.execute();
+        });
+    }
+
+    //TODO: Do we want to delete the team members here? -Philippe
+    public void delete(final Integer id) {
+        Database.doVoidTransaction("DELETE FROM teams where id = ?", (pstmt) -> {
+            pstmt.setInt(1,id);
+            pstmt.execute();
+        });
+    }
+
+    private Team teamFromResultSet(final ResultSet rs) throws SQLException{
+        final Team team = new Team();
+        team.setName(rs.getString("name"));
+        team.setId(rs.getInt("id"));
+        team.setSeasonId(rs.getInt("season_id"));
+        team.setLeagueWinner(rs.getBoolean("leagueWinner"));
+        team.setPlayoffWinner(rs.getBoolean("playoffWinner"));
+        return team;
     }
 }

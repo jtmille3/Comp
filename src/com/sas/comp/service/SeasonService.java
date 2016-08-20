@@ -38,6 +38,14 @@ public class SeasonService {
         });
     }
 
+    public void create(final Season season) {
+        Database.doReturnTransaction(Season.class, "INSERT INTO seasons VALUES(NULL, ?)", (pstmt) -> {
+            pstmt.setString(1, season.getName());
+            pstmt.execute();
+            return season;
+        });
+    }
+
     public Season read(final Integer id) {
         return Database.doReturnTransaction(Season.class, "SELECT * FROM seasons WHERE id = ?", (pstmt) -> {
             pstmt.setInt(1,id);
@@ -47,14 +55,6 @@ public class SeasonService {
             } else {
                 return null;
             }
-        });
-    }
-
-    public void create(final Season season) {
-        Database.doReturnTransaction(Season.class, "INSERT INTO seasons VALUES(NULL, ?)", (pstmt) -> {
-            pstmt.setString(1, season.getName());
-            pstmt.execute();
-            return season;
         });
     }
 

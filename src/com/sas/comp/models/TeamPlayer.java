@@ -7,11 +7,19 @@ public class TeamPlayer extends BaseModel implements Serializable {
 
 	private Integer teamId;
 	private Integer playerId;
-	private Byte isGoalie;
-	private Byte isCaptain;
-	private Byte isCoCaptain;
+	private Boolean isGoalie;
+	private Boolean isCaptain;
+	private Boolean isCoCaptain;
 
-	public Integer getTeamId() {
+    public TeamPlayer(Team team, Player player, boolean isCaptain, boolean isCoCaptain, boolean isGoalie) {
+        this.teamId = team.getId();
+        this.playerId = player.getId();
+        this.isCaptain = isCaptain;
+        this.isCoCaptain = isCoCaptain;
+        this.isGoalie = isGoalie;
+    }
+
+    public Integer getTeamId() {
 		return teamId;
 	}
 
@@ -27,28 +35,27 @@ public class TeamPlayer extends BaseModel implements Serializable {
 		this.playerId = playerId;
 	}
 
-	public Byte getIsGoalie() {
-		return isGoalie;
-	}
+    public Boolean getIsGoalie() {
+        return isGoalie;
+    }
 
-	public void setIsGoalie(final Byte isGoalie) {
-		this.isGoalie = isGoalie;
-	}
+    public void setIsGoalie(Boolean isGoalie) {
+        this.isGoalie = isGoalie;
+    }
 
-	public Byte getIsCaptain() {
-		return isCaptain;
-	}
+    public Boolean getIsCaptain() {
+        return isCaptain;
+    }
 
-	public void setIsCaptain(final Byte isCaptain) {
-		this.isCaptain = isCaptain;
-	}
+    public void setIsCaptain(Boolean isCaptain) {
+        this.isCaptain = isCaptain;
+    }
 
-	public Byte getIsCoCaptain() {
-		return isCoCaptain;
-	}
+    public Boolean getIsCoCaptain() {
+        return isCoCaptain;
+    }
 
-	public void setIsCoCaptain(final Byte isCoCaptain) {
-		this.isCoCaptain = isCoCaptain;
-	}
-
+    public void setIsCoCaptain(Boolean isCoCaptain) {
+        this.isCoCaptain = isCoCaptain;
+    }
 }
