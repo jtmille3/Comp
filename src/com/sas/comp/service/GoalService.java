@@ -28,10 +28,11 @@ public class GoalService {
 	}
 
 	public void addGoal(final Goal goal) {
-        Database.doVoidTransaction("INSERT INTO GOALS(player_id, game_Id) VALUES(?, ?)", (pstmt) -> {
+        Database.doReturnTransaction(Goal.class,"INSERT INTO GOALS(player_id, game_Id) VALUES(?, ?)", (pstmt) -> {
 			pstmt.setInt(1, goal.getPlayerId());
 			pstmt.setInt(2, goal.getGameId());
 			pstmt.execute();
+            return goal;
 		});
 	}
 

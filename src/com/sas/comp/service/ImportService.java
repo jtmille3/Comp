@@ -1,9 +1,6 @@
 package com.sas.comp.service;
 
-import com.sas.comp.models.Team;
-import com.sas.comp.models.Game;
-import com.sas.comp.models.Player;
-import com.sas.comp.models.Season;
+import com.sas.comp.models.*;
 import org.codehaus.jackson.map.ObjectMapper;
 
 import java.io.File;
@@ -38,7 +35,7 @@ public class ImportService {
             System.out.println("Season not found.");
             season = new Season();
             season.setName(seasonName);
-            seasonService.save(season);
+            seasonService.create(season);
         } else {
             System.out.println("Season: " + season.getName());
             System.out.println();
@@ -55,10 +52,14 @@ public class ImportService {
                 team = new Team();
                 team.setName(teamName);
                 team.setSeasonId(season.getId());
-                teamService.save(team);
+                teamService.create(team);
             } else {
                 System.out.println("Team: " + team.getName());
             }
+
+            final Object captain = teamMap.get("captain");
+            final Object cocaptain = teamMap.get("cocaptain");
+            final Object goalie = teamMap.get("goalie");
 
             final List<String> playersList = (List<String>) teamMap.get("players");
             for(final String playerName : playersList) {
@@ -67,19 +68,14 @@ public class ImportService {
                     System.out.println("Player " + playerName + " not found");
                     player = new Player();
                     player.setName(playerName);
-                    playerService.save(player);
+                    playerService.create(player);
                 } else {
                     System.out.println(player.getName());
                 }
 
-                final Object captain = teamMap.get("captain");
-                final Object cocaptain = teamMap.get("cocaptain");
-                final Object goalie = teamMap.get("goalie");
                 if(!teamService.isPlaying(team, player)) {
-                    player.setCaptain(playerName.equals(captain));
-                    player.setCoCaptain(playerName.equals(cocaptain));
-                    player.setGoalie(playerName.equals(goalie));
-                    teamService.addPlayer(team, player);
+                    TeamPlayer teamPlayer = new TeamPlayer(team,player,playerName.equals(captain),playerName.equals(cocaptain),playerName.equals(goalie));
+                    teamService.addPlayer(teamPlayer);
                 }
             }
 

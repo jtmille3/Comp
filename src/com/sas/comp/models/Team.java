@@ -8,6 +8,8 @@ import java.io.Serializable;
 public class Team extends BaseModel implements Serializable {
 	private Integer seasonId;
 	private String name;
+    private Boolean leagueWinner;
+    private Boolean playoffWinner;
 
 	public String getName() {
 		return this.name;
@@ -24,4 +26,20 @@ public class Team extends BaseModel implements Serializable {
 	public void setSeasonId(final Integer seasonId) {
 		this.seasonId = seasonId;
 	}
+
+    public Boolean getLeagueWinner() {
+        return leagueWinner;
+    }
+
+    public void setLeagueWinner(Boolean leagueWinner) {
+        this.leagueWinner = leagueWinner;
+    }
+
+    public Boolean getPlayoffWinner() {
+        return playoffWinner;
+    }
+
+    public void setPlayoffWinner(Boolean playoffWinner) {
+        this.playoffWinner = playoffWinner;
+    }
 }

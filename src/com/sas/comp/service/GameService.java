@@ -142,7 +142,7 @@ public class GameService {
     }
 
     public void save(final Game game) {
-        Database.doVoidTransaction("INSERT INTO games VALUES(null, ?, ?, ?, ?, ?, ?, ?)", (pstmt) -> {
+        Database.doReturnTransaction(Game.class, "INSERT INTO games VALUES(null, ?, ?, ?, ?, ?, ?, ?)", (pstmt) -> {
             pstmt.setInt(1, game.getSeasonId());
             pstmt.setInt(2, game.getHomeId());
             pstmt.setInt(3, game.getAwayId());
@@ -151,6 +151,7 @@ public class GameService {
             pstmt.setNull(6, Types.NULL);
             pstmt.setInt(7, 0);
             pstmt.execute();
+            return game;
         });
     }
 }
