@@ -27,7 +27,7 @@ module.exports = function (grunt) {
             },
             handlebars: {
                 files: [
-                    '<%= yeoman.app %>/templates/**/*.html'
+                    '<%= yeoman.app %>/**/*.html'
                 ],
                 tasks: ['handlebars']
             },
@@ -213,7 +213,7 @@ module.exports = function (grunt) {
                     partialRegex: /^_/
                 },
                 files: {
-                    '<%= yeoman.app %>/scripts/templates.js': ['<%= yeoman.app %>/templates/**/*.html']
+                    '<%= yeoman.app %>/scripts/templates.js': ['<%= yeoman.app %>/scripts/**/*.html', '<%= yeoman.app %>/templates/**/*.html']
                 }
             }
         },
