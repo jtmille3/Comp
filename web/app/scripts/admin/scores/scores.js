@@ -1,84 +1,29 @@
 /*global define */
-define(function(require) {
+define(function() {
 	'use strict';
 	return {
 		render: function() {
-			var self = this;
-			var passwordTemplate = window.comp['web/app/templates/password.html'];
-			$('#administrator').html(passwordTemplate());
-			$('#passwordDialog').modal({
-				backdrop: false,
-				show:true
-			});
+            var scoresTemplate = window.comp['web/app/scripts/admin/scores/scores.html'];
+            $('#admin-content').html(scoresTemplate());
 
-			$('#password').keyup(function(e) {
-				var code = (e.keyCode ? e.keyCode : e.which);
-				if(code == 13) {
-					self.login();
-				}
-			});
-
-			$('#passwordButton').click(function() {
-				self.login();	
-			});
-
-			$('#passwordDialog').on('shown.bs.modal', function() {
-				$('#password').focus();
-			});
+            this.attachHandlers();
 		},
 
-		login: function() {
-			$('#passwordButton').prop('disabled', true);
-			$('#password').prop('disabled', true);
+        attachHandlers: function() {
+            var self = this;
+            var $gameDatePicker = $('#game-date');
+            $gameDatePicker.datepicker({
+                autoclose: true,
+                todayBtn: true
+            }).on('changeDate', function() {
+                var date = self.parseDate($gameDatePicker.data('datepicker').getDate());
+                self.getGames(date);
+            });
 
-			var self = this;
-			var password = md5($('#password').val());
-			$.ajax({
-				url: '/service/authentication?password=' + password,
-				type: 'POST',
-				success: function() {
-					var adminTemplate = window.comp['web/app/templates/admin.html'];
-					$('#administrator').html(adminTemplate());
-
-					self.attachResetCacheHandler();
-					self.attachDatePickerHandler();
-				},
-				error: function() {
-					$('#password-group').addClass('error');
-					$('#password').val('');
-					$('#passwordHelp').show();
-
-					$('#passwordButton').prop('disabled', false);
-					$('#password').prop('disabled', false);
-				}
-			});
-		},
-
-		attachResetCacheHandler: function() {
-			var $cacheMessage = $('#cache-message');
-			$('#reset-cache').click(function() {
-				$cacheMessage.html('<div class="alert alert-error">Clearing cache, please wait...</div>');
-				$.get('/service/cache/reset', function() {
-					$cacheMessage.html('<div class="alert alert-success">Cache cleared</div>');
-				});
-			});
-		},
-
-		attachDatePickerHandler: function() {
-			var self = this;
-			var $gameDatePicker = $('#game-date');
-			$gameDatePicker.datepicker({
-				autoclose: true,
-				todayBtn: true
-			}).on('changeDate', function(ev) {
-				var date = self.parseDate($gameDatePicker.data('datepicker').getDate());
-				self.getGames(date);
-			});
-
-			var today = this.parseDate(new Date());
-			$gameDatePicker.datepicker('update', today);
-			self.getGames(today); // automatically set todays games
-		},
+            var today = this.parseDate(new Date());
+            $gameDatePicker.datepicker('update', today);
+            self.getGames(today); // automatically set todays games
+        },
 
 		parseDate: function(date) {
 			var month = date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1;
@@ -114,7 +59,7 @@ define(function(require) {
 			$('.played').click(function() {
 				$(this).prop('checked', true);
 				$(this).prop('disabled', true);
-				
+
 				var gameId = $(this).data('game-id');
 				var game = self.getGame(gameId, games);
 				game.homeScore = 0;

@@ -6,6 +6,7 @@ import com.sas.comp.service.SeasonService;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import java.util.List;
 
 /**
  * Resource for creating and updating seasons.
@@ -32,6 +33,11 @@ public class SeasonResource {
     @Path("{id}")
     public Season read(@PathParam("id") Integer seasonID) {
         return seasonService.read(seasonID);
+    }
+
+    @GET
+    public List<Season> read() {
+        return seasonService.getSeasons();
     }
 
 }

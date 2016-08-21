@@ -1,7 +1,7 @@
 require.config({
 });
 
-require(['./controller/competitive'], function (competitiveController) {
+require(['./competitive'], function (competitiveController) {
     'use strict';
 
     //setup crossroads
