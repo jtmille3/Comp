@@ -140,6 +140,8 @@ define(function() {
         },
 
         renderPlayers: function(teamId) {
+            var self = this;
+
             var playerFormTemplate = window.comp['web/app/scripts/admin/teams/player_form.html'];
             $('#player-form').html(playerFormTemplate());
 
@@ -149,6 +151,89 @@ define(function() {
                 $('#player-list').html(playerListTemplate({
                     players: players
                 }));
+            });
+
+            $.get('/service/players', function(players) {
+                self.attachPlayerSearch(teamId, players);
+            });
+        },
+
+        attachPlayerSearch: function(teamId, players) {
+            var self = this;
+
+            var names = new Bloodhound({
+                limit: 10,
+                datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
+                queryTokenizer: Bloodhound.tokenizers.whitespace,
+                local: players,
+                matcher: function(player) {
+                    player.name.toUpperCase() === this.query.toUpperCase()
+                }
+            });
+
+            names.initialize();
+
+            var search = $('#player-name');
+
+            search.on('keyup', function() {
+                var text = search.val();
+                var $addButton = $('#add-player-button');
+                var player = Lazy(players).find(function(player) { return player.name.toUpperCase() === text.toUpperCase(); });
+                $addButton.prop('disabled', !!!player);
+            });
+
+            search.typeahead({
+                    minLength: 1,
+                    hint: true,
+                    highlight: true
+                },
+                {
+                    name: 'player',
+                    displayKey: 'name',
+                    source: names.ttAdapter(),
+                    templates: {
+                        suggestion: Handlebars.compile('<p><strong>{{name}}</strong></p>')
+                    }
+                });
+
+            var player;
+            search.on('typeahead:selected', function(event, suggestion) {
+                player = suggestion;
+            });
+
+            var $addButton = $('#add-player-button');
+            $addButton.on('click', function() {
+                if(!player) {
+                    return;
+                }
+
+                var teamPlayer = {
+                    name: player.name,
+                    teamId: teamId,
+                    playerId: player.id,
+                    isGoalie: false,
+                    isCaptain: false,
+                    isCoCaptain: false
+                };
+
+                $.ajax({
+                    type: 'POST',
+                    data: JSON.stringify(teamPlayer),
+                    url: '/service/teams/player',
+                    contentType: 'application/json; charset=utf-8',
+                    dataType: 'json',
+                    success: function() {
+                        names.add(teamPlayer);
+
+                        self.renderPlayers(teamId);
+                    }
+                });
+
+                var $addButton = $('#add-player-button');
+                $addButton.prop('disabled', true);
+
+                var search = $('#player-name');
+                search.val('');
             });
         }
     };

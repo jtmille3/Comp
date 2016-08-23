@@ -11,6 +11,8 @@ public class TeamPlayer extends BaseModel implements Serializable {
 	private Boolean isCaptain;
 	private Boolean isCoCaptain;
 
+    public TeamPlayer() {}
+
     public TeamPlayer(Team team, Player player, boolean isCaptain, boolean isCoCaptain, boolean isGoalie) {
         this.teamId = team.getId();
         this.playerId = player.getId();
