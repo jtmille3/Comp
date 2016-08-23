@@ -46,11 +46,13 @@ define(function() {
                     teams: teams
                 }));
 
-                self.attachTeamSearch(teams);
+                self.attachTeamSearch(seasonId, teams);
             });
         },
 
-        attachTeamSearch: function(teams) {
+        attachTeamSearch: function(seasonId, teams) {
+            var self = this;
+
             var names = new Bloodhound({
                 limit: 10,
                 datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
@@ -91,19 +93,24 @@ define(function() {
                 var search = $('#team-name');
                 var name = search.val();
 
+                var team = {
+                    seasonId: seasonId,
+                    name: name,
+                    leagueWinner: false,
+                    playoffWinner: false
+                };
+
                 $.ajax({
                     type: 'POST',
-                    data: JSON.stringify({name: name}),
+                    data: JSON.stringify(team),
                     url: '/service/teams',
                     contentType: 'application/json; charset=utf-8',
                     dataType: 'json',
                     success: function() {
-                        var team = {name: name};
                         names.add(team);
                         teams.push(team);
 
-                        var $teamMessage = $('#team-message');
-                        $teamMessage.html('<div class="alert alert-success">Added team ' + name + '</div>');
+                        self.renderTeams(seasonId);
                     }
                 });
 
