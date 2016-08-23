@@ -13,32 +13,30 @@ define(function() {
                 contentType: 'application/json; charset=utf-8',
                 dataType: 'json',
                 success: function(players) {
-                    self.players = players;
-                    self.attachSearch();
-                    self.attachHandlers();
+                    self.attachSearch(players);
                 }
             });
         },
-        attachSearch: function() {
-            var self = this;
-            self.names = new Bloodhound({
+
+        attachSearch: function(players) {
+            var names = new Bloodhound({
                 limit: 10,
                 datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
                 queryTokenizer: Bloodhound.tokenizers.whitespace,
-                local: self.players,
+                local: players,
                 matcher: function(player) {
                     player.name.toUpperCase() === this.query.toUpperCase()
                 }
             });
 
-            self.names.initialize();
+            names.initialize();
 
             var search = $('#player-name');
 
             search.on('keyup', function() {
                 var text = search.val();
                 var $addButton = $('#add-player-button');
-                var player = Lazy(self.players).find(function(player) { return player.name.toUpperCase() === text.toUpperCase(); });
+                var player = Lazy(players).find(function(player) { return player.name.toUpperCase() === text.toUpperCase(); });
                 $addButton.prop('disabled', !!player);
             });
 
@@ -50,15 +48,11 @@ define(function() {
             {
                 name: 'player',
                 displayKey: 'name',
-                source: self.names.ttAdapter(),
+                source: names.ttAdapter(),
                 templates: {
                     suggestion: Handlebars.compile('<p><strong>{{name}}</strong></p>')
                 }
             });
-        },
-
-        attachHandlers: function() {
-            var self = this;
 
             var $addButton = $('#add-player-button');
             $addButton.on('click', function() {
@@ -73,8 +67,8 @@ define(function() {
                     dataType: 'json',
                     success: function() {
                         var player = {name: name};
-                        self.names.add(player);
-                        self.players.push(player);
+                        names.add(player);
+                        players.push(player);
 
                         var $playerMessage = $('#player-message');
                         $playerMessage.html('<div class="alert alert-success">Added user ' + name + '</div>');
