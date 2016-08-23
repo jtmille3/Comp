@@ -1,3 +1,30 @@
 <div id="teams">
-    <span>teams</span>
+    <h1 class="page-header">Teams</h1>
+    <div class="dropdown" id="seasons-dropdown">
+        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Pick a season<span class="caret"></span></button>
+        <ul class="dropdown-menu">
+            {{#each seasons}}
+            <li><a id="season-{{id}}" href="#" onclick="javascript: return false;">{{name}}</a></li>
+            {{/each}}
+        </ul>
+    </div>
+    <br/>
+    <div class="row">
+        <div class="col-md-12">
+            <form class="form-horizontal well">
+                <div class="form-group">
+                    <label for="team-name" class="col-sm-2 control-label">Name</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="team-name" placeholder="Name" readonly="true">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button id="add-team-button" type="submit" class="btn btn-primary" disabled>Add</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="team-list"></div>
 </div>

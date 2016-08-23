@@ -1,5 +1,6 @@
 package com.sas.comp.service;
 
+import com.sas.comp.models.Season;
 import com.sas.comp.models.Team;
 import com.sas.comp.models.Player;
 import com.sas.comp.models.TeamPlayer;
@@ -7,6 +8,8 @@ import com.sas.comp.mysql.Database;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -94,6 +97,20 @@ public class TeamService {
                 return null;
             }
         });
+    }
+
+    public List<Team> readBySeasonId(final Integer id) {
+        final List<Team> teams = new ArrayList<>();
+
+        Database.doVoidTransaction("SELECT * FROM teams WHERE season_id = ?", (pstmt) -> {
+            pstmt.setInt(1, id);
+            final ResultSet rs = pstmt.executeQuery();
+            while (rs.next()) {
+                teams.add(this.teamFromResultSet(rs));
+            }
+        });
+
+        return teams;
     }
 
     public void update(final Team team) {

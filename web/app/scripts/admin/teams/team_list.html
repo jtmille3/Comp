@@ -1,0 +1,12 @@
+<table id="teams-table" class="table table-condensed table-striped table-hover tablesorter">
+    <thead>
+    <th>Team</th>
+    </thead>
+    <tbody>
+    {{#each teams}}
+    <tr data-team-id="{{id}}" class="selectable">
+        <td>{{name}}</td>
+    </tr>
+    {{/each}}
+    </tbody>
+</table>
