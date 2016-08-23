@@ -140,4 +140,26 @@ public class TeamService {
         team.setPlayoffWinner(rs.getBoolean("playoffWinner"));
         return team;
     }
+
+    public List<Player> readPlayers(Integer id) {
+        final List<Player> players = new ArrayList<>();
+
+        Database.doVoidTransaction("SELECT * FROM team_player tp join players p on tp.player_id = p.id WHERE tp.team_id = ? ORDER BY p.id DESC", (pstmt) -> {
+            pstmt.setInt(1, id);
+
+            final ResultSet rs = pstmt.executeQuery();
+            while (rs.next()) {
+                players.add(this.playerFromResultSet(rs));
+            }
+        });
+
+        return players;
+    }
+
+    private Player playerFromResultSet(ResultSet rs) throws SQLException{
+        final Player player = new Player();
+        player.setName(rs.getString("name"));
+        player.setId(rs.getInt("id"));
+        return player;
+    }
 }

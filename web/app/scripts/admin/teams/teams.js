@@ -22,7 +22,7 @@ define(function() {
             var self = this;
 
             $('#seasons-dropdown a').on('click', function (e) {
-                var seasonId = $(this).attr('id').substring('season-'.length);
+                var seasonId = $(this).data('seasonId');
                 self.renderTeams(seasonId);
 
                 $('#team-name').attr('readonly', false);
@@ -40,6 +40,9 @@ define(function() {
         renderTeams: function(seasonId) {
             var self = this;
 
+            var teamFormTemplate = window.comp['web/app/scripts/admin/teams/team_form.html'];
+            $('#team-form').html(teamFormTemplate());
+
             $.get('/service/seasons/' + seasonId + '/teams', function(teams) {
                 var teamListTemplate = window.comp['web/app/scripts/admin/teams/team_list.html'];
                 $('#team-list').html(teamListTemplate({
@@ -47,6 +50,7 @@ define(function() {
                 }));
 
                 self.attachTeamSearch(seasonId, teams);
+                self.attachTeamHandler();
             });
         },
 
@@ -119,6 +123,32 @@ define(function() {
 
                 var search = $('#team-name');
                 search.val('');
+            });
+        },
+
+        attachTeamHandler: function() {
+            var self = this;
+
+            $('#team-list tr').on('click', function() {
+                $('#team-list tr').removeClass('info');
+                $(this).addClass('info');
+
+                var teamId = $(this).data('teamId');
+
+                self.renderPlayers(teamId);
+            });
+        },
+
+        renderPlayers: function(teamId) {
+            var playerFormTemplate = window.comp['web/app/scripts/admin/teams/player_form.html'];
+            $('#player-form').html(playerFormTemplate());
+
+            // load players for this team...
+            $.get('/service/teams/' + teamId + '/players', function(players) {
+                var playerListTemplate = window.comp['web/app/scripts/admin/teams/player_list.html'];
+                $('#player-list').html(playerListTemplate({
+                    players: players
+                }));
             });
         }
     };

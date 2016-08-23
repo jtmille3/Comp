@@ -4,6 +4,7 @@ import com.sas.comp.models.Player;
 import com.sas.comp.service.PlayerService;
 
 import javax.ws.rs.*;
+import javax.ws.rs.core.MediaType;
 import java.util.List;
 
 /**
@@ -11,6 +12,8 @@ import java.util.List;
  * Created by Philippe on 8/19/16.
  */
 @Path("players")
+@Produces(MediaType.APPLICATION_JSON)
+@Consumes(MediaType.APPLICATION_JSON)
 public class PlayerResource {
     final PlayerService service = new PlayerService();
 

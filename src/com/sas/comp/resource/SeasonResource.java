@@ -15,6 +15,7 @@ import java.util.List;
  */
 @Path("seasons")
 @Produces(MediaType.APPLICATION_JSON)
+@Consumes(MediaType.APPLICATION_JSON)
 public class SeasonResource {
 
     private final SeasonService seasonService = new SeasonService();
