@@ -4,6 +4,7 @@ import com.sas.comp.models.Player;
 import com.sas.comp.service.PlayerService;
 
 import javax.ws.rs.*;
+import java.util.List;
 
 /**
  * CRUD for players
@@ -12,6 +13,11 @@ import javax.ws.rs.*;
 @Path("players")
 public class PlayerResource {
     final PlayerService service = new PlayerService();
+
+    @GET
+    public List<Player> read() {
+        return service.read();
+    }
 
     @POST
     public Player create(Player team) {

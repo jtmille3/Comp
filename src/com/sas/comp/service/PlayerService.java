@@ -1,10 +1,13 @@
 package com.sas.comp.service;
 
 import com.sas.comp.models.Player;
+import com.sas.comp.models.Season;
 import com.sas.comp.mysql.Database;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -33,6 +36,19 @@ public class PlayerService {
             pstmt.execute();
             return player;
         });
+    }
+
+    public List<Player> read() {
+        final List<Player> players = new ArrayList<>();
+
+        Database.doVoidTransaction("SELECT * FROM players ORDER BY id DESC", (pstmt) -> {
+            final ResultSet rs = pstmt.executeQuery();
+            while (rs.next()) {
+                players.add(this.playerFromResultSet(rs));
+            }
+        });
+
+        return players;
     }
 
     public Player read(final Integer id) {
