@@ -23,10 +23,7 @@ define(function() {
                 limit: 10,
                 datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
                 queryTokenizer: Bloodhound.tokenizers.whitespace,
-                local: players,
-                matcher: function(player) {
-                    player.name.toUpperCase() === this.query.toUpperCase()
-                }
+                local: players
             });
 
             names.initialize();
