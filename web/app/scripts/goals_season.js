@@ -20,7 +20,7 @@ define(function (require) {
 
             var seasons = [];
             Lazy(competitive.seasons).each(function (season) {
-                var found = Lazy(season.playerStatistics).where({ playerId: player.playerId });
+                var found = Lazy(season.playerStatistics).where({ id: player.id });
                 if (found.size()) {
                     seasons.push(season);
                 }
@@ -28,7 +28,7 @@ define(function (require) {
 
             Lazy(seasons).each(function (season, j) {
                 if (!data[j]) {
-                    var name = season.name.split(' ')[1].substring(0, 2) + season.name.split(' ')[0];
+                    var name = season.name.split(' ')[1].substring(0, 1) + season.name.split(' ')[0].substring(2,4);
                     data[j] = {
                         name: name,
                         goals: 0
@@ -36,14 +36,14 @@ define(function (require) {
                 }
 
                 Lazy(season.leagueSchedule).each(function (game) {
-                    var games = Lazy(goals).where({ gameId: game.gameId });
+                    var games = Lazy(goals).where({ gameId: game.id });
                     if (games.size()) {
                         data[j].goals += games.size();
                     }
                 });
 
                 Lazy(season.playoffSchedule).each(function (game) {
-                    var games = Lazy(goals).where({ gameId: game.gameId });
+                    var games = Lazy(goals).where({ gameId: game.id });
                     if (games.size()) {
                         data[j].goals += games.size();
                     }
@@ -57,7 +57,7 @@ define(function (require) {
 
             var seasons = [];
             Lazy(competitive.seasons).each(function (season) {
-                var found = Lazy(season.playerStatistics).where({ playerId: player.playerId });
+                var found = Lazy(season.playerStatistics).where({ id: player.id });
                 if (found.size()) {
                     seasons.push(season);
                 }
@@ -74,7 +74,7 @@ define(function (require) {
 
                 Lazy(season.standings).each(function (team) {
                     Lazy(season.playerStatistics).each(function (p2) {
-                        if (team.teamId === p2.teamId && p2.playerId === player.playerId) {
+                        if (team.teamId === p2.teamId && p2.id === player.id) {
                             data[j].shutouts = team.shutouts;
                         }
                     });

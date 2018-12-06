@@ -11,7 +11,7 @@ define(function(require) {
 			this.competitive = competitive;
 
             Lazy(competitive.shutoutStatistics).each(function(p1) {
-                var player = Lazy(competitive.playerStatistics).where({playerId: p1.playerId}).toArray()[0];
+                var player = Lazy(competitive.playerStatistics).where({id: p1.id}).toArray()[0];
                 player.shutouts = p1.shutouts;
                 player.goalsAgainst = p1.goalsAgainst;
             });

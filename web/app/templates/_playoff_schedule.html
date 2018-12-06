@@ -8,11 +8,11 @@
 	</thead>
 	<tbody>
 		{{#each playoffSchedule}}
-			<tr id="{{gameId}}" class="selectable">
+			<tr id="{{id}}" class="selectable">
 				<td>{{home}}</td>
 				<td>{{away}}</td>
 				<td>{{played}}</td>
-                <td>{{#if available}}{{score}}{{/if}}</td>
+				<td>{{#if available}}{{score}}{{/if}}</td>
 			</tr>
 		{{/each}}
 	</tbody>
