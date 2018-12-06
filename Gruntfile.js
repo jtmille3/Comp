@@ -97,12 +97,12 @@ module.exports = function (grunt) {
                         {
                             files: ['<%= yeoman.dist %>/index.html'],
                             module: 'main',
-                            modulePath: '/scripts/main'
+                            modulePath: 'scripts/main'
                         },
                         {
                             files: ['<%= yeoman.dist %>/admin.html'],
                             module: 'admin',
-                            modulePath: '/scripts/admin'
+                            modulePath: 'scripts/admin'
                         }
                     ],
                     modules: [
