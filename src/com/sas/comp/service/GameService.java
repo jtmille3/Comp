@@ -67,8 +67,6 @@ public class GameService {
             if (rs.next()) {
                 returnGame = processSingleGame(rs);
             }
-
-            rs.close();
             return returnGame;
         });
     }
