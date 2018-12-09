@@ -14,6 +14,8 @@ public class Player extends BaseModel {
 	private Integer playoffWinner;
 	private Boolean coCaptain;
 	private Boolean captain;
+	private Integer seasonsPlayed;
+	private String goalsPerSeason;
 
 	public String getTeam() {
 		return team;
@@ -109,6 +111,22 @@ public class Player extends BaseModel {
 
 	public void setCaptain(final Boolean captain) {
 		this.captain = captain;
+	}
+
+	public Integer getSeasonsPlayed() {
+		return seasonsPlayed;
+	}
+
+	public void setSeasonsPlayed(final Integer seasonsPlayed) {
+		this.seasonsPlayed = seasonsPlayed;
+	}
+
+	public String getGoalsPerSeason() {
+		return goalsPerSeason;
+	}
+
+	public void setGoalsPerSeason(final String goalsPerSeason) {
+		this.goalsPerSeason = goalsPerSeason;
 	}
 
 }

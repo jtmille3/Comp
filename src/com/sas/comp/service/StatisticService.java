@@ -70,6 +70,9 @@ public class StatisticService {
                 statistic.setLeagueWinner(rs.getInt("league"));
                 statistic.setPlayoffWinner(rs.getInt("playoff"));
                 statistic.setGoals(rs.getInt("goals"));
+                statistic.setSeasonsPlayed(rs.getInt("seasonsPlayed"));
+                String goalsPerSeason = String.format("%.1f", (float)(statistic.getGoals().floatValue() / statistic.getSeasonsPlayed().floatValue()));
+                statistic.setGoalsPerSeason(goalsPerSeason);
                 statistics.add(statistic);
             }
         });
