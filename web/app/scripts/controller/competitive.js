@@ -20,9 +20,11 @@ define(function(require) {
 			$('#competitive').html(compTemplate(competitive));
 
 			$('#player-all-time-table').tablesorter( {sortList: [[1,1]]} );
+			$('#champions-table').tablesorter( {sortList: [[0,1]]} );
 			$('#goalie-all-time-table').tablesorter( {sortList: [[1,1]]} );
 
             this.attachSearch(competitive);
+            this.attachChampionClickHandler(competitive.seasons);
 
 			for(var i = 0; i < competitive.seasons.length; i++) {
 				var season = competitive.seasons[i];
@@ -41,6 +43,23 @@ define(function(require) {
                 var weatherTemplate = window.comp['web/app/templates/weather.html'];
                 $('#weather').html(weatherTemplate(weather));
             });
+		},
+		attachChampionClickHandler: function(seasons) {
+			var self = this;
+			$('#champions-table tr').click(function(row) {
+				var $row = $(row.currentTarget);
+				var teamId = parseInt($row.attr('id'), 10);
+				var seasonName = $row.attr('season');
+				$row.addClass('selected').siblings().removeClass('selected');
+				for(var i = 0; i < seasons.length; i++) {
+					var season = seasons[i];
+					var seasonId = season.id;
+					if( seasonName == season.name ) {
+						self.selectedChampion(season, teamId);
+						break;
+					}
+				}
+			});
 		},
 		attachStandingsClickHandler: function(season) {
 			var self = this;
@@ -165,6 +184,17 @@ define(function(require) {
                 goalsSeason.generate(player, self.competitive);
             }
         },
+		selectedChampion: function(season, teamId) {
+			var roster = this.roster(season, teamId);
+			var championRosterTemplate = window.comp['web/app/templates/champion_roster.html'];
+			var template = championRosterTemplate({
+				id: teamId,
+				name: roster[0].team,
+				roster: roster
+			});
+			$('#champions-roster').html(template);
+			$('#' + teamId + '-champion-roster-table').tablesorter( {sortList: [[1,0]]} );
+		},
 		selectedTeam: function(season, teamId) {
 			var schedule = this.schedule(season, teamId);
 			var roster = this.roster(season, teamId);
@@ -308,6 +338,13 @@ define(function(require) {
 
             $('#comp-content').children().removeClass('active');
             $('#all-time-content').addClass('active');
+        },
+        renderChampions: function() {
+            $('#comp-menu').children().removeClass('active');
+            $('#comp-champions-menu').addClass('active');
+
+            $('#comp-content').children().removeClass('active');
+            $('#champions-content').addClass('active');
         },
         renderStandings: function(id) {
             this.renderSeason(id);

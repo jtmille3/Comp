@@ -23,6 +23,9 @@ require(['./controller/competitive'], function (competitiveController) {
     crossroads.addRoute('alltime', function() {
         competitiveController.renderAllTime();
     });
+    crossroads.addRoute('champions', function() {
+        competitiveController.renderChampions();
+    });
     crossroads.addRoute('', function() {
         competitiveController.renderSeason(null);
     });
