@@ -1,0 +1,4 @@
+-- revert.sql
+-- sets the db schema/views back to what they were before the upgrade
+
+CREATE OR REPLACE VIEW `standings`  AS  select `game_summary`.`season_id` AS `season_id`,`game_summary`.`team` AS `team`,sum(`game_summary`.`points`) AS `points`,sum((case when (`game_summary`.`points` = 3) then 1 else 0 end)) AS `wins`,sum((case when (`game_summary`.`points` = 0) then 1 else 0 end)) AS `losses`,sum((case when (`game_summary`.`points` = 1) then 1 else 0 end)) AS `ties`,sum(`game_summary`.`goals_for`) AS `goals_for`,sum(`game_summary`.`goals_against`) AS `goals_against`,(sum(`game_summary`.`goals_for`) - sum(`game_summary`.`goals_against`)) AS `goal_differential`,sum(`game_summary`.`shutouts`) AS `shutouts`,`game_summary`.`team_id` AS `team_id` from `game_summary` group by `game_summary`.`season_id`,`game_summary`.`team` order by `game_summary`.`season_id`,`points` desc,`goal_differential` desc,`goals_for` desc ;
