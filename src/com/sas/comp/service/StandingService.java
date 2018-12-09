@@ -38,6 +38,8 @@ public class StandingService {
                 standing.setGoalsAgainst(0);
                 standing.setGoalDifferential(0);
                 standing.setShutouts(0);
+                standing.setLeagueWinner(0);
+                standing.setPlayoffWinner(0);
                 standings.add(standing);
             }
         });
@@ -66,6 +68,8 @@ public class StandingService {
                 standing.setGoalDifferential(rs.getInt("goal_differential"));
                 standing.setShutouts(rs.getInt("shutouts"));
                 standing.setTeamId(rs.getInt("team_id"));
+                standing.setLeagueWinner(rs.getInt("leagueWinner"));
+                standing.setPlayoffWinner(rs.getInt("playoffWinner"));
                 standings.add(standing);
             }
         });

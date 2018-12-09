@@ -13,6 +13,9 @@ public class Standing {
 	private Integer goalsAgainst;
 	private Integer goalDifferential;
 	private Integer shutouts;
+	private Integer leagueWinner;
+	private Integer playoffWinner;
+	private String season;
 
 	public Integer getRank() {
 		return rank;
@@ -102,4 +105,28 @@ public class Standing {
 		this.goalDifferential = goalDifferential;
 	}
 
+	public Integer getLeagueWinner() {
+		return leagueWinner;
+	}
+
+	public void setLeagueWinner(final Integer leagueWinner) {
+		this.leagueWinner = leagueWinner;
+	}
+
+	public Integer getPlayoffWinner() {
+		return playoffWinner;
+	}
+
+	public void setPlayoffWinner(final Integer playoffWinner) {
+		this.playoffWinner = playoffWinner;
+	}
+
+	public String getSeason() {
+		return season;
+	}
+
+	public void setSeason(final String season) {
+		this.season = season;
+	}
+	
 }
