@@ -15,7 +15,15 @@
 		{{#each this.standings}}
 			<tr id="{{teamId}}" class="selectable">
 				<td>{{#if rank}}{{rank}}{{/if}}</td>
-				<td>{{team}}</td>
+				<td>
+					{{team}}
+					{{#if leagueWinner}}
+					<i class="fas fa-award" style="color: #3399ff;" title="League Winner"></i>
+					{{/if}}
+					{{#if playoffWinner}}
+					<i class="fas fa-trophy" style="color: #ffcc00;" title="Playoff Winner"></i>
+					{{/if}}
+				</td>
 				<td>{{wins}}</td>
 				<td>{{losses}}</td>
 				<td>{{ties}}</td>
