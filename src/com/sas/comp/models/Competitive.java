@@ -1,6 +1,7 @@
 package com.sas.comp.models;
 
 import java.util.List;
+import java.util.ArrayList;
 
 public class Competitive {
 	private List<Season> seasons;
@@ -8,6 +9,7 @@ public class Competitive {
 	private List<Player> goalieStatistics;
     private List<Player> shutoutStatistics;
 	private List<Goal> goals;
+	private List<Standing> champions = new ArrayList<Standing>();
 
     public List<Season> getSeasons() {
 		return seasons;
@@ -48,4 +50,18 @@ public class Competitive {
     public List<Player> getShutoutStatistics() {
         return shutoutStatistics;
     }
+
+	public List<Standing> getChampions() {
+		return champions;
+	}
+
+	public void setChampions(final List<Standing> champions) {
+		this.champions = champions;
+	}
+	
+	public void addChampion(final Standing champion) {
+		if( champion != null && ! this.champions.contains(champion) ) {
+			this.champions.add(champion);
+		}
+	}
 }

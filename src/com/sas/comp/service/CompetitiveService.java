@@ -2,6 +2,7 @@ package com.sas.comp.service;
 
 import com.sas.comp.models.Competitive;
 import com.sas.comp.models.Season;
+import com.sas.comp.models.Standing;
 
 public class CompetitiveService {
 
@@ -26,8 +27,22 @@ public class CompetitiveService {
 			season.setPlayoffSchedule(this.gameService.getPlayoffSchedule(season.getId()));
 			season.setPlayerStatistics(this.statisticService.getPlayerStatistics(season.getId()));
 			season.setGoalieStatistics(this.statisticService.getGoalieStatistics(season.getId()));
+			Standing champion = this.findChampion(season);
+			competitive.addChampion(champion);
 		}
 
 		return competitive;
+	}
+	private Standing findChampion(Season season) {
+		Standing champ = null;
+		for(final Standing standing : season.getStandings()) {
+			Integer playoffWinner = standing.getPlayoffWinner();
+			if( playoffWinner != null && playoffWinner.intValue() == 1 ) {
+				standing.setSeason(season.getName());
+				champ = standing;
+				break;
+			}
+		}
+		return champ;
 	}
 }

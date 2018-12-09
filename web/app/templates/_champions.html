@@ -1,0 +1,43 @@
+<div class="tab-pane" id="champions-content">
+	<div class="row">
+		<div class="col-md-7">
+			<h1 class="page-header">Champions</h1>
+			<table id="champions-table" class="table table-condensed table-striped table-hover tablesorter">
+				<thead>
+					<th></th>
+					<th>Season</th>
+					<th>Name</th>
+					<th>W</th>
+					<th>L</th>
+					<th>T</th>
+					<th>Pts</th>
+					<th>GF</th>
+					<th>GA</th>
+					<th>GD</th>
+					<th>GP</th>
+					<th>Shutouts</th>
+				</thead>
+				<tbody>
+					{{#each champions}}
+						<tr id="{{teamId}}" season="{{season}}" class="selectable">
+							<td>{{id}}</td>
+							<td>{{season}}</td>
+							<td>{{team}}</td>
+							<td>{{wins}}</td>
+							<td>{{losses}}</td>
+							<td>{{ties}}</td>
+							<td>{{points}}</td>
+							<td>{{goalsFor}}</td>
+							<td>{{goalsAgainst}}</td>
+							<td>{{goalDifferential}}</td>
+							<td>{{gamesPlayed}}</td>
+							<td>{{shutouts}}</td>
+						</tr>
+					{{/each}}
+				</tbody>
+			</table>
+		</div>
+		<div id="champions-roster">
+		</div>
+	</div>
+</div>

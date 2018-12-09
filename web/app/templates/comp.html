@@ -5,8 +5,9 @@
             {{#each seasons}}
             <li {{#unless @index}}class='active'{{/unless}} id="comp-season-{{id}}-menu"><a href="#/seasons/{{id}}">{{name}}</a></li>
             {{/each}}
-            <li class="nav-header">Statistics</li>
-            <li id="comp-all-time-menu"><a href="#/alltime">All Time</a></li>
+            <li class="nav-header">Summaries</li>
+            <li id="comp-all-time-menu"><a href="#/alltime">All Time Statistics</a></li>
+            <li id="comp-champions-menu"><a href="#/champions">All Champions</a></li>
         </ul>
     </div><!--/.well -->
 </div>
@@ -35,4 +36,5 @@
   </div>
   {{/each}}
   {{> alltime this}}
+  {{> champions this}}
 </div>
