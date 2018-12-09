@@ -128,5 +128,9 @@ public class Standing {
 	public void setSeason(final String season) {
 		this.season = season;
 	}
-	
+
+	public Integer getGamesPlayed() {
+		return new Integer(this.wins + this.losses + this.ties);
+	}
+
 }
