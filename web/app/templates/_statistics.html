@@ -11,7 +11,7 @@
 				{{#each this.playerStatistics}}
 					<tr>
 						<td>{{rank}}</td>
-						<td>{{name}}</td>
+						<td role="player">{{name}}</td>
 						<td>{{team}}</td>
 						<td>{{goals}}</td>
 					</tr>
@@ -29,7 +29,7 @@
 			<tbody>
 				{{#each this.goalieStatistics}}
 					<tr>
-						<td>{{name}}</td>
+						<td role="player">{{name}}</td>
 						<td>{{team}}</td>
 						<td>{{shutouts}}</td>
 					</tr>

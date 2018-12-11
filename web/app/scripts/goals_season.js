@@ -96,8 +96,8 @@ define(function (require) {
             var maxDataPointsForDots = 50;
 
             var margin = 20,
-                w = 600 - margin * 2,
-                h = 350 - margin * 2;
+                w = 900 - margin * 2,
+                h = 400 - margin * 2;
             var pointRadius = 5;
 
             var x = d3.scale.ordinal().rangeRoundBands([0, w - margin * 2], 1).domain(goalData.map(function (d) {

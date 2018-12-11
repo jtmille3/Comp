@@ -13,7 +13,7 @@
     <tbody>
       {{#each playerStatistics}}
         <tr>
-          <td>{{name}}</td>
+          <td role="player">{{name}}</td>
           <td>{{goals}}</td>
           <td>{{seasonsPlayed}}</td>
           <td>{{goalsPerSeason}}</td>
@@ -33,7 +33,7 @@
         <tbody>
           {{#each goalieStatistics}}
             <tr>
-              <td>{{name}}</td>
+              <td role="player">{{name}}</td>
               <td>{{shutouts}}</td>
             </tr>
           {{/each}}
