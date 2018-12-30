@@ -6,8 +6,52 @@ import com.sas.comp.mysql.Database;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.TreeMap;
 
 public class StandingService {
+    
+    private TreeMap<Integer, List<Standing>> allStandings = new TreeMap<Integer, List<Standing>>();
+    
+    public StandingService() {
+        this.populateAllStandings();
+    }
+    
+    private void populateAllStandings() {
+
+        Database.doVoidTransaction("SELECT * FROM standings order by season_id desc ,points desc, goal_differential desc, goals_for desc", (pstmt) -> {
+            final ResultSet rs = pstmt.executeQuery();
+            int rank = 0;
+            Integer prevSeasonId = null;
+            while (rs.next()) {
+                Integer seasonId = rs.getInt("season_id");
+                List<Standing>standings = allStandings.get(seasonId);
+                if( standings == null ) standings = new ArrayList<>();
+                if( seasonId != prevSeasonId ) {
+                    rank = 1;
+                } else {
+                    rank++;
+                }
+                Standing standing = new Standing();
+                standing.setRank(rank);
+                standing.setTeam(rs.getString("team"));
+                standing.setPoints(rs.getInt("points"));
+                standing.setWins(rs.getInt("wins"));
+                standing.setLosses(rs.getInt("losses"));
+                standing.setTies(rs.getInt("ties"));
+                standing.setGoalsFor(rs.getInt("goals_for"));
+                standing.setGoalsAgainst(rs.getInt("goals_against"));
+                standing.setGoalDifferential(rs.getInt("goal_differential"));
+                standing.setShutouts(rs.getInt("shutouts"));
+                standing.setTeamId(rs.getInt("team_id"));
+                standing.setLeagueWinner(rs.getInt("leagueWinner"));
+                standing.setPlayoffWinner(rs.getInt("playoffWinner"));
+                standings.add(standing);
+                allStandings.put(seasonId, standings);
+                prevSeasonId = seasonId;
+            }
+        });
+        
+    }
 
     public List<Standing> getStandings(final Integer seasonId) {
         final List<Standing> standings = getSeasonStandings(seasonId);
@@ -48,32 +92,7 @@ public class StandingService {
     }
 
     private List<Standing> getSeasonStandings(final Integer seasonId) {
-        final List<Standing> standings = new ArrayList<>();
-
-        Database.doVoidTransaction("SELECT * FROM standings WHERE season_id = ? order by points desc, goal_differential desc, goals_for desc", (pstmt) -> {
-            pstmt.setInt(1, seasonId);
-
-            final ResultSet rs = pstmt.executeQuery();
-            int rank = 1;
-            while (rs.next()) {
-                final Standing standing = new Standing();
-                standing.setRank(rank++);
-                standing.setTeam(rs.getString("team"));
-                standing.setPoints(rs.getInt("points"));
-                standing.setWins(rs.getInt("wins"));
-                standing.setLosses(rs.getInt("losses"));
-                standing.setTies(rs.getInt("ties"));
-                standing.setGoalsFor(rs.getInt("goals_for"));
-                standing.setGoalsAgainst(rs.getInt("goals_against"));
-                standing.setGoalDifferential(rs.getInt("goal_differential"));
-                standing.setShutouts(rs.getInt("shutouts"));
-                standing.setTeamId(rs.getInt("team_id"));
-                standing.setLeagueWinner(rs.getInt("leagueWinner"));
-                standing.setPlayoffWinner(rs.getInt("playoffWinner"));
-                standings.add(standing);
-            }
-        });
-
+        final List<Standing> standings = allStandings.get(seasonId);
         return standings;
     }
 

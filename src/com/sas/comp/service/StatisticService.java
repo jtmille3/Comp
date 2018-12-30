@@ -6,20 +6,34 @@ import com.sas.comp.mysql.Database;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.TreeMap;
 
 public class StatisticService {
+    
+    private TreeMap<Integer, List<Player>> allSeasonPlayerStatistics = new TreeMap<Integer, List<Player>>();
+    private TreeMap<Integer, List<Player>> allSeasonGoalieStatistics = new TreeMap<Integer, List<Player>>();
+    
+    public StatisticService() {
+        this.populateAllSeasonPlayerStatistics();
+        this.populateAllSeasonGoalieStatistics();
+    }
 
-    public List<Player> getPlayerStatistics(final Integer seasonId) {
-        final List<Player> statistics = new ArrayList<>();
-
-        Database.doVoidTransaction("SELECT * FROM player_statistics WHERE season_id = ? ORDER BY season_id, goals DESC, team_id, player_id", (pstmt) -> {
-            pstmt.setInt(1, seasonId);
-
+    private void populateAllSeasonPlayerStatistics() {
+        Database.doVoidTransaction("SELECT * FROM player_statistics ORDER BY season_id, goals DESC, team_id, player_id", (pstmt) -> {
             final ResultSet rs = pstmt.executeQuery();
-            int rank = 1;
+            int rank = 0;
+            Integer prevSeasonId = null;
             while (rs.next()) {
+                Integer seasonId = rs.getInt("season_id");
+                List<Player>statistics = allSeasonPlayerStatistics.get(seasonId);
+                if( statistics == null ) statistics = new ArrayList<>();
+                if( seasonId != prevSeasonId ) {
+                    rank = 1;
+                } else {
+                    rank++;
+                }
                 final Player statistic = new Player();
-                statistic.setRank(rank++);
+                statistic.setRank(rank);
                 statistic.setTeam(rs.getString("team"));
                 statistic.setName(rs.getString("player"));
                 statistic.setGoals(rs.getInt("goals"));
@@ -29,20 +43,19 @@ public class StatisticService {
                 statistic.setCaptain(rs.getBoolean("captain"));
                 statistic.setCoCaptain(rs.getBoolean("co_captain"));
                 statistics.add(statistic);
+                allSeasonPlayerStatistics.put(seasonId, statistics);
             }
         });
-
-        return statistics;
+        
     }
-
-    public List<Player> getGoalieStatistics(final Integer seasonId) {
-        final List<Player> statistics = new ArrayList<>();
-
-        Database.doVoidTransaction("SELECT * FROM shutout_statistics WHERE season_id = ? and goalie = 1 ORDER BY shutouts DESC", (pstmt) -> {
-            pstmt.setInt(1, seasonId);
-
+    
+    private void populateAllSeasonGoalieStatistics() {
+        Database.doVoidTransaction("SELECT * FROM shutout_statistics WHERE goalie = 1 ORDER BY season_id, shutouts DESC", (pstmt) -> {
             final ResultSet rs = pstmt.executeQuery();
             while (rs.next()) {
+                Integer seasonId = rs.getInt("season_id");
+                List<Player>statistics = allSeasonGoalieStatistics.get(seasonId);
+                if( statistics == null ) statistics = new ArrayList<>();
                 final Player statistic = new Player();
                 statistic.setName(rs.getString("player"));
                 statistic.setId(rs.getInt("player_id"));
@@ -50,8 +63,18 @@ public class StatisticService {
                 statistic.setGoalsAgainst(rs.getInt("against"));
                 statistic.setShutouts(rs.getInt("shutouts"));
                 statistics.add(statistic);
+                allSeasonGoalieStatistics.put(seasonId, statistics);
             }
         });
+    }
+
+    public List<Player> getPlayerStatistics(final Integer seasonId) {
+        final List<Player> statistics = this.allSeasonPlayerStatistics.get(seasonId);
+        return statistics;
+    }
+
+    public List<Player> getGoalieStatistics(final Integer seasonId) {
+        final List<Player> statistics = this.allSeasonGoalieStatistics.get(seasonId);
         return statistics;
     }
 
