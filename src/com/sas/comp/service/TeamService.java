@@ -18,7 +18,7 @@ import java.sql.SQLException;
 public class TeamService {
 
     public Team find(final String name, final Integer seasonId) {
-        return Database.doReturnTransaction(Team.class,"SELECT name, id, season_id FROM teams WHERE name = ? and season_id=?", (pstmt) -> {
+        return Database.doReturnTransaction(Team.class,"SELECT name, id, season_id, leagueWinner, playoffWinner FROM teams WHERE name = ? and season_id=?", (pstmt) -> {
             pstmt.setString(1, name);
             pstmt.setInt(2, seasonId);
 
@@ -74,11 +74,9 @@ public class TeamService {
     }
 
     public void create(final Team team) {
-        Database.doReturnTransaction(Team.class,"INSERT INTO teams VALUES(NULL, ?, ?, ?, ?)", (pstmt) -> {
+        Database.doReturnTransaction(Team.class,"INSERT INTO teams VALUES(NULL, ?, ?, 0, 0)", (pstmt) -> {
             pstmt.setInt(1, team.getSeasonId());
             pstmt.setString(2, team.getName());
-            pstmt.setBoolean(3, team.getLeagueWinner());
-            pstmt.setBoolean(4, team.getPlayoffWinner());
             pstmt.execute();
             return team;
         });
