@@ -1,11 +1,14 @@
+bin
 node_modules
 temp
 dist
-web/comp
+src/main/resources/static/comp
 .sass-cache
-app/components
+src/main/resources/static/app/components
 work
 distribution
 .idea
 out
 .tmp
+.gradle
+build
