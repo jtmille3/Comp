@@ -21,19 +21,14 @@ public class StatisticService {
     private void populateAllSeasonPlayerStatistics() {
         Database.doVoidTransaction("SELECT * FROM player_statistics ORDER BY season_id, goals DESC, team_id, player_id", (pstmt) -> {
             final ResultSet rs = pstmt.executeQuery();
-            int rank = 0;
-            Integer prevSeasonId = null;
             while (rs.next()) {
                 Integer seasonId = rs.getInt("season_id");
                 List<Player>statistics = allSeasonPlayerStatistics.get(seasonId);
                 if( statistics == null ) statistics = new ArrayList<>();
-                if( seasonId != prevSeasonId ) {
-                    rank = 1;
-                } else {
-                    rank++;
-                }
                 final Player statistic = new Player();
-                statistic.setRank(rank);
+                int rank = 0;
+                if( allSeasonPlayerStatistics.containsKey(seasonId) ) rank = allSeasonPlayerStatistics.get(seasonId).size();
+                statistic.setRank(++rank);
                 statistic.setTeam(rs.getString("team"));
                 statistic.setName(rs.getString("player"));
                 statistic.setGoals(rs.getInt("goals"));
