@@ -5,7 +5,7 @@ package com.sas.comp.models;
  * Created by phsabo on 8/19/16.
  */
 public abstract class BaseModel {
-    protected Integer id;
+    private Integer id;
 
     public Integer getId() {
         return id;

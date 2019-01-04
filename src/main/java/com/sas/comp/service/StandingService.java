@@ -55,7 +55,7 @@ public class StandingService {
 
     public List<Standing> getStandings(final Integer seasonId) {
         final List<Standing> standings = getSeasonStandings(seasonId);
-        if(standings.size() == 0) {
+        if(standings == null || standings.size() == 0) {
             return getEmptyStandings(seasonId);
         } else {
             return standings;

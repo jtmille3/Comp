@@ -25,7 +25,7 @@ public class ImportService {
         final PlayerService playerService = new PlayerService();
         final GameService gameService = new GameService();
 
-        final File file = new File("./import/spring2015.json");
+        final File file = new File("./import/winter2018.json");
         final ObjectMapper mapper = new ObjectMapper(); // can reuse, share globally
         final Map root = mapper.readValue(file, Map.class);
 

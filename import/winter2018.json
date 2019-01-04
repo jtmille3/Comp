@@ -1,0 +1,70 @@
+{
+    "season": "2018 Winter",
+    "teams": [
+        {
+            "name": "Rock",
+            "captain": "Flintstone, Fred",
+            "goalie": "Rubble, Barney",
+            "players": [
+                "Flintstone, Fred",
+                "Rubble, Barney",
+                "Dino",
+                "Wilma",
+                "Betty",
+                "Pebbles",
+                "Bam Bam"
+            ]
+        },
+        {
+            "name": "Paper",
+            "captain": "Tzu, Sun",
+            "goalie": "Lama, Dalai",
+            "players": [
+                "Tzu, Sun",
+                "Lama, Dalai",
+                "Plato",
+                "Hume",
+                "Kant",
+                "Confucius",
+                "Descartes"
+            ]
+        },
+        {
+            "name": "Scissors",
+            "captain": "Kruger, Freddy",
+            "goalie": "Vorhees, Jason",
+            "players": [
+                "Kruger, Freddy",
+                "Vorhees, Jason",
+                "Abdulla",
+                "Gozen, Tomoe",
+                "Nobunaga, Oda",
+                "Pumpkinhead",
+                "Butch"
+            ]
+        }
+    ],
+    "games": [
+        {
+            "away": "Rock",
+            "home": "Paper",
+            "datetime": "2018-12-24 11:30:00"
+        },
+        {
+            "away": "Scissors",
+            "home": "Rock",
+            "datetime": "2018-12-24 12:30:00"
+        },
+        {
+            "away": "Paper",
+            "home": "Scissors",
+            "datetime": "2018-12-25 12:00:00"
+        },
+        {
+            "away": "Rock",
+            "home": "Scissors",
+            "datetime": "2018-12-26 11:30:00",
+        	"playoff": true
+        }
+    ]
+}
