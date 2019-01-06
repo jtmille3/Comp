@@ -218,12 +218,12 @@ define(function(require) {
 		selectedTeam: function(season, teamId) {
 			var schedule = this.schedule(season, teamId);
 			var roster = this.roster(season, teamId);
-            var team = this.getTeam(season, teamId);
+			var team = this.getTeam(season, teamId);
 
 			var teamScheduleTemplate = window.comp['src/main/resources/static/app/templates/team_schedule.html'];
 			var template = teamScheduleTemplate({
 				id: team.teamId,
-                name: team.team,
+				name: team.team,
 				schedule: schedule,
 				roster: roster
 			});
@@ -287,34 +287,36 @@ define(function(require) {
 		},
 		schedule: function(season, teamId) {
 			var schedule = [];
-			for(var i = 0; i < season.leagueSchedule.length; i++) {
-				var match = season.leagueSchedule[i];
-                match.homeTeam = false;
-                match.awayTeam = false;
-				if(match.homeId === teamId) {
-                    match.homeTeam = true;
-					if(match.available) {
-						if(match.homeScore > match.awayScore) {
-							match.result = 'won';
-						} else if(match.homeScore < match.awayScore) {
-							match.result = 'lost';
-						} else if(match.homeScore === match.awayScore && match.score) {
-							match.result = 'tied';
+			if( season.hasOwnProperty('leagueSchedule') ) {
+				for(var i = 0; i < season.leagueSchedule.length; i++) {
+					var match = season.leagueSchedule[i];
+	                match.homeTeam = false;
+	                match.awayTeam = false;
+					if(match.homeId === teamId) {
+	                    match.homeTeam = true;
+						if(match.available) {
+							if(match.homeScore > match.awayScore) {
+								match.result = 'won';
+							} else if(match.homeScore < match.awayScore) {
+								match.result = 'lost';
+							} else if(match.homeScore === match.awayScore && match.score) {
+								match.result = 'tied';
+							}
 						}
-					}
-					schedule.push(match);
-				} else if(match.awayId === teamId) {
-                    match.awayTeam = true;
-					if(match.available) {
-						if(match.homeScore < match.awayScore) {
-							match.result = 'won';
-						} else if(match.homeScore > match.awayScore) {
-							match.result = 'lost';
-						} else if(match.homeScore === match.awayScore && match.score) {
-							match.result = 'tied';
+						schedule.push(match);
+					} else if(match.awayId === teamId) {
+	                    match.awayTeam = true;
+						if(match.available) {
+							if(match.homeScore < match.awayScore) {
+								match.result = 'won';
+							} else if(match.homeScore > match.awayScore) {
+								match.result = 'lost';
+							} else if(match.homeScore === match.awayScore && match.score) {
+								match.result = 'tied';
+							}
 						}
+						schedule.push(match);
 					}
-					schedule.push(match);
 				}
 			}
 			return schedule;

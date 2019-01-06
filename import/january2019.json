@@ -1,0 +1,35 @@
+{
+    "season": "2019 January",
+    "teams": [
+        {
+            "name": "Earth",
+            "captain": "Danali",
+            "goalie": "K2",
+            "players": [
+                "Danali",
+                "K2",
+                "Fuji"
+            ]
+        },
+        {
+            "name": "Wind",
+            "captain": "Bryce",
+            "goalie": "Grand",
+            "players": [
+                "Bryce",
+                "Grand",
+                "Zion"
+            ]
+        },
+        {
+            "name": "Fire",
+            "captain": "St Helen",
+            "goalie": "Kona",
+            "players": [
+                "St Helen",
+                "Kona",
+                "Crater Lake"
+            ]
+        }
+    ]
+}
