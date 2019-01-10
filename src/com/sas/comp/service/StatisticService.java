@@ -26,9 +26,18 @@ public class StatisticService {
                 List<Player>statistics = allSeasonPlayerStatistics.get(seasonId);
                 if( statistics == null ) statistics = new ArrayList<>();
                 final Player statistic = new Player();
-                int rank = 0;
-                if( allSeasonPlayerStatistics.containsKey(seasonId) ) rank = allSeasonPlayerStatistics.get(seasonId).size();
-                statistic.setRank(++rank);
+                int rank = 1;
+                if( allSeasonPlayerStatistics.containsKey(seasonId) ) {
+                    List<Player> seasonPlayers = allSeasonPlayerStatistics.get(seasonId);
+                    if( seasonPlayers.size() > 0 ) {
+                        Player prevPlayer = seasonPlayers.get(seasonPlayers.size() - 1);
+                        rank = prevPlayer.getRank();
+                        if( rs.getInt("goals") < prevPlayer.getGoals() ) {
+                            rank++;
+                        }
+                    }
+                }
+                statistic.setRank(rank);
                 statistic.setTeam(rs.getString("team"));
                 statistic.setName(rs.getString("player"));
                 statistic.setGoals(rs.getInt("goals"));
@@ -41,9 +50,9 @@ public class StatisticService {
                 allSeasonPlayerStatistics.put(seasonId, statistics);
             }
         });
-        
+       
     }
-    
+
     private void populateAllSeasonGoalieStatistics() {
         Database.doVoidTransaction("SELECT * FROM shutout_statistics WHERE goalie = 1 ORDER BY season_id, shutouts DESC", (pstmt) -> {
             final ResultSet rs = pstmt.executeQuery();
