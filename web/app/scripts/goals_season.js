@@ -90,20 +90,20 @@ define(function (require) {
             var playoffWinners = {};
             var teamIds = new Set();
             Lazy(competitive.seasons).each(function (season) {
-                var leagueWinner = season.standings.filter(function(standing){ return standing.leagueWinner == 1});   // will be undefined if no winner yet.
-                var playoffWinner = season.standings.filter(function(standing){ return standing.playoffWinner == 1}); // will be undefined if no winner yet.
+                var leagueWinner = season.standings.filter(function(standing){ return standing.leagueWinner == 1});
+                var playoffWinner = season.standings.filter(function(standing){ return standing.playoffWinner == 1});
                 // short season name, F18 for example, determined by parsing long season name, Fall 2018.
                 var sname = season.name.split(' ')[1].substring(0, 1) + season.name.split(' ')[0].substring(2,4);
                 var playerteams = season.playerStatistics.filter(function(p) {return p.name == player.name});
                 var playerteam = null;
-                if( typeof playerteams !== undefined && playerteams.length > 0 ) {
+                if( playerteams.length > 0 ) {
                     playerteam = playerteams.pop();
                     teamIds.add(playerteam.teamId);
                 }
-                if( typeof leagueWinner !== 'undefined' && leagueWinner.length > 0 ) {
+                if( leagueWinner.length > 0 ) {
                     leagueWinners[sname] = leagueWinner.pop();
                 }
-                if( typeof playoffWinner !== 'undefined' && playoffWinner.length > 0 ) {
+                if( playoffWinner.length > 0 ) {
                     playoffWinners[sname] = playoffWinner.pop();
                 }
                 var found = Lazy(season.playerStatistics).where({ id: player.id });
