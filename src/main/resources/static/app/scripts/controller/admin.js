@@ -143,16 +143,16 @@ define(function(require) {
 				}
 
 				game.homePlayers.push({
-					player: 'Ghost',
+					name: 'Ghost',
 					teamId: game.homeId,
-					playerId: -1,
+					id: -1,
 					goals: self.getGhostGoals(game.homeId, game.homeScore, players)
 				});
 
 				game.awayPlayers.push({
-					player: 'Ghost',
+					name: 'Ghost',
 					teamId: game.awayId,
-					playerId: -2,
+					id: -2,
 					goals: self.getGhostGoals(game.awayId, game.awayScore, players)
 				});
 
