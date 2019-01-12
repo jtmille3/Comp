@@ -29,6 +29,7 @@ public class GoalResource {
 		final Game game = gameService.getGame(goal.getGameId());
 
         if(goal.getPlayerId() < 0) {
+        	// Ghost goals.  Used for own goals and games decided by PK.  Maybe forfeits too?
             if (goal.getPlayerId() == -1) {
                 game.setHomeScore(game.getHomeScore() + 1);
             } else if (goal.getPlayerId() == -2) {
