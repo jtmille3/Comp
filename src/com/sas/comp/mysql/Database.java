@@ -28,6 +28,7 @@ public class Database {
             conn = getConnection();
             conn.setAutoCommit(false);
 
+            System.err.println("sql: " + preparedStatement);
 
             PreparedStatement statement = conn.prepareStatement(preparedStatement, PreparedStatement.RETURN_GENERATED_KEYS);
             if(transactionInterface instanceof TransactionReturnInterface) {
