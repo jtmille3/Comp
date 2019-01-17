@@ -22,6 +22,8 @@ define(function(require) {
 			$('#player-all-time-table').tablesorter( {sortList: [[1,1]]} );
 			$('#champions-table').tablesorter( {sortList: [[0,1]]} );
 			$('#goalie-all-time-table').tablesorter( {sortList: [[1,1]]} );
+            $('#player-statistics-content table').tablesorter( {sortList: [[4,1]]} );
+
 
             this.attachSearch(competitive);
             this.attachChampionClickHandler(competitive.seasons);
@@ -360,6 +362,20 @@ define(function(require) {
 
             $('#comp-content').children().removeClass('active');
             $('#all-time-content').addClass('active');
+        },
+        renderPlayerStatistics: function(type) {
+            $('#comp-menu').children().removeClass('active');
+            $('#comp-player-statistics-menu').addClass('active');
+
+            $('#comp-content').children().removeClass('active');
+            $('#player-statistics-content').addClass('active');
+
+            $('#player-statistics-menu').children().removeClass('active');
+            $('#player-statistics-' + type + '-menu').addClass('active');
+
+            $('#player-statistics-tabs').children().removeClass('active');
+            $('#player-statistics-' + type).addClass('active');
+
         },
         renderChampions: function() {
             $('#comp-menu').children().removeClass('active');

@@ -1,0 +1,44 @@
+<div class="tab-pane" id="player-statistics-content">
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table table-condensed table-striped table-hover tablesorter">
+    <thead>
+      <th>Name</th>
+      <th>Seasons</th>
+      <th>League Titles</th>
+      <th>Champ-<br />ionships</th>
+      <th>Goals</th>
+      <th>Avg Goals /<br />Season</th>
+      <th>Max Goals<br />in Season</th>
+      <th>Max Goals<br />in Game</th>
+      <th>Wins</th>
+      <th>Losses</th>
+      <th>Ties</th>
+      <th>Win%</th>
+      <th>Loss%</th>
+      <th>Tie%</th>
+    </thead>
+    <tbody>
+      {{#each this}}
+        <tr>
+          <td role="player">{{name}}</td>
+          <td>{{numSeasons}}</td>
+          <td>{{leagueWinner}}</td>
+          <td>{{playoffWinner}}</td>
+          <td>{{totalGoals}}</td>
+          <td>{{avgGoalsSeason}}</td>
+          <td>{{maxGoalsInSeason}}</td>
+          <td>{{maxGoalsInGame}}</td>
+          <td>{{win}}</td>
+          <td>{{loss}}</td>
+          <td>{{tie}}</td>
+          <td>{{winpct}}</td>
+          <td>{{losspct}}</td>
+          <td>{{tiepct}}</td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+    </div>
+  </div>
+</div>

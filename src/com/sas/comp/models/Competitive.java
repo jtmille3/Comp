@@ -2,6 +2,7 @@ package com.sas.comp.models;
 
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Map;
 
 public class Competitive {
 	private List<Season> seasons;
@@ -10,8 +11,18 @@ public class Competitive {
     private List<Player> shutoutStatistics;
 	private List<Goal> goals;
 	private List<Standing> champions = new ArrayList<Standing>();
+	private Map<String, List<PlayerDetailedStats>>playerDetailedStatsMap;
+	
+	public Map<String, List<PlayerDetailedStats>> getPlayerDetailedStatsMap() {
+		return playerDetailedStatsMap;
+	}
 
-    public List<Season> getSeasons() {
+	public void setPlayerDetailedStatsMap(
+			Map<String, List<PlayerDetailedStats>> playerDetailedStatsMap) {
+		this.playerDetailedStatsMap = playerDetailedStatsMap;
+	}
+
+	public List<Season> getSeasons() {
 		return seasons;
 	}
 

@@ -23,6 +23,12 @@ require(['./controller/competitive'], function (competitiveController) {
     crossroads.addRoute('alltime', function() {
         competitiveController.renderAllTime();
     });
+    crossroads.addRoute('playerstatistics', function() {
+        competitiveController.renderPlayerStatistics('overall');
+    });
+    crossroads.addRoute('playerstatistics/{type}', function(type) {
+        competitiveController.renderPlayerStatistics(type);
+    });
     crossroads.addRoute('champions', function() {
         competitiveController.renderChampions();
     });
