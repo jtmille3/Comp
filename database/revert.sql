@@ -34,3 +34,30 @@ order by s.id,
 count(gs.id) desc,
 t.id,
 p.id;
+
+
+-- Issue #15
+CREATE or REPLACE VIEW 
+goalie_summary AS select s.id AS season_id,
+p.id AS player_id,
+p.name AS player,
+t.name AS team,
+g.away_score AS against,
+(case when (g.away_score = 0) then 1 else 0 end) AS shutouts 
+from players p 
+join team_player pt on ((p.id = pt.player_id) and (pt.isGoalie = 1))
+join teams t on (t.id = pt.team_id)
+join games g on (g.home_team_id = t.id)
+join seasons s on ((g.season_id = s.id) and (t.season_id = s.id)) 
+union all 
+select s.id AS season_id,
+p.id AS player_id,
+p.name AS player,
+t.name AS team,
+g.home_score AS against,
+(case when (g.home_score = 0) then 1 else 0 end) AS shutouts 
+from players p 
+join team_player pt on ((p.id = pt.player_id) and (pt.isGoalie = 1))
+join teams t on (t.id = pt.team_id)
+join games g on (g.away_team_id = t.id)
+join seasons s on ((g.season_id = s.id) and (t.season_id = s.id));

@@ -17,6 +17,7 @@ public class CompetitiveService {
 
 		competitive.setSeasons(this.seasonService.getSeasons());
 		competitive.setPlayerDetailedStatsMap(this.statisticService.getPlayerDetailedStatsMap());
+		competitive.setGoalieDetailedStatsMap(this.statisticService.getGoalieDetailedStatsMap());
 		competitive.setPlayerStatistics(this.statisticService.getPlayerStatistics());
 		competitive.setGoalieStatistics(this.statisticService.getGoalieStatistics());
         competitive.setShutoutStatistics(this.statisticService.getShutoutStatistics());
