@@ -20,8 +20,17 @@ require(['./controller/competitive'], function (competitiveController) {
     crossroads.addRoute('seasons/{id}/playoffs', function(id) {
         competitiveController.renderPlayoffs(id);
     });
-    crossroads.addRoute('alltime', function() {
-        competitiveController.renderAllTime();
+    crossroads.addRoute('goaliestatistics', function() {
+        competitiveController.renderGoalieStatistics('overall');
+    });
+    crossroads.addRoute('goaliestatistics/{type}', function(type) {
+        competitiveController.renderGoalieStatistics(type);
+    });
+    crossroads.addRoute('playerstatistics', function() {
+        competitiveController.renderPlayerStatistics('overall');
+    });
+    crossroads.addRoute('playerstatistics/{type}', function(type) {
+        competitiveController.renderPlayerStatistics(type);
     });
     crossroads.addRoute('champions', function() {
         competitiveController.renderChampions();

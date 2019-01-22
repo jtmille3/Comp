@@ -19,9 +19,9 @@ define(function(require) {
 			var compTemplate = window.comp['web/app/templates/comp.html'];
 			$('#competitive').html(compTemplate(competitive));
 
-			$('#player-all-time-table').tablesorter( {sortList: [[1,1]]} );
-			$('#champions-table').tablesorter( {sortList: [[0,1]]} );
-			$('#goalie-all-time-table').tablesorter( {sortList: [[1,1]]} );
+			$('#champions-table').tablesorter( {sortList: [[0,1]], sortInitialOrder: "desc"} );
+            $('#player-statistics-content table').tablesorter( {sortList: [[5,1]], sortInitialOrder: "desc"} );
+			$('#goalie-statistics-content table').tablesorter( {sortList: [[5,1]], sortInitialOrder: "desc"} );
 
             this.attachSearch(competitive);
             this.attachChampionClickHandler(competitive.seasons);
@@ -213,7 +213,7 @@ define(function(require) {
 				roster: roster
 			});
 			$('#champions-roster').html(template);
-			$('#' + teamId + '-champion-roster-table').tablesorter( {sortList: [[1,0]]} );
+			$('#' + teamId + '-champion-roster-table').tablesorter( {sortList: [[1,0]], sortInitialOrder: "desc"} );
 		},
 		selectedTeam: function(season, teamId) {
 			var schedule = this.schedule(season, teamId);
@@ -231,7 +231,7 @@ define(function(require) {
 			$('#' + season.id + '-team-schedule').html(template);
 
 			$('#' + team.teamId + '-team-schedule-table').tablesorter( {sortList: [[2,0]]} );
-			$('#' + team.teamId + '-team-roster-table').tablesorter( {sortList: [[1,0]]} );
+			$('#' + team.teamId + '-team-roster-table').tablesorter( {sortList: [[1,0]], sortInitialOrder: "desc"} );
 		},
 
 		selectedGame: function(gameId, teamId) {
@@ -354,12 +354,31 @@ define(function(require) {
             $('#comp-content').children().removeClass('active');
             $('#season-' + id + '-content').addClass('active');
         },
-        renderAllTime: function() {
+        renderGoalieStatistics: function(type) {
             $('#comp-menu').children().removeClass('active');
-            $('#comp-all-time-menu').addClass('active');
+            $('#comp-goalie-statistics-menu').addClass('active');
 
             $('#comp-content').children().removeClass('active');
-            $('#all-time-content').addClass('active');
+            $('#goalie-statistics-content').addClass('active');
+
+            $('#goalie-statistics-menu').children().removeClass('active');
+            $('#goalie-statistics-' + type + '-menu').addClass('active');
+
+            $('#goalie-statistics-tabs').children().removeClass('active');
+            $('#goalie-statistics-' + type).addClass('active');
+        },
+        renderPlayerStatistics: function(type) {
+            $('#comp-menu').children().removeClass('active');
+            $('#comp-player-statistics-menu').addClass('active');
+
+            $('#comp-content').children().removeClass('active');
+            $('#player-statistics-content').addClass('active');
+
+            $('#player-statistics-menu').children().removeClass('active');
+            $('#player-statistics-' + type + '-menu').addClass('active');
+
+            $('#player-statistics-tabs').children().removeClass('active');
+            $('#player-statistics-' + type).addClass('active');
         },
         renderChampions: function() {
             $('#comp-menu').children().removeClass('active');
