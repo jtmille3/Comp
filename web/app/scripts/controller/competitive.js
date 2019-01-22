@@ -19,7 +19,7 @@ define(function(require) {
 			var compTemplate = window.comp['web/app/templates/comp.html'];
 			$('#competitive').html(compTemplate(competitive));
 
-			$('#champions-table').tablesorter( {sortList: [[0,1]]} );
+			$('#champions-table').tablesorter( {sortList: [[0,1]], sortInitialOrder: "desc"} );
             $('#player-statistics-content table').tablesorter( {sortList: [[5,1]], sortInitialOrder: "desc"} );
 			$('#goalie-statistics-content table').tablesorter( {sortList: [[5,1]], sortInitialOrder: "desc"} );
 
@@ -213,7 +213,7 @@ define(function(require) {
 				roster: roster
 			});
 			$('#champions-roster').html(template);
-			$('#' + teamId + '-champion-roster-table').tablesorter( {sortList: [[1,0]]} );
+			$('#' + teamId + '-champion-roster-table').tablesorter( {sortList: [[1,0]], sortInitialOrder: "desc"} );
 		},
 		selectedTeam: function(season, teamId) {
 			var schedule = this.schedule(season, teamId);
