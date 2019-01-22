@@ -7,6 +7,7 @@ public class PlayerDetailedStats {
 	private Integer numGames;
 	private Integer leagueWinner;
 	private Integer playoffWinner;
+	private Integer trophies;
 	private Integer totalGoals = 0;  // default data that views will not populate with zero.
 	private String avgGoalsSeason = "0.0";
 	private Integer maxGoalsInSeason = 0;
@@ -52,6 +53,12 @@ public class PlayerDetailedStats {
 	}
 	public void setPlayoffWinner(Integer playoffWinner) {
 		this.playoffWinner = playoffWinner;
+	}
+	public Integer getTrophies() {
+		return trophies;
+	}
+	public void setTrophies(Integer trophies) {
+		this.trophies = trophies;
 	}
 	public Integer getTotalGoals() {
 		return totalGoals;

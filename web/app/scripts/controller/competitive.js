@@ -20,9 +20,8 @@ define(function(require) {
 			$('#competitive').html(compTemplate(competitive));
 
 			$('#champions-table').tablesorter( {sortList: [[0,1]]} );
-            $('#player-statistics-content table').tablesorter( {sortList: [[4,1]]} );
-			$('#goalie-statistics-content table').tablesorter( {sortList: [[4,1]]} );
-
+            $('#player-statistics-content table').tablesorter( {sortList: [[5,1]], sortInitialOrder: "desc"} );
+			$('#goalie-statistics-content table').tablesorter( {sortList: [[5,1]], sortInitialOrder: "desc"} );
 
             this.attachSearch(competitive);
             this.attachChampionClickHandler(competitive.seasons);
@@ -232,7 +231,7 @@ define(function(require) {
 			$('#' + season.id + '-team-schedule').html(template);
 
 			$('#' + team.teamId + '-team-schedule-table').tablesorter( {sortList: [[2,0]]} );
-			$('#' + team.teamId + '-team-roster-table').tablesorter( {sortList: [[1,0]]} );
+			$('#' + team.teamId + '-team-roster-table').tablesorter( {sortList: [[1,0]], sortInitialOrder: "desc"} );
 		},
 
 		selectedGame: function(gameId, teamId) {

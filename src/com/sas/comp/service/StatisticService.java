@@ -250,6 +250,7 @@ public class StatisticService {
                 detailedStat.setNumGames(rs.getInt("num_games"));
                 detailedStat.setLeagueWinner(rs.getInt("leagueWinner"));
                 detailedStat.setPlayoffWinner(rs.getInt("playoffWinner"));
+                detailedStat.setTrophies(rs.getInt("leagueWinner") + rs.getInt("playoffWinner"));
                 detailedStat.setWin(rs.getInt("wins"));
                 detailedStat.setLoss(rs.getInt("losses"));
                 detailedStat.setTie(rs.getInt("ties"));
@@ -287,6 +288,7 @@ public class StatisticService {
                 detailedStat.setNumGames(rs.getInt("num_games"));
                 detailedStat.setLeagueWinner(rs.getInt("leagueWinner"));
                 detailedStat.setPlayoffWinner(rs.getInt("playoffWinner"));
+                detailedStat.setTrophies(rs.getInt("leagueWinner") + rs.getInt("playoffWinner"));
                 detailedStat.setWin(rs.getInt("wins"));
                 detailedStat.setLoss(rs.getInt("losses"));
                 detailedStat.setTie(rs.getInt("ties"));
@@ -324,6 +326,7 @@ public class StatisticService {
                 detailedStat.setNumGames(rs.getInt("num_games"));
                 detailedStat.setLeagueWinner(rs.getInt("leagueWinner"));
                 detailedStat.setPlayoffWinner(rs.getInt("playoffWinner"));
+                detailedStat.setTrophies(rs.getInt("leagueWinner") + rs.getInt("playoffWinner"));
                 detailedStat.setWin(rs.getInt("wins"));
                 detailedStat.setLoss(rs.getInt("losses"));
                 detailedStat.setTie(rs.getInt("ties"));
@@ -361,6 +364,7 @@ public class StatisticService {
                 detailedStat.setNumGames(rs.getInt("num_games"));
                 detailedStat.setLeagueWinner(rs.getInt("leagueWinner"));
                 detailedStat.setPlayoffWinner(rs.getInt("playoffWinner"));
+                detailedStat.setTrophies(rs.getInt("leagueWinner") + rs.getInt("playoffWinner"));
                 detailedStat.setTotalGoalsAgainst(rs.getInt("against"));
                 detailedStat.setTotalShutouts(rs.getInt("shutouts"));
                 detailedStat.setAgainstPerSeason(String.format("%.1f", rs.getFloat("againstperseason")));
@@ -383,6 +387,7 @@ public class StatisticService {
                 detailedStat.setNumGames(rs.getInt("num_games"));
                 detailedStat.setLeagueWinner(rs.getInt("leagueWinner"));
                 detailedStat.setPlayoffWinner(rs.getInt("playoffWinner"));
+                detailedStat.setTrophies(rs.getInt("leagueWinner") + rs.getInt("playoffWinner"));
                 detailedStat.setTotalGoalsAgainst(rs.getInt("against"));
                 detailedStat.setTotalShutouts(rs.getInt("shutouts"));
                 detailedStat.setAgainstPerSeason(String.format("%.1f", rs.getFloat("againstperseason")));
@@ -405,6 +410,7 @@ public class StatisticService {
                 detailedStat.setNumGames(rs.getInt("num_games"));
                 detailedStat.setLeagueWinner(rs.getInt("leagueWinner"));
                 detailedStat.setPlayoffWinner(rs.getInt("playoffWinner"));
+                detailedStat.setTrophies(rs.getInt("leagueWinner") + rs.getInt("playoffWinner"));
                 detailedStat.setTotalGoalsAgainst(rs.getInt("against"));
                 detailedStat.setTotalShutouts(rs.getInt("shutouts"));
                 detailedStat.setAgainstPerSeason(String.format("%.1f", rs.getFloat("againstperseason")));

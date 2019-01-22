@@ -7,6 +7,7 @@ public class GoalieDetailedStats {
 	private Integer numGames;
 	private Integer leagueWinner;
 	private Integer playoffWinner;
+	private Integer trophies;
 	private Integer totalShutouts;
 	private Integer totalGoalsAgainst;
 	private String againstPerSeason;
@@ -48,6 +49,12 @@ public class GoalieDetailedStats {
 	}
 	public void setPlayoffWinner(Integer playoffWinner) {
 		this.playoffWinner = playoffWinner;
+	}
+	public Integer getTrophies() {
+		return trophies;
+	}
+	public void setTrophies(Integer trophies) {
+		this.trophies = trophies;
 	}
 	public Integer getTotalShutouts() {
 		return totalShutouts;
