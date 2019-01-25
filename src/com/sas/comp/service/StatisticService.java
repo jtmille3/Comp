@@ -16,10 +16,36 @@ public class StatisticService {
     
     private TreeMap<Integer, List<Player>> allSeasonPlayerStatistics = new TreeMap<Integer, List<Player>>();
     private TreeMap<Integer, List<Player>> allSeasonGoalieStatistics = new TreeMap<Integer, List<Player>>();
+    private TreeMap<Integer, Map<String,Map<String,List<Player>>>> allSeasonStatistics = new TreeMap<Integer, Map<String, Map<String,List<Player>>>>();
     
     public StatisticService() {
         this.populateAllSeasonPlayerStatistics();
         this.populateAllSeasonGoalieStatistics();
+    }
+    
+    private Map<String,Map<String,List<Player>>> getEmptyStatMap() {
+        // handlebars requires a fleshed out object for the season statistics map or it will fail silently so we 
+        // populate the bare minimum object so the structure is present even for seasons not yet having any games
+        Map<String, Map<String, List<Player>>> seasonStatistics = new HashMap<String, Map<String, List<Player>>>();
+        Map<String, List<Player>> playerStatMap = new HashMap<String, List<Player>>();
+        List<Player>players = new ArrayList<Player>();
+        List<Player>goalies = new ArrayList<Player>();
+        playerStatMap.put("player", players);
+        playerStatMap.put("goalie", goalies);
+        seasonStatistics.put("overall", playerStatMap);
+        playerStatMap = new HashMap<String, List<Player>>();
+        players = new ArrayList<Player>();
+        goalies = new ArrayList<Player>();
+        playerStatMap.put("player", players);
+        playerStatMap.put("goalie", goalies);
+        seasonStatistics.put("season", playerStatMap);
+        playerStatMap = new HashMap<String, List<Player>>();
+        players = new ArrayList<Player>();
+        goalies = new ArrayList<Player>();
+        playerStatMap.put("player", players);
+        playerStatMap.put("goalie", goalies);
+        seasonStatistics.put("playoff", playerStatMap);
+        return seasonStatistics;
     }
 
     private void populateAllSeasonPlayerStatistics() {
@@ -54,6 +80,104 @@ public class StatisticService {
                 allSeasonPlayerStatistics.put(seasonId, statistics);
             }
         });
+        
+        Database.doVoidTransaction("SELECT * FROM season_goal_totals ORDER BY season_id, total_goals DESC, team_name, player", (pstmt) -> {
+            final ResultSet rs = pstmt.executeQuery();
+            while (rs.next()) {
+                Integer seasonId = rs.getInt("season_id");
+                Map<String, Map<String,List<Player>>>statMap = allSeasonStatistics.get(seasonId);
+                if( statMap == null ) statMap = this.getEmptyStatMap();
+                allSeasonStatistics.put(seasonId, statMap);
+                Map<String, List<Player>> playerStatMap = statMap.get("overall");
+                if( playerStatMap == null ) playerStatMap = new HashMap<String, List<Player>>();
+                statMap.put("overall", playerStatMap);
+                List<Player> statistics = playerStatMap.get("player");
+                if( statistics == null) statistics = new ArrayList<Player>();
+                playerStatMap.put("player", statistics);
+                final Player statistic = new Player();
+                int rank = 1;
+                if( allSeasonStatistics.containsKey(seasonId) ) {
+                    List<Player> seasonPlayers = allSeasonStatistics.get(seasonId).get("overall").get("player");
+                    if( seasonPlayers.size() > 0 ) {
+                        Player prevPlayer = seasonPlayers.get(seasonPlayers.size() - 1);
+                        rank = prevPlayer.getRank();
+                        if( rs.getInt("total_goals") < prevPlayer.getGoals() ) {
+                            rank++;
+                        }
+                    }
+                }
+                statistic.setRank(rank);
+                statistic.setTeam(rs.getString("team_name"));
+                statistic.setName(rs.getString("player"));
+                statistic.setGoals(rs.getInt("total_goals"));
+                statistics.add(statistic);
+            }
+        });
+       
+        Database.doVoidTransaction("SELECT * FROM regular_season_goal_totals ORDER BY season_id, total_goals DESC, team_name, player", (pstmt) -> {
+            final ResultSet rs = pstmt.executeQuery();
+            while (rs.next()) {
+                Integer seasonId = rs.getInt("season_id");
+                Map<String, Map<String,List<Player>>>statMap = allSeasonStatistics.get(seasonId);
+                if( statMap == null ) statMap = this.getEmptyStatMap();
+                allSeasonStatistics.put(seasonId, statMap);
+                Map<String, List<Player>> playerStatMap = statMap.get("season");
+                if( playerStatMap == null ) playerStatMap = new HashMap<String, List<Player>>();
+                statMap.put("season", playerStatMap);
+                List<Player> statistics = playerStatMap.get("player");
+                if( statistics == null) statistics = new ArrayList<Player>();
+                playerStatMap.put("player", statistics);
+                final Player statistic = new Player();
+                int rank = 1;
+                if( allSeasonStatistics.containsKey(seasonId) ) {
+                    List<Player> seasonPlayers = allSeasonStatistics.get(seasonId).get("season").get("player");
+                    if( seasonPlayers.size() > 0 ) {
+                        Player prevPlayer = seasonPlayers.get(seasonPlayers.size() - 1);
+                        rank = prevPlayer.getRank();
+                        if( rs.getInt("total_goals") < prevPlayer.getGoals() ) {
+                            rank++;
+                        }
+                    }
+                }
+                statistic.setRank(rank);
+                statistic.setTeam(rs.getString("team_name"));
+                statistic.setName(rs.getString("player"));
+                statistic.setGoals(rs.getInt("total_goals"));
+                statistics.add(statistic);
+            }
+        });
+        Database.doVoidTransaction("SELECT * FROM playoff_goal_totals ORDER BY season_id, total_goals DESC, team_name, player", (pstmt) -> {
+            final ResultSet rs = pstmt.executeQuery();
+            while (rs.next()) {
+                Integer seasonId = rs.getInt("season_id");
+                Map<String, Map<String,List<Player>>>statMap = allSeasonStatistics.get(seasonId);
+                if( statMap == null ) statMap = this.getEmptyStatMap();
+                allSeasonStatistics.put(seasonId, statMap);
+                Map<String, List<Player>> playerStatMap = statMap.get("playoff");
+                if( playerStatMap == null ) playerStatMap = new HashMap<String, List<Player>>();
+                statMap.put("playoff", playerStatMap);
+                List<Player> statistics = playerStatMap.get("player");
+                if( statistics == null) statistics = new ArrayList<Player>();
+                playerStatMap.put("player", statistics);
+                final Player statistic = new Player();
+                int rank = 1;
+                if( allSeasonStatistics.containsKey(seasonId) ) {
+                    List<Player> seasonPlayers = allSeasonStatistics.get(seasonId).get("playoff").get("player");
+                    if( seasonPlayers.size() > 0 ) {
+                        Player prevPlayer = seasonPlayers.get(seasonPlayers.size() - 1);
+                        rank = prevPlayer.getRank();
+                        if( rs.getInt("total_goals") < prevPlayer.getGoals() ) {
+                            rank++;
+                        }
+                    }
+                }
+                statistic.setRank(rank);
+                statistic.setTeam(rs.getString("team_name"));
+                statistic.setName(rs.getString("player"));
+                statistic.setGoals(rs.getInt("total_goals"));
+                statistics.add(statistic);
+            }
+        });
        
     }
 
@@ -74,6 +198,79 @@ public class StatisticService {
                 allSeasonGoalieStatistics.put(seasonId, statistics);
             }
         });
+        
+        String baseSql = "SELECT season_id, player_id, player, team, sum(against) as total_against, sum(shutouts) as total_shutouts FROM goalie_summary ";
+        String groupOrder = "group by season_id, player_id ORDER BY season_id DESC, total_shutouts desc";
+        
+        Database.doVoidTransaction(baseSql + groupOrder, (pstmt) -> {
+            final ResultSet rs = pstmt.executeQuery();
+            while (rs.next()) {
+                Integer seasonId = rs.getInt("season_id");
+                Map<String, Map<String,List<Player>>>statMap = allSeasonStatistics.get(seasonId);
+                if( statMap == null ) statMap = this.getEmptyStatMap();
+                allSeasonStatistics.put(seasonId, statMap);
+                Map<String, List<Player>> playerStatMap = statMap.get("overall");
+                if( playerStatMap == null ) playerStatMap = new HashMap<String, List<Player>>();
+                statMap.put("overall", playerStatMap);
+                List<Player> statistics = playerStatMap.get("goalie");
+                if( statistics == null) statistics = new ArrayList<Player>();
+                playerStatMap.put("goalie", statistics);
+                final Player statistic = new Player();
+                statistic.setId(rs.getInt("player_id"));
+                statistic.setName(rs.getString("player"));
+                statistic.setTeam(rs.getString("team"));
+                statistic.setGoalsAgainst(rs.getInt("total_against"));
+                statistic.setShutouts(rs.getInt("total_shutouts"));
+                statistics.add(statistic);
+            }
+        });
+
+        Database.doVoidTransaction(baseSql + " where playoff = 0 " + groupOrder, (pstmt) -> {
+            final ResultSet rs = pstmt.executeQuery();
+            while (rs.next()) {
+                Integer seasonId = rs.getInt("season_id");
+                Map<String, Map<String,List<Player>>>statMap = allSeasonStatistics.get(seasonId);
+                if( statMap == null ) statMap = this.getEmptyStatMap();
+                allSeasonStatistics.put(seasonId, statMap);
+                Map<String, List<Player>> playerStatMap = statMap.get("season");
+                if( playerStatMap == null ) playerStatMap = new HashMap<String, List<Player>>();
+                statMap.put("season", playerStatMap);
+                List<Player> statistics = playerStatMap.get("goalie");
+                if( statistics == null) statistics = new ArrayList<Player>();
+                playerStatMap.put("goalie", statistics);
+                final Player statistic = new Player();
+                statistic.setId(rs.getInt("player_id"));
+                statistic.setName(rs.getString("player"));
+                statistic.setTeam(rs.getString("team"));
+                statistic.setGoalsAgainst(rs.getInt("total_against"));
+                statistic.setShutouts(rs.getInt("total_shutouts"));
+                statistics.add(statistic);
+            }
+        });
+        
+        Database.doVoidTransaction(baseSql + " where playoff = 1 " + groupOrder, (pstmt) -> {
+            final ResultSet rs = pstmt.executeQuery();
+            while (rs.next()) {
+                Integer seasonId = rs.getInt("season_id");
+                Map<String, Map<String,List<Player>>>statMap = allSeasonStatistics.get(seasonId);
+                if( statMap == null ) statMap = this.getEmptyStatMap();
+                allSeasonStatistics.put(seasonId, statMap);
+                Map<String, List<Player>> playerStatMap = statMap.get("playoff");
+                if( playerStatMap == null ) playerStatMap = new HashMap<String, List<Player>>();
+                statMap.put("playoff", playerStatMap);
+                List<Player> statistics = playerStatMap.get("goalie");
+                if( statistics == null) statistics = new ArrayList<Player>();
+                playerStatMap.put("goalie", statistics);
+                final Player statistic = new Player();
+                statistic.setId(rs.getInt("player_id"));
+                statistic.setName(rs.getString("player"));
+                statistic.setTeam(rs.getString("team"));
+                statistic.setGoalsAgainst(rs.getInt("total_against"));
+                statistic.setShutouts(rs.getInt("total_shutouts"));
+                statistics.add(statistic);
+            }
+        });
+
     }
 
     public List<Player> getPlayerStatistics(final Integer seasonId) {
@@ -83,6 +280,11 @@ public class StatisticService {
 
     public List<Player> getGoalieStatistics(final Integer seasonId) {
         final List<Player> statistics = this.allSeasonGoalieStatistics.get(seasonId);
+        return statistics;
+    }
+
+    public Map<String, Map<String, List<Player>>> getSeasonStatistics(final Integer seasonId) {
+        final Map<String, Map<String,List<Player>>> statistics = this.allSeasonStatistics.get(seasonId);
         return statistics;
     }
 

@@ -28,6 +28,7 @@ public class CompetitiveService {
 			season.setLeagueSchedule(this.gameService.getLeagueSchedule(season.getId()));
 			season.setPlayoffSchedule(this.gameService.getPlayoffSchedule(season.getId()));
 			season.setPlayerStatistics(this.statisticService.getPlayerStatistics(season.getId()));
+			season.setSeasonStatistics(this.statisticService.getSeasonStatistics(season.getId()));
 			season.setGoalieStatistics(this.statisticService.getGoalieStatistics(season.getId()));
 			Standing champion = this.findChampion(season);
 			competitive.addChampion(champion);

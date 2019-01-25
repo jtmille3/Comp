@@ -22,6 +22,8 @@ define(function(require) {
 			$('#champions-table').tablesorter( {sortList: [[0,1]], sortInitialOrder: "desc"} );
             $('#player-statistics-content table').tablesorter( {sortList: [[5,1]], sortInitialOrder: "desc"} );
 			$('#goalie-statistics-content table').tablesorter( {sortList: [[5,1]], sortInitialOrder: "desc"} );
+			$('table.season_player_stats').tablesorter( {sortList: [[3,1]]} );
+			$('table.season_goalie_stats').tablesorter( {sortList: [[2,1]]} );
 
             this.attachSearch(competitive);
             this.attachChampionClickHandler(competitive.seasons);
@@ -32,8 +34,6 @@ define(function(require) {
 				$('#' + season.id + '-standings-table').tablesorter( {sortList: [[0,0]]} );
 				$('#' + season.id + '-playoff-schedule-table').tablesorter( {sortList: [[2,0]]} );
 				$('#' + season.id + '-league-schedule-table').tablesorter( {sortList: [[2,0]]} ); 
-				$('#' + season.id + '-player-statistics-table').tablesorter( {sortList: [[3,1]]} );
-				$('#' + season.id + '-goalie-statistics-table').tablesorter( {sortList: [[2,1]]} );
 
 				this.attachStandingsClickHandler(season);
 				this.attachLeagueScheduleClickHandler(season);
@@ -405,14 +405,14 @@ define(function(require) {
             $('#season-' + id + '-tabs').children().removeClass('active');
             $('#season-' + id + '-schedule').addClass('active');
         },
-        renderStatistics: function(id) {
+        renderStatistics: function(id, type) {
             this.renderSeason(id);
 
             $('#season-' + id + '-menu').children().removeClass('active');
-            $('#season-' + id + '-statistics-menu').addClass('active');
+            $('#season-' + id + '-' + type + '-statistics-menu').addClass('active');
 
             $('#season-' + id + '-tabs').children().removeClass('active');
-            $('#season-' + id + '-statistics').addClass('active');
+            $('#season-' + id + '-' + type + '-statistics').addClass('active');
         },
         renderPlayoffs: function(id) {
             this.renderSeason(id);
