@@ -19,8 +19,6 @@ public class CompetitiveService {
 		this.statisticService.initializePlayerGoalieStatistics();
 		competitive.setPlayerDetailedStatsMap(this.statisticService.getPlayerDetailedStatsMap());
 		competitive.setGoalieDetailedStatsMap(this.statisticService.getGoalieDetailedStatsMap());
-		//competitive.setPlayerStatistics(this.statisticService.getPlayerStatistics());
-		//competitive.setGoalieStatistics(this.statisticService.getGoalieStatistics());
 		competitive.setShutoutStatistics(this.statisticService.getShutoutStatistics());
 		competitive.setGoals(this.goalService.getGoals());
 
@@ -28,9 +26,7 @@ public class CompetitiveService {
 			season.setStandings(this.standingService.getStandings(season.getId()));
 			season.setLeagueSchedule(this.gameService.getLeagueSchedule(season.getId()));
 			season.setPlayoffSchedule(this.gameService.getPlayoffSchedule(season.getId()));
-			//season.setPlayerStatistics(this.statisticService.getPlayerStatistics(season.getId()));
 			season.setSeasonStatistics(this.statisticService.getSeasonStatistics(season.getId()));
-			//season.setGoalieStatistics(this.statisticService.getGoalieStatistics(season.getId()));
 			Standing champion = this.findChampion(season);
 			competitive.addChampion(champion);
 		}

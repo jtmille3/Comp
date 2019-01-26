@@ -15,8 +15,6 @@ import java.util.TreeMap;
 
 public class StatisticService {
     
-    private TreeMap<Integer, List<Player>> allSeasonPlayerStatistics = new TreeMap<Integer, List<Player>>();
-    private TreeMap<Integer, List<Player>> allSeasonGoalieStatistics = new TreeMap<Integer, List<Player>>();
     private TreeMap<Integer, Map<String,Map<String,List<Player>>>> allSeasonStatistics = new TreeMap<Integer, Map<String, Map<String,List<Player>>>>();
     
     public void initializePlayerGoalieStatistics() {
@@ -48,41 +46,8 @@ public class StatisticService {
         seasonStatistics.put("playoff", playerStatMap);
         return seasonStatistics;
     }
-
+    
     private void populateAllSeasonPlayerStatistics() {
-        // TODO.  still needed?
-        Database.doVoidTransaction("SELECT * FROM player_statistics ORDER BY season_id, goals DESC, team_id, player_id", (pstmt) -> {
-            final ResultSet rs = pstmt.executeQuery();
-            while (rs.next()) {
-                Integer seasonId = rs.getInt("season_id");
-                List<Player>statistics = allSeasonPlayerStatistics.get(seasonId);
-                if( statistics == null ) statistics = new ArrayList<>();
-                final Player statistic = new Player();
-                int rank = 1;
-                if( allSeasonPlayerStatistics.containsKey(seasonId) ) {
-                    List<Player> seasonPlayers = allSeasonPlayerStatistics.get(seasonId);
-                    if( seasonPlayers.size() > 0 ) {
-                        Player prevPlayer = seasonPlayers.get(seasonPlayers.size() - 1);
-                        rank = prevPlayer.getRank();
-                        if( rs.getInt("goals") < prevPlayer.getGoals() ) {
-                            rank++;
-                        }
-                    }
-                }
-                statistic.setRank(rank);
-                statistic.setTeam(rs.getString("team"));
-                statistic.setName(rs.getString("player"));
-                statistic.setGoals(rs.getInt("goals"));
-                statistic.setTeamId(rs.getInt("team_id"));
-                statistic.setId(rs.getInt("player_id"));
-                statistic.setGoalie(rs.getBoolean("goalie"));
-                statistic.setCaptain(rs.getBoolean("captain"));
-                statistic.setCoCaptain(rs.getBoolean("co_captain"));
-                statistics.add(statistic);
-                allSeasonPlayerStatistics.put(seasonId, statistics);
-            }
-        });
-        
         // TODO. proceduralize and parameterize rs extraction
         Database.doVoidTransaction("SELECT * FROM season_goal_totals ORDER BY season_id, total_goals DESC, team_name, player", (pstmt) -> {
             final ResultSet rs = pstmt.executeQuery();
@@ -191,24 +156,6 @@ public class StatisticService {
     }
 
     private void populateAllSeasonGoalieStatistics() {
-        // TODO.  is this still needed?
-        Database.doVoidTransaction("SELECT * FROM shutout_statistics WHERE goalie = 1 ORDER BY season_id, shutouts DESC", (pstmt) -> {
-            final ResultSet rs = pstmt.executeQuery();
-            while (rs.next()) {
-                Integer seasonId = rs.getInt("season_id");
-                List<Player>statistics = allSeasonGoalieStatistics.get(seasonId);
-                if( statistics == null ) statistics = new ArrayList<>();
-                final Player statistic = new Player();
-                statistic.setName(rs.getString("player"));
-                statistic.setId(rs.getInt("player_id"));
-                statistic.setTeam(rs.getString("team"));
-                statistic.setGoalsAgainst(rs.getInt("against"));
-                statistic.setShutouts(rs.getInt("shutouts"));
-                statistics.add(statistic);
-                allSeasonGoalieStatistics.put(seasonId, statistics);
-            }
-        });
-        
         String baseSql = "SELECT season_id, player_id, player, team, sum(against) as total_against, sum(shutouts) as total_shutouts FROM goalie_summary ";
         String groupOrder = "group by season_id, player_id ORDER BY season_id DESC, total_shutouts desc";
         
@@ -286,62 +233,8 @@ public class StatisticService {
 
     }
 
-    public List<Player> getPlayerStatistics(final Integer seasonId) {
-        final List<Player> statistics = this.allSeasonPlayerStatistics.get(seasonId);
-        return statistics;
-    }
-
-    public List<Player> getGoalieStatistics(final Integer seasonId) {
-        final List<Player> statistics = this.allSeasonGoalieStatistics.get(seasonId);
-        return statistics;
-    }
-
     public Map<String, Map<String, List<Player>>> getSeasonStatistics(final Integer seasonId) {
         final Map<String, Map<String,List<Player>>> statistics = this.allSeasonStatistics.get(seasonId);
-        return statistics;
-    }
-
-    // TODO.  is this still needed with the detailed stats
-    public List<Player> getPlayerStatistics() {
-        final List<Player> statistics = new ArrayList<>();
-
-        Database.doVoidTransaction("SELECT * FROM player_alltime_statistics ORDER BY goals DESC", (pstmt) -> {
-
-            final ResultSet rs = pstmt.executeQuery();
-            int rank = 1;
-            while (rs.next()) {
-                final Player statistic = new Player();
-                statistic.setRank(rank++);
-                statistic.setName(rs.getString("player"));
-                statistic.setId(rs.getInt("player_id"));
-                statistic.setLeagueWinner(rs.getInt("league"));
-                statistic.setPlayoffWinner(rs.getInt("playoff"));
-                statistic.setGoals(rs.getInt("goals"));
-                statistic.setSeasonsPlayed(rs.getInt("seasonsPlayed"));
-                String goalsPerSeason = String.format("%.1f", (float)(statistic.getGoals().floatValue() / statistic.getSeasonsPlayed().floatValue()));
-                statistic.setGoalsPerSeason(goalsPerSeason);
-                statistics.add(statistic);
-            }
-        });
-
-        return statistics;
-    }
-    // TODO.  is this still needed with the detailed stats
-    public List<Player> getGoalieStatistics() {
-        final List<Player> statistics = new ArrayList<>();
-
-        Database.doVoidTransaction("SELECT * FROM goalie_alltime_statistics ORDER BY shutouts desc", (pstmt) -> {
-
-            final ResultSet rs = pstmt.executeQuery();
-            while (rs.next()) {
-                final Player statistic = new Player();
-                statistic.setName(rs.getString("player"));
-                statistic.setGoalsAgainst(rs.getInt("against"));
-                statistic.setShutouts(rs.getInt("shutouts"));
-                statistics.add(statistic);
-            }
-        });
-
         return statistics;
     }
 
@@ -365,6 +258,7 @@ public class StatisticService {
 
         return statistics;
     }
+    
     public Map<String, List<PlayerDetailedStats>> getPlayerDetailedStatsMap() {
         // player detailed stats has two query components.  The goal oriented and the winlosstie oriented
         // we first get the goal oriented and pass that map structure to the winlosstie oriented which
@@ -374,6 +268,7 @@ public class StatisticService {
         Map<String, List<PlayerDetailedStats>> playerWinLossTie = this.getPlayerWinLossTie(playerDetailedGoalStatsMap);
         return playerWinLossTie;
     }
+    
     private HashMap<String, HashMap<String, PlayerDetailedStats>> getPlayerDetailedGoalStats() {
         final HashMap<String, HashMap<String, PlayerDetailedStats>> playerDetailedGoalStatsMap = new HashMap<String, HashMap<String,PlayerDetailedStats>>();
         String baseSql = "select player_name, sum(totalGoals) as totalGoals, max(totalGoals) as maxGoalInSeason, max(maxGoalInGame) as maxGoalInGame, playoff from ( "
@@ -418,6 +313,7 @@ public class StatisticService {
 
         return playerDetailedGoalStatsMap;
     }
+
     private PlayerDetailedStats extractPlayerDetailedStatsFromResultSet(final ResultSet rs) throws SQLException {
         final PlayerDetailedStats detailedStat = new PlayerDetailedStats();
         detailedStat.setName(rs.getString("player_name"));
@@ -426,6 +322,7 @@ public class StatisticService {
         detailedStat.setMaxGoalsInGame(rs.getInt("maxGoalInGame"));
         return detailedStat;
     }
+    
     public Map<String, List<PlayerDetailedStats>> getPlayerWinLossTie(HashMap<String, HashMap<String, PlayerDetailedStats>> playerDetailedGoalStatsMap) {
         final Map<String, List<PlayerDetailedStats>> playerDetailedStatsMap = new HashMap<String,List<PlayerDetailedStats>>();
         
@@ -603,6 +500,7 @@ public class StatisticService {
 
         return goalieDetailedStatsMap;
     }
+    
     private GoalieDetailedStats extractGoalieDetailedStatsFromResultSet(final ResultSet rs) throws SQLException {
         final GoalieDetailedStats detailedStat = new GoalieDetailedStats();
         String goalieName = rs.getString("player");
@@ -620,4 +518,5 @@ public class StatisticService {
         detailedStat.setShutoutsPerGame(String.format("%.1f", rs.getFloat("shutoutspergame")));
         return detailedStat;
     }
+
 }
