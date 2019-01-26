@@ -20,7 +20,7 @@ define(function (require) {
 
             var seasons = [];
             Lazy(competitive.seasons).each(function (season) {
-                var found = Lazy(season.playerStatistics).where({ id: player.id });
+                var found = Lazy(season.playerStatistics).where({ name: player.name });
                 if (found.size()) {
                     seasons.push(season);
                 }
@@ -57,7 +57,7 @@ define(function (require) {
 
             var seasons = [];
             Lazy(competitive.seasons).each(function (season) {
-                var found = Lazy(season.playerStatistics).where({ id: player.id });
+                var found = Lazy(season.playerStatistics).where({ name: player.name });
                 if (found.size()) {
                     seasons.push(season);
                 }
@@ -74,7 +74,7 @@ define(function (require) {
 
                 Lazy(season.standings).each(function (team) {
                     Lazy(season.playerStatistics).each(function (p2) {
-                        if (team.teamId === p2.teamId && p2.id === player.id) {
+                        if (team.teamId === p2.teamId && p2.name === player.name) {
                             data[j].shutouts = team.shutouts;
                         }
                     });
@@ -106,7 +106,7 @@ define(function (require) {
                 if( playoffWinner.length > 0 ) {
                     playoffWinners[sname] = playoffWinner.pop();
                 }
-                var found = Lazy(season.playerStatistics).where({ id: player.id });
+                var found = Lazy(season.playerStatistics).where({ name: player.name });
                 if (found.size()) {
                     seasons.push(season);
                 }

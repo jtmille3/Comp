@@ -65,3 +65,78 @@ join teams t on (t.id = pt.team_id)
 join games g on (g.away_team_id = t.id)
 join seasons s on ((g.season_id = s.id) and (t.season_id = s.id))
 ;
+
+-- Issue #19
+CREATE or REPLACE VIEW 
+season_goal_totals AS 
+select s.id AS season_id,
+s.name AS season_name,
+t.id AS team_id,
+t.name AS team_name,
+p.id AS player_id,
+p.name AS player,
+count(gs.id) AS total_goals
+from players p 
+join team_player tp on (tp.player_id = p.id)
+join teams t on (t.id = tp.team_id)
+join seasons s on (s.id = t.season_id)
+left join games g on (g.season_id = s.id)
+left join goals gs on ((gs.game_id = g.id) and (gs.player_id = p.id))
+group by s.id,
+t.id,
+p.id 
+order by s.id,
+count(gs.id) desc,
+t.id,
+p.id;
+CREATE or REPLACE VIEW 
+playoff_goal_totals AS 
+select s.id AS season_id,
+s.name AS season_name,
+t.id AS team_id,
+t.name AS team_name,
+p.id AS player_id,
+p.name AS player,
+g.playoff as playoff,
+count(gs.id) AS total_goals
+from players p 
+join team_player tp on (tp.player_id = p.id)
+join teams t on (t.id = tp.team_id)
+join seasons s on (s.id = t.season_id)
+left join games g on (g.season_id = s.id)
+left join goals gs on ((gs.game_id = g.id) and (gs.player_id = p.id))
+where g.playoff = 1
+group by s.id,
+t.id,
+g.playoff,
+p.id 
+order by s.id,
+count(gs.id) desc,
+t.id,
+p.id;
+CREATE or REPLACE VIEW 
+regular_season_goal_totals as
+select s.id AS season_id,
+s.name AS season_name,
+t.id AS team_id,
+t.name AS team_name,
+p.id AS player_id,
+p.name AS player,
+g.playoff as playoff,
+count(gs.id) AS total_goals
+from players p 
+join team_player tp on (tp.player_id = p.id)
+join teams t on (t.id = tp.team_id)
+join seasons s on (s.id = t.season_id)
+left join games g on (g.season_id = s.id)
+left join goals gs on ((gs.game_id = g.id) and (gs.player_id = p.id))
+where g.playoff = 0
+group by s.id,
+t.id,
+g.playoff,
+p.id 
+order by s.id,
+count(gs.id) desc,
+t.id,
+p.id;
+

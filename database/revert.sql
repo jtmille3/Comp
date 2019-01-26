@@ -61,3 +61,44 @@ join team_player pt on ((p.id = pt.player_id) and (pt.isGoalie = 1))
 join teams t on (t.id = pt.team_id)
 join games g on (g.away_team_id = t.id)
 join seasons s on ((g.season_id = s.id) and (t.season_id = s.id));
+
+
+-- Issue #19
+CREATE or REPLACE VIEW 
+season_goal_totals AS select s.name AS name,
+gs.player AS player,
+count(0) AS total_goals 
+from goal_summary gs 
+join games g
+join seasons s 
+where ((gs.game_id = g.id) 
+and (s.id = g.season_id)) 
+group by gs.team_id,
+gs.player 
+order by count(0) desc;
+CREATE or REPLACE VIEW 
+playoff_goal_totals AS select s.name AS name,
+gs.player AS player,
+count(0) AS total_goals 
+from goal_summary gs 
+join games g
+join seasons s
+where ((gs.game_id = g.id) 
+and (s.id = g.season_id) 
+and (g.playoff = 1)) 
+group by gs.team_id,
+gs.player 
+order by count(0) desc;
+CREATE or REPLACE VIEW 
+regular_season_goal_totals AS select s.name AS name,
+gs.player AS player,
+count(0) AS total_goals 
+from goal_summary gs 
+join games g 
+join seasons s 
+where ((gs.game_id = g.id) 
+and (s.id = g.season_id) 
+and (g.playoff = 0)) 
+group by gs.team_id,
+gs.player 
+order by count(0) desc;

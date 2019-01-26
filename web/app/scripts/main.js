@@ -15,7 +15,10 @@ require(['./controller/competitive'], function (competitiveController) {
         competitiveController.renderSchedule(id);
     });
     crossroads.addRoute('seasons/{id}/statistics', function(id) {
-        competitiveController.renderStatistics(id);
+        competitiveController.renderStatistics(id, 'overall');
+    });
+    crossroads.addRoute('seasons/{id}/statistics/{type}', function(id, type) {
+        competitiveController.renderStatistics(id, type);
     });
     crossroads.addRoute('seasons/{id}/playoffs', function(id) {
         competitiveController.renderPlayoffs(id);
