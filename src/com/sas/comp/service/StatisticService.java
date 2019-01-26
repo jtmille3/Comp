@@ -6,6 +6,7 @@ import com.sas.comp.models.PlayerDetailedStats;
 import com.sas.comp.mysql.Database;
 
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -18,7 +19,7 @@ public class StatisticService {
     private TreeMap<Integer, List<Player>> allSeasonGoalieStatistics = new TreeMap<Integer, List<Player>>();
     private TreeMap<Integer, Map<String,Map<String,List<Player>>>> allSeasonStatistics = new TreeMap<Integer, Map<String, Map<String,List<Player>>>>();
     
-    public StatisticService() {
+    public void initializePlayerGoalieStatistics() {
         this.populateAllSeasonPlayerStatistics();
         this.populateAllSeasonGoalieStatistics();
     }
@@ -49,6 +50,7 @@ public class StatisticService {
     }
 
     private void populateAllSeasonPlayerStatistics() {
+        // TODO.  still needed?
         Database.doVoidTransaction("SELECT * FROM player_statistics ORDER BY season_id, goals DESC, team_id, player_id", (pstmt) -> {
             final ResultSet rs = pstmt.executeQuery();
             while (rs.next()) {
@@ -81,6 +83,7 @@ public class StatisticService {
             }
         });
         
+        // TODO. proceduralize and parameterize rs extraction
         Database.doVoidTransaction("SELECT * FROM season_goal_totals ORDER BY season_id, total_goals DESC, team_name, player", (pstmt) -> {
             final ResultSet rs = pstmt.executeQuery();
             while (rs.next()) {
@@ -108,12 +111,14 @@ public class StatisticService {
                 }
                 statistic.setRank(rank);
                 statistic.setTeam(rs.getString("team_name"));
+                statistic.setTeamId(rs.getInt("team_id"));
                 statistic.setName(rs.getString("player"));
                 statistic.setGoals(rs.getInt("total_goals"));
                 statistics.add(statistic);
             }
         });
        
+        // TODO. proceduralize and parameterize rs extraction
         Database.doVoidTransaction("SELECT * FROM regular_season_goal_totals ORDER BY season_id, total_goals DESC, team_name, player", (pstmt) -> {
             final ResultSet rs = pstmt.executeQuery();
             while (rs.next()) {
@@ -141,11 +146,14 @@ public class StatisticService {
                 }
                 statistic.setRank(rank);
                 statistic.setTeam(rs.getString("team_name"));
+                statistic.setTeamId(rs.getInt("team_id"));
                 statistic.setName(rs.getString("player"));
                 statistic.setGoals(rs.getInt("total_goals"));
                 statistics.add(statistic);
             }
         });
+
+        // TODO. proceduralize and parameterize rs extraction
         Database.doVoidTransaction("SELECT * FROM playoff_goal_totals ORDER BY season_id, total_goals DESC, team_name, player", (pstmt) -> {
             final ResultSet rs = pstmt.executeQuery();
             while (rs.next()) {
@@ -173,6 +181,7 @@ public class StatisticService {
                 }
                 statistic.setRank(rank);
                 statistic.setTeam(rs.getString("team_name"));
+                statistic.setTeamId(rs.getInt("team_id"));
                 statistic.setName(rs.getString("player"));
                 statistic.setGoals(rs.getInt("total_goals"));
                 statistics.add(statistic);
@@ -182,6 +191,7 @@ public class StatisticService {
     }
 
     private void populateAllSeasonGoalieStatistics() {
+        // TODO.  is this still needed?
         Database.doVoidTransaction("SELECT * FROM shutout_statistics WHERE goalie = 1 ORDER BY season_id, shutouts DESC", (pstmt) -> {
             final ResultSet rs = pstmt.executeQuery();
             while (rs.next()) {
@@ -202,6 +212,7 @@ public class StatisticService {
         String baseSql = "SELECT season_id, player_id, player, team, sum(against) as total_against, sum(shutouts) as total_shutouts FROM goalie_summary ";
         String groupOrder = "group by season_id, player_id ORDER BY season_id DESC, total_shutouts desc";
         
+        // TODO. proceduralize and parameterize rs extraction
         Database.doVoidTransaction(baseSql + groupOrder, (pstmt) -> {
             final ResultSet rs = pstmt.executeQuery();
             while (rs.next()) {
@@ -225,6 +236,7 @@ public class StatisticService {
             }
         });
 
+        // TODO. proceduralize and parameterize rs extraction
         Database.doVoidTransaction(baseSql + " where playoff = 0 " + groupOrder, (pstmt) -> {
             final ResultSet rs = pstmt.executeQuery();
             while (rs.next()) {
@@ -248,6 +260,7 @@ public class StatisticService {
             }
         });
         
+        // TODO. proceduralize and parameterize rs extraction
         Database.doVoidTransaction(baseSql + " where playoff = 1 " + groupOrder, (pstmt) -> {
             final ResultSet rs = pstmt.executeQuery();
             while (rs.next()) {
@@ -288,6 +301,7 @@ public class StatisticService {
         return statistics;
     }
 
+    // TODO.  is this still needed with the detailed stats
     public List<Player> getPlayerStatistics() {
         final List<Player> statistics = new ArrayList<>();
 
@@ -312,7 +326,7 @@ public class StatisticService {
 
         return statistics;
     }
-
+    // TODO.  is this still needed with the detailed stats
     public List<Player> getGoalieStatistics() {
         final List<Player> statistics = new ArrayList<>();
 
@@ -352,6 +366,10 @@ public class StatisticService {
         return statistics;
     }
     public Map<String, List<PlayerDetailedStats>> getPlayerDetailedStatsMap() {
+        // player detailed stats has two query components.  The goal oriented and the winlosstie oriented
+        // we first get the goal oriented and pass that map structure to the winlosstie oriented which
+        // will not only get the winlosstie but tie in the appropriate goal data for each player.
+        // basically, cannot (or would be difficult and expensive) to do in one sql
         HashMap<String, HashMap<String, PlayerDetailedStats>> playerDetailedGoalStatsMap = this.getPlayerDetailedGoalStats();
         Map<String, List<PlayerDetailedStats>> playerWinLossTie = this.getPlayerWinLossTie(playerDetailedGoalStatsMap);
         return playerWinLossTie;
@@ -371,11 +389,7 @@ public class StatisticService {
             playerDetailedGoalStatsMap.put("overall", detailedStats);
             final ResultSet rs = pstmt.executeQuery();
             while (rs.next()) {
-                final PlayerDetailedStats detailedStat = new PlayerDetailedStats();
-                detailedStat.setName(rs.getString("player_name"));
-                detailedStat.setTotalGoals(rs.getInt("totalGoals"));
-                detailedStat.setMaxGoalsInSeason(rs.getInt("maxGoalInSeason"));
-                detailedStat.setMaxGoalsInGame(rs.getInt("maxGoalInGame"));
+                final PlayerDetailedStats detailedStat = this.extractPlayerDetailedStatsFromResultSet(rs);
                 detailedStats.put(rs.getString("player_name"), detailedStat);
             }
         });
@@ -386,11 +400,7 @@ public class StatisticService {
             playerDetailedGoalStatsMap.put("season", detailedStats);
             final ResultSet rs = pstmt.executeQuery();
             while (rs.next()) {
-                final PlayerDetailedStats detailedStat = new PlayerDetailedStats();
-                detailedStat.setName(rs.getString("player_name"));
-                detailedStat.setTotalGoals(rs.getInt("totalGoals"));
-                detailedStat.setMaxGoalsInSeason(rs.getInt("maxGoalInSeason"));
-                detailedStat.setMaxGoalsInGame(rs.getInt("maxGoalInGame"));
+                final PlayerDetailedStats detailedStat = this.extractPlayerDetailedStatsFromResultSet(rs);
                 detailedStats.put(rs.getString("player_name"), detailedStat);
             }
         });
@@ -401,16 +411,20 @@ public class StatisticService {
             playerDetailedGoalStatsMap.put("playoff", detailedStats);
             final ResultSet rs = pstmt.executeQuery();
             while (rs.next()) {
-                final PlayerDetailedStats detailedStat = new PlayerDetailedStats();
-                detailedStat.setName(rs.getString("player_name"));
-                detailedStat.setTotalGoals(rs.getInt("totalGoals"));
-                detailedStat.setMaxGoalsInSeason(rs.getInt("maxGoalInSeason"));
-                detailedStat.setMaxGoalsInGame(rs.getInt("maxGoalInGame"));
+                final PlayerDetailedStats detailedStat = this.extractPlayerDetailedStatsFromResultSet(rs);
                 detailedStats.put(rs.getString("player_name"), detailedStat);
             }
         });
 
         return playerDetailedGoalStatsMap;
+    }
+    private PlayerDetailedStats extractPlayerDetailedStatsFromResultSet(final ResultSet rs) throws SQLException {
+        final PlayerDetailedStats detailedStat = new PlayerDetailedStats();
+        detailedStat.setName(rs.getString("player_name"));
+        detailedStat.setTotalGoals(rs.getInt("totalGoals"));
+        detailedStat.setMaxGoalsInSeason(rs.getInt("maxGoalInSeason"));
+        detailedStat.setMaxGoalsInGame(rs.getInt("maxGoalInGame"));
+        return detailedStat;
     }
     public Map<String, List<PlayerDetailedStats>> getPlayerWinLossTie(HashMap<String, HashMap<String, PlayerDetailedStats>> playerDetailedGoalStatsMap) {
         final Map<String, List<PlayerDetailedStats>> playerDetailedStatsMap = new HashMap<String,List<PlayerDetailedStats>>();
@@ -427,7 +441,8 @@ public class StatisticService {
                        + "sum(win)/count(*)*100 as winpct, sum(loss)/count(*)*100 as losspct, sum(tie)/count(*)*100 as tiepct, "
                        + "pat.league as leagueWinner, pat.playoff as playoffWinner "
                        + "from (" + subquery + ") sq left join player_alltime_statistics pat on sq.player_id = pat.player_id";
-
+        
+        // TODO. proceduralize and parameterize rs extraction
         Database.doVoidTransaction(baseSql + " group by sq.player_id order by wins DESC", (pstmt) -> {
             List<PlayerDetailedStats> detailedStats = new ArrayList<>();
             playerDetailedStatsMap.put("overall", detailedStats);
@@ -466,6 +481,7 @@ public class StatisticService {
             }
         });
 
+        // TODO. proceduralize and parameterize rs extraction
         Database.doVoidTransaction(baseSql + " where sq.playoff = 0 group by sq.player_id order by wins DESC", (pstmt) -> {
             List<PlayerDetailedStats> detailedStats = new ArrayList<>();
             playerDetailedStatsMap.put("season", detailedStats);
@@ -504,6 +520,7 @@ public class StatisticService {
             }
         });
 
+        // TODO. proceduralize and parameterize rs extraction
         Database.doVoidTransaction(baseSql + " where sq.playoff = 1 group by sq.player_id order by wins DESC", (pstmt) -> {
             List<PlayerDetailedStats> detailedStats = new ArrayList<>();
             playerDetailedStatsMap.put("playoff", detailedStats);
@@ -559,20 +576,7 @@ public class StatisticService {
             goalieDetailedStatsMap.put("overall", detailedStats);
             final ResultSet rs = pstmt.executeQuery();
             while (rs.next()) {
-                final GoalieDetailedStats detailedStat = new GoalieDetailedStats();
-                String goalieName = rs.getString("player");
-                detailedStat.setName(goalieName);
-                detailedStat.setNumSeasons(rs.getInt("num_seasons"));
-                detailedStat.setNumGames(rs.getInt("num_games"));
-                detailedStat.setLeagueWinner(rs.getInt("leagueWinner"));
-                detailedStat.setPlayoffWinner(rs.getInt("playoffWinner"));
-                detailedStat.setTrophies(rs.getInt("leagueWinner") + rs.getInt("playoffWinner"));
-                detailedStat.setTotalGoalsAgainst(rs.getInt("against"));
-                detailedStat.setTotalShutouts(rs.getInt("shutouts"));
-                detailedStat.setAgainstPerSeason(String.format("%.1f", rs.getFloat("againstperseason")));
-                detailedStat.setAgainstPerGame(String.format("%.1f", rs.getFloat("againstpergame")));
-                detailedStat.setShutoutsPerSeason(String.format("%.1f", rs.getFloat("shutoutsperseason")));
-                detailedStat.setShutoutsPerGame(String.format("%.1f", rs.getFloat("shutoutspergame")));
+                final GoalieDetailedStats detailedStat = this.extractGoalieDetailedStatsFromResultSet(rs);
                 detailedStats.add(detailedStat);
             }
         });
@@ -582,20 +586,7 @@ public class StatisticService {
             goalieDetailedStatsMap.put("season", detailedStats);
             final ResultSet rs = pstmt.executeQuery();
             while (rs.next()) {
-                final GoalieDetailedStats detailedStat = new GoalieDetailedStats();
-                String goalieName = rs.getString("player");
-                detailedStat.setName(goalieName);
-                detailedStat.setNumSeasons(rs.getInt("num_seasons"));
-                detailedStat.setNumGames(rs.getInt("num_games"));
-                detailedStat.setLeagueWinner(rs.getInt("leagueWinner"));
-                detailedStat.setPlayoffWinner(rs.getInt("playoffWinner"));
-                detailedStat.setTrophies(rs.getInt("leagueWinner") + rs.getInt("playoffWinner"));
-                detailedStat.setTotalGoalsAgainst(rs.getInt("against"));
-                detailedStat.setTotalShutouts(rs.getInt("shutouts"));
-                detailedStat.setAgainstPerSeason(String.format("%.1f", rs.getFloat("againstperseason")));
-                detailedStat.setAgainstPerGame(String.format("%.1f", rs.getFloat("againstpergame")));
-                detailedStat.setShutoutsPerSeason(String.format("%.1f", rs.getFloat("shutoutsperseason")));
-                detailedStat.setShutoutsPerGame(String.format("%.1f", rs.getFloat("shutoutspergame")));
+                final GoalieDetailedStats detailedStat = this.extractGoalieDetailedStatsFromResultSet(rs);
                 detailedStats.add(detailedStat);
             }
         });
@@ -605,25 +596,28 @@ public class StatisticService {
             goalieDetailedStatsMap.put("playoff", detailedStats);
             final ResultSet rs = pstmt.executeQuery();
             while (rs.next()) {
-                final GoalieDetailedStats detailedStat = new GoalieDetailedStats();
-                String goalieName = rs.getString("player");
-                detailedStat.setName(goalieName);
-                detailedStat.setNumSeasons(rs.getInt("num_seasons"));
-                detailedStat.setNumGames(rs.getInt("num_games"));
-                detailedStat.setLeagueWinner(rs.getInt("leagueWinner"));
-                detailedStat.setPlayoffWinner(rs.getInt("playoffWinner"));
-                detailedStat.setTrophies(rs.getInt("leagueWinner") + rs.getInt("playoffWinner"));
-                detailedStat.setTotalGoalsAgainst(rs.getInt("against"));
-                detailedStat.setTotalShutouts(rs.getInt("shutouts"));
-                detailedStat.setAgainstPerSeason(String.format("%.1f", rs.getFloat("againstperseason")));
-                detailedStat.setAgainstPerGame(String.format("%.1f", rs.getFloat("againstpergame")));
-                detailedStat.setShutoutsPerSeason(String.format("%.1f", rs.getFloat("shutoutsperseason")));
-                detailedStat.setShutoutsPerGame(String.format("%.1f", rs.getFloat("shutoutspergame")));
+                final GoalieDetailedStats detailedStat = this.extractGoalieDetailedStatsFromResultSet(rs);
                 detailedStats.add(detailedStat);
             }
         });
 
         return goalieDetailedStatsMap;
     }
-
+    private GoalieDetailedStats extractGoalieDetailedStatsFromResultSet(final ResultSet rs) throws SQLException {
+        final GoalieDetailedStats detailedStat = new GoalieDetailedStats();
+        String goalieName = rs.getString("player");
+        detailedStat.setName(goalieName);
+        detailedStat.setNumSeasons(rs.getInt("num_seasons"));
+        detailedStat.setNumGames(rs.getInt("num_games"));
+        detailedStat.setLeagueWinner(rs.getInt("leagueWinner"));
+        detailedStat.setPlayoffWinner(rs.getInt("playoffWinner"));
+        detailedStat.setTrophies(rs.getInt("leagueWinner") + rs.getInt("playoffWinner"));
+        detailedStat.setTotalGoalsAgainst(rs.getInt("against"));
+        detailedStat.setTotalShutouts(rs.getInt("shutouts"));
+        detailedStat.setAgainstPerSeason(String.format("%.1f", rs.getFloat("againstperseason")));
+        detailedStat.setAgainstPerGame(String.format("%.1f", rs.getFloat("againstpergame")));
+        detailedStat.setShutoutsPerSeason(String.format("%.1f", rs.getFloat("shutoutsperseason")));
+        detailedStat.setShutoutsPerGame(String.format("%.1f", rs.getFloat("shutoutspergame")));
+        return detailedStat;
+    }
 }

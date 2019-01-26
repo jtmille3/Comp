@@ -8,10 +8,11 @@ define(function(require) {
 	return {
 		init: function(competitive) {
 			var self = this;
+			competitive.playerStatistics = competitive.playerDetailedStatsMap.overall;
 			this.competitive = competitive;
 
             Lazy(competitive.shutoutStatistics).each(function(p1) {
-                var player = Lazy(competitive.playerStatistics).where({id: p1.id}).toArray()[0];
+                var player = Lazy(competitive.playerStatistics).where({name: p1.name}).toArray()[0];
                 player.shutouts = p1.shutouts;
                 player.goalsAgainst = p1.goalsAgainst;
             });
@@ -31,6 +32,7 @@ define(function(require) {
 
 			for(var i = 0; i < competitive.seasons.length; i++) {
 				var season = competitive.seasons[i];
+				season.playerStatistics = season.seasonStatistics.overall.player;
 				$('#' + season.id + '-standings-table').tablesorter( {sortList: [[0,0]]} );
 				$('#' + season.id + '-playoff-schedule-table').tablesorter( {sortList: [[2,0]]} );
 				$('#' + season.id + '-league-schedule-table').tablesorter( {sortList: [[2,0]]} ); 
