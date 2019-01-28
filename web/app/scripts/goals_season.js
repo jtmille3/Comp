@@ -9,7 +9,10 @@ define(function (require) {
 
     return {
         getGoalData: function (player, competitive) {
-            var data = [];
+            var toReturn = {};
+            var data = [];        // overall, regular season plus playoff
+            var seasonData = [];  // regular season only
+            var playoffData = []; // playoff goals only
 
             var goals = [];
             Lazy(competitive.goals).each(function (goal) {
@@ -27,9 +30,21 @@ define(function (require) {
             });
 
             Lazy(seasons).each(function (season, j) {
+                var name = season.name.split(' ')[1].substring(0, 1) + season.name.split(' ')[0].substring(2,4);
                 if (!data[j]) {
-                    var name = season.name.split(' ')[1].substring(0, 1) + season.name.split(' ')[0].substring(2,4);
                     data[j] = {
+                        name: name,
+                        goals: 0
+                    };
+                }
+                if (!seasonData[j]) {
+                    seasonData[j] = {
+                        name: name,
+                        goals: 0
+                    };
+                }
+                if (!playoffData[j]) {
+                    playoffData[j] = {
                         name: name,
                         goals: 0
                     };
@@ -39,6 +54,7 @@ define(function (require) {
                     var games = Lazy(goals).where({ gameId: game.id });
                     if (games.size()) {
                         data[j].goals += games.size();
+                        seasonData[j].goals += games.size();
                     }
                 });
 
@@ -46,11 +62,19 @@ define(function (require) {
                     var games = Lazy(goals).where({ gameId: game.id });
                     if (games.size()) {
                         data[j].goals += games.size();
+                        playoffData[j].goals += games.size();
                     }
                 });
             });
+            
+            var overall = Lazy(data).reverse().toArray();
+            var season  = Lazy(seasonData).reverse().toArray();
+            var playoff = Lazy(playoffData).reverse().toArray();
+            toReturn.overall = overall;
+            toReturn.season = season;
+            toReturn.playoff = playoff;
 
-            return Lazy(data).reverse().toArray();
+            return toReturn;
         },
         getShutoutData: function (player, competitive) {
             var data = [];
@@ -154,7 +178,8 @@ define(function (require) {
         },
         generate: function (player, competitive) {
             var shutoutData = this.getShutoutData(player, competitive);
-            var goalData = this.getGoalData(player, competitive);
+            var goalDataObj = this.getGoalData(player, competitive);
+            var goalData = goalDataObj.overall;
 
             var max = Lazy(goalData).max(function (d) {
                 return d.goals;
