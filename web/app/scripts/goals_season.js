@@ -180,72 +180,107 @@ define(function (require) {
             var shutoutData = this.getShutoutData(player, competitive);
             var goalDataObj = this.getGoalData(player, competitive);
             var goalData = goalDataObj.overall;
+            var bardata = [];
+            for( var i = 0 ; i < goalDataObj.overall.length ; i++ ) {
+                // depends on same number of seasons in overall as season and playoff (should always be the case)
+                var name = goalDataObj.overall[i].name;
+                var seasonGoals = goalDataObj.season[i].goals;
+                var playoffGoals = goalDataObj.playoff[i].goals;
+                bardata.push({name: name, season: seasonGoals, playoff: playoffGoals});
+            }
+            //console.log('bardata');
+            //console.log(bardata);
+
+            // Transpose the data into layers
+            var dataset = d3.layout.stack()(["season", "playoff"].map(function(type) {
+              return bardata.map(function(d) {
+                return {x: d.name, y: +d[type], type: type};
+              });
+            }));
+            //console.log('dataset');
+            //console.log(dataset);
 
             var max = Lazy(goalData).max(function (d) {
                 return d.goals;
             });
 
             var ticks = Math.min(max.goals, 10);
-
-            var maxDataPointsForDots = 50;
-
-            var margin = 20,
-                w = 900 - margin * 2,
-                h = 400 - margin * 2;
             var pointRadius = 5;
+            var maxDataPointsForDots = 50;
+            
+            var margin = {top: 35, right: 30, bottom: 35, left: 30};
+            //var margin = {top: 20, right: 20, bottom: 20, left: 20};
 
-            var x = d3.scale.ordinal().rangeRoundBands([0, w - margin * 2], 1).domain(goalData.map(function (d) {
-                return d.name;
-            }));
+            var width = 900 - margin.left - margin.right,
+                height = 400 - margin.top - margin.bottom;
 
-            var y = d3.scale.linear().range([h - margin * 2, 0]).domain([0, d3.max(goalData, function (d) {
-                return d.goals;
-            })]);
+            var svg = d3.select("#goals-per-season")
+              .attr("width", width + margin.left + margin.right)
+              .attr("height", height + margin.top + margin.bottom)
+              .append("g")
+              .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+              //.attr("style", "outline: thin solid red;")
+              ;
 
-            var xAxis = d3.svg.axis().scale(x).tickSize(h - margin * 2).tickPadding(10).ticks(goalData.length);
+            // Set x, y and colors
+            var x = d3.scale.ordinal()
+              .domain(dataset[0].map(function(d) { return d.x; }))
+              .rangeRoundBands([10, width-10], 0.65);
 
-            var yAxis = d3.svg.axis().scale(y).orient('left').ticks(ticks).tickSize(-w + margin * 2).tickPadding(10).tickFormat(d3.format(".0f"));
+            var y = d3.scale.linear()
+              .domain([0, d3.max(dataset, function(d) { return d3.max(d, function(d) { return d.y0 + d.y; });  })])
+              .range([height, 0]);
 
-            var svg = d3.select('#goals-per-season')
-                .attr('width', w)
-                .attr('height', h)
-                .attr('class', 'viz')
-                .append('svg:g')
-                .attr('transform', 'translate(' + margin + ',' + margin + ')');
+            var colors = ["#3399ff", "#00539B"];
 
-            // y ticks and labels
-            svg.append('svg:g')
-                .attr('class', 'yTick')
-                .call(yAxis);
+            // Define and draw axes
+            var yAxis = d3.svg.axis()
+              .scale(y)
+              .orient("left")
+              .ticks(ticks)
+              .tickSize(-width, 0, 0)
+              .tickPadding(10)
+              .tickFormat( function(d) { return d } );
 
-            // x ticks and labels
-            svg.append('svg:g')
-                .attr('class', 'xTick')
-                .call(xAxis);
+            var xAxis = d3.svg.axis()
+              .scale(x)
+              .orient("bottom")
+              .tickPadding(10)
+              .tickSize(-height, 0, 0);
 
-            var dataLines = svg.append('svg:g')
-                .selectAll('.data-line')
-                .data([goalData]);
+            svg.append("g")
+              .attr("class", "y axis")
+              .call(yAxis);
 
-            var line = d3.svg.line()
-                .x(function (d) {
-                    // verbose logging to show what's actually being done
-                    return x(d.name);
+            svg.append("g")
+              .attr("class", "x axis")
+              .attr("transform", "translate(0," + height + ")")
+              .call(xAxis);
+
+
+            // Create groups for each series, rects for each segment
+            var groups = svg.selectAll("g.goals")
+              .data(dataset)
+              .enter().append("g")
+              .attr("class", "goals")
+              .style("fill", function(d, i) { return colors[i]; })
+            ;
+
+            var rect = groups.selectAll("rect")
+              .data(function(d) { return d; })
+              .enter()
+              .append("rect")
+              .attr("x", function(d) { return x(d.x); })
+              .attr("y", function(d) { return y(d.y0 + d.y); })
+              .attr("height", function(d) { return y(d.y0) - y(d.y0 + d.y); })
+              .attr("width", x.rangeBand())
+              .append("svg:title")
+                .text(function(d, i) {
+                  var type = d.type;
+                  return d.y + ' ' + type + ' goals'; 
                 })
-                .y(function (d) {
-                    // verbose logging to show what's actually being done
-                    return y(d.goals);
-                })
-                .interpolate("linear");
+              ;
 
-            dataLines
-                .enter()
-                .append('path')
-                .attr('class', 'data-line')
-                .style('opacity', 0.7)
-                .attr("d", line(goalData));
-
-            // Draw the points
             svg.append('svg:g')
                 .selectAll('.data-point')
                 .data(goalData)
@@ -253,7 +288,7 @@ define(function (require) {
                 .append('svg:circle')
                 .attr('class', 'data-point')
                 .attr('cx', function (d) {
-                    return x(d.name)
+                    return x(d.name)+x.rangeBand()/2
                 })
                 .attr('cy', function (d) {
                     return y(d.goals)
@@ -263,10 +298,10 @@ define(function (require) {
                 })
                 .append("svg:title")
                     .text(function(d, i) { 
-                        return d.goals+' goals'; 
+                        return d.goals+' total goals'; 
                     })
                 ;
-            
+
             var winData = this.getLeaguePlayoffWinnerData(player, competitive);
             var playerTopScorer = winData.filter(function(dat){return dat.playerTopScorer});
             var leagueTitles = winData.filter(function(dat){return dat.playerWonLeague});
@@ -299,11 +334,11 @@ define(function (require) {
                     $("div.modal-body").append('<i id="'+id+'" class="fas fa-futbol" title="Top Scorer"></i>');
                     var offset=$( "text:contains('" + s.name + "')" ).offset();
                     offset.left = offset.left + 5;
-                    offset.top = offset.top - 15;
+                    offset.top = offset.top + 30;
                     $('#'+id).offset(offset);
                 }
             });
-            
+
         }
     }
     ;
