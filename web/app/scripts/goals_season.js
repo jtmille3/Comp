@@ -334,7 +334,9 @@ define(function (require) {
                     $("div.modal-body").append('<i id="'+id+'" class="fas fa-futbol" title="Top Scorer"></i>');
                     var offset=$( "text:contains('" + s.name + "')" ).offset();
                     offset.left = offset.left + 5;
-                    offset.top = offset.top + 30;
+                    var top_offset = 15;
+                    if( $('#lt'+s.name).length || $('#pt'+s.name).length ) top_offset += 15;
+                    offset.top = offset.top + top_offset;
                     $('#'+id).offset(offset);
                 }
             });
