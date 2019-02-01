@@ -3,6 +3,9 @@ package com.sas.comp.models;
 public class PlayerDetailedStats {
 	private Integer id;
 	private String name;
+	private Boolean goalie;
+	private Boolean coCaptain;
+	private Boolean captain;
 	private Integer numSeasons;
 	private Integer numGames;
 	private Integer leagueWinner;
@@ -29,6 +32,24 @@ public class PlayerDetailedStats {
 	}
 	public void setName(String name) {
 		this.name = name;
+	}
+	public Boolean getGoalie() {
+		return goalie;
+	}
+	public void setGoalie(Boolean goalie) {
+		this.goalie = goalie;
+	}
+	public Boolean getCoCaptain() {
+		return coCaptain;
+	}
+	public void setCoCaptain(Boolean coCaptain) {
+		this.coCaptain = coCaptain;
+	}
+	public Boolean getCaptain() {
+		return captain;
+	}
+	public void setCaptain(Boolean captain) {
+		this.captain = captain;
 	}
 	public Integer getNumSeasons() {
 		return numSeasons;

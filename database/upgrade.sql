@@ -7,7 +7,7 @@ CREATE OR REPLACE VIEW `standings`  AS  select `game_summary`.`season_id` AS `se
 -- Issue #30
 CREATE OR REPLACE VIEW `player_alltime_statistics`  AS  select `player_statistics`.`player` AS `player`,`player_statistics`.`player_id` AS `player_id`,sum(`player_statistics`.`league`) AS `league`,sum(`player_statistics`.`playoff`) AS `playoff`,sum(`player_statistics`.`goals`) AS `goals`,count(player_statistics.season_id) AS seasonsPlayed from `player_statistics` group by `player_statistics`.`player_id` order by sum(`player_statistics`.`goals`) desc ;
 
--- Issue #22
+-- Issue #22 and #38
 CREATE or REPLACE VIEW 
 player_statistics AS select s.id AS season_id,
 t.id AS team_id,
@@ -75,6 +75,9 @@ t.id AS team_id,
 t.name AS team_name,
 p.id AS player_id,
 p.name AS player,
+tp.isGoalie as goalie,
+tp.isCaptain as captain,
+tp.isCoCaptain as cocaptain,
 count(gs.id) AS total_goals
 from players p 
 join team_player tp on (tp.player_id = p.id)
@@ -97,6 +100,9 @@ t.id AS team_id,
 t.name AS team_name,
 p.id AS player_id,
 p.name AS player,
+tp.isGoalie as goalie,
+tp.isCaptain as captain,
+tp.isCoCaptain as cocaptain,
 g.playoff as playoff,
 count(gs.id) AS total_goals
 from players p 
@@ -122,6 +128,9 @@ t.id AS team_id,
 t.name AS team_name,
 p.id AS player_id,
 p.name AS player,
+tp.isGoalie as goalie,
+tp.isCaptain as captain,
+tp.isCoCaptain as cocaptain,
 g.playoff as playoff,
 count(gs.id) AS total_goals
 from players p 

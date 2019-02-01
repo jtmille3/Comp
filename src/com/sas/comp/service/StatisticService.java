@@ -97,6 +97,9 @@ public class StatisticService {
         statistic.setTeam(rs.getString("team_name"));
         statistic.setTeamId(rs.getInt("team_id"));
         statistic.setName(rs.getString("player"));
+        statistic.setGoalie(rs.getBoolean("goalie"));
+        statistic.setCaptain(rs.getBoolean("captain"));
+        statistic.setCoCaptain(rs.getBoolean("cocaptain"));
         statistic.setGoals(rs.getInt("total_goals"));
         statistics.add(statistic);
     }
