@@ -16,17 +16,17 @@ public class CompetitiveService {
 		final Competitive competitive = new Competitive();
 
 		competitive.setSeasons(this.seasonService.getSeasons());
-		competitive.setPlayerStatistics(this.statisticService.getPlayerStatistics());
-		competitive.setGoalieStatistics(this.statisticService.getGoalieStatistics());
-        competitive.setShutoutStatistics(this.statisticService.getShutoutStatistics());
+		this.statisticService.initializePlayerGoalieStatistics();
+		competitive.setPlayerDetailedStatsMap(this.statisticService.getPlayerDetailedStatsMap());
+		competitive.setGoalieDetailedStatsMap(this.statisticService.getGoalieDetailedStatsMap());
+		competitive.setShutoutStatistics(this.statisticService.getShutoutStatistics());
 		competitive.setGoals(this.goalService.getGoals());
 
 		for (final Season season : competitive.getSeasons()) {
 			season.setStandings(this.standingService.getStandings(season.getId()));
 			season.setLeagueSchedule(this.gameService.getLeagueSchedule(season.getId()));
 			season.setPlayoffSchedule(this.gameService.getPlayoffSchedule(season.getId()));
-			season.setPlayerStatistics(this.statisticService.getPlayerStatistics(season.getId()));
-			season.setGoalieStatistics(this.statisticService.getGoalieStatistics(season.getId()));
+			season.setSeasonStatistics(this.statisticService.getSeasonStatistics(season.getId()));
 			Standing champion = this.findChampion(season);
 			competitive.addChampion(champion);
 		}

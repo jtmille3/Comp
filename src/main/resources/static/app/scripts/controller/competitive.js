@@ -8,10 +8,11 @@ define(function(require) {
 	return {
 		init: function(competitive) {
 			var self = this;
+			competitive.playerStatistics = competitive.playerDetailedStatsMap.overall;
 			this.competitive = competitive;
 
             Lazy(competitive.shutoutStatistics).each(function(p1) {
-                var player = Lazy(competitive.playerStatistics).where({id: p1.id}).toArray()[0];
+                var player = Lazy(competitive.playerStatistics).where({name: p1.name}).toArray()[0];
                 player.shutouts = p1.shutouts;
                 player.goalsAgainst = p1.goalsAgainst;
             });
@@ -19,9 +20,11 @@ define(function(require) {
 			var compTemplate = window.comp['src/main/resources/static/app/templates/comp.html'];
 			$('#competitive').html(compTemplate(competitive));
 
-			$('#player-all-time-table').tablesorter( {sortList: [[1,1]]} );
-			$('#champions-table').tablesorter( {sortList: [[0,1]]} );
-			$('#goalie-all-time-table').tablesorter( {sortList: [[1,1]]} );
+			$('#champions-table').tablesorter( {sortList: [[0,1]], sortInitialOrder: "desc"} );
+            $('#player-statistics-content table').tablesorter( {sortList: [[5,1]], sortInitialOrder: "desc"} );
+			$('#goalie-statistics-content table').tablesorter( {sortList: [[5,1]], sortInitialOrder: "desc"} );
+			$('table.season_player_stats').tablesorter( {sortList: [[3,1]]} );
+			$('table.season_goalie_stats').tablesorter( {sortList: [[2,1]]} );
 
             this.attachSearch(competitive);
             this.attachChampionClickHandler(competitive.seasons);
@@ -29,11 +32,10 @@ define(function(require) {
 
 			for(var i = 0; i < competitive.seasons.length; i++) {
 				var season = competitive.seasons[i];
+				season.playerStatistics = season.seasonStatistics.overall.player;
 				$('#' + season.id + '-standings-table').tablesorter( {sortList: [[0,0]]} );
 				$('#' + season.id + '-playoff-schedule-table').tablesorter( {sortList: [[2,0]]} );
 				$('#' + season.id + '-league-schedule-table').tablesorter( {sortList: [[2,0]]} ); 
-				$('#' + season.id + '-player-statistics-table').tablesorter( {sortList: [[3,1]]} );
-				$('#' + season.id + '-goalie-statistics-table').tablesorter( {sortList: [[2,1]]} );
 
 				this.attachStandingsClickHandler(season);
 				this.attachLeagueScheduleClickHandler(season);
@@ -213,7 +215,7 @@ define(function(require) {
 				roster: roster
 			});
 			$('#champions-roster').html(template);
-			$('#' + teamId + '-champion-roster-table').tablesorter( {sortList: [[1,0]]} );
+			$('#' + teamId + '-champion-roster-table').tablesorter( {sortList: [[1,0]], sortInitialOrder: "desc"} );
 		},
 		selectedTeam: function(season, teamId) {
 			var schedule = this.schedule(season, teamId);
@@ -231,7 +233,7 @@ define(function(require) {
 			$('#' + season.id + '-team-schedule').html(template);
 
 			$('#' + team.teamId + '-team-schedule-table').tablesorter( {sortList: [[2,0]]} );
-			$('#' + team.teamId + '-team-roster-table').tablesorter( {sortList: [[1,0]]} );
+			$('#' + team.teamId + '-team-roster-table').tablesorter( {sortList: [[1,0]], sortInitialOrder: "desc"} );
 		},
 
 		selectedGame: function(gameId, teamId) {
@@ -354,12 +356,31 @@ define(function(require) {
             $('#comp-content').children().removeClass('active');
             $('#season-' + id + '-content').addClass('active');
         },
-        renderAllTime: function() {
+        renderGoalieStatistics: function(type) {
             $('#comp-menu').children().removeClass('active');
-            $('#comp-all-time-menu').addClass('active');
+            $('#comp-goalie-statistics-menu').addClass('active');
 
             $('#comp-content').children().removeClass('active');
-            $('#all-time-content').addClass('active');
+            $('#goalie-statistics-content').addClass('active');
+
+            $('#goalie-statistics-menu').children().removeClass('active');
+            $('#goalie-statistics-' + type + '-menu').addClass('active');
+
+            $('#goalie-statistics-tabs').children().removeClass('active');
+            $('#goalie-statistics-' + type).addClass('active');
+        },
+        renderPlayerStatistics: function(type) {
+            $('#comp-menu').children().removeClass('active');
+            $('#comp-player-statistics-menu').addClass('active');
+
+            $('#comp-content').children().removeClass('active');
+            $('#player-statistics-content').addClass('active');
+
+            $('#player-statistics-menu').children().removeClass('active');
+            $('#player-statistics-' + type + '-menu').addClass('active');
+
+            $('#player-statistics-tabs').children().removeClass('active');
+            $('#player-statistics-' + type).addClass('active');
         },
         renderChampions: function() {
             $('#comp-menu').children().removeClass('active');
@@ -386,14 +407,14 @@ define(function(require) {
             $('#season-' + id + '-tabs').children().removeClass('active');
             $('#season-' + id + '-schedule').addClass('active');
         },
-        renderStatistics: function(id) {
+        renderStatistics: function(id, type) {
             this.renderSeason(id);
 
             $('#season-' + id + '-menu').children().removeClass('active');
-            $('#season-' + id + '-statistics-menu').addClass('active');
+            $('#season-' + id + '-' + type + '-statistics-menu').addClass('active');
 
             $('#season-' + id + '-tabs').children().removeClass('active');
-            $('#season-' + id + '-statistics').addClass('active');
+            $('#season-' + id + '-' + type + '-statistics').addClass('active');
         },
         renderPlayoffs: function(id) {
             this.renderSeason(id);

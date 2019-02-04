@@ -1,17 +1,61 @@
 <div class="sidebar col-md-2">
     <div class="sidebar-nav">
         <ul class="nav nav-list" id="comp-menu">
+            <li class="nav-header">Summaries</li>
+            <li id="comp-champions-menu"><a href="#/champions">All Champions</a></li>
+            <li id="comp-player-statistics-menu"><a href="#/playerstatistics">Player Statistics</a></li>
+            <li id="comp-goalie-statistics-menu"><a href="#/goaliestatistics">Goalie Statistics</a></li>
             <li class="nav-header">Seasons</li>
             {{#each seasons}}
             <li {{#unless @index}}class='active'{{/unless}} id="comp-season-{{id}}-menu"><a href="#/seasons/{{id}}">{{name}}</a></li>
             {{/each}}
-            <li class="nav-header">Summaries</li>
-            <li id="comp-all-time-menu"><a href="#/alltime">All Time Statistics</a></li>
-            <li id="comp-champions-menu"><a href="#/champions">All Champions</a></li>
         </ul>
     </div><!--/.well -->
 </div>
 <div class="tab-content col-md-offset-2 col-md-10" id="comp-content">
+  {{> champions this}}
+  <div class="tab-pane" id="player-statistics-content">
+    <div class="tab-pane {{#unless @index}}active{{/unless}}" id="player-statistics-overall-content">
+      <div class="container-fluid">
+          <div class="row">
+              <div class="col-md-12">
+                  <h1 class="page-header">Player Statistics</h1>
+                  <ul class="nav nav-pills" id="player-statistics-menu">
+                      <li class="active" id="player-statistics-overall-menu"><a href="#/playerstatistics/overall">Overall</a></li>
+                      <li id="player-statistics-season-menu"><a href="#/playerstatistics/season">Regular Season</a></li>
+                      <li id="player-statistics-playoffs-menu"><a href="#/playerstatistics/playoffs">Playoff</a></li>
+                  </ul>
+                  <div class="tab-content" id="player-statistics-tabs">
+                      <div class="tab-pane active" id="player-statistics-overall">{{> player_statistics this.playerDetailedStatsMap.overall}}</div>
+                      <div class="tab-pane" id="player-statistics-season">{{> player_statistics this.playerDetailedStatsMap.season}}</div>
+                      <div class="tab-pane" id="player-statistics-playoffs">{{> player_statistics this.playerDetailedStatsMap.playoff}}</div>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+  </div>
+  <div class="tab-pane" id="goalie-statistics-content">
+    <div class="tab-pane {{#unless @index}}active{{/unless}}" id="goalie-statistics-overall-content">
+      <div class="container-fluid">
+          <div class="row">
+              <div class="col-md-12">
+                  <h1 class="page-header">Goalie Statistics</h1>
+                  <ul class="nav nav-pills" id="goalie-statistics-menu">
+                      <li class="active" id="goalie-statistics-overall-menu"><a href="#/goaliestatistics/overall">Overall</a></li>
+                      <li id="goalie-statistics-season-menu"><a href="#/goaliestatistics/season">Regular Season</a></li>
+                      <li id="goalie-statistics-playoffs-menu"><a href="#/goaliestatistics/playoffs">Playoff</a></li>
+                  </ul>
+                  <div class="tab-content" id="goalie-statistics-tabs">
+                      <div class="tab-pane active" id="goalie-statistics-overall">{{> goalie_statistics this.goalieDetailedStatsMap.overall}}</div>
+                      <div class="tab-pane" id="goalie-statistics-season">{{> goalie_statistics this.goalieDetailedStatsMap.season}}</div>
+                      <div class="tab-pane" id="goalie-statistics-playoffs">{{> goalie_statistics this.goalieDetailedStatsMap.playoff}}</div>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+  </div>
   {{#each seasons}}
   <div class="tab-pane {{#unless @index}}active{{/unless}}" id="season-{{id}}-content">
     <div class="container-fluid">
@@ -21,13 +65,17 @@
                 <ul class="nav nav-pills" id="season-{{id}}-menu">
                     <li class="active" id="season-{{id}}-standings-menu"><a href="#/seasons/{{id}}/standings">Standings</a></li>
                     <li id="season-{{id}}-schedule-menu"><a href="#/seasons/{{id}}/schedule">Schedule</a></li>
-                    <li id="season-{{id}}-statistics-menu"><a href="#/seasons/{{id}}/statistics">Statistics</a></li>
+                    <li id="season-{{id}}-overall-statistics-menu"><a href="#/seasons/{{id}}/statistics/overall">Overall Statistics</a></li>
+                    <li id="season-{{id}}-season-statistics-menu"><a href="#/seasons/{{id}}/statistics/season">Regular Season Statistics</a></li>
+                    <li id="season-{{id}}-playoff-statistics-menu"><a href="#/seasons/{{id}}/statistics/playoff">Playoff Statistics</a></li>
                     <li id="season-{{id}}-playoffs-menu"><a href="#/seasons/{{id}}/playoffs">Playoffs</a></li>
                 </ul>
                 <div class="tab-content" id="season-{{id}}-tabs">
                     <div class="tab-pane active" id="season-{{id}}-standings">{{> standings this}}</div>
                     <div class="tab-pane" id="season-{{id}}-schedule">{{> league_schedule this}}</div>
-                    <div class="tab-pane" id="season-{{id}}-statistics">{{> statistics this}}</div>
+                    <div class="tab-pane" id="season-{{id}}-overall-statistics">{{> statistics this.seasonStatistics.overall}}</div>
+                    <div class="tab-pane" id="season-{{id}}-season-statistics">{{> statistics this.seasonStatistics.season}}</div>
+                    <div class="tab-pane" id="season-{{id}}-playoff-statistics">{{> statistics this.seasonStatistics.playoff}}</div>
                     <div class="tab-pane" id="season-{{id}}-playoffs">{{> playoff_schedule this}}</div>
                 </div>
             </div>
@@ -35,6 +83,4 @@
     </div>
   </div>
   {{/each}}
-  {{> alltime this}}
-  {{> champions this}}
 </div>
