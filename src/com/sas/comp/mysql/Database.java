@@ -8,8 +8,8 @@ public class Database {
 
 	private static Connection getConnection() throws SQLException, ClassNotFoundException {
 		Class.forName("com.mysql.jdbc.Driver");
-		//return DriverManager.getConnection("jdbc:mysql://pip.na.sas.com:3306/soccer", "soccer", "i<3soccer");
-        return DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/soccer", "soccer", "i<3soccer");
+		//return DriverManager.getConnection("jdbc:mysql://pip.na.sas.com:3306/soccer?useSSL=false", "soccer", "i<3soccer");
+        return DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/soccer?useSSL=false", "soccer", "i<3soccer");
 	}
 
     public static void doVoidTransaction(String preparedStatement, TransactionVoidInterface transactionVoidInterface) {
@@ -28,6 +28,7 @@ public class Database {
             conn = getConnection();
             conn.setAutoCommit(false);
 
+            System.err.println("sql: " + preparedStatement);
 
             PreparedStatement statement = conn.prepareStatement(preparedStatement, PreparedStatement.RETURN_GENERATED_KEYS);
             if(transactionInterface instanceof TransactionReturnInterface) {

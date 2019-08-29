@@ -21,7 +21,7 @@
                     <img src="img/cocaptain.png"/>
                     {{/if}}
                 </td>
-                <td>{{name}}</td>
+                <td role="player">{{name}}</td>
                 <td>{{goals}}</td>
             </tr>
             {{/each}}
@@ -38,9 +38,9 @@
 			</thead>
 			<tbody>
 				{{#each schedule}}
-					<tr id="{{gameId}}" class="{{result}} selectable">
+					<tr id="{{id}}" class="{{result}} selectable">
 						<td>{{#if homeTeam}}<strong>{{/if}}{{home}}{{#if homeTeam}}</strong>{{/if}}</td>
-                        <td>{{#if awayTeam}}<strong>{{/if}}{{away}}{{#if awayTeam}}</strong>{{/if}}</td>
+						<td>{{#if awayTeam}}<strong>{{/if}}{{away}}{{#if awayTeam}}</strong>{{/if}}</td>
 						<td>{{played}}</td>
 						<td>{{#if available}}{{score}}{{/if}}</td>
 					</tr>

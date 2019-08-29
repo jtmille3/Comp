@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-md-6">
-		<table id="{{id}}-player-statistics-table" class="table table-condensed table-striped table-hover">
+		<table class="season_player_stats table table-condensed table-striped table-hover">
 			<thead>
 				<th>Rank</th>
 				<th>Top Scorers</th>
@@ -8,10 +8,10 @@
 				<th>Goals</th>
 			</thead>
 			<tbody>
-				{{#each this.playerStatistics}}
+				{{#each this.player}}
 					<tr>
 						<td>{{rank}}</td>
-						<td>{{name}}</td>
+						<td role="player">{{name}}</td>
 						<td>{{team}}</td>
 						<td>{{goals}}</td>
 					</tr>
@@ -20,16 +20,16 @@
 		</table>
 	</div>
 	<div class="col-md-6">
-		<table id="{{id}}-goalie-statistics-table" class="table table-condensed table-striped table-hover">
+		<table class="season_goalie_stats table table-condensed table-striped table-hover">
 			<thead>
 				<th>Goalie</th>
 				<th>Team</th>
 				<th>Shutouts</th>
 			</thead>
 			<tbody>
-				{{#each this.goalieStatistics}}
+				{{#each this.goalie}}
 					<tr>
-						<td>{{name}}</td>
+						<td role="player">{{name}}</td>
 						<td>{{team}}</td>
 						<td>{{shutouts}}</td>
 					</tr>

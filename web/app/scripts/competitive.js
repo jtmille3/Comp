@@ -8,10 +8,11 @@ define(function(require) {
 	return {
 		init: function(competitive) {
 			var self = this;
+			competitive.playerStatistics = competitive.playerDetailedStatsMap.overall;
 			this.competitive = competitive;
 
             Lazy(competitive.shutoutStatistics).each(function(p1) {
-                var player = Lazy(competitive.playerStatistics).where({playerId: p1.playerId}).toArray()[0];
+                var player = Lazy(competitive.playerStatistics).where({name: p1.name}).toArray()[0];
                 player.shutouts = p1.shutouts;
                 player.goalsAgainst = p1.goalsAgainst;
             });
@@ -19,18 +20,22 @@ define(function(require) {
 			var compTemplate = window.comp['web/app/templates/comp.html'];
 			$('#competitive').html(compTemplate(competitive));
 
-			$('#player-all-time-table').tablesorter( {sortList: [[1,1]]} );
-			$('#goalie-all-time-table').tablesorter( {sortList: [[1,1]]} );
+			$('#champions-table').tablesorter( {sortList: [[0,1]], sortInitialOrder: "desc"} );
+            $('#player-statistics-content table').tablesorter( {sortList: [[5,1]], sortInitialOrder: "desc"} );
+			$('#goalie-statistics-content table').tablesorter( {sortList: [[5,1]], sortInitialOrder: "desc"} );
+			$('table.season_player_stats').tablesorter( {sortList: [[3,1]]} );
+			$('table.season_goalie_stats').tablesorter( {sortList: [[2,1]]} );
 
             this.attachSearch(competitive);
+            this.attachChampionClickHandler(competitive.seasons);
+            this.attachPlayerClickHandler();
 
 			for(var i = 0; i < competitive.seasons.length; i++) {
 				var season = competitive.seasons[i];
+				season.playerStatistics = season.seasonStatistics.overall.player;
 				$('#' + season.id + '-standings-table').tablesorter( {sortList: [[0,0]]} );
 				$('#' + season.id + '-playoff-schedule-table').tablesorter( {sortList: [[2,0]]} );
 				$('#' + season.id + '-league-schedule-table').tablesorter( {sortList: [[2,0]]} ); 
-				$('#' + season.id + '-player-statistics-table').tablesorter( {sortList: [[3,1]]} );
-				$('#' + season.id + '-goalie-statistics-table').tablesorter( {sortList: [[2,1]]} );
 
 				this.attachStandingsClickHandler(season);
 				this.attachLeagueScheduleClickHandler(season);
@@ -42,6 +47,23 @@ define(function(require) {
                 $('#weather').html(weatherTemplate(weather));
             });
 		},
+		attachChampionClickHandler: function(seasons) {
+			var self = this;
+			$('#champions-table tr').click(function(row) {
+				var $row = $(row.currentTarget);
+				var teamId = parseInt($row.attr('id'), 10);
+				var seasonName = $row.attr('season');
+				$row.addClass('selected').siblings().removeClass('selected');
+				for(var i = 0; i < seasons.length; i++) {
+					var season = seasons[i];
+					var seasonId = season.id;
+					if( seasonName == season.name ) {
+						self.selectedChampion(season, teamId);
+						break;
+					}
+				}
+			});
+		},
 		attachStandingsClickHandler: function(season) {
 			var self = this;
 			$('#' + season.id + '-standings-table tr').click(function(row) {
@@ -51,6 +73,48 @@ define(function(require) {
 				self.selectedTeam(season, teamId);
 				self.attachTeamClickHandler(teamId);
 			});
+		},
+		generatePlayerDialog: function(player) {
+			var playerTemplate = window.comp['web/app/templates/player.html'];
+
+			var seasons = [];
+			Lazy(this.competitive.seasons).each(function(season) {
+				var found = Lazy(season.playerStatistics).where({ name: player.name });
+				if(found.size()) {
+					seasons.push(season);
+				}
+			});
+
+			player.seasonsPlayed = seasons.length;
+
+			$('#competitive').append(playerTemplate(player));
+			var playerDialog = $('#playerDialog');
+			playerDialog.modal({
+				backdrop:true,
+				show:true
+			});
+			playerDialog.on('hidden.bs.modal', function() {
+				$('#playerDialog').remove();
+				$('#comp-search').val('');
+			});
+			goalsSeason.generate(player, this.competitive);
+		},
+		attachPlayerClickHandler: function() {
+			var self = this;
+			function displayPlayer(playerName) {
+				var players = self.competitive.playerStatistics.filter(
+					function(player) {
+						return player.name == playerName;
+					}
+				);
+				// hope everyone has a unique name, because just taking first from filtered array
+				var player = players.shift();
+				self.generatePlayerDialog(player);
+			}
+			$(document).on('click','td[role="player"]', function(row){
+				var playerName = this.innerHTML;
+				displayPlayer(playerName);
+			}); 
 		},
 		attachTeamClickHandler: function(teamId) {
 			var self = this;
@@ -139,41 +203,29 @@ define(function(require) {
 
             var self = this;
             function displayPlayer(player) {
-                var playerTemplate = window.comp['web/app/templates/player.html'];
-
-                var seasons = [];
-                Lazy(self.competitive.seasons).each(function(season) {
-                    var found = Lazy(season.playerStatistics).where({ name: player.name });
-                    if(found.size()) {
-                        seasons.push(season);
-                    }
-                });
-
-                player.seasonsPlayed = seasons.length;
-
-                $('#competitive').append(playerTemplate(player));
-                var playerDialog = $('#playerDialog');
-                playerDialog.modal({
-                    backdrop:true,
-                    show:true
-                });
-                playerDialog.on('hidden.bs.modal', function() {
-                    $('#playerDialog').remove();
-                    search.val('');
-                });
-
-                goalsSeason.generate(player, self.competitive);
+                self.generatePlayerDialog(player);
             }
         },
+		selectedChampion: function(season, teamId) {
+			var roster = this.roster(season, teamId);
+			var championRosterTemplate = window.comp['web/app/templates/champion_roster.html'];
+			var template = championRosterTemplate({
+				id: teamId,
+				name: roster[0].team,
+				roster: roster
+			});
+			$('#champions-roster').html(template);
+			$('#' + teamId + '-champion-roster-table').tablesorter( {sortList: [[1,0]], sortInitialOrder: "desc"} );
+		},
 		selectedTeam: function(season, teamId) {
 			var schedule = this.schedule(season, teamId);
 			var roster = this.roster(season, teamId);
-            var team = this.getTeam(season, teamId);
+			var team = this.getTeam(season, teamId);
 
 			var teamScheduleTemplate = window.comp['web/app/templates/team_schedule.html'];
 			var template = teamScheduleTemplate({
 				id: team.teamId,
-                name: team.team,
+				name: team.team,
 				schedule: schedule,
 				roster: roster
 			});
@@ -181,7 +233,7 @@ define(function(require) {
 			$('#' + season.id + '-team-schedule').html(template);
 
 			$('#' + team.teamId + '-team-schedule-table').tablesorter( {sortList: [[2,0]]} );
-			$('#' + team.teamId + '-team-roster-table').tablesorter( {sortList: [[1,0]]} );
+			$('#' + team.teamId + '-team-roster-table').tablesorter( {sortList: [[1,0]], sortInitialOrder: "desc"} );
 		},
 
 		selectedGame: function(gameId, teamId) {
@@ -237,34 +289,36 @@ define(function(require) {
 		},
 		schedule: function(season, teamId) {
 			var schedule = [];
-			for(var i = 0; i < season.leagueSchedule.length; i++) {
-				var match = season.leagueSchedule[i];
-                match.homeTeam = false;
-                match.awayTeam = false;
-				if(match.homeId === teamId) {
-                    match.homeTeam = true;
-					if(match.available) {
-						if(match.homeScore > match.awayScore) {
-							match.result = 'won';
-						} else if(match.homeScore < match.awayScore) {
-							match.result = 'lost';
-						} else if(match.homeScore === match.awayScore && match.score) {
-							match.result = 'tied';
+			if( season.hasOwnProperty('leagueSchedule') ) {
+				for(var i = 0; i < season.leagueSchedule.length; i++) {
+					var match = season.leagueSchedule[i];
+	                match.homeTeam = false;
+	                match.awayTeam = false;
+					if(match.homeId === teamId) {
+	                    match.homeTeam = true;
+						if(match.available) {
+							if(match.homeScore > match.awayScore) {
+								match.result = 'won';
+							} else if(match.homeScore < match.awayScore) {
+								match.result = 'lost';
+							} else if(match.homeScore === match.awayScore && match.score) {
+								match.result = 'tied';
+							}
 						}
-					}
-					schedule.push(match);
-				} else if(match.awayId === teamId) {
-                    match.awayTeam = true;
-					if(match.available) {
-						if(match.homeScore < match.awayScore) {
-							match.result = 'won';
-						} else if(match.homeScore > match.awayScore) {
-							match.result = 'lost';
-						} else if(match.homeScore === match.awayScore && match.score) {
-							match.result = 'tied';
+						schedule.push(match);
+					} else if(match.awayId === teamId) {
+	                    match.awayTeam = true;
+						if(match.available) {
+							if(match.homeScore < match.awayScore) {
+								match.result = 'won';
+							} else if(match.homeScore > match.awayScore) {
+								match.result = 'lost';
+							} else if(match.homeScore === match.awayScore && match.score) {
+								match.result = 'tied';
+							}
 						}
+						schedule.push(match);
 					}
-					schedule.push(match);
 				}
 			}
 			return schedule;
@@ -302,12 +356,38 @@ define(function(require) {
             $('#comp-content').children().removeClass('active');
             $('#season-' + id + '-content').addClass('active');
         },
-        renderAllTime: function() {
+        renderGoalieStatistics: function(type) {
             $('#comp-menu').children().removeClass('active');
-            $('#comp-all-time-menu').addClass('active');
+            $('#comp-goalie-statistics-menu').addClass('active');
 
             $('#comp-content').children().removeClass('active');
-            $('#all-time-content').addClass('active');
+            $('#goalie-statistics-content').addClass('active');
+
+            $('#goalie-statistics-menu').children().removeClass('active');
+            $('#goalie-statistics-' + type + '-menu').addClass('active');
+
+            $('#goalie-statistics-tabs').children().removeClass('active');
+            $('#goalie-statistics-' + type).addClass('active');
+        },
+        renderPlayerStatistics: function(type) {
+            $('#comp-menu').children().removeClass('active');
+            $('#comp-player-statistics-menu').addClass('active');
+
+            $('#comp-content').children().removeClass('active');
+            $('#player-statistics-content').addClass('active');
+
+            $('#player-statistics-menu').children().removeClass('active');
+            $('#player-statistics-' + type + '-menu').addClass('active');
+
+            $('#player-statistics-tabs').children().removeClass('active');
+            $('#player-statistics-' + type).addClass('active');
+        },
+        renderChampions: function() {
+            $('#comp-menu').children().removeClass('active');
+            $('#comp-champions-menu').addClass('active');
+
+            $('#comp-content').children().removeClass('active');
+            $('#champions-content').addClass('active');
         },
         renderStandings: function(id) {
             this.renderSeason(id);
@@ -327,14 +407,14 @@ define(function(require) {
             $('#season-' + id + '-tabs').children().removeClass('active');
             $('#season-' + id + '-schedule').addClass('active');
         },
-        renderStatistics: function(id) {
+        renderStatistics: function(id, type) {
             this.renderSeason(id);
 
             $('#season-' + id + '-menu').children().removeClass('active');
-            $('#season-' + id + '-statistics-menu').addClass('active');
+            $('#season-' + id + '-' + type + '-statistics-menu').addClass('active');
 
             $('#season-' + id + '-tabs').children().removeClass('active');
-            $('#season-' + id + '-statistics').addClass('active');
+            $('#season-' + id + '-' + type + '-statistics').addClass('active');
         },
         renderPlayoffs: function(id) {
             this.renderSeason(id);

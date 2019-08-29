@@ -1,0 +1,36 @@
+<div class="tab-pane" id="goalie-statistics-content">
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table table-condensed table-striped table-hover tablesorter">
+        <thead>
+          <th>Name</th>
+          <th>Seasons</th>
+          <th>League Titles</th>
+          <th>Champ-<br />ionships</th>
+          <th>Total Trophies</th>
+          <th>Shutouts</th>
+          <th>Avg Shutouts / Season</th>
+          <th>Goals Against</th>
+          <th>Avg Goals Against / Season</th>
+        </thead>
+        <tbody>
+          {{#each this}}
+            <tr>
+              <td role="player">{{name}}</td>
+              <td>{{numSeasons}}</td>
+              <td>{{leagueWinner}}</td>
+              <td>{{playoffWinner}}</td>
+              <td>{{trophies}}
+              <td>{{totalShutouts}}</td>
+              <td>{{shutoutsPerSeason}}</td>
+              <td>{{totalGoalsAgainst}}</td>
+              <td>{{againstPerSeason}}</td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+

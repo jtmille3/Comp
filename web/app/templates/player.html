@@ -1,6 +1,6 @@
 <!-- Modal -->
 <div id="playerDialog" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -11,14 +11,16 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="row">
-                                <div class="col-md-4 text-center"><h4>Seasons</h4></div>
-                                <div class="col-md-4 text-center"><h4>League Titles</h4></div>
-                                <div class="col-md-4 text-center"><h4>Championships</h4></div>
+                                <div class="col-md-3 text-center"><h4>Seasons</h4></div>
+                                <div class="col-md-3 text-center"><h4>League Titles</h4></div>
+                                <div class="col-md-3 text-center"><h4>Championships</h4></div>
+                                <div class="col-md-3 text-center"><h4>Trophies</h4></div>
                             </div>
                             <div class="row">
-                                <div class="col-md-4 text-center"><h4 class="big-badge">{{seasonsPlayed}}</h4></div>
-                                <div class="col-md-4 text-center"><h4 class="big-badge">{{leagueWinner}}</h4></div>
-                                <div class="col-md-4 text-center"><h4 class="big-badge">{{playoffWinner}}</h4></div>
+                                <div class="col-md-3 text-center"><h4 class="big-badge">{{seasonsPlayed}}</h4></div>
+                                <div class="col-md-3 text-center"><h4 class="big-badge">{{leagueWinner}}</h4></div>
+                                <div class="col-md-3 text-center"><h4 class="big-badge">{{playoffWinner}}</h4></div>
+                                <div class="col-md-3 text-center"><h4 class="big-badge">{{trophies}}</h4></div>
                             </div>
                         </div>
                     </div>
@@ -27,12 +29,16 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-md-6 text-center"><h4>Total Goals</h4></div>
-                        <div class="col-md-6 text-center"><h4>Shutouts</h4></div>
+                        <div class="col-md-3 text-center"><h4>Total Goals</h4></div>
+                        <div class="col-md-3 text-center"><h4>Avg Goals / Season</h4></div>
+                        <div class="col-md-3 text-center"><h4>Most Goals in 1 Game</h4></div>
+                        <div class="col-md-3 text-center"><h4>Shutouts</h4></div>
                     </div>
                     <div class="row">
-                        <div class="col-md-6"><h4 class="big-badge">{{goals}}</h4></div>
-                        <div class="col-md-6"><h4 class="big-badge">{{shutouts}}</h4></div>
+                        <div class="col-md-3"><h4 class="big-badge">{{totalGoals}}</h4></div>
+                        <div class="col-md-3"><h4 class="big-badge">{{avgGoalsSeason}}</h4></div>
+                        <div class="col-md-3"><h4 class="big-badge">{{maxGoalsInGame}}</h4></div>
+                        <div class="col-md-3"><h4 class="big-badge">{{shutouts}}</h4></div>
                     </div>
                 </div>
             </div>

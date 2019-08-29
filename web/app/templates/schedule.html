@@ -8,8 +8,8 @@
 	</thead>
 	<tbody>
 		{{#each this}}
-			<tr data-game-id="{{gameId}}" class="selectable">
-				<td><input class="played" type="checkbox" data-game-id="{{gameId}}" {{#if available}}checked disabled{{/if}}/>
+			<tr data-game-id="{{id}}" class="selectable">
+				<td><input class="played" type="checkbox" data-game-id="{{id}}" {{#if available}}checked disabled{{/if}}/>
 				<td>{{home}}</td>
 				<td>{{away}}</td>
 				<td>{{played}}</td>

@@ -15,13 +15,28 @@ require(['./competitive'], function (competitiveController) {
         competitiveController.renderSchedule(id);
     });
     crossroads.addRoute('seasons/{id}/statistics', function(id) {
-        competitiveController.renderStatistics(id);
+        competitiveController.renderStatistics(id, 'overall');
+    });
+    crossroads.addRoute('seasons/{id}/statistics/{type}', function(id, type) {
+        competitiveController.renderStatistics(id, type);
     });
     crossroads.addRoute('seasons/{id}/playoffs', function(id) {
         competitiveController.renderPlayoffs(id);
     });
-    crossroads.addRoute('alltime', function() {
-        competitiveController.renderAllTime();
+    crossroads.addRoute('goaliestatistics', function() {
+        competitiveController.renderGoalieStatistics('overall');
+    });
+    crossroads.addRoute('goaliestatistics/{type}', function(type) {
+        competitiveController.renderGoalieStatistics(type);
+    });
+    crossroads.addRoute('playerstatistics', function() {
+        competitiveController.renderPlayerStatistics('overall');
+    });
+    crossroads.addRoute('playerstatistics/{type}', function(type) {
+        competitiveController.renderPlayerStatistics(type);
+    });
+    crossroads.addRoute('champions', function() {
+        competitiveController.renderChampions();
     });
     crossroads.addRoute('', function() {
         competitiveController.renderSeason(null);

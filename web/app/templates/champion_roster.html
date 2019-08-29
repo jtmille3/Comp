@@ -1,0 +1,29 @@
+ <div class="col-md-4">
+     <h1 class="page-header">{{name}}</h1> 
+     <table id="{{id}}-champion-roster-table" class="table table-condensed table-striped table-hover tablesorter">
+         <thead>
+         <th></th>
+         <th>Player</th>
+         <th>Goals</th>
+         </thead>
+         <tbody>
+         {{#each roster}}
+         <tr>
+             <td width="40px">
+                 {{#if goalie}}
+                 <img src="img/goalie.png"/>
+                 {{/if}}
+                 {{#if captain}}
+                 <img src="img/captain.png"/>
+                 {{/if}}
+                 {{#if coCaptain}}
+                 <img src="img/cocaptain.png"/>
+                 {{/if}}
+             </td>
+             <td role="player">{{name}}</td>
+             <td>{{goals}}</td>
+         </tr>
+         {{/each}}
+         </tbody>
+     </table>
+ </div>

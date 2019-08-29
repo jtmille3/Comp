@@ -9,13 +9,22 @@
 		<th>GF</th>
 		<th>GA</th>
 		<th>GD</th>
+		<th>GP</th>
 		<th>Shutouts</th>
 	</thead>
 	<tbody>
 		{{#each this.standings}}
 			<tr id="{{teamId}}" class="selectable">
 				<td>{{#if rank}}{{rank}}{{/if}}</td>
-				<td>{{team}}</td>
+				<td>
+					{{team}}
+					{{#if leagueWinner}}
+					<i class="fas fa-award" style="color: #3399ff;" title="League Winner"></i>
+					{{/if}}
+					{{#if playoffWinner}}
+					<i class="fas fa-trophy" style="color: #ffcc00;" title="Playoff Winner"></i>
+					{{/if}}
+				</td>
 				<td>{{wins}}</td>
 				<td>{{losses}}</td>
 				<td>{{ties}}</td>
@@ -23,6 +32,7 @@
 				<td>{{goalsFor}}</td>
 				<td>{{goalsAgainst}}</td>
 				<td>{{goalDifferential}}</td>
+				<td>{{gamesPlayed}}</td>
 				<td>{{shutouts}}</td>
 			</tr>
 		{{/each}}

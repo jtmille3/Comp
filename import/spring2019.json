@@ -1,0 +1,384 @@
+{
+    "season": "2019 Spring",
+    "teams": [
+        {
+            "name": "BS United",
+            "captain": "Smith, Brett",
+            "goalie": "Mukhopadhyay, Pushpal",
+            "players": [
+            	"Davis, Mark",
+            	"Davis, Randy",
+            	"DePompa, Andrew",
+            	"Eastwood, Peter",
+            	"Lysenko, Alexander",
+            	"Mukhopadhyay, Pushpal",
+            	"Plachco, Chrystian",
+            	"Rasathurai, Sumithran",
+            	"Robinson, Gordon",
+            	"Smith, Brett",
+            	"Taylor, David",
+            	"Vazquez, Miguel",
+            	"Xiang, Ling",
+            	"Zachary, Michael",
+            	"Zamora, Mario"
+            ]
+        },
+        {
+            "name": "Frank's Red Hot",
+            "captain": "Fulajtar, Frank",
+            "goalie": "Busfield, Kevin",
+            "players": [
+            	"Allen, Taylor",
+            	"Babineau, Steven",
+            	"Bertram, Joanna",
+            	"Burney, Michael",
+            	"Busfield, Kevin",
+            	"Fulajtar, Frank",
+            	"Fuller, Jay",
+            	"LaRoche, Stephen",
+            	"Lawrence, Brad",
+            	"Lockard, Zachary",
+            	"McCorquodale, Don",
+            	"Robison, Russ",
+            	"Sershen, Leigh",
+            	"Stelmack, Greg",
+            	"Stonehouse, Dave"
+            ]
+        },
+        {
+            "name": "Liquid Football",
+            "captain": "McGrother, Simon",
+            "goalie": "Fusco, Marc",
+            "players": [
+            	"Bosko, Jason",
+            	"Braynin, Daniel",
+            	"Chapman, Grant",
+            	"Fusco, Marc",
+            	"Klink, Rob",
+            	"Leprince, Marc",
+            	"Lu, Jiangang",
+            	"McGrother, Simon",
+            	"Pallo, Mark",
+            	"Salvatore, John",
+            	"Sanchez, Eduardo",
+            	"Shannon, Eddie",
+            	"Smith, Casey",
+            	"Trexler, Patty",
+            	"Trubey, Brad"
+            ]
+        },
+        {
+            "name": "Michael's Team",
+            "captain": "Schnupper, Michael",
+            "goalie": "Tamburro, Dan",
+            "players": [
+            	"Benson, Matt",
+            	"Boyd, Chris",
+            	"Brodie, Devon",
+            	"Coleman, Isaiah",
+            	"Egerdahl, Nate",
+            	"Hoh, Chris",
+            	"House, Ken",
+            	"Mann, Craig",
+            	"Muraleetharan, M.",
+            	"Richardson, Josh",
+            	"Schnupper, Michael",
+            	"Tamburro, Dan",
+            	"Terrents, Brady",
+            	"Ye, Qing"
+            ]
+        },
+        {
+            "name": "Nacho Mama's Team 3.0",
+            "captain": "Ryan, Stephen",
+            "goalie": "Gibson, Mark",
+            "players": [
+            	"Abbey, Ralph",
+            	"Bernstien, Meg",
+            	"Brown, Chris",
+            	"Clayton, Mike",
+            	"George, Rob",
+            	"Gibson, Mark",
+            	"Hosford, Matt",
+            	"Hurtado, Gerardo",
+            	"Kummer, Daniel",
+            	"Mangum, Tim",
+            	"Mohr, Winslow",
+            	"Ryan, Stephen",
+            	"Sies, Michael",
+            	"Watts, Brian",
+            	"White, Carson"
+            ]
+        },
+        {
+            "name": "Purple Cobras",
+            "captain": "Gautreau, Tim",
+            "goalie": "Gerakios, Peter",
+            "players": [
+            	"Ashokkumar, Vinay",
+            	"Bishop, Orin",
+            	"Coleman, Michaiah",
+            	"Davis, Nick",
+            	"Elfaysal, Hassan",
+            	"Gautreau, Tim",
+            	"Gerakios, Peter",
+            	"Haithcock, Mike",
+            	"Hernandez-Stumpfhauser, Daniel",
+            	"Hintz, Michael",
+            	"Matthew, Jason",
+            	"McCusker, David",
+            	"Montgomery-Blinn, Samuel",
+            	"Sianez, David",
+            	"Thompson, Clay"
+            ]
+        },
+        {
+            "name": "Shot in the Dark",
+            "captain": "Sabourin, Philippe",
+            "goalie": "Valentine, Logan",
+            "players": [
+            	"Andries, Chase",
+            	"Cleveland, Chauncey",
+            	"Conard, Matt",
+            	"Estroff, Cameron",
+            	"Henry, Ian",
+            	"Imbriani, Jack",
+            	"Kinas, Aleksei",
+            	"Kline, Abe",
+            	"Niemer, Spain",
+            	"Pustynsky, Alexander",
+            	"Reese, Brandon",
+            	"Reich, Dominik",
+            	"Sabourin, Philippe",
+            	"Thompson, Jeff",
+            	"Valentine, Logan"
+            ]
+        },
+        {
+            "name": "Underwood's Underdogs",
+            "captain": "Underwood, Daniel",
+            "goalie": "Barbee, Brad",
+            "players": [
+            	"Apilli, Bellanov",
+            	"Barbee, Brad",
+            	"Barker, Layton",
+            	"Girardin, Robert",
+            	"Goodman, Andrew",
+            	"Hajinezhad, Davood",
+            	"Jones, Nate",
+            	"Landy, James",
+            	"Latour, Dom",
+            	"Mariduena, Paul",
+            	"Soltys, Mitchel",
+            	"Stracuzza, Marc",
+            	"Underwood, Daniel",
+            	"Weiss, James",
+            	"Woelfel, Charles"
+            ]
+        },
+        {
+            "name": "Witty Team Name TBD",
+            "captain": "Taft, Lee",
+            "goalie": "Grosso, Steve",
+            "players": [
+            	"Applegate, Chris",
+            	"Barkley, Ian",
+            	"Fan, Haolan",
+            	"Firlet, John",
+            	"Foreman, Todd",
+            	"Grosso, Steve",
+            	"Hia, Kyle",
+            	"Lui, Kenny",
+            	"Murphy, Jaron",
+            	"Nieman, Bryan",
+            	"Oneil, Jonathan",
+            	"Polito, Jonathan",
+            	"Stanisic, Goran",
+            	"Taft, Lee",
+            	"Zuercher, Brian"
+            ]
+        }
+    ],
+ "games": [
+  {
+    "away": "Frank's Red Hot",
+    "home": "Purple Cobras",
+    "datetime": "2019-03-18 11:30:00"
+  },
+  {
+    "away": "Witty Team Name TBD",
+    "home": "Michael's Team",
+    "datetime": "2019-03-18 11:30:00"
+  },
+  {
+    "away": "Nacho Mama's Team 3.0",
+    "home": "Underwood's Underdogs",
+    "datetime": "2019-03-18 12:30:00"
+  },
+  {
+    "away": "Liquid Football",
+    "home": "Shot in the Dark",
+    "datetime": "2019-03-18 12:30:00"
+  },
+  {
+    "away": "Michael's Team",
+    "home": "Liquid Football",
+    "datetime": "2019-03-25 11:30:00"
+  },
+  {
+    "away": "Shot in the Dark",
+    "home": "Frank's Red Hot",
+    "datetime": "2019-03-25 11:30:00"
+  },
+  {
+    "away": "BS United",
+    "home": "Witty Team Name TBD",
+    "datetime": "2019-03-25 12:30:00"
+  },
+  {
+    "away": "Purple Cobras",
+    "home": "Nacho Mama's Team 3.0",
+    "datetime": "2019-03-25 12:30:00"
+  },
+  {
+    "away": "Underwood's Underdogs",
+    "home": "Purple Cobras",
+    "datetime": "2019-04-1 11:30:00"
+  },
+  {
+    "away": "Frank's Red Hot",
+    "home": "Michael's Team",
+    "datetime": "2019-04-1 11:30:00"
+  },
+  {
+    "away": "Nacho Mama's Team 3.0",
+    "home": "Shot in the Dark",
+    "datetime": "2019-04-1 12:30:00"
+  },
+  {
+    "away": "Liquid Football",
+    "home": "BS United",
+    "datetime": "2019-04-1 12:30:00"
+  },
+  {
+    "away": "Michael's Team",
+    "home": "Nacho Mama's Team 3.0",
+    "datetime": "2019-04-8 11:30:00"
+  },
+  {
+    "away": "Shot in the Dark",
+    "home": "Underwood's Underdogs",
+    "datetime": "2019-04-8 11:30:00"
+  },
+  {
+    "away": "Witty Team Name TBD",
+    "home": "Liquid Football",
+    "datetime": "2019-04-8 12:30:00"
+  },
+  {
+    "away": "BS United",
+    "home": "Frank's Red Hot",
+    "datetime": "2019-04-8 12:30:00"
+  },
+  {
+    "away": "Frank's Red Hot",
+    "home": "Witty Team Name TBD",
+    "datetime": "2019-04-15 11:30:00"
+  },
+  {
+    "away": "Underwood's Underdogs",
+    "home": "Michael's Team",
+    "datetime": "2019-04-15 11:30:00"
+  },
+  {
+    "away": "Purple Cobras",
+    "home": "Shot in the Dark",
+    "datetime": "2019-04-15 12:30:00"
+  },
+  {
+    "away": "Nacho Mama's Team 3.0",
+    "home": "BS United",
+    "datetime": "2019-04-15 12:30:00"
+  },
+  {
+    "away": "Liquid Football",
+    "home": "Frank's Red Hot",
+    "datetime": "2019-04-22 11:30:00"
+  },
+  {
+    "away": "Michael's Team",
+    "home": "Purple Cobras",
+    "datetime": "2019-04-22 11:30:00"
+  },
+  {
+    "away": "BS United",
+    "home": "Underwood's Underdogs",
+    "datetime": "2019-04-22 12:30:00"
+  },
+  {
+    "away": "Witty Team Name TBD",
+    "home": "Nacho Mama's Team 3.0",
+    "datetime": "2019-04-22 12:30:00"
+  },
+  {
+    "away": "Shot in the Dark",
+    "home": "Michael's Team",
+    "datetime": "2019-04-29 11:30:00"
+  },
+  {
+    "away": "Nacho Mama's Team 3.0",
+    "home": "Liquid Football",
+    "datetime": "2019-04-29 11:30:00"
+  },
+  {
+    "away": "Purple Cobras",
+    "home": "BS United",
+    "datetime": "2019-04-29 12:30:00"
+  },
+  {
+    "away": "Underwood's Underdogs",
+    "home": "Witty Team Name TBD",
+    "datetime": "2019-04-29 12:30:00"
+  },
+  {
+    "away": "Liquid Football",
+    "home": "Underwood's Underdogs",
+    "datetime": "2019-05-6 11:30:00"
+  },
+  {
+    "away": "Witty Team Name TBD",
+    "home": "Purple Cobras",
+    "datetime": "2019-05-6 11:30:00"
+  },
+  {
+    "away": "Frank's Red Hot",
+    "home": "Nacho Mama's Team 3.0",
+    "datetime": "2019-05-6 12:30:00"
+  },
+  {
+    "away": "BS United",
+    "home": "Shot in the Dark",
+    "datetime": "2019-05-6 12:30:00"
+  },
+  {
+    "away": "Shot in the Dark",
+    "home": "Witty Team Name TBD",
+    "datetime": "2019-05-13 11:30:00"
+  },
+  {
+    "away": "Purple Cobras",
+    "home": "Liquid Football",
+    "datetime": "2019-05-13 11:30:00"
+  },
+  {
+    "away": "Michael's Team",
+    "home": "BS United",
+    "datetime": "2019-05-13 12:30:00"
+  },
+  {
+    "away": "Underwood's Underdogs",
+    "home": "Frank's Red Hot",
+    "datetime": "2019-05-13 12:30:00"
+  }
+]
+}

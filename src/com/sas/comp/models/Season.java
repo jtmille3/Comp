@@ -1,6 +1,7 @@
 package com.sas.comp.models;
 
 import java.util.List;
+import java.util.Map;
 
 public class Season extends BaseModel {
 
@@ -10,7 +11,8 @@ public class Season extends BaseModel {
 	private List<Game> leagueSchedule;
 	private List<Player> playerStatistics;
 	private List<Player> goalieStatistics;
-
+	private Map<String,Map<String,List<Player>>> seasonStatistics;
+	
 	public String getName() {
 		return this.name;
 	}
@@ -58,4 +60,13 @@ public class Season extends BaseModel {
 	public void setGoalieStatistics(final List<Player> goalieStatistics) {
 		this.goalieStatistics = goalieStatistics;
 	}
+
+	public Map<String, Map<String,List<Player>>> getSeasonStatistics() {
+		return seasonStatistics;
+	}
+
+	public void setSeasonStatistics(final Map<String, Map<String,List<Player>>> seasonStatistics) {
+		this.seasonStatistics = seasonStatistics;
+	}
+
 }

@@ -5,12 +5,21 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.TreeMap;
 
 import com.sas.comp.models.Game;
 import com.sas.comp.models.Player;
 import com.sas.comp.mysql.Database;
 
 public class GameService {
+    
+    private TreeMap<Integer, List<Game>>allRegularSeason = new TreeMap<Integer, List<Game>>();
+    private TreeMap<Integer, List<Game>>allPlayoff = new TreeMap<Integer, List<Game>>();
+    
+    public GameService() {
+        this.populateAllSeasons();
+    }
+    
     public List<Game> getLeagueSchedule(final Integer seasonId) {
         return getSchedules(seasonId, false);
     }
@@ -18,17 +27,36 @@ public class GameService {
     public List<Game> getPlayoffSchedule(final Integer seasonId) {
         return getSchedules(seasonId, true);
     }
+    
+    private void populateAllSeasons() {
+        Database.doVoidTransaction("SELECT * FROM schedule order by season_id desc, playoff", (pstmt) -> {
+            final ResultSet rs = pstmt.executeQuery();
+            while (rs.next()) {
+                Integer seasonId = rs.getInt("season_id");
+                Boolean playoff = rs.getBoolean("playoff");
+                List<Game> schedules = null;
+                TreeMap<Integer, List<Game>> gameMap = null;
+                if( playoff.booleanValue() ) {
+                    gameMap = allPlayoff;
+                } else {
+                    gameMap = allRegularSeason;
+                }
+                schedules = gameMap.get(seasonId);
+                if( schedules == null ) schedules = new ArrayList<Game>();
+                schedules.add(processSingleGame(rs));
+                gameMap.put(seasonId, schedules);
+            }
+        });
+    }
 
     private List<Game> getSchedules(final Integer seasonId, final Boolean playoff) {
-        final List<Game> schedules = new ArrayList<>();
-
-        Database.doVoidTransaction("SELECT * FROM schedule WHERE playoff = ? AND season_id = ?", (pstmt) -> {
-            pstmt.setBoolean(1, playoff);
-            pstmt.setInt(2, seasonId);
-
-            final ResultSet rs = pstmt.executeQuery();
-            processGameResultSet(rs,schedules);
-        });
+        TreeMap<Integer, List<Game>> gameMap = null;
+        if( playoff.booleanValue() ) {
+            gameMap = allPlayoff;
+        } else {
+            gameMap = allRegularSeason;
+        }
+        final List<Game>schedules = gameMap.get(seasonId);
         return schedules;
     }
 
@@ -67,8 +95,6 @@ public class GameService {
             if (rs.next()) {
                 returnGame = processSingleGame(rs);
             }
-
-            rs.close();
             return returnGame;
         });
     }

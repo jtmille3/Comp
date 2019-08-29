@@ -75,7 +75,7 @@ define(function() {
 		selectedGame: function(game) {
 			var self = this;
 
-			$.get('/service/games/'+game.gameId+'/players', function(players) {
+			$.get('/service/games/'+game.id+'/players', function(players) {
 				game.homePlayers = [];
 				game.awayPlayers = [];
 				for(var i = 0; i < players.length; i++) {
@@ -88,16 +88,16 @@ define(function() {
 				}
 
 				game.homePlayers.push({
-					player: 'Ghost',
+					name: 'Ghost',
 					teamId: game.homeId,
-					playerId: -1,
+					id: -1,
 					goals: self.getGhostGoals(game.homeId, game.homeScore, players)
 				});
 
 				game.awayPlayers.push({
-					player: 'Ghost',
+					name: 'Ghost',
 					teamId: game.awayId,
-					playerId: -2,
+					id: -2,
 					goals: self.getGhostGoals(game.awayId, game.awayScore, players)
 				});
 
@@ -133,7 +133,7 @@ define(function() {
 				dataType: 'json',
 				data: JSON.stringify({
 					playerId: playerId,
-					gameId: game.gameId
+					gameId: game.id
 				})
 			});
 		},
@@ -156,14 +156,14 @@ define(function() {
 				dataType: 'json',
 				data: JSON.stringify({
 					playerId: playerId,
-					gameId: game.gameId
+					gameId: game.id
 				})
 			});
 		},
 
 		played: function(game) {
 			$.ajax({
-				url: '/service/games/' + game.gameId + '/score',
+				url: '/service/games/' + game.id + '/score',
 				type: 'PUT',
 				contentType: 'application/json; charset=utf-8',
 				dataType: 'json',
@@ -174,7 +174,7 @@ define(function() {
 		getGame: function(gameId, games) {
 			for(var i = 0; i < games.length; i++) {
 				var game = games[i];
-				if(game.gameId === gameId) {
+				if(game.id === gameId) {
 					return game;
 				}
 			}
@@ -184,12 +184,12 @@ define(function() {
 
 		getTeamId: function(game, playerId) {
 			for(var i = 0; i < game.homePlayers.length; i++) {
-				if(playerId === game.homePlayers[i].playerId) {
+				if(playerId === game.homePlayers[i].id) {
 					return game.homeId;
 				}
 			}
 			for(var i = 0; i < game.awayPlayers.length; i++) {
-				if(playerId === game.awayPlayers[i].playerId) {
+				if(playerId === game.awayPlayers[i].id) {
 					return game.awayId;
 				}
 			}
@@ -199,7 +199,7 @@ define(function() {
 
 		isVisiting: function(game, playerId) {
 			for(var i = 0; i < game.awayPlayers.length; i++) {
-				if(playerId === game.awayPlayers[i].playerId) {
+				if(playerId === game.awayPlayers[i].id) {
 					return true;
 				}
 			}
