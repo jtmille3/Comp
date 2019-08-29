@@ -37,7 +37,7 @@ public class Database {
                 ((TransactionVoidInterface)transactionInterface).doTransaction(statement);
             }
             conn.commit();
-            if(returnObject != null && returnObject instanceof BaseModel) {
+            if(returnObject instanceof BaseModel) {
                 try {
                     final ResultSet rs = statement.getGeneratedKeys();
                     if (rs.next()) {

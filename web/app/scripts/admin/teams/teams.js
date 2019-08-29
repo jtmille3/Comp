@@ -199,6 +199,8 @@ define(function() {
             var player;
             search.on('typeahead:selected', function(event, suggestion) {
                 player = suggestion;
+                var $addButton = $('#add-player-button');
+                $addButton.prop('disabled', !!!player);
             });
 
             var $addButton = $('#add-player-button');
