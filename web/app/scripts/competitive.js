@@ -32,10 +32,12 @@ define(function(require) {
 
 			for(var i = 0; i < competitive.seasons.length; i++) {
 				var season = competitive.seasons[i];
-				season.playerStatistics = season.seasonStatistics.overall.player;
-				$('#' + season.id + '-standings-table').tablesorter( {sortList: [[0,0]]} );
-				$('#' + season.id + '-playoff-schedule-table').tablesorter( {sortList: [[2,0]]} );
-				$('#' + season.id + '-league-schedule-table').tablesorter( {sortList: [[2,0]]} ); 
+				if(season.seasonStatistics) {
+                    season.playerStatistics = season.seasonStatistics.overall.player;
+                    $('#' + season.id + '-standings-table').tablesorter( {sortList: [[0,0]]} );
+                    $('#' + season.id + '-playoff-schedule-table').tablesorter( {sortList: [[2,0]]} );
+                    $('#' + season.id + '-league-schedule-table').tablesorter( {sortList: [[2,0]]} );
+                }
 
 				this.attachStandingsClickHandler(season);
 				this.attachLeagueScheduleClickHandler(season);
@@ -114,7 +116,7 @@ define(function(require) {
 			$(document).on('click','td[role="player"]', function(row){
 				var playerName = this.innerHTML;
 				displayPlayer(playerName);
-			}); 
+			});
 		},
 		attachTeamClickHandler: function(teamId) {
 			var self = this;

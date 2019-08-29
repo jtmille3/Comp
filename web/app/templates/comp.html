@@ -65,18 +65,22 @@
                 <ul class="nav nav-pills" id="season-{{id}}-menu">
                     <li class="active" id="season-{{id}}-standings-menu"><a href="#/seasons/{{id}}/standings">Standings</a></li>
                     <li id="season-{{id}}-schedule-menu"><a href="#/seasons/{{id}}/schedule">Schedule</a></li>
+                    {{#if this.seasonStatistics}}
                     <li id="season-{{id}}-overall-statistics-menu"><a href="#/seasons/{{id}}/statistics/overall">Overall Statistics</a></li>
                     <li id="season-{{id}}-season-statistics-menu"><a href="#/seasons/{{id}}/statistics/season">Regular Season Statistics</a></li>
                     <li id="season-{{id}}-playoff-statistics-menu"><a href="#/seasons/{{id}}/statistics/playoff">Playoff Statistics</a></li>
                     <li id="season-{{id}}-playoffs-menu"><a href="#/seasons/{{id}}/playoffs">Playoffs</a></li>
+                    {{/if}}
                 </ul>
                 <div class="tab-content" id="season-{{id}}-tabs">
                     <div class="tab-pane active" id="season-{{id}}-standings">{{> standings this}}</div>
                     <div class="tab-pane" id="season-{{id}}-schedule">{{> league_schedule this}}</div>
+                    {{#if this.seasonStatistics}}
                     <div class="tab-pane" id="season-{{id}}-overall-statistics">{{> statistics this.seasonStatistics.overall}}</div>
                     <div class="tab-pane" id="season-{{id}}-season-statistics">{{> statistics this.seasonStatistics.season}}</div>
                     <div class="tab-pane" id="season-{{id}}-playoff-statistics">{{> statistics this.seasonStatistics.playoff}}</div>
                     <div class="tab-pane" id="season-{{id}}-playoffs">{{> playoff_schedule this}}</div>
+                    {{/if}}
                 </div>
             </div>
         </div>

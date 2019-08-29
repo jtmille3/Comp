@@ -101,8 +101,8 @@ module.exports = function (grunt) {
                         },
                         {
                             files: ['<%= yeoman.dist %>/admin.html'],
-                            module: 'admin',
-                            modulePath: 'scripts/admin'
+                            module: 'admin/admin',
+                            modulePath: 'scripts/admin/admin'
                         }
                     ],
                     modules: [
@@ -110,7 +110,7 @@ module.exports = function (grunt) {
                             name: 'main'
                         },
                         {
-                            name: 'admin'
+                            name: 'admin/admin'
                         }
                     ]
                 }
@@ -193,7 +193,7 @@ module.exports = function (grunt) {
             assets: {
                 files: [{
                     src: [
-                        '<%= yeoman.dist %>/scripts/{,*/!(require)}*.js',
+                        '<%= yeoman.dist %>/scripts/{,**/!(require)}*.js',
                         '<%= yeoman.dist %>/styles/{,*/}*.css',
                         '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp}',
                         '<%= yeoman.dist %>/fonts/{,*/}*.*'
