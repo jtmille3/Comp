@@ -63,9 +63,9 @@ public class TeamResource {
     }
 
     @DELETE
-    @Path("player")
-    public void deleteTeamPlayer(TeamPlayer player) {
-        service.deletePlayer(player);
+    @Path("player/{id}")
+    public void deleteTeamPlayer(@PathParam("id") Integer playerId) {
+        service.deletePlayer(playerId);
     }
 
 }

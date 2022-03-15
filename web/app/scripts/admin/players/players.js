@@ -75,8 +75,8 @@ define(function() {
                 var $addButton = $('#add-player-button');
                 $addButton.prop('disabled', true);
 
-                var search = $('#player-name');
                 search.val('');
+                search.focus();
             });
         }
     };

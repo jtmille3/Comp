@@ -58,20 +58,18 @@ public class TeamService {
     }
 
     public void updatePlayer(TeamPlayer player) {
-        Database.doVoidTransaction("UPDATE team_player SET isGoalie = ?, isCaptain = ?, isCoCaptain = ? WHERE player_id = ? AND team_id = ?", (pstmt) -> {
+        Database.doVoidTransaction("UPDATE team_player SET isGoalie = ?, isCaptain = ?, isCoCaptain = ? WHERE id = ?", (pstmt) -> {
             pstmt.setBoolean(1, player.getIsGoalie());
             pstmt.setBoolean(2, player.getIsCaptain());
             pstmt.setBoolean(3, player.getIsCoCaptain());
-            pstmt.setInt(4, player.getPlayerId());
-            pstmt.setInt(5, player.getTeamId());
+            pstmt.setInt(4, player.getId());
             pstmt.execute();
         });
     }
 
-    public void deletePlayer(TeamPlayer player) {
-        Database.doVoidTransaction("DELETE FROM team_player WHERE player_id = ? AND team_id = ?", (pstmt) -> {
-            pstmt.setInt(1, player.getPlayerId());
-            pstmt.setInt(2, player.getTeamId());
+    public void deletePlayer(Integer id) {
+        Database.doVoidTransaction("DELETE FROM team_player WHERE id = ?", (pstmt) -> {
+            pstmt.setInt(1, id);
             pstmt.execute();
         });
     }
@@ -158,6 +156,8 @@ public class TeamService {
         final Player player = new Player();
         player.setName(rs.getString("name"));
         player.setId(rs.getInt("id"));
+        player.setCaptain(rs.getBoolean("isCaptain"));
+        player.setGoalie(rs.getBoolean("isGoalie"));
         return player;
     }
 }

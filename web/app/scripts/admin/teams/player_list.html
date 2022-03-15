@@ -1,11 +1,27 @@
 <table id="players-table" class="table table-condensed table-striped table-hover tablesorter">
     <thead>
-    <th>Player</th>
+    <tr>
+        <th>Player</th>
+        <th>Captain</th>
+        <th>Goalie</th>
+        <th>Remove</th>
+    </tr>
     </thead>
     <tbody>
     {{#each players}}
     <tr data-player-id="{{id}}" class="selectable">
         <td>{{name}}</td>
+        {{#if captain}}
+        <td><input class="captain" type="checkbox" checked/></td>
+        {{else}}
+        <td><input class="captain" type="checkbox"/></td>
+        {{/if}}
+        {{#if goalie}}
+        <td><input class="goalie" type="checkbox" checked/></td>
+        {{else}}
+        <td><input class="goalie" type="checkbox"/></td>
+        {{/if}}
+        <td><button class="remove">Remove</button></td>
     </tr>
     {{/each}}
     </tbody>

@@ -25,8 +25,6 @@ define(function() {
                 var seasonId = $(this).data('seasonId');
                 self.renderTeams(seasonId);
 
-                $('#team-name').attr('readonly', false);
-
                 var $div = $(this).parent().parent().parent();
                 var $btn = $div.find('button');
                 $btn.html($(this).text() + ' <span class="caret"></span>');
@@ -51,6 +49,7 @@ define(function() {
 
                 self.attachTeamSearch(seasonId, teams);
                 self.attachTeamHandler();
+                $('#team-name').focus();
             });
         },
 
@@ -121,7 +120,6 @@ define(function() {
                 var $addButton = $('#add-team-button');
                 $addButton.prop('disabled', true);
 
-                var search = $('#team-name');
                 search.val('');
             });
         },
@@ -151,10 +149,72 @@ define(function() {
                 $('#player-list').html(playerListTemplate({
                     players: players
                 }));
+                $('.captain').on("click", function() {
+                    const playerId = $(this).parent().parent().data('player-id');
+                    const player = players.find(p => p.id === playerId);
+                    const captain = $(this).prop("checked");
+                    const teamPlayer = {
+                        id: player.id,
+                        isGoalie: player.goalie,
+                        isCaptain: captain,
+                        isCoCaptain: false
+                    };
+                    $.ajax({
+                        type: 'PUT',
+                        data: JSON.stringify(teamPlayer),
+                        url: '/service/teams/player',
+                        contentType: 'application/json; charset=utf-8',
+                        dataType: 'json',
+                        success: function() {
+                            console.log(`Made ${player.name} a captain: ${captain}`);
+                            player.captain = captain;
+                        }
+                    });
+                });
+
+                $('.goalie').on("click", function() {
+                    const playerId = $(this).parent().parent().data('player-id');
+                    const player = players.find(p => p.id === playerId);
+                    const goalie = $(this).prop("checked");
+                    const teamPlayer = {
+                        id: player.id,
+                        isGoalie: goalie,
+                        isCaptain: player.captain,
+                        isCoCaptain: false
+                    };
+                    $.ajax({
+                        type: 'PUT',
+                        data: JSON.stringify(teamPlayer),
+                        url: '/service/teams/player',
+                        contentType: 'application/json; charset=utf-8',
+                        dataType: 'json',
+                        success: function() {
+                            console.log(`Made ${player.name} a goalie: ${goalie}`);
+                            player.goalie = goalie;
+                        }
+                    });
+
+                });
+
+                $('.remove').on("click", function() {
+                    const row = $(this).parent().parent();
+                    const playerId = row.data('player-id');
+                    $.ajax({
+                        type: 'DELETE',
+                        url: `/service/teams/player/${playerId}`,
+                        success: function() {
+                            console.log(`Removed player from team.`);
+                            players = players.filter(p => p.id !== playerId);
+                            row.remove();
+                        }
+                    });
+
+                });
             });
 
             $.get('/service/players', function(players) {
                 self.attachPlayerSearch(teamId, players);
+                $('#player-name').focus();
             });
         },
 
