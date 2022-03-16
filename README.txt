@@ -1,7 +1,10 @@
-npm update -g grunt
-npm update -g grunt-cli
-npm update -g bower
-npm update -g yo
+npm install -g grunt && \
+npm install -g grunt-cli && \
+npm install -g bower && \
+npm install -g yo && \
+bower install && \
+npm install && \
+grunt build
 
 if you have not installed any of the above, use "npm install" instead of "npm update" keeping the other arguments unchanged.
 

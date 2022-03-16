@@ -10,11 +10,11 @@ require.config({
 });
 
 require([
-    './scores/scores',
-    './seasons/seasons',
-    './players/players',
-    './teams/teams',
-    './cache/cache',
+    'admin/scores/scores',
+    'admin/seasons/seasons',
+    'admin/players/players',
+    'admin/teams/teams',
+    'admin/cache/cache',
 ], function (
     adminController,
     seasonsController,
