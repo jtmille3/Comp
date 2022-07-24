@@ -6,8 +6,6 @@ bower install && \
 npm install && \
 grunt build
 
-if you have not installed any of the above, use "npm install" instead of "npm update" keeping the other arguments unchanged.
-
 make sure you have the latest version of node and more importantly NPM.  ~1.4.3
 
 git clone https://github.com/jtmille3/Comp.git
