@@ -8,7 +8,7 @@ public class Database {
 
 	private static Connection getConnection() throws SQLException, ClassNotFoundException {
 		Class.forName("com.mysql.jdbc.Driver");
-		return DriverManager.getConnection("jdbc:mysql://pip.na.sas.com:3306/soccer?useSSL=false", "soccer", "i<3soccer");
+		return DriverManager.getConnection("jdbc:mysql://soccerdb.na.sas.com:3306/soccer?useSSL=false", "soccer", "i<3soccer");
         //return DriverManager.getConnection("jdbc:mysql://pip.na.sas.com:3306/soccer_test?useSSL=false", "soccer", "i<3soccer");
 	}
 

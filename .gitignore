@@ -10,3 +10,11 @@ distribution
 out
 .tmp
 package-lock.json
+soccer.jar
+soccer_lib/
+database/*.bat
+database/soccerdb_last.sql
+database/Dump20220713.sql
+runComp.bat
+import/summer2022.json
+
