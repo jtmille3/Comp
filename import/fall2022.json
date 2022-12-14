@@ -1,0 +1,317 @@
+{
+    "season": "2022 Fall",
+    "teams": [
+        {
+            "name": "Witty Team Name TBD",
+            "captain": "Taft, Lee",
+            "goalie": "",
+            "players": [
+            	"Armstrong, Tommy",
+            	"Barker, Layton",
+            	"Busfield, Kevin",
+            	"Clayton, Mike",
+            	"Davis, Nick",
+            	"De Souza, Thiago",
+            	"Goodman, Andrew",
+            	"Haithcock, Mike",
+            	"Hoh, Chris",
+            	"Imbriani, Jack",
+            	"McCorquodale, Don",
+            	"Polo, Paul",
+            	"Taft, Lee",
+            	"Watts, Brian",
+            	"Ye, Qing"
+            ]
+        },
+        {
+            "name": "Zero Schnups Given",
+            "captain": "Michael Schnupper",
+            "goalie": "",
+            "players": [
+            	"Hosford, Matt",
+            	"Iagnocco, Alex",
+            	"Kestecher, Craig",
+            	"Mosakewicz, Chris",
+            	"Muraleetharan, M.",
+            	"Osterman, Ryan",
+            	"Pallo, Mark",
+            	"Pustynsky, Alexander",
+            	"Robinson, Gordon",
+            	"Sanchez, Eduardo",
+            	"Schnupper, Michael",
+            	"Stelmack, Greg",
+            	"Vannatta, Stefan",
+            	"Vazquez, Miguel",
+            	"Zimmerman, Danny"
+            ]
+        },
+        {
+            "name": "Glory Days FC",
+            "captain": "Howard, Matt",
+            "goalie": "",
+            "players": [
+            	"Ashokkumar, Vinay",
+            	"Gottberg, Chris",
+            	"Hia, Kyle",
+            	"Howard, Matt",
+            	"Latour, Dom",
+            	"Lockard, Zachary",
+            	"Mann, Geoff",
+            	"Miller, Jeff",
+            	"Montufar, Octavio",
+            	"Nisley, Amber",
+            	"Rasathurai, Sumithran",
+            	"Rodin, Alex",
+            	"Scott, Sean",
+            	"Sies, Michael",
+            	"Weiss, James"
+            ]
+        },
+        {
+            "name": "Roy Kent",
+            "captain": "Beeman, Jennifer",
+            "goalie": "",
+            "players": [
+            	"Allen, Taylor",
+            	"Andress, Trevor",
+            	"Beeman, Jennifer",
+            	"Brown, McLeod",
+            	"Elfaysal, Hassan",
+            	"Firlet, John",
+            	"Flynn, Joe",
+            	"Foreman, Todd",
+            	"Hunt, Dane",
+            	"Kummer, Daniel",
+            	"Landy, James",
+            	"Montgomery-Blinn, Samuel",
+            	"Nieman, Bryan",
+            	"Smith, Casey",
+            	"Zachary, Michael"
+            ]
+        },
+        {
+            "name": "gg one re",
+            "captain": "Abbey, Ralph",
+            "goalie": "",
+            "players": [
+            	"Abbey, Ralph",
+            	"Bosko, Jason",
+            	"Clowes, Richard",
+            	"Gibson, Mark",
+            	"Girardin, Robert",
+            	"Hurtado, Gerardo",
+            	"Lopez, Ivan",
+            	"Lu, Jiangang",
+            	"Matthew, Jason",
+            	"Ryan, Stephen",
+            	"Smith, Brett",
+            	"Soltys, Mitchel",
+            	"Stonehouse, Dave",
+            	"Terrents, Brady"
+            ]
+        },
+        {
+            "name": "Liquid Football",
+            "captain": "McGrother, Simon",
+            "goalie": "",
+            "players": [
+            	"Bermudez, Marcelo",
+            	"Boruah, Sumanta",
+            	"Braynin, Daniel",
+            	"Ibrahim, Idris",
+            	"Kinas, Aleksei",
+            	"Klink, Rob",
+            	"Lui, Kenny",
+            	"Mann, Craig",
+            	"McCormack, Daniel",
+            	"McGrother, Simon",
+            	"Morris, James",
+            	"Titov, Nikolay",
+            	"Trubey, Brad",
+            	"Waters, Taylor"
+            ]
+        }
+    ],
+ "games": [
+  {
+    "home": "Liquid Football",
+    "away": "gg one re",
+    "datetime": "2022-09-14 11:30:00"
+  },
+  {
+    "home": "Glory Days FC",
+    "away": "Roy Kent",
+    "datetime": "2022-09-14 12:30:00"
+  },
+  {
+    "home": "Witty Team Name TBD",
+    "away": "Zero Schnups Given",
+    "datetime": "2022-09-14 11:30:00"
+  },
+  {
+    "home": "Zero Schnups Given",
+    "away": "gg one re",
+    "datetime": "2022-09-21 11:30:00"
+  },
+  {
+    "home": "Roy Kent",
+    "away": "Liquid Football",
+    "datetime": "2022-09-21 12:30:00"
+  },
+  {
+    "home": "Witty Team Name TBD",
+    "away": "Glory Days FC",
+    "datetime": "2022-09-21 11:30:00"
+  },
+  {
+    "home": "Roy Kent",
+    "away": "Witty Team Name TBD",
+    "datetime": "2022-09-28 11:30:00"
+  },
+  {
+    "home": "Liquid Football",
+    "away": "Zero Schnups Given",
+    "datetime": "2022-09-28 12:30:00"
+  },
+  {
+    "home": "gg one re",
+    "away": "Glory Days FC",
+    "datetime": "2022-09-28 11:30:00"
+  },
+  {
+    "home": "Witty Team Name TBD",
+    "away": "Liquid Football",
+    "datetime": "2022-10-05 11:30:00"
+  },
+  {
+    "home": "Glory Days FC",
+    "away": "Zero Schnups Given",
+    "datetime": "2022-10-05 12:30:00"
+  },
+  {
+    "home": "gg one re",
+    "away": "Roy Kent",
+    "datetime": "2022-10-05 11:30:00"
+  },
+  {
+    "home": "Liquid Football",
+    "away": "Glory Days FC",
+    "datetime": "2022-10-12 11:30:00"
+  },
+  {
+    "home": "gg one re",
+    "away": "Witty Team Name TBD",
+    "datetime": "2022-10-12 12:30:00"
+  },
+  {
+    "home": "Zero Schnups Given",
+    "away": "Roy Kent",
+    "datetime": "2022-10-12 11:30:00"
+  },
+  {
+    "home": "Liquid Football",
+    "away": "gg one re",
+    "datetime": "2022-10-19 11:30:00"
+  },
+  {
+    "home": "Glory Days FC",
+    "away": "Roy Kent",
+    "datetime": "2022-10-19 12:30:00"
+  },
+  {
+    "home": "Witty Team Name TBD",
+    "away": "Zero Schnups Given",
+    "datetime": "2022-10-19 11:30:00"
+  },
+  {
+    "home": "Zero Schnups Given",
+    "away": "gg one re",
+    "datetime": "2022-10-26 11:30:00"
+  },
+  {
+    "home": "Witty Team Name TBD",
+    "away": "Glory Days FC",
+    "datetime": "2022-10-26 12:30:00"
+  },
+  {
+    "home": "Roy Kent",
+    "away": "Liquid Football",
+    "datetime": "2022-10-26 11:30:00"
+  },
+  {
+    "home": "Roy Kent",
+    "away": "Witty Team Name TBD",
+    "datetime": "2022-11-02 11:30:00"
+  },
+  {
+    "home": "Liquid Football",
+    "away": "Zero Schnups Given",
+    "datetime": "2022-11-02 12:30:00"
+  },
+  {
+    "home": "gg one re",
+    "away": "Glory Days FC",
+    "datetime": "2022-11-02 11:30:00"
+  },
+  {
+    "home": "Witty Team Name TBD",
+    "away": "Liquid Football",
+    "datetime": "2022-11-09 11:30:00"
+  },
+  {
+    "home": "gg one re",
+    "away": "Roy Kent",
+    "datetime": "2022-11-09 12:30:00"
+  },
+  {
+    "home": "Glory Days FC",
+    "away": "Zero Schnups Given",
+    "datetime": "2022-11-09 11:30:00"
+  },
+  {
+    "home": "Liquid Football",
+    "away": "Glory Days FC",
+    "datetime": "2022-11-16 11:30:00"
+  },
+  {
+    "home": "gg one re",
+    "away": "Witty Team Name TBD",
+    "datetime": "2022-11-16 12:30:00"
+  },
+  {
+    "home": "Zero Schnups Given",
+    "away": "Roy Kent",
+    "datetime": "2022-11-16 11:30:00"
+  },
+  {
+    "home": "Liquid Football",
+    "away": "Glory Days FC",
+    "datetime": "2022-12-02 11:30:00",
+    "playoff": 1
+  },
+  {
+    "home": "Witty Team Name TBD",
+    "away": "Zero Schnups Given",
+    "datetime": "2022-12-05 11:30:00",
+    "playoff": 1
+  },
+  {
+    "home": "Roy Kent",
+    "away": "Glory Days FC",
+    "datetime": "2022-12-07 11:30:00",
+    "playoff": 1
+  },
+  {
+    "home": "gg one re",
+    "away": "Zero Schnups Given",
+    "datetime": "2022-12-12 11:30:00",
+    "playoff": 1
+  },
+  {
+    "home": "gg one re",
+    "away": "Roy Kent",
+    "datetime": "2022-12-14 11:30:00",
+    "playoff": 1
+  }
+]
+}

@@ -175,7 +175,11 @@ public class GameService {
             pstmt.setTimestamp(4, new java.sql.Timestamp(game.getDate().getTime()));
             pstmt.setNull(5, Types.NULL);
             pstmt.setNull(6, Types.NULL);
-            pstmt.setInt(7, 0);
+            if( game.getPlayoff().booleanValue() ) {
+                pstmt.setInt(7, 1);
+            } else {
+                pstmt.setInt(7, 0);
+            }
             pstmt.execute();
             return game;
         });
