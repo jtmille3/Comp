@@ -1,0 +1,295 @@
+{
+    "season": "2023 Spring",
+    "teams": [
+        {
+            "name": "It's Called Soccer",
+            "captain": "Davis, Nick",
+            "goalie": "",
+            "players": [
+            	"Kinas, Aleksei",
+            	"Pustynsky, Alexander",
+            	"Koc, Ayla",
+            	"Martinez, Byron",
+            	"Mosakewicz, Chris",
+            	"Kestecher, Craig",
+            	"Stonehouse, Dave",
+            	"Barkley, Ian",
+            	"Morris, James",
+            	"Taylor, John",
+            	"Brown, McLeod",
+            	"Davis, Nick",
+            	"Piehler, Owen",
+            	"Sabourin, Philippe",
+            	"Montgomery-Blinn, Samuel",
+            	"Andress, Trevor"
+            ]
+        },
+        {
+            "name": "GDFC",
+            "captain": "Howard, Matt",
+            "goalie": "",
+            "players": [
+            	"Smith, Casey",
+            	"Braynin, Daniel",
+            	"Elfaysal, Hassan",
+            	"Landy, James",
+            	"Matthew, Jason",
+            	"Xing, Jie",
+            	"Griffin, Langley",
+            	"Howard, Matt",
+            	"Zachary, Michael",
+            	"Soltys, Mitchel",
+            	"Titov, Nikolay",
+            	"Montufar, Octavio",
+            	"Ye, Qing",
+            	"Rasathurai, Sumithran",
+            	"Foreman, Todd",
+            	"Lockard, Zachary"
+            ]
+        },
+        {
+            "name": "Roy Kent",
+            "captain": "Beeman, Jennifer",
+            "goalie": "",
+            "players": [
+            	"Iagnocco, Alex",
+            	"Terrents, Brady",
+            	"Nieman, Bryan",
+            	"Hurtado, Gerardo",
+            	"Beeman, Jennifer",
+            	"Flynn, Joe",
+            	"Firlet, John",
+            	"Bermudez, Marcelo",
+            	"Gibson, Mark",
+            	"Pallo, Mark",
+            	"Schnupper, Michael",
+            	"Sies, Michael",
+            	"Muraleetharan, M.",
+            	"Dodge, Nick",
+            	"Abbey, Ralph",
+            	"Peredriy, Sergiy"
+            ]
+        },
+        {
+            "name": "It Must Be Zimm",
+            "captain": "Zimmerman, Danny",
+            "goalie": "",
+            "players": [
+            	"Nisley, Amber",
+            	"Applegate, Chris",
+            	"Plachco, Chrystian",
+            	"Zimmerman, Danny",
+            	"Stelmack, Greg",
+            	"Imbriani, Jack",
+            	"Morales, Jesus",
+            	"Vazquez, Miguel",
+            	"Haithcock, Mike",
+            	"Urquhart, Nathan",
+            	"Clowes, Richard",
+            	"Osterman, Ryan",
+            	"Rogers, Sean",
+            	"Vannatta, Stefan",
+            	"Ryan, Stephen",
+            	"Allen, Taylor"
+            ]
+        },
+        {
+            "name": "Liquid Football",
+            "captain": "McGrother, Simon",
+            "goalie": "",
+            "players": [
+            	"Hawkins, Brendan",
+            	"Mann, Craig",
+            	"Kummer, Daniel",
+            	"Latour, Dom",
+            	"Lopez, Ivan",
+            	"Lu, Jiangang",
+            	"House, Ken",
+            	"Lui, Kenny",
+            	"Busfield, Kevin",
+            	"Hosford, Matt",
+            	"Polo, Paul",
+            	"Klink, Rob",
+            	"McGrother, Simon",
+            	"Boruah, Sumanta",
+            	"Waters, Taylor",
+            	"Ashokkumar, Vinay"
+            ]
+        },
+        {
+            "name": "Witty Team Name TBD",
+            "captain": "",
+            "goalie": "",
+            "players": [
+            	"Trubey, Brad",
+            	"Smith, Brett",
+            	"Nielsen, Chelsea",
+            	"Gottberg, Chris",
+            	"Hoh, Chris",
+            	"Hunt, Dane",
+            	"Sanchez, Eduardo",
+            	"Martin, Hannah",
+            	"Weiss, James",
+            	"Bosko, Jason",
+            	"Hia, Kyle",
+            	"Taft, Lee",
+            	"Clayton, Mike",
+            	"Girardin, Robert",
+            	"Robison, Russ",
+            	"Armstrong, Tommy"
+            ]
+        }
+    ],
+ "games": [
+  {
+    "home": "It Must Be Zimm",
+    "away": "Roy Kent",
+    "datetime": "2023-03-08 11:30:00"
+  },
+  {
+    "home": "It's Called Soccer",
+    "away": "Witty Team Name TBD",
+    "datetime": "2023-03-08 12:30:00"
+  },
+  {
+    "home": "Liquid Football",
+    "away": "GDFC",
+    "datetime": "2023-03-08 11:30:00"
+  },
+  {
+    "home": "GDFC",
+    "away": "Roy Kent",
+    "datetime": "2023-03-15 11:30:00"
+  },
+  {
+    "home": "Witty Team Name TBD",
+    "away": "It Must Be Zimm",
+    "datetime": "2023-03-15 12:30:00"
+  },
+  {
+    "home": "Liquid Football",
+    "away": "It's Called Soccer",
+    "datetime": "2023-03-15 11:30:00"
+  },
+  {
+    "home": "Witty Team Name TBD",
+    "away": "Liquid Football",
+    "datetime": "2023-03-22 11:30:00"
+  },
+  {
+    "home": "It Must Be Zimm",
+    "away": "GDFC",
+    "datetime": "2023-03-22 12:30:00"
+  },
+  {
+    "home": "Roy Kent",
+    "away": "It's Called Soccer",
+    "datetime": "2023-03-22 11:30:00"
+  },
+  {
+    "home": "Liquid Football",
+    "away": "It Must Be Zimm",
+    "datetime": "2023-03-29 11:30:00"
+  },
+  {
+    "home": "It's Called Soccer",
+    "away": "GDFC",
+    "datetime": "2023-03-29 12:30:00"
+  },
+  {
+    "home": "Roy Kent",
+    "away": "Witty Team Name TBD",
+    "datetime": "2023-03-29 11:30:00"
+  },
+  {
+    "home": "It Must Be Zimm",
+    "away": "It's Called Soccer",
+    "datetime": "2023-04-05 11:30:00"
+  },
+  {
+    "home": "Roy Kent",
+    "away": "Liquid Football",
+    "datetime": "2023-04-05 12:30:00"
+  },
+  {
+    "home": "GDFC",
+    "away": "Witty Team Name TBD",
+    "datetime": "2023-04-05 11:30:00"
+  },
+  {
+    "home": "It Must Be Zimm",
+    "away": "Roy Kent",
+    "datetime": "2023-04-12 11:30:00"
+  },
+  {
+    "home": "It's Called Soccer",
+    "away": "Witty Team Name TBD",
+    "datetime": "2023-04-12 12:30:00"
+  },
+  {
+    "home": "Liquid Football",
+    "away": "GDFC",
+    "datetime": "2023-04-12 11:30:00"
+  },
+  {
+    "home": "GDFC",
+    "away": "Roy Kent",
+    "datetime": "2023-04-19 11:30:00"
+  },
+  {
+    "home": "Liquid Football",
+    "away": "It's Called Soccer",
+    "datetime": "2023-04-19 12:30:00"
+  },
+  {
+    "home": "Witty Team Name TBD",
+    "away": "It Must Be Zimm",
+    "datetime": "2023-04-19 11:30:00"
+  },
+  {
+    "home": "Witty Team Name TBD",
+    "away": "Liquid Football",
+    "datetime": "2023-04-26 11:30:00"
+  },
+  {
+    "home": "It Must Be Zimm",
+    "away": "GDFC",
+    "datetime": "2023-04-26 12:30:00"
+  },
+  {
+    "home": "Roy Kent",
+    "away": "It's Called Soccer",
+    "datetime": "2023-04-26 11:30:00"
+  },
+  {
+    "home": "Liquid Football",
+    "away": "It Must Be Zimm",
+    "datetime": "2023-05-03 11:30:00"
+  },
+  {
+    "home": "Roy Kent",
+    "away": "Witty Team Name TBD",
+    "datetime": "2023-05-03 12:30:00"
+  },
+  {
+    "home": "It's Called Soccer",
+    "away": "GDFC",
+    "datetime": "2023-05-03 11:30:00"
+  },
+  {
+    "home": "It Must Be Zimm",
+    "away": "It's Called Soccer",
+    "datetime": "2023-05-10 11:30:00"
+  },
+  {
+    "home": "Roy Kent",
+    "away": "Liquid Football",
+    "datetime": "2023-05-10 12:30:00"
+  },
+  {
+    "home": "GDFC",
+    "away": "Witty Team Name TBD",
+    "datetime": "2023-05-10 11:30:00"
+  }
+]
+}
