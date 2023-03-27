@@ -5,15 +5,22 @@ import org.apache.catalina.core.StandardServer;
 import org.apache.catalina.startup.Tomcat;
 
 public class EmbeddedServer {
+	
+	private static Integer port = 80;
 
 	public static void main(final String[] args) throws Exception {
 		final EmbeddedServer server = new EmbeddedServer();
+		for( String a : args) {
+			if( a.startsWith("--port=") ) {
+				String p = a.substring(a.indexOf("=")+1);
+				port = new Integer(p);
+			}
+		}
 		server.start();
 	}
 
 	private void start() throws Exception {
 		final String appBase = "";
-		final Integer port = 8080;
 
 		final Tomcat tomcat = new Tomcat();
 		tomcat.setPort(port);
