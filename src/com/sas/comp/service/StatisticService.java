@@ -253,7 +253,7 @@ public class StatisticService {
                         + "from players join team_player on players.id = team_player.player_id join games on (games.home_team_id = team_player.team_id or games.away_team_id = team_player.team_id) ";
         String baseSql = "select sq.player_id, player_name, count(distinct season_id) as num_seasons, "
                        + "sq.playoff, sum(win+loss+tie) as num_games, sum(win) as wins, sum(loss) as losses, sum(tie) as ties, "
-                       + "sum(win)/count(*)*100 as winpct, sum(loss)/count(*)*100 as losspct, sum(tie)/count(*)*100 as tiepct, "
+                       + "sum(win)/sum(win+loss+tie)*100 as winpct, sum(loss)/sum(win+loss+tie)*100 as losspct, sum(tie)/sum(win+loss+tie)*100 as tiepct, "
                        + "pat.league as leagueWinner, pat.playoff as playoffWinner "
                        + "from (" + subquery + ") sq left join player_alltime_statistics pat on sq.player_id = pat.player_id";
         
