@@ -1,0 +1,37 @@
+{
+    "season": "2023 Spring",
+    "teams": [
+    ],
+ "games": [
+  {
+    "home": "It Must Be Zimm",
+    "away": "Roy Kent",
+    "datetime": "2023-05-24 11:30:00",
+    "playoff": true
+  },
+  {
+    "home": "Witty Team Name TBD",
+    "away": "It's Called Soccer",
+    "datetime": "2023-05-24 11:30:00",
+    "playoff": true
+  },
+  {
+    "home": "Liquid Football",
+    "away": "It's Called Soccer",
+    "datetime": "2023-05-31 11:30:00",
+    "playoff": true
+  },
+  {
+    "home": "GDFC",
+    "away": "It Must Be Zimm",
+    "datetime": "2023-05-31 11:30:00",
+    "playoff": true
+  },
+  {
+    "home": "TBD",
+    "away": "TBD",
+    "datetime": "2023-06-07 11:30:00",
+    "playoff": true
+  }
+]
+}
