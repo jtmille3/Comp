@@ -4,6 +4,8 @@ import com.sas.comp.models.GoalieDetailedStats;
 import com.sas.comp.models.Player;
 import com.sas.comp.models.PlayerDetailedStats;
 import com.sas.comp.mysql.Database;
+import com.sas.comp.models.TeamStats;
+import com.sas.comp.models.CaptainStats;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -14,6 +16,67 @@ import java.util.Map;
 import java.util.TreeMap;
 
 public class StatisticService {
+
+	/* the sql is getting big and hard to maintain inline
+	 * so let's make some multi-line constants to help
+	 */
+
+	// note, there is a %s embedded for where clause injection
+	// testStatSql.format("where clause or empty")
+	private String teamStatSql = "select season, " +
+			"team, " +
+			"captain_name, " + 
+			"count(*) as games_played, " + 
+			"avg(goals_for) as gfa, " + 
+			"avg(goals_against) as gaa, " + 
+			"avg(goal_diff) as gda, " + 
+			"avg(shutout) as soa, " + 
+			"max(leagueWinner) as lw, " + 
+			"max(playoffWinner) as pw, " + 
+			"sum((case when (result = 1) then 1 else 0 end))/count(*)*100 AS winpct, " + 
+			"sum((case when (result = -1) then 1 else 0 end))/count(*)*100 AS losspct, " + 
+			"sum((case when (result = 0) then 1 else 0 end))/count(*)*100 AS tiepct " + 
+			"from team_summary_full " + 
+			"%s " +
+			"group by team_id " + 
+			"order by pw desc, lw desc, winpct desc, tiepct desc, losspct, gda desc, soa desc, team " + 
+			"";
+
+	// note, there is a %s embedded for where clause injection
+	// captainStatSql.format("where clause or empty")
+	private String captainStatSql = "select " + 
+			"sq.captain_name, " + 
+			"count(*) as seasons, " + 
+			"avg(sq.gfa) as gfa, " + 
+			"avg(sq.gaa) as gaa, " + 
+			"avg(sq.gda) as gda, " + 
+			"avg(sq.soa) as soa, " + 
+			"sum(sq.lw) as lw, " + 
+			"sum(sq.pw) as pw, " + 
+			"sum(sq.lw)/count(*)*100 as lwpct, " + 
+			"sum(sq.pw)/count(*)*100 as pwpct, " + 
+			"avg(sq.winpct) as winpct, " + 
+			"avg(sq.losspct) as losspct, " + 
+			"avg(sq.tiepct) as tiepct " + 
+			"from (" + 
+			"   select season, team, captain_name, " + 
+			"   count(*) as games_played, " + 
+			"   avg(goals_for) as gfa, " + 
+			"   avg(goals_against) as gaa, " + 
+			"   avg(goal_diff) as gda, " + 
+			"   avg(shutout) as soa, " + 
+			"   max(leagueWinner) as lw, " + 
+			"   max(playoffWinner) as pw, " + 
+			"   sum((case when (result = 1) then 1 else 0 end))/count(*)*100 AS winpct, " + 
+			"   sum((case when (result = -1) then 1 else 0 end))/count(*)*100 AS losspct, " + 
+			"   sum((case when (result = 0) then 1 else 0 end))/count(*)*100 AS tiepct " + 
+			"   from team_summary_full " + 
+			"   %s " +
+			"   group by team_id " + 
+			") sq " + 
+			"group by captain_name " + 
+			"order by pw desc, lw desc, winpct desc, tiepct desc, losspct, gda desc, soa desc, captain_name " + 
+			"";
     
     private TreeMap<Integer, Map<String,Map<String,List<Player>>>> allSeasonStatistics = new TreeMap<Integer, Map<String, Map<String,List<Player>>>>();
     
@@ -383,4 +446,121 @@ public class StatisticService {
         return detailedStat;
     }
 
+    public Map<String, List<TeamStats>> getTeamStatsMap() {
+        final Map<String, List<TeamStats>> teamStatsMap = new HashMap<String,List<TeamStats>>();
+        
+        String sql = String.format(teamStatSql, "");
+        Database.doVoidTransaction(sql, (pstmt) -> {
+            List<TeamStats> teamStats = new ArrayList<>();
+            teamStatsMap.put("overall", teamStats);
+            final ResultSet rs = pstmt.executeQuery();
+            while (rs.next()) {
+                final TeamStats teamStat = this.extractTeamStatFromResultSet(rs);
+                teamStats.add(teamStat);
+            }
+        });
+
+        sql = String.format(teamStatSql, "where playoff = 0");
+        Database.doVoidTransaction(sql, (pstmt) -> {
+            List<TeamStats> teamStats = new ArrayList<>();
+            teamStatsMap.put("season", teamStats);
+            final ResultSet rs = pstmt.executeQuery();
+            while (rs.next()) {
+                final TeamStats teamStat = this.extractTeamStatFromResultSet(rs);
+                teamStats.add(teamStat);
+            }
+        });
+
+        sql = String.format(teamStatSql, "where playoff = 1");
+        Database.doVoidTransaction(sql, (pstmt) -> {
+            List<TeamStats> teamStats = new ArrayList<>();
+            teamStatsMap.put("playoff", teamStats);
+            final ResultSet rs = pstmt.executeQuery();
+            while (rs.next()) {
+                final TeamStats teamStat = this.extractTeamStatFromResultSet(rs);
+                teamStats.add(teamStat);
+            }
+        });
+
+        return teamStatsMap;
+    }
+
+    private TeamStats extractTeamStatFromResultSet(final ResultSet rs) throws SQLException {
+        final TeamStats detailedStat = new TeamStats();
+        String season = rs.getString("season");
+        String name = rs.getString("team");
+        String captain = rs.getString("captain_name");
+        detailedStat.setSeason(season);
+        detailedStat.setName(name);
+        detailedStat.setCaptain(captain);
+        detailedStat.setGamesPlayed(rs.getInt("games_played"));
+        detailedStat.setGoalsFor(String.format("%.1f", rs.getFloat("gfa")));
+        detailedStat.setGoalsAgainst(String.format("%.1f", rs.getFloat("gaa")));
+        detailedStat.setGoalDifferential(String.format("%.1f", rs.getFloat("gda")));
+        detailedStat.setShutouts(String.format("%.1f", rs.getFloat("soa")));
+        detailedStat.setLeagueWinner(rs.getInt("lw"));
+        detailedStat.setPlayoffWinner(rs.getInt("pw"));
+        detailedStat.setWinpct(String.format("%.1f", rs.getFloat("winpct")));
+        detailedStat.setLosspct(String.format("%.1f", rs.getFloat("losspct")));
+        detailedStat.setTiepct(String.format("%.1f", rs.getFloat("tiepct")));
+        return detailedStat;
+    }
+
+    public Map<String, List<CaptainStats>> getCaptainStatsMap() {
+        final Map<String, List<CaptainStats>> captainStatsMap = new HashMap<String,List<CaptainStats>>();
+        
+        String sql = String.format(captainStatSql, "");
+        Database.doVoidTransaction(sql, (pstmt) -> {
+            List<CaptainStats> captainStats = new ArrayList<>();
+            captainStatsMap.put("overall", captainStats);
+            final ResultSet rs = pstmt.executeQuery();
+            while (rs.next()) {
+                final CaptainStats captainStat = this.extractCaptainStatFromResultSet(rs);
+                captainStats.add(captainStat);
+            }
+        });
+
+        sql = String.format(captainStatSql, "where playoff = 0");
+        Database.doVoidTransaction(sql, (pstmt) -> {
+            List<CaptainStats> captainStats = new ArrayList<>();
+            captainStatsMap.put("season", captainStats);
+            final ResultSet rs = pstmt.executeQuery();
+            while (rs.next()) {
+                final CaptainStats captainStat = this.extractCaptainStatFromResultSet(rs);
+                captainStats.add(captainStat);
+            }
+        });
+
+        sql = String.format(captainStatSql, "where playoff = 1");
+        Database.doVoidTransaction(sql, (pstmt) -> {
+            List<CaptainStats> captainStats = new ArrayList<>();
+            captainStatsMap.put("playoff", captainStats);
+            final ResultSet rs = pstmt.executeQuery();
+            while (rs.next()) {
+                final CaptainStats captainStat = this.extractCaptainStatFromResultSet(rs);
+                captainStats.add(captainStat);
+            }
+        });
+
+        return captainStatsMap;
+    }
+
+    private CaptainStats extractCaptainStatFromResultSet(final ResultSet rs) throws SQLException {
+        final CaptainStats detailedStat = new CaptainStats();
+        String captain = rs.getString("captain_name");
+        detailedStat.setName(captain);
+        detailedStat.setSeasons(rs.getInt("seasons"));
+        detailedStat.setGoalsFor(String.format("%.1f", rs.getFloat("gfa")));
+        detailedStat.setGoalsAgainst(String.format("%.1f", rs.getFloat("gaa")));
+        detailedStat.setGoalDifferential(String.format("%.1f", rs.getFloat("gda")));
+        detailedStat.setShutouts(String.format("%.1f", rs.getFloat("soa")));
+        detailedStat.setLeagueWinner(rs.getInt("lw"));
+        detailedStat.setPlayoffWinner(rs.getInt("pw"));
+        detailedStat.setLwpct(String.format("%.1f", rs.getFloat("lwpct")));
+        detailedStat.setPwpct(String.format("%.1f", rs.getFloat("pwpct")));
+        detailedStat.setWinpct(String.format("%.1f", rs.getFloat("winpct")));
+        detailedStat.setLosspct(String.format("%.1f", rs.getFloat("losspct")));
+        detailedStat.setTiepct(String.format("%.1f", rs.getFloat("tiepct")));
+        return detailedStat;
+    }
 }

@@ -8,12 +8,30 @@ public class Competitive {
 	private List<Season> seasons;
 	private List<Player> playerStatistics;
 	private List<Player> goalieStatistics;
-    private List<Player> shutoutStatistics;
+	private List<Player> shutoutStatistics;
 	private List<Goal> goals;
 	private List<Standing> champions = new ArrayList<Standing>();
 	private Map<String, List<PlayerDetailedStats>>playerDetailedStatsMap;
 	private Map<String, List<GoalieDetailedStats>>goalieDetailedStatsMap;
+	private Map<String, List<TeamStats>>teamStatMap;
+	private Map<String, List<CaptainStats>>captainStatMap;
 	
+	public Map<String, List<TeamStats>> getTeamStatMap() {
+		return teamStatMap;
+	}
+
+	public void setTeamStatMap(Map<String, List<TeamStats>> teamStatMap) {
+		this.teamStatMap = teamStatMap;
+	}
+
+	public Map<String, List<CaptainStats>> getCaptainStatMap() {
+		return captainStatMap;
+	}
+
+	public void setCaptainStatMap(Map<String, List<CaptainStats>> captainStatMap) {
+		this.captainStatMap = captainStatMap;
+	}
+
 	public Map<String, List<PlayerDetailedStats>> getPlayerDetailedStatsMap() {
 		return playerDetailedStatsMap;
 	}
@@ -64,13 +82,13 @@ public class Competitive {
 		this.goals = goals;
 	}
 
-    public void setShutoutStatistics(List<Player> shutoutStatistics) {
-        this.shutoutStatistics = shutoutStatistics;
-    }
+	public void setShutoutStatistics(List<Player> shutoutStatistics) {
+		this.shutoutStatistics = shutoutStatistics;
+	}
 
-    public List<Player> getShutoutStatistics() {
-        return shutoutStatistics;
-    }
+	public List<Player> getShutoutStatistics() {
+		return shutoutStatistics;
+	}
 
 	public List<Standing> getChampions() {
 		return champions;
@@ -85,4 +103,5 @@ public class Competitive {
 			this.champions.add(champion);
 		}
 	}
+
 }

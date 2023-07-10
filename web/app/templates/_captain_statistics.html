@@ -1,0 +1,50 @@
+<div class="tab-pane" id="captain-statistics-content">
+  <div class="row">
+      <div class="col-md-12 table-container">
+      <table class="table table-condensed table-striped table-hover tablesorter">
+        <thead>
+          <th>Captain</th>
+          <th>Seasons</th>
+          <th>Trophies</th>
+          <th>League<br/>Title %</th>
+          <th>Champ-<br/>ionship %</th>
+          <th>Win%</th>
+          <th>Loss%</th>
+          <th>Tie%</th>
+          <th>Avg GF</th>
+          <th>Avg GA</th>
+          <th>Avg GD</th>
+          <th>Avg Shutouts</th>
+        </thead>
+        <tbody>
+          {{#each this}}
+            <tr>
+              <td role="player">{{name}}</td>
+              <td>{{seasons}}</td>
+              <td>
+                <span style="display:none">{{playoffWinner}} {{leagueWinner}} note: for sorting</span>
+                {{#if leagueWinner}}
+                <i class="fas fa-award" style="color: #3399ff;" title="League Winner"></i> ({{leagueWinner}})
+                {{/if}}
+                {{#if playoffWinner}}
+                <i class="fas fa-trophy" style="color: #ffcc00;" title="Playoff Winner"></i> ({{playoffWinner}})
+                {{/if}}
+              </td>
+              <td>{{lwpct}}</td>
+              <td>{{pwpct}}</td>
+              <td>{{winpct}}</td>
+              <td>{{losspct}}</td>
+              <td>{{tiepct}}</td>
+              <td>{{goalsFor}}</td>
+              <td>{{goalsAgainst}}</td>
+              <td>{{goalDifferential}}</td>
+              <td>{{shutouts}}</td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+

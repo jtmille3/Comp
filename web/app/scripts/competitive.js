@@ -23,6 +23,8 @@ define(function(require) {
 			$('#champions-table').tablesorter( {sortList: [[0,1]], sortInitialOrder: "desc"} );
             $('#player-statistics-content table').tablesorter( {sortList: [[5,1]], sortInitialOrder: "desc"} );
 			$('#goalie-statistics-content table').tablesorter( {sortList: [[5,1]], sortInitialOrder: "desc"} );
+			$('#team-statistics-content table').tablesorter( {sortList: [[3,1]], sortInitialOrder: "desc"} );
+			$('#captain-statistics-content table').tablesorter( {sortList: [[2,1]], sortInitialOrder: "desc"} );
 			$('table.season_player_stats').tablesorter( {sortList: [[3,1]]} );
 			$('table.season_goalie_stats').tablesorter( {sortList: [[2,1]]} );
 
@@ -370,6 +372,32 @@ define(function(require) {
 
             $('#goalie-statistics-tabs').children().removeClass('active');
             $('#goalie-statistics-' + type).addClass('active');
+        },
+        renderTeamStatistics: function(type) {
+            $('#comp-menu').children().removeClass('active');
+            $('#comp-team-statistics-menu').addClass('active');
+
+            $('#comp-content').children().removeClass('active');
+            $('#team-statistics-content').addClass('active');
+
+            $('#team-statistics-menu').children().removeClass('active');
+            $('#team-statistics-' + type + '-menu').addClass('active');
+
+            $('#team-statistics-tabs').children().removeClass('active');
+            $('#team-statistics-' + type).addClass('active');
+        },
+        renderCaptainStatistics: function(type) {
+            $('#comp-menu').children().removeClass('active');
+            $('#comp-captain-statistics-menu').addClass('active');
+
+            $('#comp-content').children().removeClass('active');
+            $('#captain-statistics-content').addClass('active');
+
+            $('#captain-statistics-menu').children().removeClass('active');
+            $('#captain-statistics-' + type + '-menu').addClass('active');
+
+            $('#captain-statistics-tabs').children().removeClass('active');
+            $('#captain-statistics-' + type).addClass('active');
         },
         renderPlayerStatistics: function(type) {
             $('#comp-menu').children().removeClass('active');

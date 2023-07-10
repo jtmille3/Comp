@@ -29,6 +29,18 @@ require(['./competitive'], function (competitiveController) {
     crossroads.addRoute('goaliestatistics/{type}', function(type) {
         competitiveController.renderGoalieStatistics(type);
     });
+    crossroads.addRoute('teamstatistics', function() {
+        competitiveController.renderTeamStatistics('overall');
+    });
+    crossroads.addRoute('teamstatistics/{type}', function(type) {
+        competitiveController.renderTeamStatistics(type);
+    });
+    crossroads.addRoute('captainstatistics', function() {
+        competitiveController.renderCaptainStatistics('overall');
+    });
+    crossroads.addRoute('captainstatistics/{type}', function(type) {
+        competitiveController.renderCaptainStatistics(type);
+    });
     crossroads.addRoute('playerstatistics', function() {
         competitiveController.renderPlayerStatistics('overall');
     });
