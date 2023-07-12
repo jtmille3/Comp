@@ -19,8 +19,8 @@
         <tbody>
           {{#each this}}
             <tr>
-              <td>{{season}}</td>
-              <td>{{name}}</td>
+              <td><ul class="nav nav-pills"><li><a href="#/seasons/{{season_id}}/standings">{{season}}</a></li></ul></td>
+              <td><ul class="nav nav-pills"><li><a href="#/seasons/{{season_id}}/standings">{{name}}</a></li></ul></td>
               <td role="player">{{captain}}</td>
               <td>
                 <span style="display:none">{{playoffWinner}} {{leagueWinner}} note: for sorting</span>

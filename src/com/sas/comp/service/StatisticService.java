@@ -23,8 +23,9 @@ public class StatisticService {
 
 	// note, there is a %s embedded for where clause injection
 	// testStatSql.format("where clause or empty")
-	private String teamStatSql = "select season, " +
+	private String teamStatSql = "select season, season_id, " +
 			"team, " +
+			"team_id, " +
 			"captain_name, " + 
 			"count(*) as games_played, " + 
 			"avg(goals_for) as gfa, " + 
@@ -493,6 +494,8 @@ public class StatisticService {
         detailedStat.setSeason(season);
         detailedStat.setName(name);
         detailedStat.setCaptain(captain);
+        detailedStat.setTeam_id(rs.getInt("team_id"));
+        detailedStat.setSeason_id(rs.getInt("season_id"));
         detailedStat.setGamesPlayed(rs.getInt("games_played"));
         detailedStat.setGoalsFor(String.format("%.1f", rs.getFloat("gfa")));
         detailedStat.setGoalsAgainst(String.format("%.1f", rs.getFloat("gaa")));

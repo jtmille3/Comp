@@ -5,6 +5,8 @@ public class TeamStats {
 	private Integer rank;
 	private String season;
 	private String name;
+	private Integer team_id;
+	private Integer season_id;
 	private String captain;
 	private Integer gamesPlayed;
 	private String goalsFor;
@@ -100,12 +102,24 @@ public class TeamStats {
 	public void setTiepct(String tiepct) {
 		this.tiepct = tiepct;
 	}
+	public Integer getTeam_id() {
+		return team_id;
+	}
+	public void setTeam_id(Integer team_id) {
+		this.team_id = team_id;
+	}
+	public Integer getSeason_id() {
+		return season_id;
+	}
+	public void setSeason_id(Integer season_id) {
+		this.season_id = season_id;
+	}
 	@Override
 	public String toString() {
-		return "TeamStats [rank=" + rank + ", season=" + season + ", name=" + name + ", captain=" + captain
-				+ ", gamesPlayed=" + gamesPlayed + ", goalsFor=" + goalsFor + ", goalsAgainst=" + goalsAgainst
-				+ ", goalDifferential=" + goalDifferential + ", shutouts=" + shutouts + ", leagueWinner=" + leagueWinner
-				+ ", playoffWinner=" + playoffWinner + ", winpct=" + winpct + ", losspct=" + losspct + ", tiepct="
-				+ tiepct + "]";
+		return "TeamStats [rank=" + rank + ", season=" + season + ", name=" + name + ", team_id=" + team_id
+				+ ", season_id=" + season_id + ", captain=" + captain + ", gamesPlayed=" + gamesPlayed + ", goalsFor="
+				+ goalsFor + ", goalsAgainst=" + goalsAgainst + ", goalDifferential=" + goalDifferential + ", shutouts="
+				+ shutouts + ", leagueWinner=" + leagueWinner + ", playoffWinner=" + playoffWinner + ", winpct="
+				+ winpct + ", losspct=" + losspct + ", tiepct=" + tiepct + "]";
 	}
 }
