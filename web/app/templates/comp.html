@@ -68,6 +68,15 @@
                       <li class="active" id="team-statistics-overall-menu"><a href="#/teamstatistics/overall">Overall</a></li>
                       <li id="team-statistics-season-menu"><a href="#/teamstatistics/season">Regular Season</a></li>
                       <li id="team-statistics-playoffs-menu"><a href="#/teamstatistics/playoffs">Playoff</a></li>
+                      <li>
+                        <div class="collapse navbar-collapse">
+                            <form class="navbar-form navbar-right" role="search">
+                                <div class="form-group">
+                                    <input type="text" id="team-player-search" class="form-control" placeholder="Player Filter"/>
+                                </div>
+                            </form>
+                        </div>
+                      </li>
                   </ul>
                   <div class="tab-content" id="team-statistics-tabs">
                       <div class="tab-pane active" id="team-statistics-overall">{{> team_statistics this.teamStatMap.overall}}</div>

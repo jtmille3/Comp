@@ -29,11 +29,14 @@ define(function(require) {
 			$('table.season_goalie_stats').tablesorter( {sortList: [[2,1]]} );
 
             this.attachSearch(competitive);
+			this.attachPlayerFilterSearch(competitive);
             this.attachChampionClickHandler(competitive.seasons);
             this.attachPlayerClickHandler();
 
+			var seasonMap = new Map();
 			for(var i = 0; i < competitive.seasons.length; i++) {
 				var season = competitive.seasons[i];
+				seasonMap[season.id] = season
 				if(season.seasonStatistics) {
                     season.playerStatistics = season.seasonStatistics.overall.player;
                     $('#' + season.id + '-standings-table').tablesorter( {sortList: [[0,0]]} );
@@ -45,6 +48,49 @@ define(function(require) {
 				this.attachLeagueScheduleClickHandler(season);
 				this.attachPlayoffScheduleClickHandler(season);
 			}
+			var teamRosterMap = new Map();
+			for( var i = 0; i < competitive.teamStatMap.overall.length; i++) {
+				var teamStat = competitive.teamStatMap.overall[i]
+				var season = seasonMap[teamStat.season_id];
+				var roster = this.roster(season, teamStat.team_id);
+				teamRosterMap[teamStat.team_id] = roster;
+				var team_roster = Array();
+				for( var j=0; j < roster.length; j++) {
+					team_roster.push(roster[j].name);
+				}
+				// inserting roster into hidden span so player filtering can use it
+				// does not need decoration since will be hidden
+				$("span[name='teamstat-roster-"+teamStat.team_id+"']").html(team_roster.join(","));
+			}
+
+			var teamRosterRich = function(team_id) {
+				var roster = teamRosterMap[team_id];
+				roster.sort((a, b) => {
+					if (a.name < b.name) {
+						return -1;
+					}
+					if (a.name > b.name) {
+						return 1;
+					}
+					return 0;
+				});
+				var rosterTemplate = window.comp['web/app/templates/team_roster.html'];
+				var rich = rosterTemplate({roster: roster});
+				return rich;
+			}
+			$('td:has(img[role="roster-small"])').each(function(idx){
+				var $td = $(this);
+				var team_id = $td.attr("team_id");
+				var team_name = $td.attr("team_name");
+				$td.popover({
+					html: true,
+					placement: 'left',
+					trigger: 'hover',
+					title: team_name,
+					container: 'body',
+					content: teamRosterRich(team_id)
+				});
+			});
 
             this.getWeather(function(weather) {
                 var weatherTemplate = window.comp['web/app/templates/weather.html'];
@@ -209,6 +255,69 @@ define(function(require) {
             function displayPlayer(player) {
                 self.generatePlayerDialog(player);
             }
+        },
+        attachPlayerFilterSearch: function(competitive) {
+            var names = new Bloodhound({
+                datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
+                queryTokenizer: Bloodhound.tokenizers.whitespace,
+                local: $.map(competitive.playerStatistics, function(player) {
+                    return player;
+                })
+            });
+
+            names.initialize();
+
+            var search = $('#team-player-search');
+
+            search.typeahead({
+                    minLength: 1,
+                    hint: true,
+                    highlight: true
+                },
+                {
+                    name: 'competitive',
+                    displayKey: 'name',
+                    source: names.ttAdapter(),
+                    templates: {
+                        empty: [
+                            '<div class="empty-message">',
+                            'Nothing found',
+                            '</div>'
+                        ].join('\n'),
+                        suggestion: Handlebars.compile('<p><strong>{{name}}</strong></p>')
+                    }
+                });
+
+
+            search.on('typeahead:selected', function(event, suggestion, dataset) {
+				filterPlayer(suggestion);
+            });
+
+            var clear = $('#comp-clear');
+
+            search.on('keyup', function(event) {
+                if(search.val().length) {
+                    clear.show();
+                } else {
+                    clear.hide();
+					resetPlayerFilter();
+                }
+            });
+
+            clear.on('click', function() {
+                search.val('');
+                search.focus();
+            });
+
+            var self = this;
+            function filterPlayer(player) {
+				$('#team-statistics-content tbody tr').hide();
+				$('#team-statistics-content tbody tr:contains('+player.name+')').show();
+            }
+			function resetPlayerFilter() {
+				$('#team-player-search').val('');
+				$('#team-statistics-content tbody tr').show();
+			}
         },
 		selectedChampion: function(season, teamId) {
 			var roster = this.roster(season, teamId);

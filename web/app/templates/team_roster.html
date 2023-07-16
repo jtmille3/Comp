@@ -1,0 +1,18 @@
+<table>
+    {{#each roster}}
+    <tr>
+        <td>{{name}}</td>
+        <td style="padding-left: 5px;">
+        {{#if goalie}}
+        <img src="img/goalie.png"/>
+        {{/if}}
+        {{#if captain}}
+        <img src="img/captain.png"/>
+        {{/if}}
+        {{#if coCaptain}}
+        <img src="img/cocaptain.png"/>
+        {{/if}}
+        </td>
+    </tr>
+    {{/each}}
+</table>

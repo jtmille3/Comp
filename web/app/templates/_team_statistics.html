@@ -6,6 +6,7 @@
           <th>Season</th>
           <th>Team Name</th>
           <th>Captain</th>
+          <th>Roster</th>
           <th>Trophies</th>
           <th>Win%</th>
           <th>Loss%</th>
@@ -19,9 +20,17 @@
         <tbody>
           {{#each this}}
             <tr>
-              <td><ul class="nav nav-pills"><li><a href="#/seasons/{{season_id}}/standings">{{season}}</a></li></ul></td>
-              <td><ul class="nav nav-pills"><li><a href="#/seasons/{{season_id}}/standings">{{name}}</a></li></ul></td>
+              <td><span style="display:none">{{season_id}} note: for sorting</span><ul class="nav nav-pills"><li><a href="#/seasons/{{season_id}}/standings">{{season}}</a></li></ul></td>
+              <td>
+                <ul class="nav nav-pills">
+                  <li><a href="#/seasons/{{season_id}}/standings">{{name}}</a></li>
+                </ul>
+              </td>
               <td role="player">{{captain}}</td>
+              <td team_id="{{team_id}}" team_name="{{name}}">
+                <img title="Roster" team_key="teamstat-roster-{{team_id}}" role="roster-small" src="img/star.gif"></img>
+                <span name="teamstat-roster-{{team_id}}" style="display:none;"></span>
+              </td>
               <td>
                 <span style="display:none">{{playoffWinner}} {{leagueWinner}} note: for sorting</span>
                 {{#if leagueWinner}}
