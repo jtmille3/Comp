@@ -2,8 +2,10 @@ package com.sas.comp.resource;
 
 import com.sas.comp.models.Season;
 import com.sas.comp.models.Team;
+import com.sas.comp.models.Game;
 import com.sas.comp.service.SeasonService;
 import com.sas.comp.service.TeamService;
+import com.sas.comp.service.GameService;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -21,6 +23,8 @@ public class SeasonResource {
     private final SeasonService seasonService = new SeasonService();
 
     private final TeamService teamService = new TeamService();
+
+    private final GameService gameService = new GameService();
 
     @POST
     public Season create(Season season) {
@@ -48,6 +52,15 @@ public class SeasonResource {
     @GET
     public List<Season> read() {
         return seasonService.getSeasons();
+    }
+
+    @GET
+    @Path("{id}/schedule")
+    public List<Game> readScheduleBySeasonId(@PathParam("id") Integer seasonID) {
+        List<Game> seasonGames = gameService.getLeagueSchedule(seasonID);
+        List<Game> playoffGames = gameService.getPlayoffSchedule(seasonID);
+        playoffGames.addAll(seasonGames);
+        return playoffGames;
     }
 
 }

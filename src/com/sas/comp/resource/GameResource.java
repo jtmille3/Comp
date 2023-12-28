@@ -40,4 +40,23 @@ public class GameResource {
 	public List<Player> getPlayers(@PathParam("id") final Integer id) {
 		return gameService.getPlayers(id);
 	}
+
+	@POST
+	@Path("/new")
+	public Game newGame(final Game game) {
+		return gameService.newGame(game);
+	}
+
+	@PUT
+	@Path("{id}/save")
+	public void save(@PathParam("id") final Integer id, final Game game) {
+		gameService.update(game);
+	}
+
+	@DELETE
+	@Path("{id}/delete")
+	public void delete(@PathParam("id") final Integer id) {
+		gameService.deleteGame(id);
+	}
+
 }

@@ -1,3 +1,26 @@
+<div id="passwordDialog" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 id="myModalLabel">Security</h4>
+          </div>
+          <div class="modal-body">
+            <form class="form-horizontal" onsubmit="return false;">
+              <div id="password-group" class="control-group">
+                <label class="control-label" for="password">Password</label>
+                <div class="controls">
+                  <input type="password" id="password" placeholder="Password">
+                  <span id="passwordHelp" class="help-inline" style="display:none">Incorrect password!</span>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button id="passwordButton" class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+    </div>
+</div>
 <div class="sidebar col-md-2 col-xs-3">
     <div class="sidebar-nav">
         <ul class="nav nav-list" id="admin-menu">
@@ -6,6 +29,7 @@
             <li id="seasons-menu"><a href="#/seasons">Seasons</a></li>
             <li id="players-menu"><a href="#/players">Players</a></li>
             <li id="teams-menu"><a href="#/teams">Teams</a></li>
+            <li id="games-menu"><a href="#/games">Games</a></li>
             <li class="nav-header">Cache</li>
             <li id="cache-menu"><a href="#/cache">Reset</a></li>
         </ul>
