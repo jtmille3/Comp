@@ -1,5 +1,7 @@
 package com.sas.comp.resource;
 
+import java.text.SimpleDateFormat;
+
 import javax.ws.rs.Produces;
 import javax.ws.rs.ext.ContextResolver;
 import javax.ws.rs.ext.Provider;
@@ -17,6 +19,7 @@ public class JacksonObjectMapper implements ContextResolver<ObjectMapper> {
     objectMapper = new ObjectMapper();
     objectMapper.setSerializationInclusion(Inclusion.NON_NULL);
     objectMapper.configure(DeserializationConfig.Feature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+    objectMapper.setDateFormat(new SimpleDateFormat("yyyy/MM/dd HH:mm"));
     // objectMapper.configure(SerializationConfig.Feature.INDENT_OUTPUT, true);
     // objectMapper.configure(SerializationConfig.Feature.WRITE_DATES_AS_TIMESTAMPS,
     // false);

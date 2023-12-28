@@ -29,7 +29,7 @@ public class GameService {
     }
     
     private void populateAllSeasons() {
-        Database.doVoidTransaction("SELECT * FROM schedule order by season_id desc, playoff", (pstmt) -> {
+        Database.doVoidTransaction("SELECT * FROM schedule order by season_id desc, playoff, date desc", (pstmt) -> {
             final ResultSet rs = pstmt.executeQuery();
             while (rs.next()) {
                 Integer seasonId = rs.getInt("season_id");
@@ -154,6 +154,7 @@ public class GameService {
         schedule.setAwayId(rs.getInt("away_id"));
         schedule.setDate(rs.getTimestamp("date"));
         schedule.setId(rs.getInt("game_id"));
+        schedule.setPlayoff(rs.getBoolean("playoff"));
 
         schedule.setHomeScore(rs.getInt("home_score"));
         if (rs.wasNull()) {
@@ -167,7 +168,26 @@ public class GameService {
         return schedule;
     }
 
-    public void save(final Game game) {
+    public void update(final Game game) {
+        String sql = "UPDATE games SET home_team_id = ?, away_team_id = ?, "
+                   + "date = ?, playoff = ? WHERE id = ?";
+        Database.doReturnTransaction(Game.class, sql, (pstmt) -> {
+            pstmt.setInt(1, game.getHomeId());
+            pstmt.setInt(2, game.getAwayId());
+            pstmt.setTimestamp(3, new java.sql.Timestamp(game.getDate().getTime()));
+            if( game.getPlayoff().booleanValue() ) {
+                pstmt.setInt(4, 1);
+            } else {
+                pstmt.setInt(4, 0);
+            }
+            pstmt.setInt(5, game.getId());
+            pstmt.execute();
+            return game;
+        });
+    }
+
+    public Game newGame(final Game game) {
+        return 
         Database.doReturnTransaction(Game.class, "INSERT INTO games VALUES(null, ?, ?, ?, ?, ?, ?, ?)", (pstmt) -> {
             pstmt.setInt(1, game.getSeasonId());
             pstmt.setInt(2, game.getHomeId());
@@ -181,7 +201,20 @@ public class GameService {
                 pstmt.setInt(7, 0);
             }
             pstmt.execute();
+            ResultSet rs = pstmt.getGeneratedKeys();
+            if (rs.next()) {
+                long id = rs.getLong(1);
+                game.setId((int)(long)id);
+            }
             return game;
         });
     }
+    
+    public void deleteGame(final Integer gameId) {
+        Database.doVoidTransaction("DELETE from games where id = ?", (pstmt) -> {
+            pstmt.setInt(1, gameId);
+            pstmt.execute();
+        });
+    }
+    
 }

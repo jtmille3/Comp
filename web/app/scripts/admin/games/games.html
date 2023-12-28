@@ -1,0 +1,17 @@
+<div id="games">
+    <h1 class="page-header">Games</h1>
+    <div class="dropdown" id="seasons-dropdown-games">
+        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Pick a season <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+            {{#each seasons}}
+            <li><a data-season-id="{{id}}" href="#" onclick="javascript: return false;">{{name}}</a></li>
+            {{/each}}
+        </ul>
+    </div>
+    <br/>
+    <div class="row">
+        <div class="col-md-12">
+            <div id="games-form"></div>
+        </div>
+    </div>
+</div>

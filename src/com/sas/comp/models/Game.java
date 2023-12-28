@@ -3,23 +3,18 @@ package com.sas.comp.models;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import org.codehaus.jackson.annotate.JsonIgnore;
-
 public class Game extends BaseModel {
 	private static SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm");
-
-    @JsonIgnore
-    private Integer seasonId;
+	private Integer seasonId;
 	private String home;
 	private Integer homeId;
 	private String away;
 	private Integer awayId;
-	@JsonIgnore
 	private Date date;
 	private Integer homeScore;
 	private Integer awayScore;
 
-    private Boolean playoff;
+	private Boolean playoff;
 
 	public String getHome() {
 		return home;
