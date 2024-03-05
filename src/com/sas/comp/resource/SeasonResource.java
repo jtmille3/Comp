@@ -9,6 +9,8 @@ import com.sas.comp.service.GameService;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -57,10 +59,16 @@ public class SeasonResource {
     @GET
     @Path("{id}/schedule")
     public List<Game> readScheduleBySeasonId(@PathParam("id") Integer seasonID) {
-        List<Game> seasonGames = gameService.getLeagueSchedule(seasonID);
+        List<Game> allGames = new ArrayList<Game>();
         List<Game> playoffGames = gameService.getPlayoffSchedule(seasonID);
-        playoffGames.addAll(seasonGames);
-        return playoffGames;
+        if( playoffGames != null) {
+            allGames.addAll(playoffGames);
+        }
+        List<Game> seasonGames = gameService.getLeagueSchedule(seasonID);
+        if( seasonGames != null) {
+            allGames.addAll(seasonGames);
+        }
+        return allGames;
     }
 
 }
