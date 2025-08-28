@@ -78,6 +78,19 @@ public class PlayerService {
         });
     }
 
+    public List<Player> fuzzyMatch(String name) {
+        final List<Player> players = new ArrayList<>();
+
+        Database.doVoidTransaction("SELECT * FROM players where name like '" + name.substring(0, 4) + "%' ORDER BY name", (pstmt) -> {
+            final ResultSet rs = pstmt.executeQuery();
+            while (rs.next()) {
+                players.add(this.playerFromResultSet(rs));
+            }
+        });
+
+        return players;
+    }
+
     private Player playerFromResultSet(ResultSet rs) throws SQLException{
         final Player player = new Player();
         player.setName(rs.getString("name"));

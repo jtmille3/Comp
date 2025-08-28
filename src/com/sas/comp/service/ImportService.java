@@ -25,7 +25,7 @@ public class ImportService {
         final PlayerService playerService = new PlayerService();
         final GameService gameService = new GameService();
 
-        final File file = new File("./import/fall2023.json");
+        final File file = new File("./import/fall2025.json");
         final ObjectMapper mapper = new ObjectMapper(); // can reuse, share globally
         final Map root = mapper.readValue(file, Map.class);
 
