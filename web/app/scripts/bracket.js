@@ -4,8 +4,8 @@ define(function (require) {
     var d3 = require("../components/d3/d3");
 
     return {
-        generate: function (id, games) {
-            var root = this.transformToBracket(games);
+        generate: function (id, games, seasonComplete) {
+            var root = this.transformToBracket(games, seasonComplete);
             var selector = '#' + id;
             var width = $(window).width() - 70;
             var size = { width: width, height: 700 };
@@ -88,7 +88,13 @@ define(function (require) {
                     }
                 });
         },
-        transformToBracket: function (games) {
+        transformToBracket: function (games, seasonComplete) {
+            if( ! seasonComplete ) {
+                return {
+                    name: "Playoffs haven't finished...",
+                    content: []
+                };
+            }
             // start from the newest and build our tree from it.
             var links = Lazy(games).sortBy(function (game) {
                 return game.played;
