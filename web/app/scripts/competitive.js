@@ -197,7 +197,18 @@ define(function(require) {
 		},
         attachBracket: function(season) {
             var id = 'playoff-bracket-' + season.id;
-            bracket.generate(id, season.playoffSchedule, false);
+            // iterate season.standings look for any playoffWinner=1
+            // that indicates the season is complete and the bracket
+            // graphic can be displayed correctly. the code does not
+            // currently know how to make a correct bracket until all
+            // games have been completed
+            var seasonComplete = false
+            Lazy(season.standings).each(function(standing) {
+                if( standing.playoffWinner == 1 ) {
+                    seasonComplete = true;
+                }
+            });
+            bracket.generate(id, season.playoffSchedule, seasonComplete);
         },
         attachSearch: function(competitive) {
             var names = new Bloodhound({
