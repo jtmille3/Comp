@@ -1,11 +1,28 @@
 <?xml version="1.0" ?> 
 <project name="AntExample1" default="war">
-	
+
+	<target name="compile">
+		<mkdir dir="web/WEB-INF/classes"/>
+		<javac srcdir="src"
+			destdir="web/WEB-INF/classes"
+			includeantruntime="false"
+			release="8">
+			<classpath>
+				<fileset dir="libs">
+					<include name="**/*.jar"/>
+				</fileset>
+				<fileset dir="web/WEB-INF/lib">
+					<include name="**/*.jar"/>
+				</fileset>
+			</classpath>
+		</javac>
+	</target>
+
 	<target name="init">
 		<mkdir dir="distribution" />
 	</target>
 	
-	<target name="war" depends="init">
+	<target name="war" depends="init, compile">
 		<war destfile="distribution/comp.war" webxml="web/WEB-INF/web.xml">
 			<fileset dir="web">
 				<exclude name="**/work/**"/>
@@ -16,6 +33,24 @@
 	
 	<target name="clean">
 		<delete dir="distribution" />
+		<delete dir="web/WEB-INF/classes" />
 	</target>
-	
+
+	<target name="run" depends="compile">
+		<java classname="com.sas.comp.server.EmbeddedServer"
+			fork="true">
+			<classpath>
+				<pathelement location="web/WEB-INF/classes"/>
+				<fileset dir="libs">
+					<include name="**/*.jar"/>
+				</fileset>
+				<fileset dir="web/WEB-INF/lib">
+					<include name="**/*.jar/"/>
+				</fileset>
+			</classpath>
+			<arg value="--port=8000"/>
+			<sysproperty key="dbUrl" value="jdbc:mysql://soccer.na.sas.com:3306/soccer?useSSL=false"/>
+		</java>
+	</target>
+
 </project>
